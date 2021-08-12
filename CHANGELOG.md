@@ -2,7 +2,7 @@
 
 ## Version 2.11.0
 
-*May 31, 2021*
+*August 12, 2021*
 
 * __[Security]__ Bump addressable transitive dependency from 2.7.0 to 2.8.0
 * Support specifying custom meta tags in YAML front-matter
