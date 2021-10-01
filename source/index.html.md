@@ -244,9 +244,10 @@ Parameter | Description
 ID | The ID of the kitten to delete -->
 
 # Exhibitors
-## Get All Exhibitors
+## Get exhibitors
+
 ```shell
-curl "http://profairs-api.tom.webcontact.de/rest/profairs-api/exhibitors/" \
+curl "{baseurl}/exhibitors/" \
   -H "x-api-key: {API-Key}" \
   -X GET \
 ```
@@ -304,7 +305,7 @@ This endpoint retrieves all exhibitors.
 
 ### HTTP Request
 
-`GET http://profairs-api.tom.webcontact.de/rest/profairs-api/exhibitors/`
+`GET {baseurl}/exhibitors/`
 
 ### Query Parameters
 
@@ -313,9 +314,9 @@ Parameter | Type | required | Default | Description
 fair_id | Integer | false | | If set returns exhibitors from a specific fair.
 
 
-## Get a Specific Exhibitor
+## Get Exhibitor
 ```shell
-curl "http://profairs-api.tom.webcontact.de/rest/profairs-api/exhibitors/{exhibitor_id}" \
+curl "{baseurl}/exhibitors/{exhibitor_id}" \
   -H "x-api-key: {API-Key}" \
   -X GET \
 ```
@@ -349,7 +350,7 @@ This endpoint retrieves a specific exhibitor.
 
 ### HTTP Request
 
-`GET http://profairs-api.tom.webcontact.de/rest/profairs-api/exhibitors/{exhibitor_id}`
+`GET {baseurl}/exhibitors/{exhibitor_id}`
 
 ### Query Parameters
 
@@ -359,7 +360,7 @@ exhibitor_id | Integer | true | | defines the exhibitor.
 
 ## Create an Exhibitor
 ```shell
-curl "http://profairs-api.tom.webcontact.de/rest/profairs-api/exhibitors/" \
+curl "{baseurl}/exhibitors/" \
   -H "x-api-key: {API-Key}" \
   -H "Content-Type: application/json" \
   -X POST \
@@ -401,9 +402,9 @@ This endpoint creates an exhibitor.
 
 ### HTTP Request
 
-`POST http://profairs-api.tom.webcontact.de/rest/profairs-api/exhibitors/`
+`POST {baseurl}/exhibitors/`
 
-### Form Parameters
+### Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
@@ -431,7 +432,7 @@ newsletter | boolean | false | | Can the Exhibitor recive Newsletter
 
 ## Delete an Exhibitor
 ```shell
-curl "http://profairs-api.tom.webcontact.de/rest/profairs-api/exhibitors/{exhibitor_id}" \
+curl "{baseurl}/exhibitors/{exhibitor_id}" \
   -H "x-api-key: {API-Key}" \
   -X DELETE
 ```
@@ -449,9 +450,9 @@ This endpoint deletes an exhibitor.
 
 ### HTTP Request
 
-`DELETE http://profairs-api.tom.webcontact.de/rest/profairs-api/exhibitors/{exhibitor_id}`
+`DELETE {baseurl}/exhibitors/{exhibitor_id}`
 
-### Form Parameters
+### Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
@@ -460,8 +461,9 @@ forum_sync | boolean | true | false | If the Forum Sync feature is used, this mu
 external | boolean | true | false | Decide whether to use the ProFairs ID or the External ID
 
 ## Update an Exhibitor
+
 ```shell
-curl "http://profairs-api.tom.webcontact.de/rest/profairs-api/exhibitors/{exhibitor_id}" \
+curl "{baseurl}/exhibitors/{exhibitor_id}" \
   -H "x-api-key: {API-Key}" \
   -H "Content-Type: application/json" \
   -X PUT \
@@ -502,9 +504,9 @@ This endpoint updates an exhibitor.
 
 ### HTTP Request
 
-`PUT http://profairs-api.tom.webcontact.de/rest/profairs-api/exhibitors/{exhibitor_id}`
+`PUT {baseurl}/exhibitors/{exhibitor_id}`
 
-### Form Parameters
+### Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
@@ -533,20 +535,477 @@ newsletter | boolean | false | | Can the Exhibitor recive Newsletter
 
 # Contact persons
 
+## Retreive contact persons
+
+```shell
+curl "{baseurl}/contact_persons/" \
+  -H "x-api-key: {API-Key}" \
+  -X GET \
+```
+
+### HTTP request
+
+`GET {baseurl}/contact_persons/`
+
+## Retreive contact person
+
+```shell
+curl "{baseurl}/contact_persons/{contact_person_id}" \
+  -H "x-api-key: {API-Key}" \
+  -X GET \
+```
+
+## Create contact person
+
+```shell
+curl "{baseurl}/contact_persons/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+salutation | string | true |  |
+title | string | false |  |
+job_title | string | false |  |
+firstname | string | true |  |
+lastname | string | true |  |
+exhibitor_id | numeric | true |  |
+telephone | string | false |  |
+mobile | string | false |  |
+email | string | true |  |
+has_newsletter_approval | boolean | true |  false |
+comment | string | false |  |
+company | string | false |  |
+street | string | false |  |
+additional_address | string | false |  |
+postalcode | string | false |  |
+city | string | false |  |
+country | string | false |  |
+fair_type_id | numeric | false |  |
+
+## Upload contact person image
+
+### HTTP request
+
+`POST {baseurl}/contactpersons/upload/`
+
+### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+
+## Update contact person
+
+### HTTP request
+
+`PUT {baseurl}/contactpersons/{contact_person_id}/`
+
+### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+
+## Delete contact person
+
+### HTTP request
+
+`DELETE {baseurl}/contactperson/{contact_person_id}/`
+
+
+### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+
 # Fairs
 
-# Booths
+## Get fairs
 
-# Visitors
+### HTTP request
 
-# Industries
+`GET {baseurl}/fairs/`
+
+### Parameters
+
+## Get fair
+
+### HTTP request
+
+`GET {baseurl}/fairs/{fair_id}`
+
+### Parameters
+
+## Create fair
+
+### HTTP request
+
+`POST {baseurl}/fairs/`
+
+### Parameters
+
+## Upload file
+
+### HTTP request
+
+`POST {baseurl}/fairs/upload/`
+
+### Parameters
+
+## Update fair
+
+### HTTP request
+
+`PUT {baseurl}/fairs/{fair_id}`
+
+### Parameters
+
+## Delete fair
+
+### HTTP request
+
+`DELETE {baseurl}/fairs/{fair_id}`
+
+### Parameters
+
 
 # Fair types
 
+## Get fair types
+
+### HTTP request
+
+`GET {baseurl}/fairtypes/`
+
+### Parameters
+
+## Get fair type
+
+### HTTP request
+
+`GET {baseurl}/fairtypes/{fair_type_id}`
+
+### Parameters
+
+## Create new fair type
+
+### HTTP request
+
+`POST {baseurl}/fairtypes/`
+
+### Parameters
+
+## Update fair type
+
+### HTTP request
+
+`POST {baseurl}/fairtypes/{fair_type_id}`
+
+### Parameters
+
+## Delete fair type
+
+### HTTP request
+
+`DELETE {baseurl}/fairtypes/{fair_type_id}`
+
+### Parameters
+
+# Booths
+
+## Get booths
+
+### HTTP request
+
+`GET {baseurl}/booths/`
+
+### Parameters
+
+## Get booth
+
+### HTTP request
+
+`GET {baseurl}/booths/{booth_id}`
+
+### Parameters
+
+## Create booth
+
+### HTTP request
+
+`POST {baseurl}/booths/`
+
+### Parameters
+
+## Update booth
+
+### HTTP request
+
+`PUT {baseurl}/booths/{booth_id}`
+### Parameters
+
+## Delete booth
+
+`DELETE {baseurl}/booths/{booth_id}`
+
+# Visitors
+
+## Get visitors
+
+### HTTP request
+
+`GET {baseurl}/visitors/`
+
+### Parameters
+
+## Get visitor
+
+### HTTP request
+
+`GET {baseurl}/visitors/{visitor_id}`
+
+### Parameters
+
+## Create visitor
+
+### HTTP request
+
+`POST {baseurl}/visitors/`
+
+### Parameters
+
+## Update visitor
+
+### HTTP request
+
+`PUT {baseurl}/visitors/{visitor_id}`
+
+### Parameters
+
+## Delete visitor
+
+### HTTP request
+
+`DELETE {baseurl}/visitors/{visitor_id}`
+
+### Parameters
+
+# Industries
+
+## Get industries
+
+### HTTP request
+
+`GET {baseurl}/industries/`
+
+### Parameters
+
+## Get industrie
+
+### HTTP request
+
+`GET {baseurl}/industries/{industrie_id}`
+
+### Parameters
+
+## Create industrie
+
+### HTTP request
+
+`POST {baseurl}/industries/`
+
+### Parameters
+
+## Update industrie
+
+### HTTP request
+
+`PUT {baseurl}/industries/{industrie_id}`
+
+### Parameters
+
+## Delete industrie
+
+### HTTP request
+
+`DELETE {baseurl}/industries/{industrie_id}`
+
+### Parameters
+
 # Publications
-# Shop
 
-## Items
+## Get online medias
 
-## Categories
-## Variants
+### HTTP request
+
+`GET {baseurl}/publications/online/`
+
+### Parameters
+
+## Get online media
+
+### HTTP request
+
+`GET {baseurl}/publications/online/{exhibitor_fair_id}`
+
+### Parameters
+
+## Create online media
+
+### HTTP request
+
+`POST {baseurl}/publications/online/`
+
+### Parameters
+
+#  Shop items
+
+## Get items
+
+### HTTP request
+
+`GET {baseurl}/shop/items/`
+
+### Parameters
+
+## Get item
+
+### HTTP request
+
+`GET {baseurl}/shop/items/{item_id}`
+
+### Parameters
+
+## Create item
+
+### HTTP request
+
+`POST {baseurl}/shop/items/`
+
+### Parameters
+
+## Update item
+
+### HTTP request
+
+`PUT {baseurl}/shop/items/{item_id}`
+
+### Parameters
+
+## Upload item file
+
+### HTTP request
+
+`POST {baseurl}/shop/items/upload/`
+
+### Parameters
+
+## Delete item
+
+### HTTP request
+
+`DELETE {baseurl}/shop/items/{item_id}`
+
+### Parameters
+
+# Shop categories
+
+## Get categories
+
+### HTTP request
+
+`GET {baseurl}/shop/categories/`
+
+### Parameters
+
+## Get categorie
+
+### HTTP request
+
+`GET {baseurl}/shop/categories/{categorie_id}`
+
+### Parameters
+
+## Create categroie
+
+### HTTP request
+
+`POST {baseurl}/shop/categories/`
+
+### Parameters
+
+## Delete categorie
+
+### HTTP request
+
+`DELETE {baseurl}/shop/categories/{categorie_id}`
+
+### Parameters
+
+## Update categorie
+
+### HTTP request
+
+`PUT {baseurl}/shop/categories/{categorie_id}`
+
+### Parameters
+
+## Delete categorie
+
+### HTTP request
+
+`DELETE {baseurl}/shop/categories/{categorie_id}`
+
+### Parameters
+
+# Shop variants
+
+## Get variants
+
+### HTTP request
+
+`GET {baseurl}/shop/variants/`
+
+### Parameters
+
+## Get variant
+
+### HTTP request
+
+`GET {baseurl}/shop/variants/{variant_id}`
+
+### Parameters
+
+## Create variant
+
+### HTTP request
+
+`POST {baseurl}/shop/variants/`
+
+### Parameters
+
+## Upload files
+
+### HTTP request
+
+`POST {baseurl}/shop/variants/upload/`
+
+### Parameters
+
+## Update variant
+
+### HTTP request
+
+`PUT {baseurl}/shop/variants/{variant_id}`
+
+### Parameters
+
+## Delete variant
+
+### HTTP request
+
+`DELETE {baseurl}/shop/variants/{variant_id}`
+
+### Parameters
