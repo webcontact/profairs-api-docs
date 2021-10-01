@@ -8,8 +8,8 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
+  - <a href='mailto:kevin@webcontact'>Contact us for a developer key</a>
+  - <a href='https://www.profairs.de'>Powered by profairs</a>
 
 includes:
   - errors
@@ -530,3 +530,23 @@ password | string | false | | Password for the Exhibitor-Area
 address_verified | boolean | false | | Address verified
 lock | boolean | false | | Locks the created Exhibitor
 newsletter | boolean | false | | Can the Exhibitor recive Newsletter
+
+# Contact persons
+
+# Fairs
+
+# Booths
+
+# Visitors
+
+# Industries
+
+# Fair types
+
+# Publications
+# Shop
+
+## Items
+
+## Categories
+## Variants
