@@ -593,6 +593,11 @@ curl "{baseurl}/ENDPOINT/" \
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
+datasource | string | true |  |
+file | binary | true |  |
+image_name | string | true |  |
+type | string | true |  |
+contact_person_id | numeric | true |  |
 
 ## Update contact person
 
@@ -604,6 +609,25 @@ Parameter | Type | required | Default | Description
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
+datasource | string | true |  |
+salutation | string | true |  |
+title | string | false |  |
+job_title | string | false |  |
+firstname | string | true |  |
+lastname | string | true |  |
+exhibitor_id |numeric | true |  |
+telephone | string | false |  |
+mobile | string | false |  |
+email | string | true |  |
+has_newsletter_approval | boolean | true | false |
+comment | string | false |  |
+company | string | false |  |
+street | string | false |  |
+additional_address | string | false |  |
+postalcode |string | false |  |
+city | string | false |  |
+country | string | false |  |
+fair_type_id | numeric | false |  |
 
 ## Delete contact person
 
@@ -616,6 +640,9 @@ Parameter | Type | required | Default | Description
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
+contact_person_id | numeric | true |  |
+datasource | string | true |  |
+forum_sync | boolean |  false | false |  |
 
 # Fairs
 
@@ -639,6 +666,13 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### Parameters
 
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+datasource | string | true |  |
+logo | boolean | true | false  |
+motion | boolean | true | false  |
+order | boolean | true | false  |
+
 ## Get fair
 
 ```shell
@@ -658,6 +692,13 @@ curl "{baseurl}/ENDPOINT/" \
 `GET {baseurl}/fairs/{fair_id}`
 
 ### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+fair_id | numeric | true |  |
+datasource | string | true |  |
+logo | boolean | true | false  |
+motion | boolean | true | false  |
 
 ## Create fair
 
@@ -679,6 +720,20 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### Parameters
 
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+datasource | string | true |  |
+fair | string | false |  |
+fair_type_id | numeric | false |  |
+location | string | false |  |
+shop_no_cancellations | string | false |  |
+shop_closes | string | false |  |
+css | string | true | profairs-default  |
+url_logout | string | false |  |
+price_per_voucher | string | false |  |
+date_from | string | false |  |
+date_to | string | false |  |
+
 ## Upload file
 
 ```shell
@@ -698,6 +753,13 @@ curl "{baseurl}/ENDPOINT/" \
 `POST {baseurl}/fairs/upload/`
 
 ### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+datasource | string | true |  |
+type | string | true |  |
+file | binary | true |  |
+fair_id | numeric | true |  |
 
 ## Update fair
 
@@ -719,6 +781,21 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### Parameters
 
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+fair_id | string | true | |
+datasource | string | true | |
+fair | string | false | |
+fair_type_id | numeric | false | |
+location | string | false | |
+shop_no_cancellations | string | false | |
+shop_closes | string | false | |
+css | string | true | profairs-default |
+url_logout | string | false | |
+price_per_voucher | string | false | |
+date_from | string | false | |
+date_to | string | false | |
+
 ## Delete fair
 
 ```shell
@@ -738,6 +815,10 @@ curl "{baseurl}/ENDPOINT/" \
 `DELETE {baseurl}/fairs/{fair_id}`
 
 ### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+fair_id | numeric | true |
 
 
 # Fair types
@@ -760,8 +841,6 @@ curl "{baseurl}/ENDPOINT/" \
 
 `GET {baseurl}/fairtypes/`
 
-### Parameters
-
 ## Get fair type
 
 ```shell
@@ -781,6 +860,10 @@ curl "{baseurl}/ENDPOINT/" \
 `GET {baseurl}/fairtypes/{fair_type_id}`
 
 ### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+fair_type_id | numeric | true |
 
 ## Create new fair type
 
@@ -802,6 +885,14 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### Parameters
 
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+fair_type | string | false |  |
+email | string | false |  |
+telephone | string | false |  |
+redirect | string | false | https:// |
+redirect_error | string | false | https:// |
+
 ## Update fair type
 
 ```shell
@@ -822,6 +913,17 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### Parameters
 
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+fair_type_id | numeric | true | |
+datasource | string | true | |
+fair_type | string | false | |
+email | string | false | |
+telephone | string | false | |
+redirect | string | false | https:// |
+redirect_error | string | false | https:// |
+contact_person_id | numeric | false | |
+
 ## Delete fair type
 
 ```shell
@@ -841,6 +943,10 @@ curl "{baseurl}/ENDPOINT/" \
 `DELETE {baseurl}/fairtypes/{fair_type_id}`
 
 ### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+fair_type_id | numeric | true | |
 
 # Booths
 
@@ -864,6 +970,10 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### Parameters
 
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+fair_id | numeric | false |
+
 ## Get booth
 
 ```shell
@@ -883,6 +993,10 @@ curl "{baseurl}/ENDPOINT/" \
 `GET {baseurl}/booths/{booth_id}`
 
 ### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+booth_id | numeric | true |
 
 ## Create booth
 
@@ -904,6 +1018,10 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### Parameters
 
+<!-- TODO: SET PARAMS -->
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+
 ## Update booth
 
 ```shell
@@ -923,6 +1041,10 @@ curl "{baseurl}/ENDPOINT/" \
 `PUT {baseurl}/booths/{booth_id}`
 ### Parameters
 
+<!-- TODO: SET PARAMS -->
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+
 ## Delete booth
 
 ```shell
@@ -938,6 +1060,16 @@ curl "{baseurl}/ENDPOINT/" \
 ```
 
 `DELETE {baseurl}/booths/{booth_id}`
+
+### HTTP request
+
+`PUT {baseurl}/booths/{booth_id}`
+### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+booth_id | numeric | true | |
+forum_sync | boolean | false | false |
 
 # Visitors
 
@@ -961,6 +1093,10 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### Parameters
 
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+fairid | numeric | false | |
+
 ## Get visitor
 
 ```shell
@@ -980,6 +1116,13 @@ curl "{baseurl}/ENDPOINT/" \
 `GET {baseurl}/visitors/{visitor_id}`
 
 ### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+visitor_id | numeric | true | |
+datasource | string | true | |
+fair_id | numeric | false | |
+external | boolean | false | false |
 
 ## Create visitor
 
@@ -1001,6 +1144,27 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### Parameters
 
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+datasource | string | false | |
+external_id | string | false | |
+code_id | numeric | false | |
+company | string | false |  |
+title | string | false |  |
+salutation | string | false |  |
+firstname | string | false |  |
+lastname | string | false |  |
+street | string | false |  |
+postalcode | string | false |  |
+city | string | false |  |
+country | string | false | Deutschland |
+telephone | string | false |  |
+mobil | string | false |  |
+latitude | string | false |  |
+longitude | string | false |  |
+email | string | false |  |
+newsletter | boolean | false | false |
+
 ## Update visitor
 
 ```shell
@@ -1021,6 +1185,27 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### Parameters
 
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+external | boolean | true | false |
+datasource | string | true | |
+code_id | numeric | true | |
+company | string | false |  |
+title | string | false |  |
+salutation | string | false |  |
+firstname | string | false |  |
+lastname | string | false |  |
+street | string | false |  |
+postalcode | string | false |  |
+city | string | false |  |
+country | string | false | Deutschland |
+telephone | string | false |  |
+mobil | string | false |  |
+latitude | string | false |  |
+longitude | string | false |  |
+email | string | false |  |
+newsletter | boolean | false | false |
+
 ## Delete visitor
 
 ```shell
@@ -1040,6 +1225,12 @@ curl "{baseurl}/ENDPOINT/" \
 `DELETE {baseurl}/visitors/{visitor_id}`
 
 ### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+visitor_id | numeric | true | |
+datasource | string | true | |
+external | boolean | true | false |
 
 # Industries
 
@@ -1063,6 +1254,9 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### Parameters
 
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+
 ## Get industrie
 
 ```shell
@@ -1082,6 +1276,10 @@ curl "{baseurl}/ENDPOINT/" \
 `GET {baseurl}/industries/{industrie_id}`
 
 ### Parameters
+
+<!-- TODO: SET PARAMS -->
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
 
 ## Create industrie
 
@@ -1103,6 +1301,10 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### Parameters
 
+<!-- TODO: SET PARAMS -->
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+
 ## Update industrie
 
 ```shell
@@ -1123,6 +1325,10 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### Parameters
 
+<!-- TODO: SET PARAMS -->
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+
 ## Delete industrie
 
 ```shell
@@ -1142,6 +1348,10 @@ curl "{baseurl}/ENDPOINT/" \
 `DELETE {baseurl}/industries/{industrie_id}`
 
 ### Parameters
+
+<!-- TODO: SET PARAMS -->
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
 
 # Publications
 
@@ -1165,6 +1375,10 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### Parameters
 
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+fair_id | numeric | true | |
+
 ## Get online media
 
 ```shell
@@ -1185,6 +1399,10 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### Parameters
 
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitor_fair_id | numeric | true | |
+
 ## Create online media
 
 ```shell
@@ -1204,6 +1422,20 @@ curl "{baseurl}/ENDPOINT/" \
 `POST {baseurl}/publications/online/`
 
 ### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitor_fair_id | numeric | true | |
+language | string | true | |
+description | string | false | |
+company_description | string | false | |
+logo | binary | false | |
+logo_name | string | false | |
+logo_mimetype | string | false | |
+logo_preview | binary | false | |
+logo_mimetype | string | false | |
+video_url | string | false | |
+contact_person_id | numeric | false | |
 
 #  Shop items
 
@@ -1227,6 +1459,23 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### Parameters
 
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+datasource | string | true | |
+category_id | numeric | false | |
+itemnr | string | false | |
+language | string | false | de_DE |
+item_id | numeric | false | |
+fair_id | numeric | false | |
+end_date | string | false | |
+show_locked | boolean | false | true |
+show_coupon | boolean | false | |
+show_catchall | boolean | false | |
+show_special_coupon | boolean | false | |
+user_role_admin | boolean | false | |
+user_roles | string | false | |
+exhibitor_types | string | false | |
+
 ## Get item
 
 ```shell
@@ -1246,6 +1495,23 @@ curl "{baseurl}/ENDPOINT/" \
 `GET {baseurl}/shop/items/{item_id}`
 
 ### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+item_id | string | true | |
+datasource | string | false | |
+category_id | numeric | true | |
+itemnr | string | false | |
+language | string | false | |
+fair_id | numeric | false | |
+end_date | string | false | |
+show_locked | boolean | false | true |
+show_coupon | boolean | false | |
+show_catchall | boolean | false | |
+show_special_coupon | boolean | false | |
+user_role_admin | boolean | false | |
+user_roles | string | false | |
+exhibitor_types | string | false | |
 
 ## Create item
 
@@ -1267,6 +1533,27 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### Parameters
 
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+datasource | string | true | |
+type_id | numeric | false | |
+category_id | numeric | false | |
+itemnr | string | false | |
+booth_specific | boolean | true | false |
+comment | string | false | |
+sort | string | false | |
+lock | boolean | true | false |
+end_date | string | false | |
+item_units | string | false | |
+unit_of_measurement | string | false | |
+item_title | string | false | |
+upload | boolean | true | false |
+recommended | boolean | true | false |
+languages | any | true | false |
+crossselling | string | false | |
+dependence | string | false | |
+exhibitor_types | string | false | |
+
 ## Update item
 
 ```shell
@@ -1286,6 +1573,28 @@ curl "{baseurl}/ENDPOINT/" \
 `PUT {baseurl}/shop/items/{item_id}`
 
 ### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+item_id | numeric | true | |
+datasource | string | true | |
+type_id | numeric | false | |
+category_id | numeric | false | |
+itemnr | string | false | |
+booth_specific | boolean | true | false |
+comment | string | false | |
+sort | string | false | |
+lock | boolean | true | false |
+end_date | string | false | |
+item_units | string | false | |
+unit_of_measurement | string | false | |
+item_title | string | false | |
+upload | boolean | true | false |
+recommended | boolean | true | false |
+languages | any | true | false |
+crossselling | string | false | |
+dependence | string | false | |
+exhibitor_types | string | false | |
 
 ## Upload item file
 
@@ -1307,6 +1616,15 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### Parameters
 
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+file | binary | true | |
+file_name | string | true | |
+file_title | string | true | |
+item_id | numeric | true | |
+language | string | true | |
+type | string | true | |
+
 ## Delete item
 
 ```shell
@@ -1326,6 +1644,10 @@ curl "{baseurl}/ENDPOINT/" \
 `DELETE {baseurl}/shop/items/{item_id}`
 
 ### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+item_id | numeric | true | |
 
 # Shop categories
 
@@ -1349,6 +1671,14 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### Parameters
 
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+datasource | string | true | |
+language | string | false | de_DE |
+fair_id | numeric | false | |
+show_disabled | boolean | false | false |
+hide_coupon | boolean | false | true |
+
 ## Get categorie
 
 ```shell
@@ -1368,6 +1698,13 @@ curl "{baseurl}/ENDPOINT/" \
 `GET {baseurl}/shop/categories/{categorie_id}`
 
 ### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+category_id | string | true | |
+datasource | string | true | |
+language | string | false | |
+fair_id | numeric | false | |
 
 ## Create categroie
 
@@ -1389,25 +1726,18 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### Parameters
 
-## Delete categorie
-
-```shell
-curl "{baseurl}/ENDPOINT/" \
-  -H "x-api-key: {API-Key}" \
-  -X POST \
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{}
-```
-
-### HTTP request
-
-`DELETE {baseurl}/shop/categories/{categorie_id}`
-
-### Parameters
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+datasource | string | true | |
+parent_id | numeric | false | 0  |
+contact_id | numeric | false | |
+permissions_group_id | numeric | false | |
+fair_id | numeric | false | |
+show_coupons_link | boolean | false | false  |
+order | numeric | false | |
+lock | boolean | false | false  |
+languages | string | false | |
+auth_user | numeric | true | 666  |
 
 ## Update categorie
 
@@ -1429,6 +1759,20 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### Parameters
 
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+category_id | numeric | false | |
+datasource | string | false | |
+parent_id | numeric | false | 0 |
+contact_id | numeric | false | |
+permissions_group_id | numeric | false | |
+fair_id | numeric | false | |
+show_coupons_link | boolean | false | false |
+order | numeric | false | |
+lock | boolean | false | false |
+languages | string | false | |
+auth_user | numeric | false | 666 |
+
 ## Delete categorie
 
 ```shell
@@ -1448,6 +1792,10 @@ curl "{baseurl}/ENDPOINT/" \
 `DELETE {baseurl}/shop/categories/{categorie_id}`
 
 ### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+category_id | numeric | true | |
 
 # Shop variants
 
@@ -1471,6 +1819,13 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### Parameters
 
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+datasource | string | false | |
+item_id | numeric | false | |
+locked | boolean | false | false |
+ordered_variants | boolean | false | false |
+
 ## Get variant
 
 ```shell
@@ -1490,6 +1845,13 @@ curl "{baseurl}/ENDPOINT/" \
 `GET {baseurl}/shop/variants/{variant_id}`
 
 ### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+variants_id | numeric | true | |
+datasource | string | true | |
+locked | boolean | false | false |
+ordered_variants | boolean | false | false |
 
 ## Create variant
 
@@ -1511,6 +1873,15 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### Parameters
 
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+datasource | string | true | |
+item_id | numeric | true | |
+number_of_pieces | numeric | true | |
+price | numeric | true | |
+lock | boolean | true | false |
+languages | any | true | |
+
 ## Upload files
 
 ```shell
@@ -1530,6 +1901,14 @@ curl "{baseurl}/ENDPOINT/" \
 `POST {baseurl}/shop/variants/upload/`
 
 ### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+file | binary | true | |
+file_name | string | true | |
+file_title | string | true | |
+variants_id | numeric | true | |
+language | string | true | |
 
 ## Update variant
 
@@ -1551,6 +1930,16 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### Parameters
 
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+variant_id | numeric | true | |
+datasource | string | true | |
+item_id | numeric | true | |
+number_of_pieces | numeric | true | |
+price | numeric | true | |
+lock | boolean | true | false |
+languages | any | true | |
+
 ## Delete variant
 
 ```shell
@@ -1570,3 +1959,7 @@ curl "{baseurl}/ENDPOINT/" \
 `DELETE {baseurl}/shop/variants/{variant_id}`
 
 ### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+variant_id | numeric | true | |
