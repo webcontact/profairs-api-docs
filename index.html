@@ -514,13 +514,10 @@
                     <a href="#create-categroie" class="toc-h2 toc-link" data-title="Create categroie">Create categroie</a>
                   </li>
                   <li>
-                    <a href="#delete-categorie" class="toc-h2 toc-link" data-title="Delete categorie">Delete categorie</a>
-                  </li>
-                  <li>
                     <a href="#update-categorie" class="toc-h2 toc-link" data-title="Update categorie">Update categorie</a>
                   </li>
                   <li>
-                    <a href="#delete-categorie-2" class="toc-h2 toc-link" data-title="Delete categorie">Delete categorie</a>
+                    <a href="#delete-categorie" class="toc-h2 toc-link" data-title="Delete categorie">Delete categorie</a>
                   </li>
               </ul>
           </li>
@@ -1501,6 +1498,41 @@ ID | The ID of the kitten to delete -->
 <th>Description</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>file</td>
+<td>binary</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>image_name</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>contact_person_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
 </tbody></table>
 <h2 id='update-contact-person'>Update contact person</h2><h3 id='http-request-8'>HTTP request</h3>
 <p><code>PUT {baseurl}/contactpersons/{contact_person_id}/</code></p>
@@ -1514,6 +1546,139 @@ ID | The ID of the kitten to delete -->
 <th>Description</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>salutation</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>job_title</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>firstname</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>lastname</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>exhibitor_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>telephone</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>has_newsletter_approval</td>
+<td>boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>comment</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>company</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>street</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>additional_address</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>postalcode</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>country</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fair_type_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
 </tbody></table>
 <h2 id='delete-contact-person'>Delete contact person</h2><h3 id='http-request-9'>HTTP request</h3>
 <p><code>DELETE {baseurl}/contactperson/{contact_person_id}/</code></p>
@@ -1527,6 +1692,27 @@ ID | The ID of the kitten to delete -->
 <th>Description</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>contact_person_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>forum_sync</td>
+<td>boolean</td>
+<td>false</td>
+<td>false</td>
+<td></td>
+</tr>
 </tbody></table>
 <h1 id='fairs'>Fairs</h1><h2 id='get-fairs'>Get fairs</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
@@ -1538,7 +1724,46 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-10'>HTTP request</h3>
 <p><code>GET {baseurl}/fairs/</code></p>
-<h3 id='parameters-8'>Parameters</h3><h2 id='get-fair'>Get fair</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<h3 id='parameters-8'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>logo</td>
+<td>boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>motion</td>
+<td>boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>order</td>
+<td>boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='get-fair'>Get fair</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1548,7 +1773,46 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-11'>HTTP request</h3>
 <p><code>GET {baseurl}/fairs/{fair_id}</code></p>
-<h3 id='parameters-9'>Parameters</h3><h2 id='create-fair'>Create fair</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<h3 id='parameters-9'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fair_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>logo</td>
+<td>boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>motion</td>
+<td>boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='create-fair'>Create fair</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1558,7 +1822,95 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-12'>HTTP request</h3>
 <p><code>POST {baseurl}/fairs/</code></p>
-<h3 id='parameters-10'>Parameters</h3><h2 id='upload-file'>Upload file</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<h3 id='parameters-10'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fair</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fair_type_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>location</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>shop_no_cancellations</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>shop_closes</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>css</td>
+<td>string</td>
+<td>true</td>
+<td>profairs-default</td>
+<td></td>
+</tr>
+<tr>
+<td>url_logout</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>price_per_voucher</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>date_from</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>date_to</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='upload-file'>Upload file</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1568,7 +1920,46 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-13'>HTTP request</h3>
 <p><code>POST {baseurl}/fairs/upload/</code></p>
-<h3 id='parameters-11'>Parameters</h3><h2 id='update-fair'>Update fair</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<h3 id='parameters-11'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>file</td>
+<td>binary</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fair_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='update-fair'>Update fair</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1578,7 +1969,102 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-14'>HTTP request</h3>
 <p><code>PUT {baseurl}/fairs/{fair_id}</code></p>
-<h3 id='parameters-12'>Parameters</h3><h2 id='delete-fair'>Delete fair</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<h3 id='parameters-12'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fair_id</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fair</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fair_type_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>location</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>shop_no_cancellations</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>shop_closes</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>css</td>
+<td>string</td>
+<td>true</td>
+<td>profairs-default</td>
+<td></td>
+</tr>
+<tr>
+<td>url_logout</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>price_per_voucher</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>date_from</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>date_to</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='delete-fair'>Delete fair</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1588,7 +2074,25 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-15'>HTTP request</h3>
 <p><code>DELETE {baseurl}/fairs/{fair_id}</code></p>
-<h3 id='parameters-13'>Parameters</h3><h1 id='fair-types'>Fair types</h1><h2 id='get-fair-types'>Get fair types</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<h3 id='parameters-13'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fair_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id='fair-types'>Fair types</h1><h2 id='get-fair-types'>Get fair types</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1598,7 +2102,7 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-16'>HTTP request</h3>
 <p><code>GET {baseurl}/fairtypes/</code></p>
-<h3 id='parameters-14'>Parameters</h3><h2 id='get-fair-type'>Get fair type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<h2 id='get-fair-type'>Get fair type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1608,7 +2112,25 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-17'>HTTP request</h3>
 <p><code>GET {baseurl}/fairtypes/{fair_type_id}</code></p>
-<h3 id='parameters-15'>Parameters</h3><h2 id='create-new-fair-type'>Create new fair type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<h3 id='parameters-14'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fair_type_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='create-new-fair-type'>Create new fair type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1618,7 +2140,53 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-18'>HTTP request</h3>
 <p><code>POST {baseurl}/fairtypes/</code></p>
-<h3 id='parameters-16'>Parameters</h3><h2 id='update-fair-type'>Update fair type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<h3 id='parameters-15'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fair_type</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>telephone</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>redirect</td>
+<td>string</td>
+<td>false</td>
+<td>https://</td>
+<td></td>
+</tr>
+<tr>
+<td>redirect_error</td>
+<td>string</td>
+<td>false</td>
+<td>https://</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='update-fair-type'>Update fair type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1628,7 +2196,74 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-19'>HTTP request</h3>
 <p><code>POST {baseurl}/fairtypes/{fair_type_id}</code></p>
-<h3 id='parameters-17'>Parameters</h3><h2 id='delete-fair-type'>Delete fair type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<h3 id='parameters-16'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fair_type_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fair_type</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>telephone</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>redirect</td>
+<td>string</td>
+<td>false</td>
+<td>https://</td>
+<td></td>
+</tr>
+<tr>
+<td>redirect_error</td>
+<td>string</td>
+<td>false</td>
+<td>https://</td>
+<td></td>
+</tr>
+<tr>
+<td>contact_person_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='delete-fair-type'>Delete fair type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1638,7 +2273,25 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-20'>HTTP request</h3>
 <p><code>DELETE {baseurl}/fairtypes/{fair_type_id}</code></p>
-<h3 id='parameters-18'>Parameters</h3><h1 id='booths'>Booths</h1><h2 id='get-booths'>Get booths</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<h3 id='parameters-17'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fair_type_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id='booths'>Booths</h1><h2 id='get-booths'>Get booths</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1648,7 +2301,25 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-21'>HTTP request</h3>
 <p><code>GET {baseurl}/booths/</code></p>
-<h3 id='parameters-19'>Parameters</h3><h2 id='get-booth'>Get booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<h3 id='parameters-18'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fair_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='get-booth'>Get booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1658,7 +2329,25 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-22'>HTTP request</h3>
 <p><code>GET {baseurl}/booths/{booth_id}</code></p>
-<h3 id='parameters-20'>Parameters</h3><h2 id='create-booth'>Create booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<h3 id='parameters-19'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>booth_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='create-booth'>Create booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1668,7 +2357,20 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-23'>HTTP request</h3>
 <p><code>POST {baseurl}/booths/</code></p>
-<h3 id='parameters-21'>Parameters</h3><h2 id='update-booth'>Update booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<h3 id='parameters-20'>Parameters</h3>
+<!-- TODO: SET PARAMS -->
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h2 id='update-booth'>Update booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1678,7 +2380,20 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-24'>HTTP request</h3>
 <p><code>PUT {baseurl}/booths/{booth_id}</code></p>
-<h3 id='parameters-22'>Parameters</h3><h2 id='delete-booth'>Delete booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<h3 id='parameters-21'>Parameters</h3>
+<!-- TODO: SET PARAMS -->
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h2 id='delete-booth'>Delete booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1688,6 +2403,33 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div>
 <p><code>DELETE {baseurl}/booths/{booth_id}</code></p>
+<h3 id='http-request-25'>HTTP request</h3>
+<p><code>PUT {baseurl}/booths/{booth_id}</code></p>
+<h3 id='parameters-22'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>booth_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>forum_sync</td>
+<td>boolean</td>
+<td>false</td>
+<td>false</td>
+<td></td>
+</tr>
+</tbody></table>
 <h1 id='visitors'>Visitors</h1><h2 id='get-visitors'>Get visitors</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
@@ -1696,19 +2438,27 @@ ID | The ID of the kitten to delete -->
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
-</span></code></pre></div><h3 id='http-request-25'>HTTP request</h3>
-<p><code>GET {baseurl}/visitors/</code></p>
-<h3 id='parameters-23'>Parameters</h3><h2 id='get-visitor'>Get visitor</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
-  <span class="nt">-X</span> POST <span class="se">\</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-26'>HTTP request</h3>
-<p><code>GET {baseurl}/visitors/{visitor_id}</code></p>
-<h3 id='parameters-24'>Parameters</h3><h2 id='create-visitor'>Create visitor</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<p><code>GET {baseurl}/visitors/</code></p>
+<h3 id='parameters-23'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fairid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='get-visitor'>Get visitor</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1717,8 +2467,47 @@ ID | The ID of the kitten to delete -->
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-27'>HTTP request</h3>
-<p><code>POST {baseurl}/visitors/</code></p>
-<h3 id='parameters-25'>Parameters</h3><h2 id='update-visitor'>Update visitor</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<p><code>GET {baseurl}/visitors/{visitor_id}</code></p>
+<h3 id='parameters-24'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>visitor_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fair_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>external</td>
+<td>boolean</td>
+<td>false</td>
+<td>false</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='create-visitor'>Create visitor</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1727,8 +2516,145 @@ ID | The ID of the kitten to delete -->
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-28'>HTTP request</h3>
-<p><code>PUT {baseurl}/visitors/{visitor_id}</code></p>
-<h3 id='parameters-26'>Parameters</h3><h2 id='delete-visitor'>Delete visitor</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<p><code>POST {baseurl}/visitors/</code></p>
+<h3 id='parameters-25'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>external_id</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>code_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>company</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>salutation</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>firstname</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>lastname</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>street</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>postalcode</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>country</td>
+<td>string</td>
+<td>false</td>
+<td>Deutschland</td>
+<td></td>
+</tr>
+<tr>
+<td>telephone</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>mobil</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>newsletter</td>
+<td>boolean</td>
+<td>false</td>
+<td>false</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='update-visitor'>Update visitor</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1737,8 +2663,145 @@ ID | The ID of the kitten to delete -->
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-29'>HTTP request</h3>
-<p><code>DELETE {baseurl}/visitors/{visitor_id}</code></p>
-<h3 id='parameters-27'>Parameters</h3><h1 id='industries'>Industries</h1><h2 id='get-industries'>Get industries</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<p><code>PUT {baseurl}/visitors/{visitor_id}</code></p>
+<h3 id='parameters-26'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>external</td>
+<td>boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>code_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>company</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>salutation</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>firstname</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>lastname</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>street</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>postalcode</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>country</td>
+<td>string</td>
+<td>false</td>
+<td>Deutschland</td>
+<td></td>
+</tr>
+<tr>
+<td>telephone</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>mobil</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>newsletter</td>
+<td>boolean</td>
+<td>false</td>
+<td>false</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='delete-visitor'>Delete visitor</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1747,8 +2810,40 @@ ID | The ID of the kitten to delete -->
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-30'>HTTP request</h3>
-<p><code>GET {baseurl}/industries/</code></p>
-<h3 id='parameters-28'>Parameters</h3><h2 id='get-industrie'>Get industrie</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<p><code>DELETE {baseurl}/visitors/{visitor_id}</code></p>
+<h3 id='parameters-27'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>visitor_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>external</td>
+<td>boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id='industries'>Industries</h1><h2 id='get-industries'>Get industries</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1757,8 +2852,19 @@ ID | The ID of the kitten to delete -->
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-31'>HTTP request</h3>
-<p><code>GET {baseurl}/industries/{industrie_id}</code></p>
-<h3 id='parameters-29'>Parameters</h3><h2 id='create-industrie'>Create industrie</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<p><code>GET {baseurl}/industries/</code></p>
+<h3 id='parameters-28'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h2 id='get-industrie'>Get industrie</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1767,8 +2873,21 @@ ID | The ID of the kitten to delete -->
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-32'>HTTP request</h3>
-<p><code>POST {baseurl}/industries/</code></p>
-<h3 id='parameters-30'>Parameters</h3><h2 id='update-industrie'>Update industrie</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<p><code>GET {baseurl}/industries/{industrie_id}</code></p>
+<h3 id='parameters-29'>Parameters</h3>
+<!-- TODO: SET PARAMS -->
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h2 id='create-industrie'>Create industrie</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1777,8 +2896,21 @@ ID | The ID of the kitten to delete -->
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-33'>HTTP request</h3>
-<p><code>PUT {baseurl}/industries/{industrie_id}</code></p>
-<h3 id='parameters-31'>Parameters</h3><h2 id='delete-industrie'>Delete industrie</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<p><code>POST {baseurl}/industries/</code></p>
+<h3 id='parameters-30'>Parameters</h3>
+<!-- TODO: SET PARAMS -->
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h2 id='update-industrie'>Update industrie</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1787,8 +2919,21 @@ ID | The ID of the kitten to delete -->
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-34'>HTTP request</h3>
-<p><code>DELETE {baseurl}/industries/{industrie_id}</code></p>
-<h3 id='parameters-32'>Parameters</h3><h1 id='publications'>Publications</h1><h2 id='get-online-medias'>Get online medias</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<p><code>PUT {baseurl}/industries/{industrie_id}</code></p>
+<h3 id='parameters-31'>Parameters</h3>
+<!-- TODO: SET PARAMS -->
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h2 id='delete-industrie'>Delete industrie</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1797,8 +2942,21 @@ ID | The ID of the kitten to delete -->
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-35'>HTTP request</h3>
-<p><code>GET {baseurl}/publications/online/</code></p>
-<h3 id='parameters-33'>Parameters</h3><h2 id='get-online-media'>Get online media</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<p><code>DELETE {baseurl}/industries/{industrie_id}</code></p>
+<h3 id='parameters-32'>Parameters</h3>
+<!-- TODO: SET PARAMS -->
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h1 id='publications'>Publications</h1><h2 id='get-online-medias'>Get online medias</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1807,8 +2965,26 @@ ID | The ID of the kitten to delete -->
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-36'>HTTP request</h3>
-<p><code>GET {baseurl}/publications/online/{exhibitor_fair_id}</code></p>
-<h3 id='parameters-34'>Parameters</h3><h2 id='create-online-media'>Create online media</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<p><code>GET {baseurl}/publications/online/</code></p>
+<h3 id='parameters-33'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fair_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='get-online-media'>Get online media</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1817,8 +2993,26 @@ ID | The ID of the kitten to delete -->
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-37'>HTTP request</h3>
-<p><code>POST {baseurl}/publications/online/</code></p>
-<h3 id='parameters-35'>Parameters</h3><h1 id='shop-items'>Shop items</h1><h2 id='get-items'>Get items</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<p><code>GET {baseurl}/publications/online/{exhibitor_fair_id}</code></p>
+<h3 id='parameters-34'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>exhibitor_fair_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='create-online-media'>Create online media</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1827,8 +3021,96 @@ ID | The ID of the kitten to delete -->
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-38'>HTTP request</h3>
-<p><code>GET {baseurl}/shop/items/</code></p>
-<h3 id='parameters-36'>Parameters</h3><h2 id='get-item'>Get item</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<p><code>POST {baseurl}/publications/online/</code></p>
+<h3 id='parameters-35'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>exhibitor_fair_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>language</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>company_description</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>logo</td>
+<td>binary</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>logo_name</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>logo_mimetype</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>logo_preview</td>
+<td>binary</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>logo_mimetype</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>video_url</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>contact_person_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id='shop-items'>Shop items</h1><h2 id='get-items'>Get items</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1837,8 +3119,117 @@ ID | The ID of the kitten to delete -->
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-39'>HTTP request</h3>
-<p><code>GET {baseurl}/shop/items/{item_id}</code></p>
-<h3 id='parameters-37'>Parameters</h3><h2 id='create-item'>Create item</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<p><code>GET {baseurl}/shop/items/</code></p>
+<h3 id='parameters-36'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>category_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>itemnr</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>language</td>
+<td>string</td>
+<td>false</td>
+<td>de_DE</td>
+<td></td>
+</tr>
+<tr>
+<td>item_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fair_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>show_locked</td>
+<td>boolean</td>
+<td>false</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>show_coupon</td>
+<td>boolean</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>show_catchall</td>
+<td>boolean</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>show_special_coupon</td>
+<td>boolean</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>user_role_admin</td>
+<td>boolean</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>user_roles</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>exhibitor_types</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='get-item'>Get item</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1847,8 +3238,117 @@ ID | The ID of the kitten to delete -->
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-40'>HTTP request</h3>
-<p><code>POST {baseurl}/shop/items/</code></p>
-<h3 id='parameters-38'>Parameters</h3><h2 id='update-item'>Update item</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<p><code>GET {baseurl}/shop/items/{item_id}</code></p>
+<h3 id='parameters-37'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>item_id</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>category_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>itemnr</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>language</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fair_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>show_locked</td>
+<td>boolean</td>
+<td>false</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>show_coupon</td>
+<td>boolean</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>show_catchall</td>
+<td>boolean</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>show_special_coupon</td>
+<td>boolean</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>user_role_admin</td>
+<td>boolean</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>user_roles</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>exhibitor_types</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='create-item'>Create item</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1857,8 +3357,145 @@ ID | The ID of the kitten to delete -->
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-41'>HTTP request</h3>
-<p><code>PUT {baseurl}/shop/items/{item_id}</code></p>
-<h3 id='parameters-39'>Parameters</h3><h2 id='upload-item-file'>Upload item file</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<p><code>POST {baseurl}/shop/items/</code></p>
+<h3 id='parameters-38'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>type_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>category_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>itemnr</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>booth_specific</td>
+<td>boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>comment</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>sort</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>lock</td>
+<td>boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>item_units</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>unit_of_measurement</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>item_title</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>upload</td>
+<td>boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>recommended</td>
+<td>boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>languages</td>
+<td>any</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>crossselling</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>dependence</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>exhibitor_types</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='update-item'>Update item</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1867,8 +3504,152 @@ ID | The ID of the kitten to delete -->
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-42'>HTTP request</h3>
-<p><code>POST {baseurl}/shop/items/upload/</code></p>
-<h3 id='parameters-40'>Parameters</h3><h2 id='delete-item'>Delete item</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<p><code>PUT {baseurl}/shop/items/{item_id}</code></p>
+<h3 id='parameters-39'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>item_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>type_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>category_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>itemnr</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>booth_specific</td>
+<td>boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>comment</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>sort</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>lock</td>
+<td>boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>item_units</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>unit_of_measurement</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>item_title</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>upload</td>
+<td>boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>recommended</td>
+<td>boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>languages</td>
+<td>any</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>crossselling</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>dependence</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>exhibitor_types</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='upload-item-file'>Upload item file</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1877,8 +3658,61 @@ ID | The ID of the kitten to delete -->
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-43'>HTTP request</h3>
-<p><code>DELETE {baseurl}/shop/items/{item_id}</code></p>
-<h3 id='parameters-41'>Parameters</h3><h1 id='shop-categories'>Shop categories</h1><h2 id='get-categories'>Get categories</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<p><code>POST {baseurl}/shop/items/upload/</code></p>
+<h3 id='parameters-40'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>file</td>
+<td>binary</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>file_name</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>file_title</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>item_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>language</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='delete-item'>Delete item</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1887,8 +3721,26 @@ ID | The ID of the kitten to delete -->
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-44'>HTTP request</h3>
-<p><code>GET {baseurl}/shop/categories/</code></p>
-<h3 id='parameters-42'>Parameters</h3><h2 id='get-categorie'>Get categorie</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<p><code>DELETE {baseurl}/shop/items/{item_id}</code></p>
+<h3 id='parameters-41'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>item_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id='shop-categories'>Shop categories</h1><h2 id='get-categories'>Get categories</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1897,8 +3749,54 @@ ID | The ID of the kitten to delete -->
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-45'>HTTP request</h3>
-<p><code>GET {baseurl}/shop/categories/{categorie_id}</code></p>
-<h3 id='parameters-43'>Parameters</h3><h2 id='create-categroie'>Create categroie</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<p><code>GET {baseurl}/shop/categories/</code></p>
+<h3 id='parameters-42'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>language</td>
+<td>string</td>
+<td>false</td>
+<td>de_DE</td>
+<td></td>
+</tr>
+<tr>
+<td>fair_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>show_disabled</td>
+<td>boolean</td>
+<td>false</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>hide_coupon</td>
+<td>boolean</td>
+<td>false</td>
+<td>true</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='get-categorie'>Get categorie</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1907,8 +3805,47 @@ ID | The ID of the kitten to delete -->
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-46'>HTTP request</h3>
-<p><code>POST {baseurl}/shop/categories/</code></p>
-<h3 id='parameters-44'>Parameters</h3><h2 id='delete-categorie'>Delete categorie</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<p><code>GET {baseurl}/shop/categories/{categorie_id}</code></p>
+<h3 id='parameters-43'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>category_id</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>language</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fair_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='create-categroie'>Create categroie</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1917,8 +3854,89 @@ ID | The ID of the kitten to delete -->
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-47'>HTTP request</h3>
-<p><code>DELETE {baseurl}/shop/categories/{categorie_id}</code></p>
-<h3 id='parameters-45'>Parameters</h3><h2 id='update-categorie'>Update categorie</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<p><code>POST {baseurl}/shop/categories/</code></p>
+<h3 id='parameters-44'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>parent_id</td>
+<td>numeric</td>
+<td>false</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td>contact_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>permissions_group_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fair_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>show_coupons_link</td>
+<td>boolean</td>
+<td>false</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>order</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>lock</td>
+<td>boolean</td>
+<td>false</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>languages</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>auth_user</td>
+<td>numeric</td>
+<td>true</td>
+<td>666</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='update-categorie'>Update categorie</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1928,7 +3946,95 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-48'>HTTP request</h3>
 <p><code>PUT {baseurl}/shop/categories/{categorie_id}</code></p>
-<h3 id='parameters-46'>Parameters</h3><h2 id='delete-categorie-2'>Delete categorie</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<h3 id='parameters-45'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>category_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>parent_id</td>
+<td>numeric</td>
+<td>false</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td>contact_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>permissions_group_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fair_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>show_coupons_link</td>
+<td>boolean</td>
+<td>false</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>order</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>lock</td>
+<td>boolean</td>
+<td>false</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>languages</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>auth_user</td>
+<td>numeric</td>
+<td>false</td>
+<td>666</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='delete-categorie'>Delete categorie</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1938,7 +4044,25 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-49'>HTTP request</h3>
 <p><code>DELETE {baseurl}/shop/categories/{categorie_id}</code></p>
-<h3 id='parameters-47'>Parameters</h3><h1 id='shop-variants'>Shop variants</h1><h2 id='get-variants'>Get variants</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<h3 id='parameters-46'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>category_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id='shop-variants'>Shop variants</h1><h2 id='get-variants'>Get variants</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1948,7 +4072,46 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-50'>HTTP request</h3>
 <p><code>GET {baseurl}/shop/variants/</code></p>
-<h3 id='parameters-48'>Parameters</h3><h2 id='get-variant'>Get variant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<h3 id='parameters-47'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>item_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>locked</td>
+<td>boolean</td>
+<td>false</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>ordered_variants</td>
+<td>boolean</td>
+<td>false</td>
+<td>false</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='get-variant'>Get variant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1958,7 +4121,46 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-51'>HTTP request</h3>
 <p><code>GET {baseurl}/shop/variants/{variant_id}</code></p>
-<h3 id='parameters-49'>Parameters</h3><h2 id='create-variant'>Create variant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<h3 id='parameters-48'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>variants_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>locked</td>
+<td>boolean</td>
+<td>false</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>ordered_variants</td>
+<td>boolean</td>
+<td>false</td>
+<td>false</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='create-variant'>Create variant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1968,7 +4170,60 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-52'>HTTP request</h3>
 <p><code>POST {baseurl}/shop/variants/</code></p>
-<h3 id='parameters-50'>Parameters</h3><h2 id='upload-files'>Upload files</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<h3 id='parameters-49'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>item_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>number_of_pieces</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>price</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>lock</td>
+<td>boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>languages</td>
+<td>any</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='upload-files'>Upload files</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1978,7 +4233,53 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-53'>HTTP request</h3>
 <p><code>POST {baseurl}/shop/variants/upload/</code></p>
-<h3 id='parameters-51'>Parameters</h3><h2 id='update-variant'>Update variant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<h3 id='parameters-50'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>file</td>
+<td>binary</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>file_name</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>file_title</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>variants_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>language</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='update-variant'>Update variant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1988,7 +4289,67 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-54'>HTTP request</h3>
 <p><code>PUT {baseurl}/shop/variants/{variant_id}</code></p>
-<h3 id='parameters-52'>Parameters</h3><h2 id='delete-variant'>Delete variant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
+<h3 id='parameters-51'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>variant_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>datasource</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>item_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>number_of_pieces</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>price</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>lock</td>
+<td>boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>languages</td>
+<td>any</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='delete-variant'>Delete variant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/ENDPOINT/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
 </code></pre></div>
@@ -1998,7 +4359,25 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-55'>HTTP request</h3>
 <p><code>DELETE {baseurl}/shop/variants/{variant_id}</code></p>
-<h3 id='parameters-53'>Parameters</h3><h1 id='errors'>Errors</h1>
+<h3 id='parameters-52'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>variant_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
 </aside>
