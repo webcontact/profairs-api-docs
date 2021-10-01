@@ -3,9 +3,6 @@ title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - ruby
-  - python
-  - javascript
 
 toc_footers:
   - <a href='mailto:kevin@webcontact'>Contact us for a developer key</a>
@@ -35,28 +32,10 @@ This example API documentation page was created with [Slate](https://github.com/
 
 > To authorize, use this code:
 
-```ruby
-require 'profairs'
-
-api = profairs::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import profairs
-
-api = profairs.authorize('meowmeowmeow')
-```
-
 ```shell
 # With shell, you can just pass the correct header with each request
 curl "api_endpoint_here" \
   -H "x-api-key: {API-Key}"
-```
-
-```javascript
-const profairs = require('profairs');
-
-let api = profairs.authorize('meowmeowmeow');
 ```
 
 > Make sure to replace `{API-Key}` with your API key.
@@ -563,6 +542,12 @@ curl "{baseurl}/contact_persons/" \
   -X POST \
 ```
 
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### Parameters
 
 Parameter | Type | required | Default | Description
@@ -587,6 +572,18 @@ country | string | false |  |
 fair_type_id | numeric | false |  |
 
 ## Upload contact person image
+
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
 
 ### HTTP request
 
@@ -624,6 +621,18 @@ Parameter | Type | required | Default | Description
 
 ## Get fairs
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `GET {baseurl}/fairs/`
@@ -631,6 +640,18 @@ Parameter | Type | required | Default | Description
 ### Parameters
 
 ## Get fair
+
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
 
 ### HTTP request
 
@@ -640,6 +661,18 @@ Parameter | Type | required | Default | Description
 
 ## Create fair
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `POST {baseurl}/fairs/`
@@ -647,6 +680,18 @@ Parameter | Type | required | Default | Description
 ### Parameters
 
 ## Upload file
+
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
 
 ### HTTP request
 
@@ -656,6 +701,18 @@ Parameter | Type | required | Default | Description
 
 ## Update fair
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `PUT {baseurl}/fairs/{fair_id}`
@@ -663,6 +720,18 @@ Parameter | Type | required | Default | Description
 ### Parameters
 
 ## Delete fair
+
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
 
 ### HTTP request
 
@@ -675,6 +744,18 @@ Parameter | Type | required | Default | Description
 
 ## Get fair types
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `GET {baseurl}/fairtypes/`
@@ -682,6 +763,18 @@ Parameter | Type | required | Default | Description
 ### Parameters
 
 ## Get fair type
+
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
 
 ### HTTP request
 
@@ -691,6 +784,18 @@ Parameter | Type | required | Default | Description
 
 ## Create new fair type
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `POST {baseurl}/fairtypes/`
@@ -699,6 +804,18 @@ Parameter | Type | required | Default | Description
 
 ## Update fair type
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `POST {baseurl}/fairtypes/{fair_type_id}`
@@ -706,6 +823,18 @@ Parameter | Type | required | Default | Description
 ### Parameters
 
 ## Delete fair type
+
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
 
 ### HTTP request
 
@@ -717,6 +846,18 @@ Parameter | Type | required | Default | Description
 
 ## Get booths
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `GET {baseurl}/booths/`
@@ -724,6 +865,18 @@ Parameter | Type | required | Default | Description
 ### Parameters
 
 ## Get booth
+
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
 
 ### HTTP request
 
@@ -733,6 +886,18 @@ Parameter | Type | required | Default | Description
 
 ## Create booth
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `POST {baseurl}/booths/`
@@ -741,6 +906,18 @@ Parameter | Type | required | Default | Description
 
 ## Update booth
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `PUT {baseurl}/booths/{booth_id}`
@@ -748,11 +925,35 @@ Parameter | Type | required | Default | Description
 
 ## Delete booth
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 `DELETE {baseurl}/booths/{booth_id}`
 
 # Visitors
 
 ## Get visitors
+
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
 
 ### HTTP request
 
@@ -762,6 +963,18 @@ Parameter | Type | required | Default | Description
 
 ## Get visitor
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `GET {baseurl}/visitors/{visitor_id}`
@@ -769,6 +982,18 @@ Parameter | Type | required | Default | Description
 ### Parameters
 
 ## Create visitor
+
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
 
 ### HTTP request
 
@@ -778,6 +1003,18 @@ Parameter | Type | required | Default | Description
 
 ## Update visitor
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `PUT {baseurl}/visitors/{visitor_id}`
@@ -785,6 +1022,18 @@ Parameter | Type | required | Default | Description
 ### Parameters
 
 ## Delete visitor
+
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
 
 ### HTTP request
 
@@ -796,6 +1045,18 @@ Parameter | Type | required | Default | Description
 
 ## Get industries
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `GET {baseurl}/industries/`
@@ -803,6 +1064,18 @@ Parameter | Type | required | Default | Description
 ### Parameters
 
 ## Get industrie
+
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
 
 ### HTTP request
 
@@ -812,6 +1085,18 @@ Parameter | Type | required | Default | Description
 
 ## Create industrie
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `POST {baseurl}/industries/`
@@ -820,6 +1105,18 @@ Parameter | Type | required | Default | Description
 
 ## Update industrie
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `PUT {baseurl}/industries/{industrie_id}`
@@ -827,6 +1124,18 @@ Parameter | Type | required | Default | Description
 ### Parameters
 
 ## Delete industrie
+
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
 
 ### HTTP request
 
@@ -838,6 +1147,18 @@ Parameter | Type | required | Default | Description
 
 ## Get online medias
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `GET {baseurl}/publications/online/`
@@ -846,6 +1167,18 @@ Parameter | Type | required | Default | Description
 
 ## Get online media
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `GET {baseurl}/publications/online/{exhibitor_fair_id}`
@@ -853,6 +1186,18 @@ Parameter | Type | required | Default | Description
 ### Parameters
 
 ## Create online media
+
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
 
 ### HTTP request
 
@@ -864,6 +1209,18 @@ Parameter | Type | required | Default | Description
 
 ## Get items
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `GET {baseurl}/shop/items/`
@@ -871,6 +1228,18 @@ Parameter | Type | required | Default | Description
 ### Parameters
 
 ## Get item
+
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
 
 ### HTTP request
 
@@ -880,6 +1249,18 @@ Parameter | Type | required | Default | Description
 
 ## Create item
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `POST {baseurl}/shop/items/`
@@ -887,6 +1268,18 @@ Parameter | Type | required | Default | Description
 ### Parameters
 
 ## Update item
+
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
 
 ### HTTP request
 
@@ -896,6 +1289,18 @@ Parameter | Type | required | Default | Description
 
 ## Upload item file
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `POST {baseurl}/shop/items/upload/`
@@ -903,6 +1308,18 @@ Parameter | Type | required | Default | Description
 ### Parameters
 
 ## Delete item
+
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
 
 ### HTTP request
 
@@ -914,6 +1331,18 @@ Parameter | Type | required | Default | Description
 
 ## Get categories
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `GET {baseurl}/shop/categories/`
@@ -921,6 +1350,18 @@ Parameter | Type | required | Default | Description
 ### Parameters
 
 ## Get categorie
+
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
 
 ### HTTP request
 
@@ -930,6 +1371,18 @@ Parameter | Type | required | Default | Description
 
 ## Create categroie
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `POST {baseurl}/shop/categories/`
@@ -937,6 +1390,18 @@ Parameter | Type | required | Default | Description
 ### Parameters
 
 ## Delete categorie
+
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
 
 ### HTTP request
 
@@ -946,6 +1411,18 @@ Parameter | Type | required | Default | Description
 
 ## Update categorie
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `PUT {baseurl}/shop/categories/{categorie_id}`
@@ -953,6 +1430,18 @@ Parameter | Type | required | Default | Description
 ### Parameters
 
 ## Delete categorie
+
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
 
 ### HTTP request
 
@@ -964,6 +1453,18 @@ Parameter | Type | required | Default | Description
 
 ## Get variants
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `GET {baseurl}/shop/variants/`
@@ -971,6 +1472,18 @@ Parameter | Type | required | Default | Description
 ### Parameters
 
 ## Get variant
+
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
 
 ### HTTP request
 
@@ -980,6 +1493,18 @@ Parameter | Type | required | Default | Description
 
 ## Create variant
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `POST {baseurl}/shop/variants/`
@@ -987,6 +1512,18 @@ Parameter | Type | required | Default | Description
 ### Parameters
 
 ## Upload files
+
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
 
 ### HTTP request
 
@@ -996,6 +1533,18 @@ Parameter | Type | required | Default | Description
 
 ## Update variant
 
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
 ### HTTP request
 
 `PUT {baseurl}/shop/variants/{variant_id}`
@@ -1003,6 +1552,18 @@ Parameter | Type | required | Default | Description
 ### Parameters
 
 ## Delete variant
+
+```shell
+curl "{baseurl}/ENDPOINT/" \
+  -H "x-api-key: {API-Key}" \
+  -X POST \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
 
 ### HTTP request
 
