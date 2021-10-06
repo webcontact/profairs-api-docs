@@ -3,26 +3,54 @@
 ## Get fairs
 
 ```shell
-curl "{baseurl}/ENDPOINT/" \
-  -H "x-api-key: {API-Key}" \
-  -X POST \
+curl --location --request GET '{baseurl}/fairs/' \
+--header '{API-Key}' \
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-{}
+{
+  "fairs": [
+    {
+        "location": "",
+        "telephone": "",
+        "fair": "DemoFair2019",
+        "date_from": "September, 15 2019 00:00:00",
+        "fairid": 8,
+        "fair_type_id": 4,
+        "shop_closes": "August, 31 2018 00:00:00",
+        "shop_no_cancellations": "June, 29 2019 00:00:00",
+        "email": "john.doe@domain.de",
+        "contact_person_id": "",
+        "date_to": "September, 18 2019 00:00:00"
+    },
+    {
+        "location": "",
+        "telephone": "",
+        "fair": "DemoFair2021",
+        "date_from": "August, 27 2021 00:00:00",
+        "fairid": 18,
+        "fair_type_id": 4,
+        "shop_closes": "August, 27 2021 00:00:00",
+        "shop_no_cancellations": "August, 27 2021 00:00:00",
+        "email": "john.doe@domain.de",
+        "contact_person_id": "",
+        "date_to": "August, 27 2021 00:00:00"
+    }
+  ],
+  "error": false
+}
 ```
 
 ### HTTP request
 
 `GET {baseurl}/fairs/`
 
-### Parameters
+### Query Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-datasource | string | true |  |
 logo | boolean | true | false  |
 motion | boolean | true | false  |
 order | boolean | true | false  |
@@ -30,42 +58,76 @@ order | boolean | true | false  |
 ## Get fair
 
 ```shell
-curl "{baseurl}/ENDPOINT/" \
-  -H "x-api-key: {API-Key}" \
-  -X POST \
+curl --location --request GET '{baseurl}/fairs/{fairid}' \
+--header 'X-API-Key: {API-Key}' \
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-{}
+{
+    "fairs": [
+        {
+            "location": "",
+            "telephone": "",
+            "fair": "DemoFair2019",
+            "date_from": "September, 15 2019 00:00:00",
+            "fairid": 8,
+            "fair_type_id": 4,
+            "shop_closes": "August, 31 2018 00:00:00",
+            "shop_no_cancellations": "June, 29 2019 00:00:00",
+            "email": "john.doe@domain.de",
+            "contact_person_id": "",
+            "date_to": "September, 18 2019 00:00:00"
+        }
+    ],
+    "error": false
+}
 ```
 
 ### HTTP request
 
-`GET {baseurl}/fairs/{fair_id}`
+`GET {baseurl}/fairs/{fairid}`
 
-### Parameters
+### URL Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-fair_id | numeric | true |  |
-datasource | string | true |  |
+fairid | numeric | true |  |
+
+### Query Parameters
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
 logo | boolean | true | false  |
 motion | boolean | true | false  |
 
 ## Create fair
 
 ```shell
-curl "{baseurl}/ENDPOINT/" \
-  -H "x-api-key: {API-Key}" \
-  -X POST \
+curl --location --request POST '{baseurl}/fairs/' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "fair": "Musterfair",
+    "fair_type_id": "1",
+    "location": "Pforzheim",
+    "shop_no_cancellations": "2021-12-31 15:00:00",
+    "shop_closes": "2022-01-31 15:00:00",
+    "url_logout": "https://...",
+    "css": "profairs-default",
+    "price_per_voucher": "10.00",
+    "date_from": "2022-02-13 00:00:00",
+    "date_to": "2022-02-15 00:00:00"
+}'
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-{}
+{
+    "fairid": "27",
+    "error": false
+}
 ```
 
 ### HTTP request
@@ -76,7 +138,6 @@ curl "{baseurl}/ENDPOINT/" \
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-datasource | string | true |  |
 fair | string | false |  |
 fair_type_id | numeric | false |  |
 location | string | false |  |
@@ -91,15 +152,20 @@ date_to | string | false |  |
 ## Upload file
 
 ```shell
-curl "{baseurl}/ENDPOINT/" \
-  -H "x-api-key: {API-Key}" \
-  -X POST \
+curl --location --request POST '{baseurl}/fairs/upload/' \
+--header 'X-API-Key: {API-Key}' \
+--form 'file=@"{img_path}"' \
+--form 'fairid="26"' \
+--form 'type="motion"'
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-{}
+{
+    "fairid": "26",
+    "error": false
+}
 ```
 
 ### HTTP request
@@ -110,35 +176,52 @@ curl "{baseurl}/ENDPOINT/" \
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-datasource | string | true |  |
 type | string | true |  |
 file | binary | true |  |
-fair_id | numeric | true |  |
+fairid | numeric | true |  |
 
 ## Update fair
 
 ```shell
-curl "{baseurl}/ENDPOINT/" \
-  -H "x-api-key: {API-Key}" \
-  -X POST \
+curl --location --request PUT '{baseurl}/fairs/{fairid}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: text/plain' \
+--data-raw '{
+    "fair": "Musterfair2",
+    "fair_type_id": "1",
+    "location": "Pforzheim",
+    "shop_no_cancellations": "2021-12-31 15:00:00",
+    "shop_closes": "2022-01-31 15:00:00",
+    "url_logout": "https://...",
+    "css": "profairs-default",
+    "price_per_voucher": "10.00",
+    "date_from": "2022-02-13 00:00:00",
+    "date_to": "2022-02-15 00:00:00"
+}'
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-{}
+{
+    "fairid": "25",
+    "error": false
+}
 ```
 
 ### HTTP request
 
 `PUT {baseurl}/fairs/{fair_id}`
 
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+fairid | string | true | |
 ### Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-fair_id | string | true | |
-datasource | string | true | |
 fair | string | false | |
 fair_type_id | numeric | false | |
 location | string | false | |
@@ -153,23 +236,26 @@ date_to | string | false | |
 ## Delete fair
 
 ```shell
-curl "{baseurl}/ENDPOINT/" \
-  -H "x-api-key: {API-Key}" \
-  -X POST \
+curl --location --request DELETE 'http://profairs-api.tom.webcontact.de/rest/profairs-api/fairs/{fairid}' \
+--header 'X-API-Key: {API-Key}' \
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-{}
+{
+    "fairid": 26,
+    "error": false,
+    "deleted": true
+}
 ```
 
 ### HTTP request
 
 `DELETE {baseurl}/fairs/{fair_id}`
 
-### Parameters
+### URL Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-fair_id | numeric | true |
+fairid | numeric | true |
