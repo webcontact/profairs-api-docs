@@ -14,7 +14,7 @@ curl --location --request GET '{baseurl}/fair_types/' \
     "fair_types": [
        {
             "telephone": "+49 12345 6789",
-            "fair_type_id": 1,
+            "fairtypeid": 1,
             "redirect_error": "http://",
             "contact_id": "",
             "fair_type": "MyEvent",
@@ -22,7 +22,7 @@ curl --location --request GET '{baseurl}/fair_types/' \
         },
         {
             "telephone": "",
-            "fair_type_id": 4,
+            "fairtypeid": 4,
             "redirect_error": "http://",
             "contact_id": "",
             "fair_type": "DemoFair",
@@ -51,7 +51,7 @@ curl --location --request GET '{baseurl}/fair_types/1/' \
     "fair_types": [
         {
             "telephone": "+49 12345 6789",
-            "fair_type_id": 1,
+            "fairtypeid": 1,
             "redirect_error": "http://",
             "contact_id": "",
             "fair_type": "MyEvent",
@@ -64,13 +64,13 @@ curl --location --request GET '{baseurl}/fair_types/1/' \
 
 ### HTTP request
 
-`GET {baseurl}/fairtypes/{fair_type_id}`
+`GET {baseurl}/fairtypes/{fairtypeid}`
 
 ### URL Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-fair_type_id | integer | true |
+fairtypeid | numeric | true |
 
 ## Create new fair type
 
@@ -92,7 +92,7 @@ curl --location --request POST '{baseurl}/fair_types/' \
 
 ```json
 {
-    "fair_type_id": 3,
+    "fairtypeid": 3,
     "error": false
 }
 ```
@@ -110,12 +110,12 @@ email | string | false |  |
 telephone | string | false |  |
 redirect | string | false | https:// |
 redirect_error | string | false | https:// |
-contact_id | integer | false |  |
+contact_id | numeric | false |  |
 
 ## Update fair type
 
 ```shell
-curl --location --request PUT '{baseurl}/fair_types/{fair_type_id}' \
+curl --location --request PUT '{baseurl}/fair_types/{fairtypeid}' \
 --header 'X-API-Key: {API-Key}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -132,32 +132,31 @@ curl --location --request PUT '{baseurl}/fair_types/{fair_type_id}' \
 
 ```json
 {
-    "fair_type_id": 14,
+    "fairtypeid": 14,
     "error": false
 }
 ```
 
 ### HTTP request
 
-`POST {baseurl}/fairtypes/{fair_type_id}`
+`POST {baseurl}/fairtypes/{fairtypeid}`
 
 ### Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-fair_type_id | integer | true | |
-datasource | string | true | |
+fairtypeid | numeric | true | |
 fair_type | string | false | |
 email | string | false | |
 telephone | string | false | |
 redirect | string | false | https:// |
 redirect_error | string | false | https:// |
-contact_person_id | integer | false | |
+contact_person_id | numeric | false | |
 
 ## Delete fair type
 
 ```shell
-curl --location --request DELETE '{baseurl}/fair_types/{fair_type_id}' \
+curl --location --request DELETE '{baseurl}/fair_types/{fairtypeid}' \
 --header 'X-API-Key: {API-Key}' \
 ```
 
@@ -165,7 +164,7 @@ curl --location --request DELETE '{baseurl}/fair_types/{fair_type_id}' \
 
 ```json
 {
-    "fair_type_id": 3,
+    "fairtypeid": 3,
     "error": false,
     "deleted": true
 }
@@ -173,10 +172,10 @@ curl --location --request DELETE '{baseurl}/fair_types/{fair_type_id}' \
 
 ### HTTP request
 
-`DELETE {baseurl}/fairtypes/{fair_type_id}`
+`DELETE {baseurl}/fairtypes/{fairtypeid}`
 
 ### URL Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-fair_type_id | integer | true | |
+fairtypeid | numeric | true | |
