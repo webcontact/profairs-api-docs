@@ -139,13 +139,18 @@ curl --location --request PUT '{baseurl}/fair_types/{fairtypeid}' \
 
 ### HTTP request
 
-`POST {baseurl}/fairtypes/{fairtypeid}`
+`PUT {baseurl}/fairtypes/{fairtypeid}`
+
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+fairtypeid | numeric | true | |
 
 ### Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-fairtypeid | numeric | true | |
 fair_type | string | false | |
 email | string | false | |
 telephone | string | false | |
