@@ -59,11 +59,11 @@ curl --location --request GET '{baseurl}/shop/items' \
 | ------------------- | ------- | -------- | ------- | ----------- |
 | categoryid         | numeric | false    |         |
 | itemnr              | string  | false    |         |
-| language            | string  | false    | de_DE   |
+| language            | string  | true    | de_DE   |
 | itemid             | numeric | false    |         |
 | fairid             | numeric | false    |         |
 | enddate            | string  | false    |         |
-| showlocked         | boolean | false    | true    |
+| showlocked         | boolean | true    | true    |
 | showcoupon         | boolean | false    |         |
 | showcatchall       | boolean | false    |         |
 | showspecial_coupon | boolean | false    |         |
@@ -123,7 +123,7 @@ curl --location --request GET '{baseurl}/shop/items/{itemid}' \
 | language            | string  | false    |         |
 | fairid             | numeric | false    |         |
 | end_date            | string  | false    |         |
-| showlocked         | boolean | false    | true    |
+| showlocked         | boolean | true    | true    |
 | showcoupon         | boolean | false    |         |
 | showcatchall       | boolean | false    |         |
 | showspecialcoupon | boolean | false    |         |
@@ -365,10 +365,10 @@ curl --location --request GET '{baseurl}/shop/categories?fairid={fairid}' \
             "locked": false,
             "description": "&lt;p&gt;Im Folgenden haben Sie die M&ouml;glichkeit &lt;strong&gt;Sonderwerbeformen &lt;&#x2f;strong&gt;zu bestellen.&amp;nbsp&#x3b;Alle Preise in Euro zuz&uuml;glich der gesetzlichen MwSt.&lt;&#x2f;p&gt;&#xd;&#xa;",
             "category": "Sonderwerbeformen",
-            "contact_id": "",
+            "contactid": "",
             "id": 42,
             "infobox_description": "",
-            "parent_id": 47
+            "parentid": 47
         },
         {
             "language": "de_DE",
@@ -376,10 +376,10 @@ curl --location --request GET '{baseurl}/shop/categories?fairid={fairid}' \
             "locked": false,
             "description": "&lt;p&gt;Die Standausstattung muss separat gebucht werden.&lt;&#x2f;p&gt;&#xd;&#xa;",
             "category": "Standausstattung",
-            "contact_id": "",
+            "contactid": "",
             "id": 27,
             "infobox_description": "",
-            "parent_id": 32
+            "parentid": 32
         }
     ]
 }
@@ -394,9 +394,9 @@ curl --location --request GET '{baseurl}/shop/categories?fairid={fairid}' \
 | Parameter     | Type    | required | Default | Description |
 | ------------- | ------- | -------- | ------- | ----------- |
 | fairid       | numeric | false    |         |
-| language      | string  | false    | de_DE   |
-| show_disabled | boolean | false    | false   |
-| hide_coupon   | boolean | false    | true    |
+| language      | string  | true    | de_DE   |
+| show_disabled | boolean | true    | false   |
+| hide_coupon   | boolean | true    | true    |
 
 ## Get categorie
 
@@ -417,10 +417,10 @@ curl --location --request GET '{baseurl}/shop/categories/{categoryid}' \
             "locked": false,
             "description": "&lt;p&gt;Die Standausstattung muss separat gebucht werden.&lt;/p&gt;\n",
             "category": "Standausstattung",
-            "contact_id": "",
+            "contactid": "",
             "id": 27,
             "infobox_description": "",
-            "parent_id": 32
+            "parentid": 32
         }
     ]
 }
@@ -450,8 +450,8 @@ curl --location --request POST '{baseurl}/shop/categories/' \
 --header 'X-API-Key: {API-Key}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "parent_id": 0,
-    "contact_id": 12,
+    "parentid": 0,
+    "contactid": 12,
     "permissions_group_id": 1,
     "fairid": 7,
     "show_coupons_link": true,
@@ -494,13 +494,13 @@ curl --location --request POST '{baseurl}/shop/categories/' \
 
 | Parameter            | Type    | required | Default | Description |
 | -------------------- | ------- | -------- | ------- | ----------- |
-| parent_id            | numeric | false    | 0       |
-| contact_id           | numeric | false    |         |
+| parentid            | numeric | false    | 0       |
+| contactid           | numeric | false    |         |
 | permissions_group_id | numeric | false    |         |
 | fairid              | numeric | false    |         |
-| show_coupons_link    | boolean | false    | false   |
+| show_coupons_link    | boolean | true    | false   |
 | order                | numeric | false    |         |
-| lock                 | boolean | false    | false   |
+| lock                 | boolean | true    | false   |
 | languages            | array of objects  | false    |         |
 
 ### Languages details
@@ -520,8 +520,8 @@ curl --location --request PUT '{baseurl}/shop/categories/{categoryid}' \
 --header 'X-API-Key: {API-Key}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "parent_id": 0,
-    "contact_id": 12,
+    "parentid": 0,
+    "contactid": 12,
     "permissions_group_id": 1,
     "fairid": 7,
     "show_coupons_link": true,
@@ -570,13 +570,13 @@ curl --location --request PUT '{baseurl}/shop/categories/{categoryid}' \
 
 | Parameter            | Type    | required | Default | Description |
 | -------------------- | ------- | -------- | ------- | ----------- |
-| parent_id            | numeric | false    | 0       |
-| contact_id           | numeric | false    |         |
+| parentid            | numeric | false    | 0       |
+| contactid           | numeric | false    |         |
 | permissions_group_id | numeric | false    |         |
 | fairid              | numeric | false    |         |
-| show_coupons_link    | boolean | false    | false   |
+| show_coupons_link    | boolean | true    | false   |
 | order                | numeric | false    |         |
-| lock                 | boolean | false    | false   |
+| lock                 | boolean | true    | false   |
 | languages            | array of objects  | false    |         |
 
 ### Languages details
@@ -664,8 +664,8 @@ curl --location --request GET '{baseurl}/shop/variants?itemid={itemid}' \
 | Parameter        | Type    | required | Default | Description |
 | ---------------- | ------- | -------- | ------- | ----------- |
 | item_id          | numeric | true    |         |
-| locked           | boolean | false    | false   |
-| ordered_variants | boolean | false    | false   |
+| locked           | boolean | true    | false   |
+| ordered_variants | boolean | true    | false   |
 
 ## Get variant
 
@@ -708,8 +708,8 @@ curl --location --request GET '{baseurl}/shop/variants/{variantid}' \
 
 | Parameter        | Type    | required | Default | Description |
 | ---------------- | ------- | -------- | ------- | ----------- |
-| locked           | boolean | false    | false   |
-| ordered_variants | boolean | false    | false   |
+| locked           | boolean | true    | false   |
+| ordered_variants | boolean | true    | false   |
 
 ## Create variant
 

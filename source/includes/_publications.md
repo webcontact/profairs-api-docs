@@ -20,7 +20,7 @@ curl --location --request GET '{baseurl}/publications/online/' \
             "video_url": "",
             "logo": "sandbox.profairs2.tom.webcontact.de/downloads/get.cfm?component=com_publikation&method=getAusstellerMesseWebsite&fieldNameFile=logo&fieldNameFileName=logo_name&fieldNameFileMimeType=logo_mimetype&aussteller_messen_id=7&type=attachment",
             "logo_name": "cms-640x640.jpg",
-            "contact_person_id": "",
+            "contactid": "",
             "logo_mimetype": "image/jpeg",
             "exhibitor_fairid": 7,
             "company_description": ""
@@ -59,7 +59,7 @@ curl --location --request GET '{baseurl}/publications/online/{exhibitor_fairid}'
             "video_url": "",
             "logo": "sandbox.profairs2.tom.webcontact.de/downloads/get.cfm?component=com_publikation&method=getAusstellerMesseWebsite&fieldNameFile=logo&fieldNameFileName=logo_name&fieldNameFileMimeType=logo_mimetype&aussteller_messen_id=766&type=attachment",
             "logo_name": "logo webcontact.jpg",
-            "contact_person_id": "",
+            "contactid": "",
             "logo_mimetype": "image/jpeg",
             "exhibitor_fairid": 766,
             "company_description": ""
@@ -123,4 +123,4 @@ logo_mimetype | string | false | |
 logo_preview | binary | false | |
 logo_mimetype | string | false | |
 video_url | string | false | |
-contact_person_id | numeric | false | |
+contactid | numeric | false | |

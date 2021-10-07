@@ -216,4 +216,4 @@ boothid | numeric | true | |
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-forum_sync | boolean | false | false |
+forum_sync | boolean | true | false |

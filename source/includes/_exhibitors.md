@@ -163,7 +163,7 @@ This endpoint creates an exhibitor.
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-external_id | string | false | | ID from a external source (for Mapping)
+external_id | string | false | | ID from a external source
 company | string | false | | Name of the Company
 sorttitle | string | false | | Sorttitle for ProFairs
 street | string | false | | Street of the Company

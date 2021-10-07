@@ -16,7 +16,7 @@ curl --location --request GET '{baseurl}/fair_types/' \
             "telephone": "+49 12345 6789",
             "fairtypeid": 1,
             "redirect_error": "http://",
-            "contact_id": "",
+            "contactid": "",
             "fair_type": "MyEvent",
             "redirect": "http://"
         },
@@ -24,7 +24,7 @@ curl --location --request GET '{baseurl}/fair_types/' \
             "telephone": "",
             "fairtypeid": 4,
             "redirect_error": "http://",
-            "contact_id": "",
+            "contactid": "",
             "fair_type": "DemoFair",
             "redirect": "http://"
         }
@@ -53,7 +53,7 @@ curl --location --request GET '{baseurl}/fair_types/1/' \
             "telephone": "+49 12345 6789",
             "fairtypeid": 1,
             "redirect_error": "http://",
-            "contact_id": "",
+            "contactid": "",
             "fair_type": "MyEvent",
             "redirect": "http://"
         }
@@ -84,7 +84,7 @@ curl --location --request POST '{baseurl}/fair_types/' \
     "telephone": "+49 12345 6789",
     "redirect": "https://...",
     "redirect_error": "https://error...",
-    "contact_id": "1"
+    "contactid": "1"
 }'
 ```
 
@@ -105,12 +105,12 @@ curl --location --request POST '{baseurl}/fair_types/' \
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-fair_type | string | false |  |
-email | string | false |  |
-telephone | string | false |  |
-redirect | string | false | https:// |
-redirect_error | string | false | https:// |
-contact_id | numeric | false |  |
+fair_type | string | true |  |
+email | string | true |  |
+telephone | string | true |  |
+redirect | string | true | https:// |
+redirect_error | string | true | https:// |
+contactid | numeric | false |  |
 
 ## Update fair type
 
@@ -124,7 +124,7 @@ curl --location --request PUT '{baseurl}/fair_types/{fairtypeid}' \
     "telephone": "+49 12345 6789",
     "redirect": "https://...",
     "redirect_error": "https://error...",
-    "contact_id": "1"
+    "contactid": "1"
 }'
 ```
 
@@ -156,7 +156,7 @@ email | string | false | |
 telephone | string | false | |
 redirect | string | false | https:// |
 redirect_error | string | false | https:// |
-contact_person_id | numeric | false | |
+contactid | numeric | false | |
 
 ## Delete fair type
 

@@ -22,7 +22,7 @@ curl --location --request GET '{baseurl}/fairs/' \
         "shop_closes": "August, 31 2018 00:00:00",
         "shop_no_cancellations": "June, 29 2019 00:00:00",
         "email": "john.doe@domain.de",
-        "contact_person_id": "",
+        "contactid": "",
         "date_to": "September, 18 2019 00:00:00"
     },
     {
@@ -35,7 +35,7 @@ curl --location --request GET '{baseurl}/fairs/' \
         "shop_closes": "August, 27 2021 00:00:00",
         "shop_no_cancellations": "August, 27 2021 00:00:00",
         "email": "john.doe@domain.de",
-        "contact_person_id": "",
+        "contactid": "",
         "date_to": "August, 27 2021 00:00:00"
     }
   ],
@@ -77,7 +77,7 @@ curl --location --request GET '{baseurl}/fairs/{fairid}' \
             "shop_closes": "August, 31 2018 00:00:00",
             "shop_no_cancellations": "June, 29 2019 00:00:00",
             "email": "john.doe@domain.de",
-            "contact_person_id": "",
+            "contactid": "",
             "date_to": "September, 18 2019 00:00:00"
         }
     ],
