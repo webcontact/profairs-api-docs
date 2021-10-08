@@ -286,8 +286,8 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-600edfa7.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print-3870743e.css" rel="stylesheet" media="print" />
+    <link href="stylesheets/screen-8faeb8f4.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-7b26dc08.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-b12a2749.js"></script>
 
     <script>
@@ -312,9 +312,6 @@
         </div>
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
-          <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
-          </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
@@ -556,12 +553,13 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the profairs API! You can use our API to access profairs API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+        <!-- # Introduction
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+Welcome to the profairs API! You can use our API to access profairs API endpoints, which can get information on various cats, kittens, and breeds in our database.
 
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+
+This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation. -->
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authorize, use this code:</p>
@@ -574,7 +572,7 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 <p>Make sure to replace <code>{API-Key}</code> with your API key.</p>
 </blockquote>
 
-<p>profairs uses API keys to allow access to the API. You can register a new profairs API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<!-- profairs uses API keys to allow access to the API. You can register a new profairs API key at our [developer portal](http://example.com/developers). -->
 
 <p>profairs expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
 
@@ -783,7 +781,7 @@ ID | The ID of the kitten to delete -->
     </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request'>HTTP request</h3>
-<p><code>GET {baseurl}/fairtypes/</code></p>
+<p><code>GET {baseurl}/fair_types/</code></p>
 <h2 id='get-fair-type'>Get fair type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/fair_types/1/'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span>
 </code></pre></div>
@@ -804,7 +802,7 @@ ID | The ID of the kitten to delete -->
     </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-2'>HTTP request</h3>
-<p><code>GET {baseurl}/fairtypes/{fairtypeid}</code></p>
+<p><code>GET {baseurl}/fair_types/{fairtypeid}</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -843,7 +841,7 @@ ID | The ID of the kitten to delete -->
     </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-3'>HTTP request</h3>
-<p><code>POST {baseurl}/fairtypes/</code></p>
+<p><code>POST {baseurl}/fair_types/</code></p>
 <h3 id='parameters'>Parameters</h3>
 <table><thead>
 <tr>
@@ -917,7 +915,7 @@ ID | The ID of the kitten to delete -->
     </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-4'>HTTP request</h3>
-<p><code>PUT {baseurl}/fairtypes/{fairtypeid}</code></p>
+<p><code>PUT {baseurl}/fair_types/{fairtypeid}</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1001,7 +999,7 @@ ID | The ID of the kitten to delete -->
     </span><span class="nl">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-5'>HTTP request</h3>
-<p><code>DELETE {baseurl}/fairtypes/{fairtypeid}</code></p>
+<p><code>DELETE {baseurl}/fair_types/{fairtypeid}</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1032,27 +1030,27 @@ ID | The ID of the kitten to delete -->
         </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
         </span><span class="nl">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
         </span><span class="nl">"fair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DemoFair2019"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"date_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"September, 15 2019 00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-15 12:00:00"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"fairid"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"fairtypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"shop_closes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"August, 31 2018 00:00:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"shop_no_cancellations"</span><span class="p">:</span><span class="w"> </span><span class="s2">"June, 29 2019 00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fair_type_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"shop_closes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-10 10:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"shop_no_cancellations"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-05 10:00:00"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@domain.de"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"contactid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"date_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"September, 18 2019 00:00:00"</span><span class="w">
+        </span><span class="nl">"contact_person_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-16 12:00:00"</span><span class="p">,</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
         </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
         </span><span class="nl">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
         </span><span class="nl">"fair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DemoFair2021"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"date_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"August, 27 2021 00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-08-27 17:00:00"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"fairid"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"fairtypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"shop_closes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"August, 27 2021 00:00:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"shop_no_cancellations"</span><span class="p">:</span><span class="w"> </span><span class="s2">"August, 27 2021 00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fair_type_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"shop_closes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-08-20 17:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"shop_no_cancellations"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-08-10 17:00:00"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@domain.de"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"contactid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"date_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"August, 27 2021 00:00:00"</span><span class="w">
+        </span><span class="nl">"contact_person_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-08-29 17:00:00"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
@@ -1100,18 +1098,18 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"fairs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"fair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DemoFair2019"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"date_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"September, 15 2019 00:00:00"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"fairid"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"fairtypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"shop_closes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"August, 31 2018 00:00:00"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"shop_no_cancellations"</span><span class="p">:</span><span class="w"> </span><span class="s2">"June, 29 2019 00:00:00"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@domain.de"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"contactid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"date_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"September, 18 2019 00:00:00"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+          </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"fair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DemoFair2019"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"date_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-15 12:00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"fairid"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"fair_type_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"shop_closes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-10 10:00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"shop_no_cancellations"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-05 10:00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@domain.de"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"contact_person_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"date_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-16 12:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1876,14 +1874,14 @@ ID | The ID of the kitten to delete -->
 <tr>
 <td>item_units</td>
 <td>string</td>
-<td>false</td>
+<td>true</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>unit_of_measurement</td>
 <td>string</td>
-<td>false</td>
+<td>true</td>
 <td></td>
 <td></td>
 </tr>
@@ -1910,9 +1908,9 @@ ID | The ID of the kitten to delete -->
 </tr>
 <tr>
 <td>languages</td>
-<td>any</td>
+<td>array of objects</td>
 <td>true</td>
-<td>false</td>
+<td></td>
 <td></td>
 </tr>
 <tr>
@@ -1933,6 +1931,52 @@ ID | The ID of the kitten to delete -->
 <td>exhibitor_types</td>
 <td>string</td>
 <td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='languages-details'>Languages details</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>language</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>introduction</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>comment</td>
+<td>string</td>
+<td>true</td>
 <td></td>
 <td></td>
 </tr>
@@ -2098,7 +2142,7 @@ ID | The ID of the kitten to delete -->
 </tr>
 <tr>
 <td>languages</td>
-<td>any</td>
+<td>array ob objects</td>
 <td>true</td>
 <td>false</td>
 <td></td>
@@ -2121,6 +2165,52 @@ ID | The ID of the kitten to delete -->
 <td>exhibitor_types</td>
 <td>string</td>
 <td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='languages-details-2'>Languages details</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>language</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>introduction</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>comment</td>
+<td>string</td>
+<td>true</td>
 <td></td>
 <td></td>
 </tr>
@@ -2474,7 +2564,7 @@ ID | The ID of the kitten to delete -->
 <td></td>
 </tr>
 </tbody></table>
-<h3 id='languages-details'>Languages details</h3>
+<h3 id='languages-details-3'>Languages details</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2644,7 +2734,7 @@ ID | The ID of the kitten to delete -->
 <td></td>
 </tr>
 </tbody></table>
-<h3 id='languages-details-2'>Languages details</h3>
+<h3 id='languages-details-4'>Languages details</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3026,7 +3116,7 @@ ID | The ID of the kitten to delete -->
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-16'>HTTP request</h3>
 <p><code>PUT {baseurl}/shop/variants/{variantid}</code></p>
-<h3 id='parameters-8'>Parameters</h3>
+<h3 id='url-parameters-8'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3043,6 +3133,17 @@ ID | The ID of the kitten to delete -->
 <td></td>
 <td></td>
 </tr>
+</tbody></table>
+<h3 id='parameters-8'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
 <tr>
 <td>itemid</td>
 <td>numeric</td>
@@ -3088,7 +3189,7 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-17'>HTTP request</h3>
 <p><code>DELETE {baseurl}/shop/variants/{variantid}</code></p>
-<h3 id='parameters-9'>Parameters</h3>
+<h3 id='url-parameters-9'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3211,7 +3312,7 @@ ID | The ID of the kitten to delete -->
 <p>This endpoint retrieves a specific exhibitor.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET {baseurl}/exhibitors/{exhibitorid}</code></p>
-<h3 id='query-parameters-2'>Query Parameters</h3>
+<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3226,7 +3327,7 @@ ID | The ID of the kitten to delete -->
 <td>numeric</td>
 <td>true</td>
 <td></td>
-<td>defines the exhibitor.</td>
+<td></td>
 </tr>
 </tbody></table>
 <h2 id='create-an-exhibitor'>Create an Exhibitor</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/exhibitors/"</span> <span class="se">\</span>
@@ -3282,147 +3383,147 @@ ID | The ID of the kitten to delete -->
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>ID from a external source</td>
+<td></td>
 </tr>
 <tr>
 <td>company</td>
 <td>string</td>
-<td>false</td>
+<td>true</td>
 <td></td>
-<td>Name of the Company</td>
+<td></td>
 </tr>
 <tr>
 <td>sorttitle</td>
 <td>string</td>
-<td>false</td>
+<td>true</td>
 <td></td>
-<td>Sorttitle for ProFairs</td>
+<td></td>
 </tr>
 <tr>
 <td>street</td>
 <td>string</td>
-<td>false</td>
+<td>true</td>
 <td></td>
-<td>Street of the Company</td>
+<td></td>
 </tr>
 <tr>
 <td>postalcode</td>
 <td>string</td>
-<td>false</td>
+<td>true</td>
 <td></td>
-<td>Postalcode</td>
+<td></td>
 </tr>
 <tr>
 <td>city</td>
 <td>string</td>
-<td>false</td>
+<td>true</td>
 <td></td>
-<td>City</td>
+<td></td>
 </tr>
 <tr>
 <td>additional_address</td>
 <td>string</td>
-<td></td>
 <td>false</td>
-<td>Additional Adress</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>country</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>Country</td>
+<td></td>
 </tr>
 <tr>
 <td>latitude</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>Latitude</td>
+<td></td>
 </tr>
 <tr>
 <td>longitude</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>Longitude</td>
+<td></td>
 </tr>
 <tr>
 <td>telephone</td>
 <td>string</td>
-<td>false</td>
+<td>true</td>
 <td></td>
-<td>Telephone</td>
+<td></td>
 </tr>
 <tr>
 <td>email</td>
 <td>string</td>
-<td>false</td>
+<td>true</td>
 <td></td>
-<td>Email</td>
+<td></td>
 </tr>
 <tr>
 <td>homepage</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>Homepage</td>
+<td></td>
 </tr>
 <tr>
 <td>customer_number</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>Customer number</td>
+<td></td>
 </tr>
 <tr>
 <td>vat_identification_number</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>VAT Identification Number</td>
+<td></td>
 </tr>
 <tr>
 <td>remarks</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>Comments</td>
+<td></td>
 </tr>
 <tr>
 <td>username</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>Username for the Exhibitor-Area</td>
+<td></td>
 </tr>
 <tr>
 <td>password</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>Password for the Exhibitor-Area</td>
+<td></td>
 </tr>
 <tr>
 <td>address_verified</td>
 <td>boolean</td>
 <td>false</td>
 <td></td>
-<td>Address verified</td>
+<td></td>
 </tr>
 <tr>
 <td>lock</td>
 <td>boolean</td>
 <td>false</td>
 <td></td>
-<td>Locks the created Exhibitor</td>
+<td></td>
 </tr>
 <tr>
 <td>newsletter</td>
 <td>boolean</td>
 <td>false</td>
 <td></td>
-<td>Can the Exhibitor recive Newsletter</td>
+<td></td>
 </tr>
 </tbody></table>
 <h2 id='delete-an-exhibitor'>Delete an Exhibitor</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/exhibitors/{exhibitorid}"</span> <span class="se">\</span>
@@ -3440,7 +3541,7 @@ ID | The ID of the kitten to delete -->
 <p>This endpoint deletes an exhibitor.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
 <p><code>DELETE {baseurl}/exhibitors/{exhibitorid}</code></p>
-<h3 id='parameters-2'>Parameters</h3>
+<h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3455,21 +3556,32 @@ ID | The ID of the kitten to delete -->
 <td>numeric</td>
 <td>true</td>
 <td></td>
-<td>ID of the exhibitor to be deleted</td>
+<td></td>
 </tr>
+</tbody></table>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
 <tr>
 <td>forum_sync</td>
 <td>boolean</td>
 <td>true</td>
 <td>false</td>
-<td>If the Forum Sync feature is used, this must be noted in the call</td>
+<td></td>
 </tr>
 <tr>
 <td>external</td>
 <td>boolean</td>
 <td>true</td>
 <td>false</td>
-<td>Decide whether to use the ProFairs ID or the External ID</td>
+<td></td>
 </tr>
 </tbody></table>
 <h2 id='update-an-exhibitor'>Update an Exhibitor</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/exhibitors/{exhibitorid}"</span> <span class="se">\</span>
@@ -3511,7 +3623,7 @@ ID | The ID of the kitten to delete -->
 <p>This endpoint updates an exhibitor.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
 <p><code>PUT {baseurl}/exhibitors/{exhibitorid}</code></p>
-<h3 id='parameters-3'>Parameters</h3>
+<h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3526,154 +3638,165 @@ ID | The ID of the kitten to delete -->
 <td>numeric</td>
 <td>true</td>
 <td></td>
-<td>ID from the Exhibitor</td>
+<td></td>
 </tr>
+</tbody></table>
+<h3 id='parameters-2'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
 <tr>
 <td>external_id</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>ID from a external source (for Mapping)</td>
+<td></td>
 </tr>
 <tr>
 <td>company</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>Name of the Company</td>
+<td></td>
 </tr>
 <tr>
 <td>sorttitle</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>Sorttitle for ProFairs</td>
+<td></td>
 </tr>
 <tr>
 <td>street</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>Street of the Company</td>
+<td></td>
 </tr>
 <tr>
 <td>postalcode</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>Postalcode</td>
+<td></td>
 </tr>
 <tr>
 <td>city</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>City</td>
+<td></td>
 </tr>
 <tr>
 <td>additional_address</td>
 <td>string</td>
 <td></td>
 <td>false</td>
-<td>Additional Adress</td>
+<td></td>
 </tr>
 <tr>
 <td>country</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>Country</td>
+<td></td>
 </tr>
 <tr>
 <td>latitude</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>Latitude</td>
+<td></td>
 </tr>
 <tr>
 <td>longitude</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>Longitude</td>
+<td></td>
 </tr>
 <tr>
 <td>telephone</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>Telephone</td>
+<td></td>
 </tr>
 <tr>
 <td>email</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>Email</td>
+<td></td>
 </tr>
 <tr>
 <td>homepage</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>Homepage</td>
+<td></td>
 </tr>
 <tr>
 <td>customer_number</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>Customer number</td>
+<td></td>
 </tr>
 <tr>
 <td>vat_identification_number</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>VAT Identification Number</td>
+<td></td>
 </tr>
 <tr>
 <td>remarks</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>Comments</td>
+<td></td>
 </tr>
 <tr>
 <td>username</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>Username for the Exhibitor-Area</td>
+<td></td>
 </tr>
 <tr>
 <td>password</td>
 <td>string</td>
 <td>false</td>
 <td></td>
-<td>Password for the Exhibitor-Area</td>
+<td></td>
 </tr>
 <tr>
 <td>address_verified</td>
 <td>boolean</td>
 <td>false</td>
 <td></td>
-<td>Address verified</td>
+<td></td>
 </tr>
 <tr>
 <td>lock</td>
 <td>boolean</td>
 <td>false</td>
 <td></td>
-<td>Locks the created Exhibitor</td>
+<td></td>
 </tr>
 <tr>
 <td>newsletter</td>
 <td>boolean</td>
 <td>false</td>
 <td></td>
-<td>Can the Exhibitor recive Newsletter</td>
+<td></td>
 </tr>
 </tbody></table>
 <h1 id='contacts'>Contacts</h1><h2 id='retreive-contacts'>Retreive contacts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl
@@ -3747,7 +3870,7 @@ ID | The ID of the kitten to delete -->
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-2'>HTTP request</h3>
 <p><code>GET {baseurl}/contacts/{contactid}</code></p>
-<h3 id='query-parameters'>Query parameters</h3>
+<h3 id='url-parameters'>URL parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3870,7 +3993,7 @@ ID | The ID of the kitten to delete -->
 <td></td>
 </tr>
 <tr>
-<td>has_newsletter_approval</td>
+<td>newsletter</td>
 <td>boolean</td>
 <td>true</td>
 <td>false</td>
@@ -3974,7 +4097,7 @@ ID | The ID of the kitten to delete -->
 <td></td>
 </tr>
 <tr>
-<td>image_name</td>
+<td>file_name</td>
 <td>string</td>
 <td>true</td>
 <td></td>
@@ -4021,7 +4144,7 @@ ID | The ID of the kitten to delete -->
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-4'>HTTP request</h3>
 <p><code>PUT {baseurl}/contactpersons/{contactid}/</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
+<h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4113,7 +4236,7 @@ ID | The ID of the kitten to delete -->
 <td></td>
 </tr>
 <tr>
-<td>has_newsletter_approval</td>
+<td>newsletter</td>
 <td>boolean</td>
 <td>true</td>
 <td>false</td>
@@ -4188,7 +4311,7 @@ ID | The ID of the kitten to delete -->
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-5'>HTTP request</h3>
 <p><code>DELETE {baseurl}/contactperson/{contactid}/</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
