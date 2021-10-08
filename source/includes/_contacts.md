@@ -47,7 +47,7 @@ curl
 ## Retreive contact
 
 ```shell
-curl --location --request GET '{baseurl}/contacts/1' \
+curl --location --request GET '{baseurl}/contacts/{contactid}' \
 --header 'Content-Type: application/json' \
 --header 'X-API-Key: {API-Key}'
 ```
@@ -94,6 +94,9 @@ Parameter | Type | required | Default | Description
 contactid | string | true |  |
 
 ## Create contact person
+### HTTP request
+
+`POST {baseurl}/contacts/`
 
 ```shell
 curl --location --request POST '{baseurl}/contacts/' \

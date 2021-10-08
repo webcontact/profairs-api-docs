@@ -40,7 +40,7 @@ curl --location --request GET '{baseurl}/fair_types/' \
 ## Get fair type
 
 ```shell
-curl --location --request GET '{baseurl}/fair_types/1/' \
+curl --location --request GET '{baseurl}/fair_types/{fairtypeid}/' \
 --header 'X-API-Key: {API-Key}'
 ```
 

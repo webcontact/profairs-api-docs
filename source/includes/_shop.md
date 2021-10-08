@@ -106,13 +106,13 @@ curl --location --request GET '{baseurl}/shop/items/{itemid}' \
 
 ### HTTP request
 
-`GET {baseurl}/shop/items/{item_id}`
+`GET {baseurl}/shop/items/{itemid}`
 
 ### URL Parameters
 
 | Parameter           | Type    | required | Default | Description |
 | ------------------- | ------- | -------- | ------- | ----------- |
-| item_id             | string  | true     |         |
+| itemid             | string  | true     |         |
 
 ### Query Parameters
 | Parameter           | Type    | required | Default | Description |
@@ -258,7 +258,7 @@ curl --location --request PUT '{baseurl}/shop/items/{itemid)' \
 
 ### HTTP request
 
-`PUT {baseurl}/shop/items/{item_id}`
+`PUT {baseurl}/shop/items/{itemid}`
 
 ### URL Parameters
 
@@ -353,7 +353,7 @@ curl --location --request DELETE '{baseurl}/shop/items/{itemid}' \
 
 ### HTTP request
 
-`DELETE {baseurl}/shop/items/{item_id}`
+`DELETE {baseurl}/shop/items/{itemid}`
 
 ### URL Parameters
 
@@ -445,7 +445,7 @@ curl --location --request GET '{baseurl}/shop/categories/{categoryid}' \
 
 ### HTTP request
 
-`GET {baseurl}/shop/categories/{categorie_id}`
+`GET {baseurl}/shop/categories/{categoryid}`
 
 ### URL Parameters
 
@@ -679,7 +679,7 @@ curl --location --request GET '{baseurl}/shop/variants?itemid={itemid}' \
 
 | Parameter        | Type    | required | Default | Description |
 | ---------------- | ------- | -------- | ------- | ----------- |
-| item_id          | numeric | true    |         |
+| itemid          | numeric | true    |         |
 | locked           | boolean | true    | false   |
 | ordered_variants | boolean | true    | false   |
 
