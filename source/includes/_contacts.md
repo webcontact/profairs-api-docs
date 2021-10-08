@@ -87,7 +87,7 @@ curl --location --request GET '{baseurl}/contacts/1' \
 
 `GET {baseurl}/contacts/{contactid}`
 
-### Query parameters
+### URL parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
@@ -143,7 +143,7 @@ exhibitorid | numeric | true |  |
 telephone | string | false |  |
 mobile | string | false |  |
 email | string | true |  |
-has_newsletter_approval | boolean | true |  false |
+newsletter | boolean | true |  false |
 comment | string | false |  |
 company | string | false |  |
 street | string | false |  |
@@ -183,7 +183,7 @@ Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 contactid | numeric | true |  |
 file | binary | true |  |
-image_name | string | true |  |
+file_name | string | true |  |
 type | string | true |  |
 
 ## Update contact person
@@ -245,7 +245,7 @@ exhibitorid |numeric | true |  |
 telephone | string | false |  |
 mobile | string | false |  |
 email | string | true |  |
-has_newsletter_approval | boolean | true | false |
+newsletter | boolean | true | false |
 comment | string | false |  |
 company | string | false |  |
 street | string | false |  |

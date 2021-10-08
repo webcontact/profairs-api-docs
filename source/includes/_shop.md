@@ -194,15 +194,23 @@ curl --location --request POST '{baseurl}/shop/items' \
 | sort                | string  | false    |         |
 | lock                | boolean | true     | false   |
 | end_date            | string  | false    |         |
-| item_units          | string  | false    |         |
-| unit_of_measurement | string  | false    |         |
+| item_units          | string  | true    |         |
+| unit_of_measurement | string  | true    |         |
 | item_title          | string  | false    |         |
 | upload              | boolean | true     | false   |
 | recommended         | boolean | true     | false   |
-| languages           | any     | true     | false   |
+| languages           | array of objects     | true     |   |
 | crossselling        | string  | false    |         |
 | dependence          | string  | false    |         |
 | exhibitor_types     | string  | false    |         |
+### Languages details
+| Parameter            | Type    | required | Default | Description |
+| -------------------- | ------- | -------- | ------- | ----------- |
+| language             | string  | true     |         |             |
+| title                | string  | true     |         |             |
+| introduction         | string  | true     |         |             |
+| description          | string  | true     |         |             |
+| comment              | string  | true     |         |             |
 
 ## Update item
 
@@ -275,10 +283,19 @@ curl --location --request PUT '{baseurl}/shop/items/{itemid)' \
 | item_title          | string  | false    |         |
 | upload              | boolean | true     | false   |
 | recommended         | boolean | true     | false   |
-| languages           | any     | true     | false   |
+| languages           | array ob objects   | true     | false   |
 | crossselling        | string  | false    |         |
 | dependence          | string  | false    |         |
 | exhibitor_types     | string  | false    |         |
+
+### Languages details
+| Parameter            | Type    | required | Default | Description |
+| -------------------- | ------- | -------- | ------- | ----------- |
+| language             | string  | true     |         |             |
+| title                | string  | true     |         |             |
+| introduction         | string  | true     |         |             |
+| description          | string  | true     |         |             |
+| comment              | string  | true     |         |             |
 
 ## Upload item file
 
@@ -580,7 +597,6 @@ curl --location --request PUT '{baseurl}/shop/categories/{categoryid}' \
 | languages            | array of objects  | false    |         |
 
 ### Languages details
-
 | Parameter            | Type    | required | Default | Description |
 | -------------------- | ------- | -------- | ------- | ----------- |
 | language            | string | true    |       |
@@ -837,11 +853,15 @@ curl --location --request PUT '{baseurl}/shop/variants/{variantid}' \
 
 `PUT {baseurl}/shop/variants/{variantid}`
 
-### Parameters
+### URL Parameters
 
 | Parameter        | Type    | required | Default | Description |
 | ---------------- | ------- | -------- | ------- | ----------- |
 | variantid       | numeric | true     |         |
+### Parameters
+
+| Parameter        | Type    | required | Default | Description |
+| ---------------- | ------- | -------- | ------- | ----------- |
 | itemid          | numeric | true     |         |
 | number_of_pieces | numeric | true     |         |
 | price            | numeric | true     |         |
@@ -865,7 +885,7 @@ curl --location --request DELETE '{baseurl}/shop/variants/{variantid}' \
 
 `DELETE {baseurl}/shop/variants/{variantid}`
 
-### Parameters
+### URL Parameters
 
 | Parameter  | Type    | required | Default | Description |
 | ---------- | ------- | -------- | ------- | ----------- |

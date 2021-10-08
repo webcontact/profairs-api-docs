@@ -107,11 +107,11 @@ This endpoint retrieves a specific exhibitor.
 
 `GET {baseurl}/exhibitors/{exhibitorid}`
 
-### Query Parameters
+### URL Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-exhibitorid | numeric | true | | defines the exhibitor.
+exhibitorid | numeric | true | |
 
 ## Create an Exhibitor
 ```shell
@@ -163,27 +163,27 @@ This endpoint creates an exhibitor.
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-external_id | string | false | | ID from a external source
-company | string | false | | Name of the Company
-sorttitle | string | false | | Sorttitle for ProFairs
-street | string | false | | Street of the Company
-postalcode | string | false | | Postalcode
-city | string | false | | City
-additional_address | string | | false | Additional Adress
-country | string | false | | Country
-latitude | string | false | | Latitude
-longitude | string | false | | Longitude
-telephone | string | false | | Telephone
-email | string | false | | Email
-homepage | string | false | | Homepage
-customer_number | string | false | | Customer number
-vat_identification_number | string | false | | VAT Identification Number
-remarks | string | false | | Comments
-username | string | false | | Username for the Exhibitor-Area
-password | string | false | | Password for the Exhibitor-Area
-address_verified | boolean | false | | Address verified
-lock | boolean | false | | Locks the created Exhibitor
-newsletter | boolean | false | | Can the Exhibitor recive Newsletter
+external_id | string | false | |
+company | string | true | |
+sorttitle | string | true | |
+street | string | true | |
+postalcode | string | true | |
+city | string | true | |
+additional_address | string | false | |
+country | string | false | |
+latitude | string | false | |
+longitude | string | false | |
+telephone | string | true | |
+email | string | true | |
+homepage | string | false | |
+customer_number | string | false | |
+vat_identification_number | string | false | |
+remarks | string | false | |
+username | string | false | |
+password | string | false | |
+address_verified | boolean | false | |
+lock | boolean | false | |
+newsletter | boolean | false | |
 
 ## Delete an Exhibitor
 ```shell
@@ -207,13 +207,17 @@ This endpoint deletes an exhibitor.
 
 `DELETE {baseurl}/exhibitors/{exhibitorid}`
 
-### Parameters
+### URL Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-exhibitorid | numeric | true | | ID of the exhibitor to be deleted
-forum_sync | boolean | true | false | If the Forum Sync feature is used, this must be noted in the call
-external | boolean | true | false | Decide whether to use the ProFairs ID or the External ID
+exhibitorid | numeric | true | |
+### Query Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+forum_sync | boolean | true | false |
+external | boolean | true | false |
 
 ## Update an Exhibitor
 
@@ -261,29 +265,33 @@ This endpoint updates an exhibitor.
 
 `PUT {baseurl}/exhibitors/{exhibitorid}`
 
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitorid | numeric | true | |
 ### Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-exhibitorid | numeric | true | | ID from the Exhibitor
-external_id | string | false | | ID from a external source (for Mapping)
-company | string | false | | Name of the Company
-sorttitle | string | false | | Sorttitle for ProFairs
-street | string | false | | Street of the Company
-postalcode | string | false | | Postalcode
-city | string | false | | City
-additional_address | string | | false | Additional Adress
-country | string | false | | Country
-latitude | string | false | | Latitude
-longitude | string | false | | Longitude
-telephone | string | false | | Telephone
-email | string | false | | Email
-homepage | string | false | | Homepage
-customer_number | string | false | | Customer number
-vat_identification_number | string | false | | VAT Identification Number
-remarks | string | false | | Comments
-username | string | false | | Username for the Exhibitor-Area
-password | string | false | | Password for the Exhibitor-Area
-address_verified | boolean | false | | Address verified
-lock | boolean | false | | Locks the created Exhibitor
-newsletter | boolean | false | | Can the Exhibitor recive Newsletter
+external_id | string | false | |
+company | string | false | |
+sorttitle | string | false | |
+street | string | false | |
+postalcode | string | false | |
+city | string | false | |
+additional_address | string | | false |
+country | string | false | |
+latitude | string | false | |
+longitude | string | false | |
+telephone | string | false | |
+email | string | false | |
+homepage | string | false | |
+customer_number | string | false | |
+vat_identification_number | string | false | |
+remarks | string | false | |
+username | string | false | |
+password | string | false | |
+address_verified | boolean | false | |
+lock | boolean | false | |
+newsletter | boolean | false | |
