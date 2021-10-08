@@ -29,13 +29,13 @@ meta:
     content: Documentation for the profairs API
 ---
 
-# Introduction
+<!-- # Introduction
 
 Welcome to the profairs API! You can use our API to access profairs API endpoints, which can get information on various cats, kittens, and breeds in our database.
 
 We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
+This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation. -->
 
 # Authentication
 
@@ -49,7 +49,7 @@ curl "api_endpoint_here" \
 
 > Make sure to replace `{API-Key}` with your API key.
 
-profairs uses API keys to allow access to the API. You can register a new profairs API key at our [developer portal](http://example.com/developers).
+<!-- profairs uses API keys to allow access to the API. You can register a new profairs API key at our [developer portal](http://example.com/developers). -->
 
 profairs expects for the API key to be included in all API requests to the server in a header that looks like the following:
 

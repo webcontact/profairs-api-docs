@@ -35,7 +35,7 @@ curl --location --request GET '{baseurl}/fair_types/' \
 
 ### HTTP request
 
-`GET {baseurl}/fairtypes/`
+`GET {baseurl}/fair_types/`
 
 ## Get fair type
 
@@ -64,7 +64,7 @@ curl --location --request GET '{baseurl}/fair_types/1/' \
 
 ### HTTP request
 
-`GET {baseurl}/fairtypes/{fairtypeid}`
+`GET {baseurl}/fair_types/{fairtypeid}`
 
 ### URL Parameters
 
@@ -99,7 +99,7 @@ curl --location --request POST '{baseurl}/fair_types/' \
 
 ### HTTP request
 
-`POST {baseurl}/fairtypes/`
+`POST {baseurl}/fair_types/`
 
 ### Parameters
 
@@ -139,7 +139,7 @@ curl --location --request PUT '{baseurl}/fair_types/{fairtypeid}' \
 
 ### HTTP request
 
-`PUT {baseurl}/fairtypes/{fairtypeid}`
+`PUT {baseurl}/fair_types/{fairtypeid}`
 
 ### URL Parameters
 
@@ -177,7 +177,7 @@ curl --location --request DELETE '{baseurl}/fair_types/{fairtypeid}' \
 
 ### HTTP request
 
-`DELETE {baseurl}/fairtypes/{fairtypeid}`
+`DELETE {baseurl}/fair_types/{fairtypeid}`
 
 ### URL Parameters
 
