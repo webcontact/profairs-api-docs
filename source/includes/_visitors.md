@@ -3,9 +3,8 @@
 ## Get visitors
 
 ```shell
-curl --location --request GET 'http://profairs-api.tom.webcontact.de/rest/profairs-api/visitors/' \
---header 'X-API-KEY: 941c8937-0b05-4530-939c-6981a2adadc8' \
---header 'Cookie: CFID=61183; CFTOKEN=1836a8b27a83e72d-ECE47375-C2CC-3014-50DB7B77F688753A; JSESSIONID=85ABDC901794201705BBA688BCE5E9D8.cfusion'
+curl --location --request GET '{baseurl}/visitors/' \
+--header 'X-API-KEY: {API-Key}' \
 ```
 
 > The above command returns JSON structured like this:
@@ -50,9 +49,8 @@ fairid | numeric | false | |
 ## Get visitor
 
 ```shell
-curl --location --request GET 'http://profairs-api.tom.webcontact.de/rest/profairs-api/visitors/110' \
---header 'X-API-KEY: 941c8937-0b05-4530-939c-6981a2adadc8' \
---header 'Cookie: CFID=61183; CFTOKEN=1836a8b27a83e72d-ECE47375-C2CC-3014-50DB7B77F688753A; JSESSIONID=85ABDC901794201705BBA688BCE5E9D8.cfusion'
+curl --location --request GET '{baseurl}/visitors/{visitorid}' \
+--header 'X-API-KEY: {API-Key}' \
 ```
 
 > The above command returns JSON structured like this:
@@ -83,24 +81,27 @@ curl --location --request GET 'http://profairs-api.tom.webcontact.de/rest/profai
 
 ### HTTP request
 
-`GET {baseurl}/visitors/{visitor_id}`
+`GET {baseurl}/visitors/{visitorid}`
 
-### Parameters
+### URL Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-visitor_id | numeric | true | |
-datasource | string | true | |
-fair_id | numeric | false | |
+visitorid | numeric | true | |
+
+### Query Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+fairid | numeric | false | |
 external | boolean | false | false |
 
 ## Create visitor
 
 ```shell
-curl --location --request POST 'http://profairs-api.tom.webcontact.de/rest/profairs-api/visitors/' \
+curl --location --request POST '{baseurl}/visitors/' \
 --header 'Content-Type: application/json' \
---header 'X-API-Key: 941c8937-0b05-4530-939c-6981a2adadc8' \
---header 'Cookie: CFID=61183; CFTOKEN=1836a8b27a83e72d-ECE47375-C2CC-3014-50DB7B77F688753A; JSESSIONID=7D2D77B5921E545A2E2A757DD6357EBF.cfusion' \
+--header 'X-API-Key: {API-Key}' \
 --data-raw '{
     "external_id": "A1C2",
     "company": "Muster GmbH",
@@ -139,9 +140,8 @@ curl --location --request POST 'http://profairs-api.tom.webcontact.de/rest/profa
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-datasource | string | false | |
 external_id | string | false | |
-code_id | numeric | false | |
+codeid | numeric | false | |
 company | string | false |  |
 title | string | false |  |
 salutation | string | false |  |
@@ -161,10 +161,9 @@ newsletter | boolean | false | false |
 ## Update visitor
 
 ```shell
-curl --location --request PUT 'http://profairs-api.tom.webcontact.de/rest/profairs-api/visitors/110' \
---header 'X-API-Key: 941c8937-0b05-4530-939c-6981a2adadc8' \
+curl --location --request PUT '{baseurl}/visitors/{visitorid}' \
+--header 'X-API-Key: {API-Key}' \
 --header 'Content-Type: text/plain' \
---header 'Cookie: CFID=61183; CFTOKEN=1836a8b27a83e72d-ECE47375-C2CC-3014-50DB7B77F688753A; JSESSIONID=85ABDC901794201705BBA688BCE5E9D8.cfusion' \
 --data-raw '{
     "externalid": "A1C2",
     "company": "Muster GmbH 2",
@@ -197,15 +196,20 @@ curl --location --request PUT 'http://profairs-api.tom.webcontact.de/rest/profai
 
 ### HTTP request
 
-`PUT {baseurl}/visitors/{visitor_id}`
+`PUT {baseurl}/visitors/{visitorid}`
+
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+visitorid | numeric | true |  |
 
 ### Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 external | boolean | true | false |
-datasource | string | true | |
-code_id | numeric | true | |
+codeid | numeric | true | |
 company | string | false |  |
 title | string | false |  |
 salutation | string | false |  |
@@ -225,26 +229,33 @@ newsletter | boolean | false | false |
 ## Delete visitor
 
 ```shell
-curl --location --request DELETE 'http://profairs-api.tom.webcontact.de/rest/profairs-api/visitors/2830' \
+curl --location --request DELETE '{baseurl}/visitors/{visitorid}' \
 --header 'Content-Type: application/json' \
---header 'X-API-Key: 941c8937-0b05-4530-939c-6981a2adadc8' \
---header 'Cookie: CFID=61183; CFTOKEN=1836a8b27a83e72d-ECE47375-C2CC-3014-50DB7B77F688753A; JSESSIONID=85ABDC901794201705BBA688BCE5E9D8.cfusion'
+--header 'X-API-Key: {API-Key}' \
 ```
 
 > The above command returns this:
 
 ```json
-Visitor deleted
+{
+    "visitorid": "111",
+    "error": false,
+    "deleted": true
+}
 ```
 
 ### HTTP request
 
-`DELETE {baseurl}/visitors/{visitor_id}`
+`DELETE {baseurl}/visitors/{visitorid}`
+
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+visitorid | numeric | true | |
 
 ### Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-visitor_id | numeric | true | |
-datasource | string | true | |
 external | boolean | true | false |

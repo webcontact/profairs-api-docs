@@ -4,9 +4,9 @@
 
 ```shell
 curl
-  --location --request GET 'http://profairs-api.tom.webcontact.de/rest/profairs-api/contacts/' \
+  --location --request GET '{baseurl}/contacts/' \
   --header 'Content-Type: application/json' \
-  --header 'X-API-Key: 941c8937-0b05-4530-939c-6981a2adadc8'
+  --header 'X-API-Key: {API-Key}'
 ```
 
 > The above command returns JSON structured like this:
@@ -47,9 +47,9 @@ curl
 ## Retreive contact
 
 ```shell
-curl --location --request GET 'http://profairs-api.tom.webcontact.de/rest/profairs-api/contacts/1' \
+curl --location --request GET '{baseurl}/contacts/1' \
 --header 'Content-Type: application/json' \
---header 'X-API-Key: 941c8937-0b05-4530-939c-6981a2adadc8'
+--header 'X-API-Key: {API-Key}'
 ```
 
 > The above command returns JSON structured like this:
@@ -96,15 +96,38 @@ contactid | string | true |  |
 ## Create contact person
 
 ```shell
-curl "{baseurl}/contacts/" \
-  -H "x-api-key: {API-Key}" \
-  -X POST \
+curl --location --request POST '{baseurl}/contacts/' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "salutation" : "Herr",
+    "title" : "Dr.",
+    "job_title" : "Developer",
+    "firstname" : "Max",
+    "lastname" : "Mustermann",
+    "exhibitorid" : "1337",
+    "telephone" : "+49 12345 6789",
+    "mobile" : "+49 1234567890",
+    "email" : "max.mustermann@gmail.com",
+    "newsletter" : true,
+    "comment" : "Lorem Ipsum",
+    "company" : "Muster GmbH",
+    "street" : "Musterstraße 123",
+    "additional_address" : "Lorem Ipsum",
+    "postalcode" : "12345",
+    "city" : "Mustercity",
+    "country" : "Deutschland",
+    "fairtypeid" : "1"
+}'
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-{}
+{
+    "error": false,
+    "contactid": "2840"
+}
 ```
 
 ### Parameters
@@ -116,7 +139,7 @@ title | string | false |  |
 job_title | string | false |  |
 firstname | string | true |  |
 lastname | string | true |  |
-exhibitor_id | numeric | true |  |
+exhibitorid | numeric | true |  |
 telephone | string | false |  |
 mobile | string | false |  |
 email | string | true |  |
@@ -128,20 +151,26 @@ additional_address | string | false |  |
 postalcode | string | false |  |
 city | string | false |  |
 country | string | false |  |
-fair_type_id | numeric | false |  |
+fairtypeid | numeric | false |  |
 
 ## Upload contact person image
 
 ```shell
-curl "{baseurl}/ENDPOINT/" \
-  -H "x-api-key: {API-Key}" \
-  -X POST \
+curl --location --request POST '{baseurl}/contacts/upload/' \
+--header 'X-API-Key: {API-Key}' \
+--form 'file=@"{file_path}"' \
+--form 'file_name="{file_name}"' \
+--form 'contactid="{contactid}"' \
+--form 'type="image"'
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-{}
+{
+    "error": false,
+    "contactid": "2838"
+}
 ```
 
 ### HTTP request
@@ -152,29 +181,67 @@ curl "{baseurl}/ENDPOINT/" \
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-datasource | string | true |  |
+contactid | numeric | true |  |
 file | binary | true |  |
 image_name | string | true |  |
 type | string | true |  |
-contact_person_id | numeric | true |  |
 
 ## Update contact person
+```shell
+curl --location --request PUT '{baseurl}/contacts/{contactid}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "salutation" : "Herr",
+    "title" : "Dr.",
+    "job_title" : "Developer",
+    "firstname" : "Max",
+    "lastname" : "Mustermann",
+    "exhibitorid" : "1337",
+    "telephone" : "+49 12345 6789",
+    "mobile" : "+49 1234567890",
+    "email" : "max.mustermann@gmail.com",
+    "newsletter" : true,
+    "comment" : "Lorem Ipsum",
+    "company" : "Muster GmbH",
+    "street" : "Musterstraße 123",
+    "additional_address" : "Lorem Ipsum",
+    "postalcode" : "12345",
+    "city" : "Mustercity",
+    "country" : "Deutschland",
+    "fairtypeid" : "1"
+}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "error": false,
+    "contactid": 2838
+}
+```
 
 ### HTTP request
 
-`PUT {baseurl}/contactpersons/{contact_person_id}/`
+`PUT {baseurl}/contactpersons/{contactid}/`
+
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+contactid | numeric | true |  |
 
 ### Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-datasource | string | true |  |
 salutation | string | true |  |
 title | string | false |  |
 job_title | string | false |  |
 firstname | string | true |  |
 lastname | string | true |  |
-exhibitor_id |numeric | true |  |
+exhibitorid |numeric | true |  |
 telephone | string | false |  |
 mobile | string | false |  |
 email | string | true |  |
@@ -186,19 +253,31 @@ additional_address | string | false |  |
 postalcode |string | false |  |
 city | string | false |  |
 country | string | false |  |
-fair_type_id | numeric | false |  |
+fairtypeid | numeric | false |  |
 
 ## Delete contact person
 
+```shell
+curl --location --request DELETE '{baseurl}/contacts/{contactid}' \
+--header 'X-API-Key: {API-Key}' \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "error": false,
+    "contactid": 2838
+}
+```
+
 ### HTTP request
 
-`DELETE {baseurl}/contactperson/{contact_person_id}/`
+`DELETE {baseurl}/contactperson/{contactid}/`
 
 
-### Parameters
+### URL Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-contact_person_id | numeric | true |  |
-datasource | string | true |  |
-forum_sync | boolean |  false | false |  |
+contactid | numeric | true |  |

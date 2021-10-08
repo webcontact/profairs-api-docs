@@ -75,7 +75,10 @@ html, body {
   .logo {
     display: block;
     max-width: 100%;
+    margin-top: .25rem;
     margin-bottom: $logo-margin;
+    width: 135px;
+    padding: 20px 20px 10px 20px;
   }
 
   &>.search {

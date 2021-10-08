@@ -59,11 +59,11 @@ curl --location --request GET '{baseurl}/shop/items' \
 | ------------------- | ------- | -------- | ------- | ----------- |
 | categoryid         | numeric | false    |         |
 | itemnr              | string  | false    |         |
-| language            | string  | false    | de_DE   |
+| language            | string  | true    | de_DE   |
 | itemid             | numeric | false    |         |
 | fairid             | numeric | false    |         |
 | enddate            | string  | false    |         |
-| showlocked         | boolean | false    | true    |
+| showlocked         | boolean | true    | true    |
 | showcoupon         | boolean | false    |         |
 | showcatchall       | boolean | false    |         |
 | showspecial_coupon | boolean | false    |         |
@@ -123,7 +123,7 @@ curl --location --request GET '{baseurl}/shop/items/{itemid}' \
 | language            | string  | false    |         |
 | fairid             | numeric | false    |         |
 | end_date            | string  | false    |         |
-| showlocked         | boolean | false    | true    |
+| showlocked         | boolean | true    | true    |
 | showcoupon         | boolean | false    |         |
 | showcatchall       | boolean | false    |         |
 | showspecialcoupon | boolean | false    |         |
@@ -207,7 +207,7 @@ curl --location --request POST '{baseurl}/shop/items' \
 ## Update item
 
 ```shell
-curl --location --request PUT 'http://profairs-api.tom.webcontact.de/rest/profairs-api/shop/items/{itemid)' \
+curl --location --request PUT '{baseurl}/shop/items/{itemid)' \
 --header 'X-API-Key: {API-Key}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -365,10 +365,10 @@ curl --location --request GET '{baseurl}/shop/categories?fairid={fairid}' \
             "locked": false,
             "description": "&lt;p&gt;Im Folgenden haben Sie die M&ouml;glichkeit &lt;strong&gt;Sonderwerbeformen &lt;&#x2f;strong&gt;zu bestellen.&amp;nbsp&#x3b;Alle Preise in Euro zuz&uuml;glich der gesetzlichen MwSt.&lt;&#x2f;p&gt;&#xd;&#xa;",
             "category": "Sonderwerbeformen",
-            "contact_id": "",
+            "contactid": "",
             "id": 42,
             "infobox_description": "",
-            "parent_id": 47
+            "parentid": 47
         },
         {
             "language": "de_DE",
@@ -376,10 +376,10 @@ curl --location --request GET '{baseurl}/shop/categories?fairid={fairid}' \
             "locked": false,
             "description": "&lt;p&gt;Die Standausstattung muss separat gebucht werden.&lt;&#x2f;p&gt;&#xd;&#xa;",
             "category": "Standausstattung",
-            "contact_id": "",
+            "contactid": "",
             "id": 27,
             "infobox_description": "",
-            "parent_id": 32
+            "parentid": 32
         }
     ]
 }
@@ -394,14 +394,14 @@ curl --location --request GET '{baseurl}/shop/categories?fairid={fairid}' \
 | Parameter     | Type    | required | Default | Description |
 | ------------- | ------- | -------- | ------- | ----------- |
 | fairid       | numeric | false    |         |
-| language      | string  | false    | de_DE   |
-| show_disabled | boolean | false    | false   |
-| hide_coupon   | boolean | false    | true    |
+| language      | string  | true    | de_DE   |
+| show_disabled | boolean | true    | false   |
+| hide_coupon   | boolean | true    | true    |
 
 ## Get categorie
 
 ```shell
-curl --location --request GET 'http://profairs-api.tom.webcontact.de/rest/profairs-api/shop/categories/{categoryid}' \
+curl --location --request GET '{baseurl}/shop/categories/{categoryid}' \
 --header 'X-API-Key: {API-Key}' \
 ```
 
@@ -417,10 +417,10 @@ curl --location --request GET 'http://profairs-api.tom.webcontact.de/rest/profai
             "locked": false,
             "description": "&lt;p&gt;Die Standausstattung muss separat gebucht werden.&lt;/p&gt;\n",
             "category": "Standausstattung",
-            "contact_id": "",
+            "contactid": "",
             "id": 27,
             "infobox_description": "",
-            "parent_id": 32
+            "parentid": 32
         }
     ]
 }
@@ -450,8 +450,8 @@ curl --location --request POST '{baseurl}/shop/categories/' \
 --header 'X-API-Key: {API-Key}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "parent_id": 0,
-    "contact_id": 12,
+    "parentid": 0,
+    "contactid": 12,
     "permissions_group_id": 1,
     "fairid": 7,
     "show_coupons_link": true,
@@ -494,13 +494,13 @@ curl --location --request POST '{baseurl}/shop/categories/' \
 
 | Parameter            | Type    | required | Default | Description |
 | -------------------- | ------- | -------- | ------- | ----------- |
-| parent_id            | numeric | false    | 0       |
-| contact_id           | numeric | false    |         |
+| parentid            | numeric | false    | 0       |
+| contactid           | numeric | false    |         |
 | permissions_group_id | numeric | false    |         |
 | fairid              | numeric | false    |         |
-| show_coupons_link    | boolean | false    | false   |
+| show_coupons_link    | boolean | true    | false   |
 | order                | numeric | false    |         |
-| lock                 | boolean | false    | false   |
+| lock                 | boolean | true    | false   |
 | languages            | array of objects  | false    |         |
 
 ### Languages details
@@ -520,8 +520,8 @@ curl --location --request PUT '{baseurl}/shop/categories/{categoryid}' \
 --header 'X-API-Key: {API-Key}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "parent_id": 0,
-    "contact_id": 12,
+    "parentid": 0,
+    "contactid": 12,
     "permissions_group_id": 1,
     "fairid": 7,
     "show_coupons_link": true,
@@ -570,13 +570,13 @@ curl --location --request PUT '{baseurl}/shop/categories/{categoryid}' \
 
 | Parameter            | Type    | required | Default | Description |
 | -------------------- | ------- | -------- | ------- | ----------- |
-| parent_id            | numeric | false    | 0       |
-| contact_id           | numeric | false    |         |
+| parentid            | numeric | false    | 0       |
+| contactid           | numeric | false    |         |
 | permissions_group_id | numeric | false    |         |
 | fairid              | numeric | false    |         |
-| show_coupons_link    | boolean | false    | false   |
+| show_coupons_link    | boolean | true    | false   |
 | order                | numeric | false    |         |
-| lock                 | boolean | false    | false   |
+| lock                 | boolean | true    | false   |
 | languages            | array of objects  | false    |         |
 
 ### Languages details
@@ -592,7 +592,7 @@ curl --location --request PUT '{baseurl}/shop/categories/{categoryid}' \
 ## Delete categorie
 
 ```shell
-curl --location --request DELETE 'http://profairs-api.tom.webcontact.de/rest/profairs-api/shop/categories/{categoryid}' \
+curl --location --request DELETE '{baseurl}/shop/categories/{categoryid}' \
 --header 'X-API-Key: {API-Key}' \
 ```
 
@@ -621,7 +621,7 @@ curl --location --request DELETE 'http://profairs-api.tom.webcontact.de/rest/pro
 ## Get variants
 
 ```shell
-curl --location --request GET 'http://profairs-api.tom.webcontact.de/rest/profairs-api/shop/variants?itemid={itemid}' \
+curl --location --request GET '{baseurl}/shop/variants?itemid={itemid}' \
 --header 'X-API-Key: {API-Key}' \
 ```
 
@@ -664,8 +664,8 @@ curl --location --request GET 'http://profairs-api.tom.webcontact.de/rest/profai
 | Parameter        | Type    | required | Default | Description |
 | ---------------- | ------- | -------- | ------- | ----------- |
 | item_id          | numeric | true    |         |
-| locked           | boolean | false    | false   |
-| ordered_variants | boolean | false    | false   |
+| locked           | boolean | true    | false   |
+| ordered_variants | boolean | true    | false   |
 
 ## Get variant
 
@@ -708,8 +708,8 @@ curl --location --request GET '{baseurl}/shop/variants/{variantid}' \
 
 | Parameter        | Type    | required | Default | Description |
 | ---------------- | ------- | -------- | ------- | ----------- |
-| locked           | boolean | false    | false   |
-| ordered_variants | boolean | false    | false   |
+| locked           | boolean | true    | false   |
+| ordered_variants | boolean | true    | false   |
 
 ## Create variant
 
@@ -741,7 +741,10 @@ curl --location --request POST '{baseurl}/shop/variants/' \
 > The above command returns JSON structured like this:
 
 ```json
-{}
+{
+    "variantid": "617",
+    "error": false
+}
 ```
 
 ### HTTP request
@@ -752,8 +755,7 @@ curl --location --request POST '{baseurl}/shop/variants/' \
 
 | Parameter        | Type    | required | Default | Description |
 | ---------------- | ------- | -------- | ------- | ----------- |
-| datasource       | string  | true     |         |
-| item_id          | numeric | true     |         |
+| itemid          | numeric | true     |         |
 | number_of_pieces | numeric | true     |         |
 | price            | numeric | true     |         |
 | lock             | boolean | true     | false   |
@@ -762,15 +764,23 @@ curl --location --request POST '{baseurl}/shop/variants/' \
 ## Upload files
 
 ```shell
-curl "{baseurl}/ENDPOINT/" \
-  -H "x-api-key: {API-Key}" \
-  -X POST \
+curl --location --request POST '{baseurl}/shop/variants/upload/' \
+--header 'X-API-Key: {API-Key}' \
+--form 'file=@"{file_path}"' \
+--form 'file_name="{file_name"' \
+--form 'file_title="{file_title}"' \
+--form 'variantid="{variantid}"' \
+--form 'language="de_DE"'
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-{}
+{
+    "variantid": "616",
+    "updated": true,
+    "error": false
+}
 ```
 
 ### HTTP request
@@ -784,34 +794,55 @@ curl "{baseurl}/ENDPOINT/" \
 | file        | binary  | true     |         |
 | file_name   | string  | true     |         |
 | file_title  | string  | true     |         |
-| variants_id | numeric | true     |         |
+| variantsid | numeric | true     |         |
 | language    | string  | true     |         |
 
 ## Update variant
 
 ```shell
-curl "{baseurl}/ENDPOINT/" \
-  -H "x-api-key: {API-Key}" \
-  -X POST \
+curl --location --request PUT '{baseurl}/shop/variants/{variantid}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "itemid": 1337,
+    "price": 100,
+    "number_of_pieces": 999,
+    "lock": false,
+    "languages": [
+        {
+            "language": "de_DE",
+            "title": "Lorem Ipsum",
+            "description": "Lorem Ipsum"
+        },
+        {
+            "language": "en_GB",
+            "title": "Lorem Ipsum",
+            "description": "Lorem Ipsum"
+        }
+    ]
+}
+'
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-{}
+{
+    "variantid": 1337,
+    "error": false
+}
 ```
 
 ### HTTP request
 
-`PUT {baseurl}/shop/variants/{variant_id}`
+`PUT {baseurl}/shop/variants/{variantid}`
 
 ### Parameters
 
 | Parameter        | Type    | required | Default | Description |
 | ---------------- | ------- | -------- | ------- | ----------- |
-| variant_id       | numeric | true     |         |
-| datasource       | string  | true     |         |
-| item_id          | numeric | true     |         |
+| variantid       | numeric | true     |         |
+| itemid          | numeric | true     |         |
 | number_of_pieces | numeric | true     |         |
 | price            | numeric | true     |         |
 | lock             | boolean | true     | false   |
@@ -820,9 +851,8 @@ curl "{baseurl}/ENDPOINT/" \
 ## Delete variant
 
 ```shell
-curl "{baseurl}/ENDPOINT/" \
-  -H "x-api-key: {API-Key}" \
-  -X POST \
+curl --location --request DELETE '{baseurl}/shop/variants/{variantid}' \
+--header 'X-API-Key: {API-Key}' \
 ```
 
 > The above command returns JSON structured like this:
@@ -833,10 +863,10 @@ curl "{baseurl}/ENDPOINT/" \
 
 ### HTTP request
 
-`DELETE {baseurl}/shop/variants/{variant_id}`
+`DELETE {baseurl}/shop/variants/{variantid}`
 
 ### Parameters
 
 | Parameter  | Type    | required | Default | Description |
 | ---------- | ------- | -------- | ------- | ----------- |
-| variant_id | numeric | true     |         |
+| variantid | numeric | true     |         |

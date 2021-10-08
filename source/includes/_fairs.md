@@ -109,7 +109,7 @@ curl --location --request POST '{baseurl}/fairs/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "fair": "Musterfair",
-    "fair_type_id": "1",
+    "fairtypeid": "1",
     "location": "Pforzheim",
     "shop_no_cancellations": "2021-12-31 15:00:00",
     "shop_closes": "2022-01-31 15:00:00",
@@ -139,7 +139,7 @@ curl --location --request POST '{baseurl}/fairs/' \
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 fair | string | false |  |
-fair_type_id | numeric | false |  |
+fairtypeid | numeric | false |  |
 location | string | false |  |
 shop_no_cancellations | string | false |  |
 shop_closes | string | false |  |
@@ -188,7 +188,7 @@ curl --location --request PUT '{baseurl}/fairs/{fairid}' \
 --header 'Content-Type: text/plain' \
 --data-raw '{
     "fair": "Musterfair2",
-    "fair_type_id": "1",
+    "fairtypeid": "1",
     "location": "Pforzheim",
     "shop_no_cancellations": "2021-12-31 15:00:00",
     "shop_closes": "2022-01-31 15:00:00",
@@ -211,7 +211,7 @@ curl --location --request PUT '{baseurl}/fairs/{fairid}' \
 
 ### HTTP request
 
-`PUT {baseurl}/fairs/{fair_id}`
+`PUT {baseurl}/fairs/{fairid}`
 
 ### URL Parameters
 
@@ -223,7 +223,7 @@ fairid | string | true | |
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 fair | string | false | |
-fair_type_id | numeric | false | |
+fairtypeid | numeric | false | |
 location | string | false | |
 shop_no_cancellations | string | false | |
 shop_closes | string | false | |
@@ -236,7 +236,7 @@ date_to | string | false | |
 ## Delete fair
 
 ```shell
-curl --location --request DELETE 'http://profairs-api.tom.webcontact.de/rest/profairs-api/fairs/{fairid}' \
+curl --location --request DELETE '{baseurl}/fairs/{fairid}' \
 --header 'X-API-Key: {API-Key}' \
 ```
 
@@ -252,7 +252,7 @@ curl --location --request DELETE 'http://profairs-api.tom.webcontact.de/rest/pro
 
 ### HTTP request
 
-`DELETE {baseurl}/fairs/{fair_id}`
+`DELETE {baseurl}/fairs/{fairid}`
 
 ### URL Parameters
 

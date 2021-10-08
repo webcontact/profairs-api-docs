@@ -66,12 +66,12 @@ This endpoint retrieves all exhibitors.
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-fair_id | Integer | false | | If set returns exhibitors from a specific fair.
+fairid | numeric | false | | If set returns exhibitors from a specific fair.
 
 
 ## Get Exhibitor
 ```shell
-curl "{baseurl}/exhibitors/{exhibitor_id}" \
+curl "{baseurl}/exhibitors/{exhibitorid}" \
   -H "x-api-key: {API-Key}" \
   -X GET \
 ```
@@ -86,7 +86,7 @@ curl "{baseurl}/exhibitors/{exhibitor_id}" \
     "address_verified": false,
     "lock": false,
     "remarks": "",
-    "exhibitor_id": 3216,
+    "exhibitorid": 3216,
     "street": "2 Seacombe St",
     "email": "keneth_stpierrie@hotmail.com",
     "vat_identification_number": "",
@@ -105,13 +105,13 @@ This endpoint retrieves a specific exhibitor.
 
 ### HTTP Request
 
-`GET {baseurl}/exhibitors/{exhibitor_id}`
+`GET {baseurl}/exhibitors/{exhibitorid}`
 
 ### Query Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-exhibitor_id | Integer | true | | defines the exhibitor.
+exhibitorid | numeric | true | | defines the exhibitor.
 
 ## Create an Exhibitor
 ```shell
@@ -149,7 +149,7 @@ curl "{baseurl}/exhibitors/" \
 ```json
 {
     "error": false,
-	"exhibitor_id": 1337
+	"exhibitorid": 1337
 }
 ```
 
@@ -163,7 +163,7 @@ This endpoint creates an exhibitor.
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-external_id | string | false | | ID from a external source (for Mapping)
+external_id | string | false | | ID from a external source
 company | string | false | | Name of the Company
 sorttitle | string | false | | Sorttitle for ProFairs
 street | string | false | | Street of the Company
@@ -187,7 +187,7 @@ newsletter | boolean | false | | Can the Exhibitor recive Newsletter
 
 ## Delete an Exhibitor
 ```shell
-curl "{baseurl}/exhibitors/{exhibitor_id}" \
+curl "{baseurl}/exhibitors/{exhibitorid}" \
   -H "x-api-key: {API-Key}" \
   -X DELETE
 ```
@@ -197,7 +197,7 @@ curl "{baseurl}/exhibitors/{exhibitor_id}" \
 ```json
 {
     "error": false,
-	"exhibitor_id": 1337
+	"exhibitorid": 1337
 }
 ```
 
@@ -205,20 +205,20 @@ This endpoint deletes an exhibitor.
 
 ### HTTP Request
 
-`DELETE {baseurl}/exhibitors/{exhibitor_id}`
+`DELETE {baseurl}/exhibitors/{exhibitorid}`
 
 ### Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-exhibitor_id | numeric | true | | ID of the exhibitor to be deleted
+exhibitorid | numeric | true | | ID of the exhibitor to be deleted
 forum_sync | boolean | true | false | If the Forum Sync feature is used, this must be noted in the call
 external | boolean | true | false | Decide whether to use the ProFairs ID or the External ID
 
 ## Update an Exhibitor
 
 ```shell
-curl "{baseurl}/exhibitors/{exhibitor_id}" \
+curl "{baseurl}/exhibitors/{exhibitorid}" \
   -H "x-api-key: {API-Key}" \
   -H "Content-Type: application/json" \
   -X PUT \
@@ -251,7 +251,7 @@ curl "{baseurl}/exhibitors/{exhibitor_id}" \
 ```json
 {
     "error": false,
-	"exhibitor_id": 1337
+	"exhibitorid": 1337
 }
 ```
 
@@ -259,13 +259,13 @@ This endpoint updates an exhibitor.
 
 ### HTTP Request
 
-`PUT {baseurl}/exhibitors/{exhibitor_id}`
+`PUT {baseurl}/exhibitors/{exhibitorid}`
 
 ### Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-exhibitor_id | integer | true | | ID from the Exhibitor
+exhibitorid | numeric | true | | ID from the Exhibitor
 external_id | string | false | | ID from a external source (for Mapping)
 company | string | false | | Name of the Company
 sorttitle | string | false | | Sorttitle for ProFairs
