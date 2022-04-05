@@ -37,40 +37,13 @@ curl --location --request GET '{baseurl}/fair_types/' \
 
 `GET {baseurl}/fair_types/`
 
-## Get fair type
-
-```shell
-curl --location --request GET '{baseurl}/fair_types/{fairtypeid}/' \
---header 'X-API-Key: {API-Key}'
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-    "fair_types": [
-        {
-            "telephone": "+49 12345 6789",
-            "fairtypeid": 1,
-            "redirect_error": "http://",
-            "contactid": "",
-            "fair_type": "MyEvent",
-            "redirect": "http://"
-        }
-    ],
-    "error": false
-}
-```
-
-### HTTP request
-
-`GET {baseurl}/fair_types/{fairtypeid}`
-
-### URL Parameters
+### Query Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-fairtypeid | numeric | true |
+fairid | numeric | false |
+fair_type_id | numeric | false |
+not_fair_type_id | numeric | false |
 
 ## Create new fair type
 

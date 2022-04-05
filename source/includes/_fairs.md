@@ -11,35 +11,29 @@ curl --location --request GET '{baseurl}/fairs/' \
 
 ```json
 {
-  "fairs": [
-    {
-        "location": "",
-        "telephone": "",
-        "fair": "DemoFair2019",
-        "date_from": "2019-10-15 12:00:00",
-        "fairid": 8,
-        "fair_type_id": 4,
-        "shop_closes": "2019-10-10 10:00:00",
-        "shop_no_cancellations": "2019-10-05 10:00:00",
-        "email": "john.doe@domain.de",
-        "contact_person_id": "",
-        "date_to": "2019-10-16 12:00:00",
-    },
-    {
-        "location": "",
-        "telephone": "",
-        "fair": "DemoFair2021",
-        "date_from": "2021-08-27 17:00:00",
-        "fairid": 18,
-        "fair_type_id": 4,
-        "shop_closes": "2021-08-20 17:00:00",
-        "shop_no_cancellations": "2021-08-10 17:00:00",
-        "email": "john.doe@domain.de",
-        "contact_person_id": "",
-        "date_to": "2021-08-29 17:00:00"
-    }
-  ],
-  "error": false
+    "fairs": [
+        {
+            "location": "",
+            "fair": "Karrieremesse 2022",
+            "date_from": "2023-11-30 12:00:00",
+            "fairid": 2,
+            "fair_type_id": 2,
+            "shop_closes": "2023-04-30 12:00:00",
+            "shop_no_cancellations": "2023-04-26 12:00:00",
+            "date_to": "2023-11-30 12:00:00"
+        },
+        {
+            "location": "Mittelerde",
+            "fair": "Demofair 2022",
+            "date_from": "2022-11-08 12:00:00",
+            "fairid": 1,
+            "fair_type_id": 1,
+            "shop_closes": "2022-03-31 12:00:00",
+            "shop_no_cancellations": "2022-03-16 12:00:00",
+            "date_to": "2022-11-10 12:00:00"
+        }
+    ],
+    "error": false
 }
 ```
 
@@ -51,9 +45,6 @@ curl --location --request GET '{baseurl}/fairs/' \
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-logo | boolean | true | false  |
-motion | boolean | true | false  |
-order | boolean | true | false  |
 fairtypeid | numeric | false |   |
 showLocked | boolean | true | true  |
 
@@ -71,18 +62,15 @@ curl --location --request GET '{baseurl}/fairs/{fairid}' \
 {
     "fairs": [
         {
-          "location": "",
-          "telephone": "",
-          "fair": "DemoFair2019",
-          "date_from": "2019-10-15 12:00:00",
-          "fairid": 8,
-          "fair_type_id": 4,
-          "shop_closes": "2019-10-10 10:00:00",
-          "shop_no_cancellations": "2019-10-05 10:00:00",
-          "email": "john.doe@domain.de",
-          "contact_person_id": "",
-          "date_to": "2019-10-16 12:00:00",
-      }
+            "location": "",
+            "fair": "Karrieremesse 2022",
+            "date_from": "2023-11-30 12:00:00",
+            "fairid": 2,
+            "fair_type_id": 2,
+            "shop_closes": "2023-04-30 12:00:00",
+            "shop_no_cancellations": "2023-04-26 12:00:00",
+            "date_to": "2023-11-30 12:00:00"
+        }
     ],
     "error": false
 }
