@@ -54,6 +54,9 @@ Parameter | Type | required | Default | Description
 logo | boolean | true | false  |
 motion | boolean | true | false  |
 order | boolean | true | false  |
+fairtypeid | numeric | false |   |
+showLocked | boolean | true | true  |
+
 
 ## Get fair
 
