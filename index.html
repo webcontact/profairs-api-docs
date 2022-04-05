@@ -425,6 +425,40 @@
               </ul>
           </li>
           <li>
+            <a href="#shop-orders" class="toc-h1 toc-link" data-title="Shop orders">Shop orders</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-orders" class="toc-h2 toc-link" data-title="Get orders">Get orders</a>
+                  </li>
+                  <li>
+                    <a href="#get-order" class="toc-h2 toc-link" data-title="Get order">Get order</a>
+                  </li>
+                  <li>
+                    <a href="#create-order" class="toc-h2 toc-link" data-title="Create order">Create order</a>
+                  </li>
+                  <li>
+                    <a href="#update-order" class="toc-h2 toc-link" data-title="Update order">Update order</a>
+                  </li>
+                  <li>
+                    <a href="#delete-order" class="toc-h2 toc-link" data-title="Delete order">Delete order</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#shop-discounts" class="toc-h1 toc-link" data-title="Shop discounts">Shop discounts</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-orders-2" class="toc-h2 toc-link" data-title="Get orders">Get orders</a>
+                  </li>
+                  <li>
+                    <a href="#create-discount" class="toc-h2 toc-link" data-title="Create discount">Create discount</a>
+                  </li>
+                  <li>
+                    <a href="#delete-order-2" class="toc-h2 toc-link" data-title="Delete order">Delete order</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#exhibitors" class="toc-h1 toc-link" data-title="Exhibitors">Exhibitors</a>
               <ul class="toc-list-h2">
                   <li>
@@ -782,7 +816,7 @@ ID | The ID of the kitten to delete -->
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request'>HTTP request</h3>
 <p><code>GET {baseurl}/fair_types/</code></p>
-<h2 id='get-fair-type'>Get fair type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/fair_types/1/'</span> <span class="se">\</span>
+<h2 id='get-fair-type'>Get fair type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/fair_types/{fairtypeid}/'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span>
 </code></pre></div>
 <blockquote>
@@ -1481,7 +1515,7 @@ ID | The ID of the kitten to delete -->
             </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="nl">"booth-specific"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
             </span><span class="nl">"categoryid"</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"remarks"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="nl">"article_typ_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
             </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="nl">"upload"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
@@ -1497,7 +1531,7 @@ ID | The ID of the kitten to delete -->
             </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="nl">"booth-specific"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="nl">"categoryid"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"remarks"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="nl">"article_typ_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
             </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="nl">"upload"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
@@ -1628,7 +1662,7 @@ ID | The ID of the kitten to delete -->
             </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="nl">"booth-specific"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="nl">"categoryid"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"remarks"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="nl">"article_typ_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
             </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="nl">"upload"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
@@ -1641,7 +1675,7 @@ ID | The ID of the kitten to delete -->
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-2'>HTTP request</h3>
-<p><code>GET {baseurl}/shop/items/{item_id}</code></p>
+<p><code>GET {baseurl}/shop/items/{itemid}</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1653,7 +1687,7 @@ ID | The ID of the kitten to delete -->
 </tr>
 </thead><tbody>
 <tr>
-<td>item_id</td>
+<td>itemid</td>
 <td>string</td>
 <td>true</td>
 <td></td>
@@ -2020,7 +2054,7 @@ ID | The ID of the kitten to delete -->
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-4'>HTTP request</h3>
-<p><code>PUT {baseurl}/shop/items/{item_id}</code></p>
+<p><code>PUT {baseurl}/shop/items/{itemid}</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2298,7 +2332,7 @@ ID | The ID of the kitten to delete -->
     </span><span class="nl">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-6'>HTTP request</h3>
-<p><code>DELETE {baseurl}/shop/items/{item_id}</code></p>
+<p><code>DELETE {baseurl}/shop/items/{itemid}</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2414,7 +2448,7 @@ ID | The ID of the kitten to delete -->
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-8'>HTTP request</h3>
-<p><code>GET {baseurl}/shop/categories/{categorie_id}</code></p>
+<p><code>GET {baseurl}/shop/categories/{categoryid}</code></p>
 <h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2855,7 +2889,7 @@ ID | The ID of the kitten to delete -->
 </tr>
 </thead><tbody>
 <tr>
-<td>item_id</td>
+<td>itemid</td>
 <td>numeric</td>
 <td>true</td>
 <td></td>
@@ -3199,6 +3233,539 @@ ID | The ID of the kitten to delete -->
 <th>Description</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>variantid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id='shop-orders'>Shop orders</h1><h2 id='get-orders'>Get orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/shop/orders/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"orderid"</span><span class="p">:</span><span class="w"> </span><span class="mi">2674</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"variantid"</span><span class="p">:</span><span class="w"> </span><span class="mi">661</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"canceled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"labelid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"remarks"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shippingdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"March, 28 2022 00:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boothid"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"exhibitorfairid"</span><span class="p">:</span><span class="w"> </span><span class="mi">2604</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"orderid"</span><span class="p">:</span><span class="w"> </span><span class="mi">2670</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"variantid"</span><span class="p">:</span><span class="w"> </span><span class="mi">74</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"canceled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"labelid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"remarks"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CatchAllGutschein-Bestellung"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shippingdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"March, 11 2022 00:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boothid"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"exhibitorfairid"</span><span class="p">:</span><span class="w"> </span><span class="mi">751</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-18'>HTTP request</h3>
+<p><code>GET {baseurl}/shop/orders/</code></p>
+<h3 id='query-parameters-7'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>language</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>order</td>
+<td>boolean</td>
+<td>true</td>
+<td>true</td>
+<td>Sorts the orders by the modification date</td>
+</tr>
+<tr>
+<td>notType</td>
+<td>list</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fairid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>usergroupid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='get-order'>Get order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/shop/orders/{orderid}/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"orderid"</span><span class="p">:</span><span class="w"> </span><span class="mi">2674</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"variantid"</span><span class="p">:</span><span class="w"> </span><span class="mi">661</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"canceled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"labelid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"remarks"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shippingdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"March, 28 2022 00:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boothid"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"exhibitorfairid"</span><span class="p">:</span><span class="w"> </span><span class="mi">2604</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-19'>HTTP request</h3>
+<p><code>GET {baseurl}/shop/orders/{orderid}</code></p>
+<h3 id='url-parameters-10'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters-8'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>language</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>order</td>
+<td>boolean</td>
+<td>true</td>
+<td>true</td>
+<td>Sorts the orders by the modification date</td>
+</tr>
+<tr>
+<td>notType</td>
+<td>list</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fairid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>usergroupid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='create-order'>Create order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/shop/orders/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-KEY: {API-Key}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+    "variantid": 1337,
+    "amount": 10,
+    "price": "199.00",
+    "exhibitorfairid": 2900,
+    "boothid": 1337,
+    "remarks": "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum ",
+    "shippingdate": "2022-03-17 14:00:00",
+    "canceled": 0
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2677"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-20'>HTTP request</h3>
+<p><code>POST {baseurl}/shop/orders/</code></p>
+<h3 id='parameters-9'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>variantid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>price</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>exhibitorfairid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>boothid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>remarks</td>
+<td>String</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>shippingdate</td>
+<td>Date</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>unhide</td>
+<td>boolean</td>
+<td>true</td>
+<td>true</td>
+<td>The order will be shown in the exhibitor area</td>
+</tr>
+<tr>
+<td>canceled</td>
+<td>boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='update-order'>Update order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> PUT <span class="s1">'{baseurl}/shop/orders/{orderid}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-KEY: {API-Key}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+    "amount": 5,
+    "price": 1000,
+    "boothid": 7331,
+    "remarks": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna",
+    "shippingdate": "2022-03-17 17:30:00",
+    "unhide": false,
+    "canceled": 0
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2675"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-21'>HTTP request</h3>
+<p><code>PUT {baseurl}/shop/orders/</code></p>
+<h3 id='url-parameters-11'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='parameters-10'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>amount</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>price</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>boothid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>remarks</td>
+<td>String</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>shippingdate</td>
+<td>Date</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>unhide</td>
+<td>boolean</td>
+<td>false</td>
+<td></td>
+<td>The order will be shown in the exhibitor area</td>
+</tr>
+<tr>
+<td>canceled</td>
+<td>boolean</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='delete-order'>Delete order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/shop/orders/{orderid}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-KEY: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2676"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-22'>HTTP request</h3>
+<p><code>DELETE {baseurl}/shop/orders/{orderid}</code></p>
+<h3 id='url-parameters-12'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id='shop-discounts'>Shop discounts</h1><h2 id='get-orders-2'>Get orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/shop/discounts/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"discount"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"exhibitorgroupid"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"variantid"</span><span class="p">:</span><span class="w"> </span><span class="mi">321</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"exhibitorgroupid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1337</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"variantid"</span><span class="p">:</span><span class="w"> </span><span class="mi">7331</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-23'>HTTP request</h3>
+<p><code>GET {baseurl}/shop/discounts/</code></p>
+<h3 id='query-parameters-9'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>exhibitorgroupid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>variantid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='create-discount'>Create discount</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/shop/discounts/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\\</span>
+
+<span class="nt">--data-raw</span> <span class="s1">'{
+    "exhibitorgroupid": "1337",
+    "variantid": "7331",
+    "discount": "100"
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-24'>HTTP request</h3>
+<p><code>POST {baseurl}/shop/discounts/</code></p>
+<h3 id='parameters-11'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>variantid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>exhibitorgroupid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>discount</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='delete-order-2'>Delete order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/shop/discounts/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-KEY: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-25'>HTTP request</h3>
+<p><code>DELETE {baseurl}/shop/discounts/</code></p>
+<h3 id='query-parameters-10'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>exhibitorgroupid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
 <tr>
 <td>variantid</td>
 <td>numeric</td>
@@ -3835,7 +4402,7 @@ ID | The ID of the kitten to delete -->
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request'>HTTP request</h3>
 <p><code>GET {baseurl}/contacts/</code></p>
-<h2 id='retreive-contact'>Retreive contact</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/contacts/1'</span> <span class="se">\</span>
+<h2 id='retreive-contact'>Retreive contact</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/contacts/{contactid}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span>
 </code></pre></div>
@@ -3888,7 +4455,9 @@ ID | The ID of the kitten to delete -->
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='create-contact-person'>Create contact person</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/contacts/'</span> <span class="se">\</span>
+<h2 id='create-contact-person'>Create contact person</h2><h3 id='http-request-3'>HTTP request</h3>
+<p><code>POST {baseurl}/contacts/</code></p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/contacts/'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
 <span class="nt">--data-raw</span> <span class="s1">'{
@@ -4070,7 +4639,7 @@ ID | The ID of the kitten to delete -->
     </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nl">"contactid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2838"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='http-request-3'>HTTP request</h3>
+</span></code></pre></div><h3 id='http-request-4'>HTTP request</h3>
 <p><code>POST {baseurl}/contactpersons/upload/</code></p>
 <h3 id='parameters-2'>Parameters</h3>
 <table><thead>
@@ -4142,7 +4711,7 @@ ID | The ID of the kitten to delete -->
     </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nl">"contactid"</span><span class="p">:</span><span class="w"> </span><span class="mi">2838</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='http-request-4'>HTTP request</h3>
+</span></code></pre></div><h3 id='http-request-5'>HTTP request</h3>
 <p><code>PUT {baseurl}/contactpersons/{contactid}/</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
@@ -4309,7 +4878,7 @@ ID | The ID of the kitten to delete -->
     </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nl">"contactid"</span><span class="p">:</span><span class="w"> </span><span class="mi">2838</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='http-request-5'>HTTP request</h3>
+</span></code></pre></div><h3 id='http-request-6'>HTTP request</h3>
 <p><code>DELETE {baseurl}/contactperson/{contactid}/</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
