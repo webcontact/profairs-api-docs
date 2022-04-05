@@ -945,7 +945,7 @@ curl --location --request GET '{baseurl}/shop/orders/' \
 | ------------------- | ------- | -------- | ------- | ------------------------------------------ |
 | language            | string  | true     |         |                                            |
 | order               | boolean | true     | true    | Sorts the orders by the modification date  |
-| notType             | list    | false    |         |                                            |
+| hideVouchers        | boolean | false    |         | Removes all ordered vouchers               |
 | fairid              | numeric | false    |         |                                            |
 | usergroupid         | numeric | false    |         |                                            |
 
@@ -994,7 +994,7 @@ curl --location --request GET '{baseurl}/shop/orders/{orderid}/' \
 | ------------------- | ------- | -------- | ------- | ------------------------------------------ |
 | language            | string  | true     |         |                                            |
 | order               | boolean | true     | true    | Sorts the orders by the modification date  |
-| notType             | list    | false    |         |                                            |
+| hideVouchers        | boolean | false    |         | Removes all ordered vouchers               |
 | fairid              | numeric | false    |         |                                            |
 | usergroupid         | numeric | false    |         |                                            |
 
@@ -1118,7 +1118,7 @@ curl --location --request DELETE '{baseurl}/shop/orders/{orderid}' \
 # Shop discounts
 
 
-## Get orders
+## Get discount
 
 ```shell
 curl --location --request GET '{baseurl}/shop/discounts/' \
