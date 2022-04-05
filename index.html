@@ -448,7 +448,7 @@
             <a href="#shop-discounts" class="toc-h1 toc-link" data-title="Shop discounts">Shop discounts</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-orders-2" class="toc-h2 toc-link" data-title="Get orders">Get orders</a>
+                    <a href="#get-discount" class="toc-h2 toc-link" data-title="Get discount">Get discount</a>
                   </li>
                   <li>
                     <a href="#create-discount" class="toc-h2 toc-link" data-title="Create discount">Create discount</a>
@@ -3303,11 +3303,11 @@ ID | The ID of the kitten to delete -->
 <td>Sorts the orders by the modification date</td>
 </tr>
 <tr>
-<td>notType</td>
-<td>list</td>
+<td>hideVouchers</td>
+<td>boolean</td>
 <td>false</td>
 <td></td>
-<td></td>
+<td>Removes all ordered vouchers</td>
 </tr>
 <tr>
 <td>fairid</td>
@@ -3392,11 +3392,11 @@ ID | The ID of the kitten to delete -->
 <td>Sorts the orders by the modification date</td>
 </tr>
 <tr>
-<td>notType</td>
-<td>list</td>
+<td>hideVouchers</td>
+<td>boolean</td>
 <td>false</td>
 <td></td>
-<td></td>
+<td>Removes all ordered vouchers</td>
 </tr>
 <tr>
 <td>fairid</td>
@@ -3640,7 +3640,7 @@ ID | The ID of the kitten to delete -->
 <td></td>
 </tr>
 </tbody></table>
-<h1 id='shop-discounts'>Shop discounts</h1><h2 id='get-orders-2'>Get orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/shop/discounts/'</span> <span class="se">\</span>
+<h1 id='shop-discounts'>Shop discounts</h1><h2 id='get-discount'>Get discount</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/shop/discounts/'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
 </code></pre></div>
 <blockquote>
