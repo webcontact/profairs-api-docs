@@ -19,7 +19,7 @@ curl --location --request GET '{baseurl}/shop/items' \
             "unit": "",
             "booth-specific": true,
             "categoryid": 39,
-            "comment": "",
+            "remarks": "",
             "article_typ_id": 1,
             "description": "",
             "upload": false,
@@ -35,7 +35,7 @@ curl --location --request GET '{baseurl}/shop/items' \
             "unit": "",
             "booth-specific": false,
             "categoryid": 80,
-            "comment": "",
+            "remarks": "",
             "article_typ_id": 1,
             "description": "",
             "upload": false,
@@ -90,7 +90,7 @@ curl --location --request GET '{baseurl}/shop/items/{itemid}' \
             "unit": "",
             "booth-specific": false,
             "categoryid": 14,
-            "comment": "",
+            "remarks": "",
             "article_typ_id": 4,
             "description": "",
             "upload": false,
@@ -889,4 +889,328 @@ curl --location --request DELETE '{baseurl}/shop/variants/{variantid}' \
 
 | Parameter  | Type    | required | Default | Description |
 | ---------- | ------- | -------- | ------- | ----------- |
+| variantid | numeric | true     |         |
+
+
+# Shop orders
+
+## Get orders
+
+```shell
+curl --location --request GET '{baseurl}/shop/orders/' \
+--header 'X-API-Key: {API-Key}' \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "orders": [
+        {
+            "orderid": 2674,
+            "variantid": 661,
+            "price": 0.0,
+            "amount": 20.0,
+            "canceled": false,
+            "labelid": "",
+            "remarks": "",
+            "shippingdate": "March, 28 2022 00:00:00",
+            "boothid": 0,
+            "exhibitorfairid": 2604
+        },
+        {
+            "orderid": 2670,
+            "variantid": 74,
+            "price": 0.0,
+            "amount": 1.0,
+            "canceled": false,
+            "labelid": "",
+            "remarks": "CatchAllGutschein-Bestellung",
+            "shippingdate": "March, 11 2022 00:00:00",
+            "boothid": 0,
+            "exhibitorfairid": 751
+        }
+    ],
+    "error": false
+}
+```
+
+### HTTP request
+
+`GET {baseurl}/shop/orders/`
+
+### Query Parameters
+
+| Parameter           | Type    | required | Default | Description                                |
+| ------------------- | ------- | -------- | ------- | ------------------------------------------ |
+| language            | string  | true     |         |                                            |
+| order               | boolean | true     | true    | Sorts the orders by the modification date  |
+| notType             | list    | false    |         |                                            |
+| fairid              | numeric | false    |         |                                            |
+| usergroupid         | numeric | false    |         |                                            |
+
+## Get order
+
+```shell
+curl --location --request GET '{baseurl}/shop/orders/{orderid}/' \
+--header 'X-API-Key: {API-Key}' \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "orders": [
+        {
+            "orderid": 2674,
+            "variantid": 661,
+            "price": 0.0,
+            "amount": 20.0,
+            "canceled": false,
+            "labelid": "",
+            "remarks": "",
+            "shippingdate": "March, 28 2022 00:00:00",
+            "boothid": 0,
+            "exhibitorfairid": 2604
+        }
+    ],
+    "error": false
+}
+```
+
+### HTTP request
+
+`GET {baseurl}/shop/orders/{orderid}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description                                |
+| ------------------- | ------- | -------- | ------- | ------------------------------------------ |
+| orderid             | numeric | true     |         |                                            |
+
+### Query Parameters
+
+| Parameter           | Type    | required | Default | Description                                |
+| ------------------- | ------- | -------- | ------- | ------------------------------------------ |
+| language            | string  | true     |         |                                            |
+| order               | boolean | true     | true    | Sorts the orders by the modification date  |
+| notType             | list    | false    |         |                                            |
+| fairid              | numeric | false    |         |                                            |
+| usergroupid         | numeric | false    |         |                                            |
+
+## Create order
+
+```shell
+curl --location --request POST '{baseurl}/shop/orders/' \
+--header 'X-API-KEY: {API-Key}' \
+--header 'Content-Type: application/json' \\
+--data-raw '{
+    "variantid": 1337,
+    "amount": 10,
+    "price": "199.00",
+    "exhibitorfairid": 2900,
+    "boothid": 1337,
+    "remarks": "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum ",
+    "shippingdate": "2022-03-17 14:00:00",
+    "canceled": 0
+}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "orderid": "2677",
+    "error": false
+}
+```
+
+### HTTP request
+
+`POST {baseurl}/shop/orders/`
+
+### Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| variantid           | numeric | true     |         |             |
+| amount              | numeric | true     |         |             |
+| price               | numeric | true     |         |             |
+| exhibitorfairid     | numeric | true     |         |             |
+| boothid             | numeric | false    |         |             |
+| remarks             | String  | false    |         |             |
+| shippingdate        | Date    | false    |         |             |
+| unhide              | boolean | true     | true    | The order will be shown in the exhibitor area |
+| canceled            | boolean | true     | false   |             |
+
+## Update order
+
+```shell
+curl --location --request PUT '{baseurl}/shop/orders/{orderid}' \
+--header 'X-API-KEY: {API-Key}' \
+--header 'Content-Type: application/json' \\
+--data-raw '{
+    "amount": 5,
+    "price": 1000,
+    "boothid": 7331,
+    "remarks": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna",
+    "shippingdate": "2022-03-17 17:30:00",
+    "unhide": false,
+    "canceled": 0
+}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "orderid": "2675",
+    "error": false
+}
+```
+
+### HTTP request
+
+`PUT {baseurl}/shop/orders/`
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description                                |
+| ------------------- | ------- | -------- | ------- | ------------------------------------------ |
+| orderid             | numeric | true     |         |                                            |
+
+### Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| amount              | numeric | false    |         |             |
+| price               | numeric | false    |         |             |
+| boothid             | numeric | false    |         |             |
+| remarks             | String  | false    |         |             |
+| shippingdate        | Date    | false    |         |             |
+| unhide              | boolean | false    |         | The order will be shown in the exhibitor area |
+| canceled            | boolean | false    |         |             |
+
+## Delete order
+```shell
+curl --location --request DELETE '{baseurl}/shop/orders/{orderid}' \
+--header 'X-API-KEY: {API-Key}' \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "orderid": "2676",
+    "error": false
+}
+```
+### HTTP request
+
+`DELETE {baseurl}/shop/orders/{orderid}`
+
+
+### URL Parameters
+
+| Parameter  | Type    | required | Default | Description |
+| ---------- | ------- | -------- | ------- | ----------- |
+| orderid | numeric | true     |         |
+
+# Shop discounts
+
+
+## Get orders
+
+```shell
+curl --location --request GET '{baseurl}/shop/discounts/' \
+--header 'X-API-Key: {API-Key}' \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "error": false,
+    "discount": [
+        {
+            "exhibitorgroupid": 123,
+            "variantid": 321,
+            "discount": 50
+        },
+        {
+            "exhibitorgroupid": 1337,
+            "variantid": 7331,
+            "discount": 100
+        }
+    ]
+}
+```
+
+### HTTP request
+
+`GET {baseurl}/shop/discounts/`
+
+### Query Parameters
+
+| Parameter           | Type    | required | Default | Description                                |
+| ------------------- | ------- | -------- | ------- | ------------------------------------------ |
+| exhibitorgroupid    | numeric | true     |         |                                            |
+| variantid           | numeric | true     |         |                                            |
+
+## Create discount
+
+```shell
+curl --location --request POST '{baseurl}/shop/discounts/' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json' \\
+
+--data-raw '{
+    "exhibitorgroupid": "1337",
+    "variantid": "7331",
+    "discount": "100"
+}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "error": false
+}
+```
+
+### HTTP request
+
+`POST {baseurl}/shop/discounts/`
+
+### Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| variantid           | numeric | true     |         |             |
+| exhibitorgroupid    | numeric | true     |         |             |
+| discount            | numeric | true     |         |             |
+
+## Delete order
+```shell
+curl --location --request DELETE '{baseurl}/shop/discounts/' \
+--header 'X-API-KEY: {API-Key}' \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "error": false
+}
+```
+### HTTP request
+
+`DELETE {baseurl}/shop/discounts/`
+
+
+### Query Parameters
+
+| Parameter  | Type    | required | Default | Description |
+| ---------- | ------- | -------- | ------- | ----------- |
+| exhibitorgroupid | numeric | true     |         |
 | variantid | numeric | true     |         |
