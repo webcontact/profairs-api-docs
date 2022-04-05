@@ -322,9 +322,6 @@
                     <a href="#get-fair-types" class="toc-h2 toc-link" data-title="Get fair types">Get fair types</a>
                   </li>
                   <li>
-                    <a href="#get-fair-type" class="toc-h2 toc-link" data-title="Get fair type">Get fair type</a>
-                  </li>
-                  <li>
                     <a href="#create-new-fair-type" class="toc-h2 toc-link" data-title="Create new fair type">Create new fair type</a>
                   </li>
                   <li>
@@ -816,28 +813,7 @@ ID | The ID of the kitten to delete -->
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request'>HTTP request</h3>
 <p><code>GET {baseurl}/fair_types/</code></p>
-<h2 id='get-fair-type'>Get fair type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/fair_types/{fairtypeid}/'</span> <span class="se">\</span>
-<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"fair_types"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+49 12345 6789"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"fairtypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"redirect_error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"contactid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"fair_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MyEvent"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"redirect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='http-request-2'>HTTP request</h3>
-<p><code>GET {baseurl}/fair_types/{fairtypeid}</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
+<h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -848,9 +824,23 @@ ID | The ID of the kitten to delete -->
 </tr>
 </thead><tbody>
 <tr>
-<td>fairtypeid</td>
+<td>fairid</td>
 <td>numeric</td>
-<td>true</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fair_type_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>not_fair_type_id</td>
+<td>numeric</td>
+<td>false</td>
 <td></td>
 <td></td>
 </tr>
@@ -874,7 +864,7 @@ ID | The ID of the kitten to delete -->
     </span><span class="nl">"fairtypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
     </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='http-request-3'>HTTP request</h3>
+</span></code></pre></div><h3 id='http-request-2'>HTTP request</h3>
 <p><code>POST {baseurl}/fair_types/</code></p>
 <h3 id='parameters'>Parameters</h3>
 <table><thead>
@@ -948,9 +938,9 @@ ID | The ID of the kitten to delete -->
     </span><span class="nl">"fairtypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
     </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='http-request-4'>HTTP request</h3>
+</span></code></pre></div><h3 id='http-request-3'>HTTP request</h3>
 <p><code>PUT {baseurl}/fair_types/{fairtypeid}</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1032,9 +1022,9 @@ ID | The ID of the kitten to delete -->
     </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nl">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='http-request-5'>HTTP request</h3>
+</span></code></pre></div><h3 id='http-request-4'>HTTP request</h3>
 <p><code>DELETE {baseurl}/fair_types/{fairtypeid}</code></p>
-<h3 id='url-parameters-3'>URL Parameters</h3>
+<h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1059,35 +1049,29 @@ ID | The ID of the kitten to delete -->
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"fairs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"fair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DemoFair2019"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"date_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-15 12:00:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"fairid"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"fair_type_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"shop_closes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-10 10:00:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"shop_no_cancellations"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-05 10:00:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@domain.de"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"contact_person_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"date_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-16 12:00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"fair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DemoFair2021"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"date_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-08-27 17:00:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"fairid"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"fair_type_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"shop_closes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-08-20 17:00:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"shop_no_cancellations"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-08-10 17:00:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@domain.de"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"contact_person_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"date_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-08-29 17:00:00"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="nl">"fairs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Karrieremesse 2022"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"date_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-11-30 12:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fairid"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fair_type_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shop_closes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-30 12:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shop_no_cancellations"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-26 12:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"date_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-11-30 12:00:00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mittelerde"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Demofair 2022"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"date_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-08 12:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fairid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fair_type_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shop_closes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-03-31 12:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shop_no_cancellations"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-03-16 12:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"date_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-10 12:00:00"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request'>HTTP request</h3>
 <p><code>GET {baseurl}/fairs/</code></p>
@@ -1101,27 +1085,6 @@ ID | The ID of the kitten to delete -->
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>logo</td>
-<td>boolean</td>
-<td>true</td>
-<td>false</td>
-<td></td>
-</tr>
-<tr>
-<td>motion</td>
-<td>boolean</td>
-<td>true</td>
-<td>false</td>
-<td></td>
-</tr>
-<tr>
-<td>order</td>
-<td>boolean</td>
-<td>true</td>
-<td>false</td>
-<td></td>
-</tr>
 <tr>
 <td>fairtypeid</td>
 <td>numeric</td>
@@ -1146,18 +1109,15 @@ ID | The ID of the kitten to delete -->
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"fairs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"fair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DemoFair2019"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"date_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-15 12:00:00"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"fairid"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"fair_type_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"shop_closes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-10 10:00:00"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"shop_no_cancellations"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-05 10:00:00"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@domain.de"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"contact_person_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"date_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-16 12:00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+            </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Karrieremesse 2022"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"date_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-11-30 12:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fairid"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fair_type_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shop_closes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-30 12:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shop_no_cancellations"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-26 12:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"date_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-11-30 12:00:00"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
