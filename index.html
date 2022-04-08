@@ -316,6 +316,77 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
+            <a href="#acquisition" class="toc-h1 toc-link" data-title="Acquisition">Acquisition</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-acquisition" class="toc-h2 toc-link" data-title="Get acquisition">Get acquisition</a>
+                  </li>
+                  <li>
+                    <a href="#get-acquisition-by-id" class="toc-h2 toc-link" data-title="Get acquisition by ID">Get acquisition by ID</a>
+                  </li>
+                  <li>
+                    <a href="#set-acquisition" class="toc-h2 toc-link" data-title="Set acquisition">Set acquisition</a>
+                  </li>
+                  <li>
+                    <a href="#update-acquisition" class="toc-h2 toc-link" data-title="Update acquisition">Update acquisition</a>
+                  </li>
+                  <li>
+                    <a href="#delete-acquisition" class="toc-h2 toc-link" data-title="Delete acquisition">Delete acquisition</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#interested-exhibitors" class="toc-h1 toc-link" data-title="Interested exhibitors">Interested exhibitors</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-interested-exhibitors" class="toc-h2 toc-link" data-title="Get interested exhibitors">Get interested exhibitors</a>
+                  </li>
+                  <li>
+                    <a href="#get-interested-exhibitor" class="toc-h2 toc-link" data-title="Get interested exhibitor">Get interested exhibitor</a>
+                  </li>
+                  <li>
+                    <a href="#set-interested-exhibitor" class="toc-h2 toc-link" data-title="Set interested exhibitor">Set interested exhibitor</a>
+                  </li>
+                  <li>
+                    <a href="#delete-interested-exhibitor" class="toc-h2 toc-link" data-title="Delete interested exhibitor">Delete interested exhibitor</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#texts" class="toc-h1 toc-link" data-title="Texts">Texts</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-text-categories" class="toc-h2 toc-link" data-title="Get text categories">Get text categories</a>
+                  </li>
+                  <li>
+                    <a href="#get-texts" class="toc-h2 toc-link" data-title="Get texts">Get texts</a>
+                  </li>
+                  <li>
+                    <a href="#set-text" class="toc-h2 toc-link" data-title="Set text">Set text</a>
+                  </li>
+                  <li>
+                    <a href="#update-text" class="toc-h2 toc-link" data-title="Update text">Update text</a>
+                  </li>
+                  <li>
+                    <a href="#delete-text" class="toc-h2 toc-link" data-title="Delete text">Delete text</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#newsletter" class="toc-h1 toc-link" data-title="Newsletter">Newsletter</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-newsletter" class="toc-h2 toc-link" data-title="Get newsletter">Get newsletter</a>
+                  </li>
+                  <li>
+                    <a href="#set-newsletter" class="toc-h2 toc-link" data-title="Set newsletter">Set newsletter</a>
+                  </li>
+                  <li>
+                    <a href="#delete-newsletter" class="toc-h2 toc-link" data-title="Delete newsletter">Delete newsletter</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#fair-types" class="toc-h1 toc-link" data-title="Fair types">Fair types</a>
               <ul class="toc-list-h2">
                   <li>
@@ -784,6 +855,1073 @@ This endpoint deletes a specific kitten.
 Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to delete -->
+<h1 id='acquisition'>Acquisition</h1><h2 id='get-acquisition'>Get acquisition</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/acquisition'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-KEY: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"acquisition"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"September, 09 2021 00:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"contact_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"contact_person"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2823"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"interested_exhibitor_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"is_followup"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"August, 30 2021 00:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"contact_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wir versuchen es auf jeden Fall, das Unternehmen zur Teilnahme zu bewegen."</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"contact_person"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2823"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"interested_exhibitor_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"is_followup"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request'>HTTP request</h3>
+<p><code>GET {baseurl}/acquisition/</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fairid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='get-acquisition-by-id'>Get acquisition by ID</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/acquisition/{acquisitionid}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-KEY: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"acquisition"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"September, 09 2021 00:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"contact_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"contact_person"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2823"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"interested_exhibitor_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"is_followup"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-2'>HTTP request</h3>
+<p><code>GET {baseurl}/acquisition/{acquisitionid}</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>acquisitionid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='set-acquisition'>Set acquisition</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/acquisition/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-KEY: {API-Key}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+    "interested_exhibitor_id": 1337,
+    "contact_type": 2,
+    "contact_person_id": 1337,
+    "date": "2022-03-21",
+    "note": "Lorem Impsum",
+    "is_followup": true
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"acquisitionid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-3'>HTTP request</h3>
+<p><code>PUT {baseurl}/acquisition/{acquisitionid}</code></p>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>acquisitionid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>date</td>
+<td>date</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>contact_type</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>contact_person_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>interested_exhibitor_id</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>note</td>
+<td>String</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>is_followup</td>
+<td>Boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='update-acquisition'>Update acquisition</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> PUT <span class="s1">'{baseurl}/acquisition/{acquisitionid}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-KEY: {API-Key}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: text/json'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+    "contact_type": 3,
+    "contact_person_id": 123,
+    "date": "2022-03-22",
+    "note": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+    "is_followup": false
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"acquisitionid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-4'>HTTP request</h3>
+<p><code>PUT {baseurl}/acquisition/{acquisitionid}</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>acquisitionid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='parameters-2'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date</td>
+<td>date</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>contact_type</td>
+<td>String</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>contact_person_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>interested_exhibitor_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>note</td>
+<td>String</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>is_followup</td>
+<td>Boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='delete-acquisition'>Delete acquisition</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/acquisition/{acquisitionid}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-KEY: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"acquisitionid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-5'>HTTP request</h3>
+<p><code>DELETE {baseurl}/acquisition/{acquisitionid}</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>acquisitionid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id='interested-exhibitors'>Interested exhibitors</h1><h2 id='get-interested-exhibitors'>Get interested exhibitors</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/acquisition/interested-exhibitors'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-KEY: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"interested-exhibitors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"interesse_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"s8WSf4"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lexwareid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11.5868931"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mail@unpainted.net"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"vat_identification_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sevdeskid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.unpainted.net"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fairid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"newsletter"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"homepage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.unpainted.net/"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99artfairs"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sorttitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"postalcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"80202"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"bexioid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customer_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"labelid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ohmstraße 22"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"adress_verified"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99artfairs GmbH"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"München"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"G2yU"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fairtypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"additional_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48.153304"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"exhibitorid"</span><span class="p">:</span><span class="w"> </span><span class="mi">54</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"interesse_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7Kf4dS"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lexwareid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oskar@keineahnung.de"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"vat_identification_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sevdeskid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.gallery-weekend-berlin.de"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fairid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"newsletter"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"homepage"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sorttitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"postalcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10785"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+49 (0)30 7003 8771"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"bexioid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customer_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"labelid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Potsdamer Straße 93"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"adress_verified"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc-gwb Veranstaltungs UG"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Berlin"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3x3H"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fairtypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"additional_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"exhibitorid"</span><span class="p">:</span><span class="w"> </span><span class="mi">55</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request'>HTTP request</h3>
+<p><code>GET {baseurl}/acquisition/interested-exhibitors/</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fairtypeid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='get-interested-exhibitor'>Get interested exhibitor</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/acquisition/interested-exhibitors/{interestedexhibitorid}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-KEY: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"interested-exhibitors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"interesse_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"s8WSf4"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lexwareid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11.5868931"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mail@unpainted.net"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"vat_identification_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sevdeskid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.unpainted.net"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fairid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"newsletter"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"homepage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.unpainted.net/"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99artfairs"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sorttitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"postalcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"80202"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"bexioid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customer_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"labelid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ohmstraße 22"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"adress_verified"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99artfairs GmbH"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"München"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"G2yU"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fairtypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"additional_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48.153304"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"exhibitorid"</span><span class="p">:</span><span class="w"> </span><span class="mi">54</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-2'>HTTP request</h3>
+<p><code>GET {baseurl}/acquisition/interested-exhibitors/{interestedexhibitorid}</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>interestedexhibitorid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='set-interested-exhibitor'>Set interested exhibitor</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/acquisition/interested-exhibitors/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+    "exhibitorid": 1337,
+    "fairtypeid": 1
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"interested_exhibitor_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"37"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-3'>HTTP request</h3>
+<p><code>POST {baseurl}/acquisition/interested-exhibitors/</code></p>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>exhibitorid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fairtypeid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='delete-interested-exhibitor'>Delete interested exhibitor</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/acquisition/interested-exhibitors/{exhibitorid}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-KEY: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"interested_exhibitor_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"37"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-4'>HTTP request</h3>
+<p><code>DELETE {baseurl}/acquisition/interested-exhibitors/{exhibitorid}</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>exhibitorid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fairtypeid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id='texts'>Texts</h1><h2 id='get-text-categories'>Get text categories</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/text/categories/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"de_DE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Automatischer Mailversand Bestellbestätigung"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"en_GB"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Automatischer Mailversand Bestellbestätigung"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">64</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"de_DE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Einstellungen Einleitung"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"en_GB"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Einstellungen Einleitung"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">63</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request'>HTTP request</h3>
+<p><code>GET {baseurl}/text/</code></p>
+<h2 id='get-texts'>Get texts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/text/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"texts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"de_DE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"change_user"</span><span class="p">:</span><span class="w"> </span><span class="mi">667</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"date_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"February, 24 2022 00:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"create_user"</span><span class="p">:</span><span class="w"> </span><span class="mi">667</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"categorieid"</span><span class="p">:</span><span class="w"> </span><span class="mi">65</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"change_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"February, 24 2022 16:10:36"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"create_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"February, 24 2022 16:10:36"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fairtypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"introduction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Danke für Ihre Anmeldung!&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test web://contact"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">137</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"date_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"September, 21 2022 00:00:00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"de_DE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"change_user"</span><span class="p">:</span><span class="w"> </span><span class="mi">666</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"date_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"July, 15 2020 00:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"create_user"</span><span class="p">:</span><span class="w"> </span><span class="mi">666</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"categorieid"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"change_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"August, 27 2021 16:02:32"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"create_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"August, 27 2021 16:02:32"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fairtypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"introduction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Hier könnte ein Einleitungstext für die Job-Wall stehen, u.a. auch was für Dateitypen hochgeladen werden und in welcher Auflösung (DPI, Farbraum, ...)&lt;/p&gt;</span><span class="se">\r\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stellenausschreibungen Job-Wall"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">122</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"date_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"December, 31 2030 00:00:00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-2'>HTTP request</h3>
+<p><code>POST {baseurl}/text/</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fairtypeid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fairid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>categorieid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='set-text'>Set text</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/text/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+    "fairtypeid": 1,
+    "title": "Text über API",
+    "introduction": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. ",
+    "categorie": 1,
+    "date_from": "2022-04-04 10:00:00",
+    "date_to": "2023-04-04 10:00:00",
+    "language": "de_DE",
+    "locked": 0
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"textid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"142"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-3'>HTTP request</h3>
+<p><code>POST {baseurl}/text/{textid}</code></p>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fairtypeid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>introduction</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>categorie</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>date_from</td>
+<td>date</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>date_to</td>
+<td>date</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>language</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='update-text'>Update text</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> PUT <span class="s1">'{baseurl}/text/{textid}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+    "fairtypeid": 1,
+    "title": "Text über API",
+    "introduction": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. ",
+    "categorie": 1,
+    "date_from": "2022-04-04 10:00:00",
+    "date_to": "2023-04-04 10:00:00",
+    "language": "en_GB",
+    "locked": 0
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"textid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"142"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-4'>HTTP request</h3>
+<p><code>PUT {baseurl}/text/{textid}</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>textid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='parameters-2'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fairtypeid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>String</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>introduction</td>
+<td>String</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>categorie</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>date_from</td>
+<td>date</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>date_to</td>
+<td>date</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>language</td>
+<td>String</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='delete-text'>Delete text</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/text/{textid}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"textid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"142"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-5'>HTTP request</h3>
+<p><code>DELETE {baseurl}/text/{textid}</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>textid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id='newsletter'>Newsletter</h1><h2 id='get-newsletter'>Get newsletter</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/newsletter/  '</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"newsletter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"text_html"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;*ANREDE*&lt;br /&gt;</span><span class="se">\r\n</span><span class="s2">*VORNAME*&lt;br /&gt;</span><span class="se">\r\n</span><span class="s2">*NAME*&lt;br /&gt;</span><span class="se">\r\n</span><span class="s2">*ID*&lt;br /&gt;</span><span class="se">\r\n</span><span class="s2">*BENUTZERNAME*&lt;br /&gt;</span><span class="se">\r\n</span><span class="s2">*PASSWORT*&lt;br /&gt;</span><span class="se">\r\n</span><span class="s2">*INTERESSE_CODE*&lt;br /&gt;</span><span class="se">\r\n</span><span class="s2">*CATCHALL*&lt;/p&gt;</span><span class="se">\r\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"reciver_pool_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"change_user"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"regard"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sdds"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"send_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"create_user"</span><span class="p">:</span><span class="w"> </span><span class="mi">61</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yannick@webcontact.de"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fff"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"change_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"January, 19 2021 14:59:20"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"create_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"February, 15 2018 13:40:47"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"reciver_pool_contactperson"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fairid"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"istest"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"reciver_pool"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"email_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"reciver_pool_acquisition"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"text_html"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"reciver_pool_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"change_user"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"regard"</span><span class="p">:</span><span class="w"> </span><span class="s2">"С 30 апреля будет поднята стоимость на доп услуги"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"send_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"create_user"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"messeleitung@myevent.de"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Уважаемы участники выставки Kubex, с 30 апреля будет поднята цена на допуслуги. Успейте приобрести необходимые услуги в разделе Вашего личного кабинета </span><span class="se">\"</span><span class="s2">Магазин</span><span class="se">\"</span><span class="s2"> по самой низкой цене."</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"change_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"April, 02 2018 09:03:09"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"create_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"April, 02 2018 08:35:32"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"reciver_pool_contactperson"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fairid"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"istest"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"reciver_pool"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"email_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"reciver_pool_acquisition"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request'>HTTP request</h3>
+<p><code>GET {baseurl}/newsletter/</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fairid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>newsletterid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>sended</td>
+<td>Boolean</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pooltype</td>
+<td>String</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>poolcontact</td>
+<td>String</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>order</td>
+<td>String</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>poolTyp</td>
+<td>String</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='set-newsletter'>Set newsletter</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/newsletter/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+    "fairid": 7,
+    "sender": "yannick@webcontact.de",
+    "regard": "Newsletter über API",
+    "text_html": "&lt;h1&gt;Text über API&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.&lt;/p&gt;",
+    "email_type": "html",
+    "pool": "t_1, t_2, a_23, a_32, akquise_32, akquise_2"
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"newsletter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-2'>HTTP request</h3>
+<p><code>POST {baseurl}/newsletter/</code></p>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fairid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>sender</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>regard</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>text_html</td>
+<td>String</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>text</td>
+<td>String</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>email_type</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>istest</td>
+<td>Boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='delete-newsletter'>Delete newsletter</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/newsletter/{newsletterid}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-3'>HTTP request</h3>
+<p><code>DELETE {baseurl}/newsletter/</code></p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>newsletterid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
 <h1 id='fair-types'>Fair types</h1><h2 id='get-fair-types'>Get fair types</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/fair_types/'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span>
 </code></pre></div>
