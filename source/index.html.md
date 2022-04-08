@@ -9,6 +9,10 @@ toc_footers:
   - <a href='https://www.profairs.de'>Powered by profairs</a>
 
 includes:
+  - acquisition
+  - interested_exhibitors
+  - texts
+  - newsletter
   - fairtypes
   - fairs
   - shop
