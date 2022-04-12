@@ -10,18 +10,18 @@ toc_footers:
 
 includes:
   - acquisition
-  - interested_exhibitors
-  - texts
-  - newsletter
-  - fairtypes
-  - fairs
-  - shop
-  - exhibitors
-  - contacts
   - booths
-  - visitors
-  - publications
+  - contacts
+  - exhibitors
+  - fairs
+  - fairtypes
   - industries
+  - interested_exhibitors
+  - newsletter
+  - publications
+  - shop
+  - texts
+  - visitors
   - errors
 
 search: true
