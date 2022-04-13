@@ -633,6 +633,32 @@
               </ul>
           </li>
           <li>
+            <a href="#users" class="toc-h1 toc-link" data-title="Users">Users</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-users" class="toc-h2 toc-link" data-title="Get users">Get users</a>
+                  </li>
+                  <li>
+                    <a href="#get-user" class="toc-h2 toc-link" data-title="Get user">Get user</a>
+                  </li>
+                  <li>
+                    <a href="#set-user" class="toc-h2 toc-link" data-title="Set user">Set user</a>
+                  </li>
+                  <li>
+                    <a href="#delete-user" class="toc-h2 toc-link" data-title="Delete user">Delete user</a>
+                  </li>
+                  <li>
+                    <a href="#get-user-groups" class="toc-h2 toc-link" data-title="Get user-groups">Get user-groups</a>
+                  </li>
+                  <li>
+                    <a href="#set-user-groups" class="toc-h2 toc-link" data-title="Set user-groups">Set user-groups</a>
+                  </li>
+                  <li>
+                    <a href="#get-shop-categories-by-user" class="toc-h2 toc-link" data-title="Get shop categories by user">Get shop categories by user</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#visitors" class="toc-h1 toc-link" data-title="Visitors">Visitors</a>
               <ul class="toc-list-h2">
                   <li>
@@ -7117,6 +7143,394 @@ ID | The ID of the kitten to delete -->
 <tr>
 <td>textid</td>
 <td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id='users'>Users</h1><h2 id='get-users'>Get users</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/user/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alf"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thomas"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alf"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"scanner"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"scanner"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"scanner"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"barcode"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request'>HTTP request</h3>
+<p><code>GET {baseurl}/users/</code></p>
+<h2 id='get-user'>Get user</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/user/{userid}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alf"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thomas"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alf"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-2'>HTTP request</h3>
+<p><code>GET {baseurl}/users/{userid}</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='set-user'>Set user</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/user/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+    "salutation": "Herr",
+    "title": "Dr.",
+    "firstname": "Max",
+    "name": "Mustermann",
+    "username": "username",
+    "password": "password",
+    "email": "max-mustermann@gmail.com",
+    "telephone": "+49 12345 123",
+    "address": "",
+    "printnode_printer_id": "123456789",
+    "printnode_api_key": "987654321",
+    "group": 1
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1337</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-3'>HTTP request</h3>
+<p><code>POST {baseurl}/users/</code></p>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>salutation</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>firstname</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>username</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>password</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>email</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>group</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>locked</td>
+<td>boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>String</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>telephone</td>
+<td>String</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>address</td>
+<td>String</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>printnode_printer_id</td>
+<td>String</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>printnode_api_key</td>
+<td>String</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='delete-user'>Delete user</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/user/{userid}/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"usersid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1337</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-4'>HTTP request</h3>
+<p><code>DELETE {baseurl}/users/{userid}</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='get-user-groups'>Get user-groups</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/groups'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"create_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"March, 17 2016 11:02:15"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"change_user"</span><span class="p">:</span><span class="w"> </span><span class="mi">999</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"create_user"</span><span class="p">:</span><span class="w"> </span><span class="mi">999</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fairid"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"change_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"March, 17 2016 11:02:15"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Admin"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"create_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"March, 18 2016 14:49:36"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"change_user"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"create_user"</span><span class="p">:</span><span class="w"> </span><span class="mi">999</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fairid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"change_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-5'>HTTP request</h3>
+<p><code>GET {baseurl}/groups</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fairid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='set-user-groups'>Set user-groups</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/groups'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+    "group": "API Group",
+    "fairid": 7,
+    "shipping": true
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"users_group_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"31"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-6'>HTTP request</h3>
+<p><code>POST {baseurl}/groups</code></p>
+<h3 id='parameters-2'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>group</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>shipping</td>
+<td>Boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>fairid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='get-shop-categories-by-user'>Get shop categories by user</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/user/{userid}/shop_categories/ \
+--header '</span>X-API-Key: <span class="o">{</span>API-Key<span class="o">}</span><span class="s1">' \
+</span></code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"shop_categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"create_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"February, 25 2022 15:29:30"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"change_user"</span><span class="p">:</span><span class="w"> </span><span class="mi">666</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parentid"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Testmesse 2022"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"usergroupid"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"create_user"</span><span class="p">:</span><span class="w"> </span><span class="mi">666</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">194</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"categorie"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Standmöbel"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"change_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"February, 25 2022 16:21:32"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"contactid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-7'>HTTP request</h3>
+<p><code>GET {baseurl}/user/{userid}/shop_categories/</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>language</td>
+<td>String</td>
 <td>true</td>
 <td></td>
 <td></td>
