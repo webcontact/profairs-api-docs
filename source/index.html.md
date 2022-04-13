@@ -21,6 +21,7 @@ includes:
   - publications
   - shop
   - texts
+  - users
   - visitors
   - errors
 
