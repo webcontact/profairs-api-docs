@@ -13,6 +13,7 @@ includes:
   - booths
   - contacts
   - exhibitors
+  - exhibitor_fair
   - fairs
   - fairtypes
   - industries

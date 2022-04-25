@@ -67,6 +67,15 @@ This endpoint retrieves all exhibitors.
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 fairid | numeric | false | | If set returns exhibitors from a specific fair.
+exhibitorid | numeric | false | |
+exhibitorfairid | numeric | false | |
+mainexhibitorid | numeric | false | |
+industryid | numeric | false | |
+industryids | list | false | |
+shop_categorie | numeric | false | |
+interestcode | String | false | |
+locked | Boolean | true | false |
+exhibitortypeid | numeric | false | |
 
 
 ## Get Exhibitor
