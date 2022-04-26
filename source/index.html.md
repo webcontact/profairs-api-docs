@@ -14,6 +14,7 @@ includes:
   - contacts
   - exhibitors
   - exhibitor_fair
+  - exhibitor_industry
   - fairs
   - fairtypes
   - industries
