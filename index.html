@@ -422,6 +422,20 @@
               </ul>
           </li>
           <li>
+            <a href="#exhibitors-industry-assignment" class="toc-h1 toc-link" data-title="Exhibitors industry assignment">Exhibitors industry assignment</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-exhibitor-industry-assignments" class="toc-h2 toc-link" data-title="Get exhibitor industry assignments">Get exhibitor industry assignments</a>
+                  </li>
+                  <li>
+                    <a href="#create-exhibitor-industry-assignment" class="toc-h2 toc-link" data-title="Create exhibitor industry assignment">Create exhibitor industry assignment</a>
+                  </li>
+                  <li>
+                    <a href="#delete-exhibitor-industry-assignment" class="toc-h2 toc-link" data-title="Delete exhibitor industry assignment">Delete exhibitor industry assignment</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#fairs" class="toc-h1 toc-link" data-title="Fairs">Fairs</a>
               <ul class="toc-list-h2">
                   <li>
@@ -3093,6 +3107,179 @@ ID | The ID of the kitten to delete -->
 <td>fairid</td>
 <td>numeric</td>
 <td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id='exhibitors-industry-assignment'>Exhibitors industry assignment</h1><h2 id='get-exhibitor-industry-assignments'>Get exhibitor industry assignments</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/exhibitor-industry/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"exhibitor_industry_assignments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"de_DE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"create_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"February, 25 2022 14:58:53"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"change_user"</span><span class="p">:</span><span class="w"> </span><span class="mi">667</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"industry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Digital"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"create_user"</span><span class="p">:</span><span class="w"> </span><span class="mi">667</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"exhibitor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"industryid"</span><span class="p">:</span><span class="w"> </span><span class="mi">73</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"change_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"February, 25 2022 14:58:53"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"exhibitorid"</span><span class="p">:</span><span class="w"> </span><span class="mi">2299</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"de_DE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"create_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"February, 25 2022 14:58:38"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"change_user"</span><span class="p">:</span><span class="w"> </span><span class="mi">667</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"industry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Print"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"create_user"</span><span class="p">:</span><span class="w"> </span><span class="mi">667</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"exhibitor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"industryid"</span><span class="p">:</span><span class="w"> </span><span class="mi">72</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"change_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"February, 25 2022 14:58:38"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"exhibitorid"</span><span class="p">:</span><span class="w"> </span><span class="mi">2299</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
+<p><code>GET {baseurl}/exhibitor-industry/</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>exhibitorid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fairtypeid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>industryid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>language</td>
+<td>String</td>
+<td>true</td>
+<td>&quot;de_DE&quot;</td>
+<td></td>
+</tr>
+<tr>
+<td>showLockedIndustries</td>
+<td>Boolean</td>
+<td>true</td>
+<td>false</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='create-exhibitor-industry-assignment'>Create exhibitor industry assignment</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/exhibitor-industry/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+    "exhibitorid": 1337,
+    "industryid": 20
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"industryid"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"exhibitorid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1337</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST {baseurl}/exhibitor-industry/</code></p>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>exhibitorid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>industryid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='delete-exhibitor-industry-assignment'>Delete exhibitor industry assignment</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/exhibitor-industry/{exhibitorid}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"industryid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"exhibitorid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1337"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-3'>HTTP Request</h3>
+<p><code>DELETE {baseurl}/exhibitor-industry/{exhibitorid}</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>exhibitorid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>industryid</td>
+<td>numeric</td>
+<td>true</td>
 <td></td>
 <td></td>
 </tr>
