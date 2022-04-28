@@ -76,6 +76,8 @@ shop_categorie | numeric | false | |
 interestcode | String | false | |
 locked | Boolean | true | false |
 exhibitortypeid | numeric | false | |
+getBooths | Boolean | true | false | Adds booths to the exhibitors. If set to true, fairid is required.
+getContacts | Boolean | true | false | Adds contacts to the exhibitors.
 
 
 ## Get Exhibitor
