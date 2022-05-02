@@ -19,6 +19,7 @@ includes:
   - fairtypes
   - industries
   - interested_exhibitors
+  - label
   - newsletter
   - publications
   - shop
