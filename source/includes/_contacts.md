@@ -1,6 +1,6 @@
 # Contacts
 
-## Retreive contacts
+## Get contacts
 
 ```shell
 curl
@@ -43,6 +43,17 @@ curl
 ### HTTP request
 
 `GET {baseurl}/contacts/`
+
+### Query parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitorid | numeric | false |  |
+contactid | numeric | false |  |
+typeid | numeric | false |  |
+language | String | false | "de_DE" |
+receivesNewsletter | Boolean | false | false |
+fairtypeid | numeric | false ||
 
 ## Retreive contact
 
