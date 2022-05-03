@@ -306,3 +306,49 @@ password | string | false | |
 address_verified | boolean | false | |
 lock | boolean | false | |
 newsletter | boolean | false | |
+
+## Generate access data
+
+```shell
+curl --location --request GET '{baseurl}/exhibitors/generate-access-data/' \
+--header 'X-API-KEY: {API-Key}' \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "error": false
+}
+```
+
+This endpoint generates username and password for all exhibitors from a specific fair.
+
+### HTTP Request
+
+`GET {baseurl}/exhibitors/generate-access-data/`
+
+### Query Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+fairid | numeric | true | |
+
+## Generate interest code
+
+```shell
+curl --location --request GET '{baseurl}/exhibitors/generate-access-data/' \
+--header 'X-API-KEY: {API-Key}' \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "error": false
+}
+```
+
+### HTTP Request
+
+`GET {baseurl}/exhibitors/generate-access-data/`
