@@ -368,7 +368,7 @@
             <a href="#contacts" class="toc-h1 toc-link" data-title="Contacts">Contacts</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#retreive-contacts" class="toc-h2 toc-link" data-title="Retreive contacts">Retreive contacts</a>
+                    <a href="#get-contacts" class="toc-h2 toc-link" data-title="Get contacts">Get contacts</a>
                   </li>
                   <li>
                     <a href="#retreive-contact" class="toc-h2 toc-link" data-title="Retreive contact">Retreive contact</a>
@@ -1787,7 +1787,7 @@ ID | The ID of the kitten to delete -->
 <td></td>
 </tr>
 </tbody></table>
-<h1 id='contacts'>Contacts</h1><h2 id='retreive-contacts'>Retreive contacts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl
+<h1 id='contacts'>Contacts</h1><h2 id='get-contacts'>Get contacts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl
   <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/contacts/'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span>
@@ -1823,6 +1823,59 @@ ID | The ID of the kitten to delete -->
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request'>HTTP request</h3>
 <p><code>GET {baseurl}/contacts/</code></p>
+<h3 id='query-parameters'>Query parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>exhibitorid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>contactid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>typeid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>language</td>
+<td>String</td>
+<td>false</td>
+<td>&quot;de_DE&quot;</td>
+<td></td>
+</tr>
+<tr>
+<td>receivesNewsletter</td>
+<td>Boolean</td>
+<td>false</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>fairtypeid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
 <h2 id='retreive-contact'>Retreive contact</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/contacts/{contactid}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span>
