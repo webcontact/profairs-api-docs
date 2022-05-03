@@ -409,6 +409,9 @@
                     <a href="#generate-access-data" class="toc-h2 toc-link" data-title="Generate access data">Generate access data</a>
                   </li>
                   <li>
+                    <a href="#generate-catchall-code" class="toc-h2 toc-link" data-title="Generate catchall code">Generate catchall code</a>
+                  </li>
+                  <li>
                     <a href="#generate-interest-code" class="toc-h2 toc-link" data-title="Generate interest code">Generate interest code</a>
                   </li>
               </ul>
@@ -3016,7 +3019,7 @@ ID | The ID of the kitten to delete -->
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='generate-interest-code'>Generate interest code</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/exhibitors/generate-access-data/'</span> <span class="se">\</span>
+<h2 id='generate-catchall-code'>Generate catchall code</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/exhibitors/generate-catchall-code/'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-KEY: {API-Key}'</span> <span class="se">\</span>
 </code></pre></div>
 <blockquote>
@@ -3026,6 +3029,49 @@ ID | The ID of the kitten to delete -->
     </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-7'>HTTP Request</h3>
+<p><code>GET {baseurl}/exhibitors/generate-catchall-code/</code></p>
+<h3 id='query-parameters-4'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fairid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>exhibitorid</td>
+<td>String</td>
+<td>false</td>
+<td></td>
+<td>required when code is set</td>
+</tr>
+</tbody></table>
+<h2 id='generate-interest-code'>Generate interest code</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/exhibitors/generate-access-data/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-KEY: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-8'>HTTP Request</h3>
 <p><code>GET {baseurl}/exhibitors/generate-access-data/</code></p>
 <h1 id='exhibitors-fair-assignment'>Exhibitors fair assignment</h1><h2 id='get-exhibitor-fair-assignments'>Get exhibitor fair assignments</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/exhibitor-fair-assignments/'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
