@@ -38,7 +38,7 @@ curl --location --request GET '{baseurl}/label/  ' \
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-module | String | true |
+module | String | true | |  Either "akquise" or "shop"
 
 ## Set label
 
