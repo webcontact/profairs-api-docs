@@ -334,6 +334,33 @@ Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 fairid | numeric | true | |
 
+## Generate catchall code
+
+```shell
+curl --location --request GET '{baseurl}/exhibitors/generate-catchall-code/' \
+--header 'X-API-KEY: {API-Key}' \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "error": false
+}
+```
+
+### HTTP Request
+
+`GET {baseurl}/exhibitors/generate-catchall-code/`
+
+### Query Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+fairid | numeric | true | |
+code | String | false | |
+exhibitorid | String | false | | required when code is set
+
 ## Generate interest code
 
 ```shell
