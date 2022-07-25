@@ -75,6 +75,7 @@ industryids | list | false | |
 shop_categorie | numeric | false | |
 interestcode | String | false | |
 locked | Boolean | true | false |
+external_id | String | false | |
 exhibitortypeid | numeric | false | |
 getBooths | Boolean | true | false | Adds booths to the exhibitors. If set to true, fairid is required.
 getContacts | Boolean | true | false | Adds contacts to the exhibitors.
@@ -150,7 +151,8 @@ curl "{baseurl}/exhibitors/" \
 	"password": "password",
 	"address_verified": false,
     "lock": true,
-    "newsletter": false
+    "newsletter": false,
+    "external_id": "EID_123"
 }'
 ```
 
@@ -195,6 +197,7 @@ password | string | false | |
 address_verified | boolean | false | |
 lock | boolean | false | |
 newsletter | boolean | false | |
+external_id | String | false | |
 
 ## Delete an Exhibitor
 ```shell
@@ -228,7 +231,6 @@ exhibitorid | numeric | true | |
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 forum_sync | boolean | true | false |
-external | boolean | true | false |
 
 ## Update an Exhibitor
 
@@ -257,7 +259,7 @@ curl "{baseurl}/exhibitors/{exhibitorid}" \
 	"password": "password",
 	"address_verified": false,
     "lock": true,
-	"external": false,
+    "external_id": "EID_123",
     "newsletter": false
 }'
 ```
@@ -306,6 +308,7 @@ password | string | false | |
 address_verified | boolean | false | |
 lock | boolean | false | |
 newsletter | boolean | false | |
+external_id | String | false | |
 
 ## Generate access data
 
