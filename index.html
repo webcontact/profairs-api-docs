@@ -2515,6 +2515,13 @@ ID | The ID of the kitten to delete -->
 <td></td>
 </tr>
 <tr>
+<td>external_id</td>
+<td>String</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td>exhibitortypeid</td>
 <td>numeric</td>
 <td>false</td>
@@ -2610,7 +2617,8 @@ ID | The ID of the kitten to delete -->
     "password": "password",
     "address_verified": false,
     "lock": true,
-    "newsletter": false
+    "newsletter": false,
+    "external_id": "EID_123"
 }'</span>
 </code></pre></div>
 <blockquote>
@@ -2781,6 +2789,13 @@ ID | The ID of the kitten to delete -->
 <td></td>
 <td></td>
 </tr>
+<tr>
+<td>external_id</td>
+<td>String</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
 </tbody></table>
 <h2 id='delete-an-exhibitor'>Delete an Exhibitor</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/exhibitors/{exhibitorid}"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
@@ -2832,13 +2847,6 @@ ID | The ID of the kitten to delete -->
 <td>false</td>
 <td></td>
 </tr>
-<tr>
-<td>external</td>
-<td>boolean</td>
-<td>true</td>
-<td>false</td>
-<td></td>
-</tr>
 </tbody></table>
 <h2 id='update-an-exhibitor'>Update an Exhibitor</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/exhibitors/{exhibitorid}"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
@@ -2864,7 +2872,7 @@ ID | The ID of the kitten to delete -->
     "password": "password",
     "address_verified": false,
     "lock": true,
-    "external": false,
+    "external_id": "EID_123",
     "newsletter": false
 }'</span>
 </code></pre></div>
@@ -3050,6 +3058,13 @@ ID | The ID of the kitten to delete -->
 <tr>
 <td>newsletter</td>
 <td>boolean</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>external_id</td>
+<td>String</td>
 <td>false</td>
 <td></td>
 <td></td>
