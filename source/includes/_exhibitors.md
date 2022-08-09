@@ -80,51 +80,6 @@ exhibitortypeid | numeric | false | |
 getBooths | Boolean | true | false | Adds booths to the exhibitors. If set to true, fairid is required.
 getContacts | Boolean | true | false | Adds contacts to the exhibitors.
 
-
-## Get Exhibitor
-```shell
-curl "{baseurl}/exhibitors/{exhibitorid}" \
-  -H "x-api-key: {API-Key}" \
-  -X GET \
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-    "postalcode": "OL15 0JP",
-    "telephone": "01919-731224",
-    "customer_number": "",
-    "address_verified": false,
-    "lock": false,
-    "remarks": "",
-    "exhibitorid": 3216,
-    "street": "2 Seacombe St",
-    "email": "keneth_stpierrie@hotmail.com",
-    "vat_identification_number": "",
-    "company": "Mueller Repro Blue Printg",
-    "order_title": "Mueller Repro Blue Printg",
-    "city": "Littleborough Lakeside Ward",
-    "country": "",
-    "external_id": "",
-    "newsletter": false,
-    "homepage": "http://www.muellerreproblueprintg.co.uk",
-    "error": "false",
-    "additional_address": "Greater Manchester"
-}
-```
-This endpoint retrieves a specific exhibitor.
-
-### HTTP Request
-
-`GET {baseurl}/exhibitors/{exhibitorid}`
-
-### URL Parameters
-
-Parameter | Type | required | Default | Description
---------- | ---- | -------- | ------- | -----------
-exhibitorid | numeric | true | |
-
 ## Create an Exhibitor
 ```shell
 curl "{baseurl}/exhibitors/" \

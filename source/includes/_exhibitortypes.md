@@ -1,5 +1,5 @@
 # Exhibitor types
-## Get exhibitors types
+## Get exhibitor types
 
 ```shell
 curl --location --request GET '{baseurl}/exhibitors/exhibitor-type/' \
