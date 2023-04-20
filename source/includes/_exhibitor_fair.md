@@ -116,3 +116,36 @@ exhibitorid | numeric | true | |
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 fairid | numeric | false | |
+
+
+## Get exhibitor-fair logins
+
+```shell
+curl --location --request GET '{baseurl}/exhibitor-fair-assignments/{exhibitorfairid}/track-login/' \
+--header 'X-API-Key: {API-Key}' \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "error": false,
+    "exhibitorlogins": [
+        {
+            "date": "October, 27 2022 14:36:44 +0200",
+            "id": 77,
+            "exhibitorfairid": 1479
+        }
+    ]
+}
+```
+
+### HTTP Request
+
+`GET {baseurl}/exhibitor-fair-assignments/{exhibitorfairid}/track-login/`
+
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitorfairid | numeric | true | |

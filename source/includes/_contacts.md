@@ -55,55 +55,6 @@ language | String | false | "de_DE" |
 receivesNewsletter | Boolean | false | false |
 fairtypeid | numeric | false ||
 
-## Retreive contact
-
-```shell
-curl --location --request GET '{baseurl}/contacts/{contactid}' \
---header 'Content-Type: application/json' \
---header 'X-API-Key: {API-Key}'
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-    "contacts": [
-        {
-            "postalcode": "",
-            "telephone": "",
-            "job_title": "",
-            "firstname": "Kevin",
-            "street": "",
-            "email": "kevin@webcontact.de",
-            "contactid": 1,
-            "comment": "",
-            "company": "",
-            "city": "",
-            "country": "Deutschland",
-            "salutation": "Herr",
-            "lastname": "Thiel",
-            "fairtypeid": "",
-            "title": "",
-            "additional_address": "",
-            "hasnewsletterapproval": false,
-            "exhibitorid": 1,
-            "mobile": "017684407551"
-        }
-    ],
-    "error": false
-}
-```
-
-### HTTP request
-
-`GET {baseurl}/contacts/{contactid}`
-
-### URL parameters
-
-Parameter | Type | required | Default | Description
---------- | ---- | -------- | ------- | -----------
-contactid | string | true |  |
-
 ## Create contact person
 ### HTTP request
 

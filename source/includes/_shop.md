@@ -71,66 +71,6 @@ curl --location --request GET '{baseurl}/shop/items' \
 | userroles          | string  | false    |         |
 | exhibitortypes     | string  | false    |         |
 
-## Get item
-
-```shell
-curl --location --request GET '{baseurl}/shop/items/{itemid}' \
---header 'X-API-Key: {API-Key}' \
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-    "error": false,
-    "items": [
-        {
-            "language": "de_DE",
-            "locked": false,
-            "unit": "",
-            "booth-specific": false,
-            "categoryid": 14,
-            "remarks": "",
-            "article_typ_id": 4,
-            "description": "",
-            "upload": false,
-            "sort": 0,
-            "introduction": "",
-            "title": "E-Gutschein",
-            "closedate": "",
-            "itemid": 23
-        }
-    ]
-}
-```
-
-### HTTP request
-
-`GET {baseurl}/shop/items/{itemid}`
-
-### URL Parameters
-
-| Parameter           | Type    | required | Default | Description |
-| ------------------- | ------- | -------- | ------- | ----------- |
-| itemid             | string  | true     |         |
-
-### Query Parameters
-| Parameter           | Type    | required | Default | Description |
-| ------------------- | ------- | -------- | ------- | ----------- |
-| itemid             | string  | true     |         |
-| categoryid         | numeric | true     |         |
-| itemnr              | string  | false    |         |
-| language            | string  | false    |         |
-| fairid             | numeric | false    |         |
-| end_date            | string  | false    |         |
-| showlocked         | boolean | true    | true    |
-| showcoupon         | boolean | false    |         |
-| showcatchall       | boolean | false    |         |
-| showspecialcoupon | boolean | false    |         |
-| userroleadmin     | boolean | false    |         |
-| userroles          | string  | false    |         |
-| exhibitortypes     | string  | false    |         |
-
 ## Create item
 
 ```shell
@@ -360,6 +300,32 @@ curl --location --request DELETE '{baseurl}/shop/items/{itemid}' \
 | Parameter | Type    | required | Default | Description |
 | --------- | ------- | -------- | ------- | ----------- |
 | itemid   | numeric | true     |         |
+
+## Copy items
+```shell
+curl --location --request GET '{baseurl}/shop/items/copy-items/' \
+--header 'X-API-KEY: {API-Key}' \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "error": false
+}
+```
+### HTTP request
+
+`GET {baseurl}/shop/items/copy-items/`
+
+
+### Query Parameters
+
+| Parameter  | Type    | required | Default | Description |
+| ---------- | ------- | -------- | ------- | ----------- |
+| fairid | numeric | true     |         |
+| fairidTo | numeric | true     |         |
+| categories | list | true     |         |
 
 # Shop categories
 
@@ -1114,6 +1080,38 @@ curl --location --request DELETE '{baseurl}/shop/orders/{orderid}' \
 | Parameter  | Type    | required | Default | Description |
 | ---------- | ------- | -------- | ------- | ----------- |
 | orderid | numeric | true     |         |
+
+## Assign label to order
+
+```shell
+curl --location '{baseurl}/shop/order/assign-label' \
+--header 'X-API-KEY: {API-Key}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "labelid": {labelid},
+    "orderid: {orderid}
+}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "error": false,
+    "orderid": 47,
+    "labelid": "23, 3"
+}
+```
+### HTTP request
+
+`POST {baseurl}/shop/order/assign-label`
+
+
+### Parameters
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+labelid | list | true | | empty to delete assigned labels
+orderid | list | true |
 
 # Shop discounts
 

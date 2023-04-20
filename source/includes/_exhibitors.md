@@ -336,4 +336,171 @@ curl --location --request GET '{baseurl}/exhibitors/generate-access-data/' \
 
 ### HTTP Request
 
-`GET {baseurl}/exhibitors/generate-access-data/`
+`POST {baseurl}/exhibitors/generate-access-data/`
+
+## Assign label to exhibitor
+
+```shell
+curl --location '{baseurl}/exhibitors/assign-label' \
+--header 'X-API-KEY: {API-Key}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "exhibitorid": {exhibitorid},
+    "labelid": {labelid}
+}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "error": false,
+    "labelid": 13,
+    "exhibitorid": 1
+}
+```
+
+### HTTP Request
+
+`POST {baseurl}/exhibitors/assign-label/`
+
+### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+labelid | numeric | true |
+exhibitorid | numeric | true |
+
+## Set exhibitor-type assignment
+
+```shell
+curl --location '{baseurl}/exhibitors/exhibitor-type-assignment/' \
+--header 'X-API-KEY: {API-Key}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "exhibitorfairid": {exhibitorfairid},
+    "exhibitortypeid": {exhibitortypeid}
+}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "error": false,
+    "exhibitor_type_assignment": {
+        "exhibitortypeid": 5,
+        "exhibitorfairid": 1541
+    }
+}
+```
+
+### HTTP Request
+
+`POST {baseurl}/exhibitors/exhibitor-type-assignment/`
+
+### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitortypeid | numeric | true |
+exhibitorfairid | numeric | true |
+
+## Get exhibitor-type assignment
+
+```shell
+curl --location '{baseurl}/exhibitors/exhibitor-type-assignment/' \
+--header 'X-API-KEY: {API-Key}' \
+--header 'Content-Type: application/json' \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "error": false,
+    "exhibitortypes": {
+        "exhibitortypeids": "1,2,3",
+        "exhibitorfairid": "1234"
+    }
+}
+```
+
+### HTTP Request
+
+`GET {baseurl}/exhibitors/exhibitor-type-assignment/`
+
+### Query Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitorfairid | numeric | true |
+
+## Get exhibitor-types
+
+```shell
+curl --location '{baseurl}/exhibitors/exhibitor-type' \
+--header 'X-API-KEY: {API-Key}' \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "error": false,
+    "exhibitortypes": {
+        "exhibitortypeids": "1,2,3",
+        "exhibitorfairid": "1234"
+    }
+}
+```
+
+### HTTP Request
+
+`GET {baseurl}/exhibitors/exhibitor-type/`
+
+### Query Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+fairtypeid | numeric | false |
+exhibitortypeid | numeric | false |
+
+
+
+## Get exhibitor-address-verification
+
+```shell
+curl --location '{baseurl}/exhibitors/{exhibitorid}/adress-verification/' \
+--header 'X-API-KEY: {API-Key}' \
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+    "error": false,
+    "addressverifications": [
+        {
+            "date": "April, 20 2023 11:58:00 +0200",
+            "fairid": 1,
+            "exhibitorid": 1
+        }
+    ]
+}
+```
+
+### HTTP Request
+
+`GET {baseurl}/exhibitors/{exhibitorid}/adress-verification/`
+
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitorid | numeric | true | |
+
+### Query Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+fairid | numeric | true | |
