@@ -359,8 +359,8 @@ curl --location --request GET '{baseurl}/booths/reservation/{reservationhash}/' 
 
 ```json
 {
-    "messeid": "3",
-    "standnummern": "S-23,S-24,S-25",
+    "fairid": "3",
+    "boothids": "S-23,S-24,S-25",
     "hash": "XXXXXXXXXXXXXXXXXXXXXX",
     "expire_date": "2023-06-02 08:13:11",
     "error": false
