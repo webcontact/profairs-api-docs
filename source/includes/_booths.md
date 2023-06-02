@@ -346,3 +346,33 @@ curl --location --request DELETE '{baseurl}/booths/exhibitor/{exhibitorboothid}/
 | Parameter           | Type    | required | Default | Description |
 | ------------------- | ------- | -------- | ------- | ----------- |
 | exhibitorboothid         | numeric | true    |         |
+
+
+## Get booth reservation
+
+```shell
+curl --location --request GET '{baseurl}/booths/reservation/{reservationhash}/' \
+--header 'X-API-Key: API-Key' \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "messeid": "3",
+    "standnummern": "S-23,S-24,S-25",
+    "hash": "XXXXXXXXXXXXXXXXXXXXXX",
+    "expire_date": "2023-06-02 08:13:11",
+    "error": false
+}
+```
+
+### HTTP request
+
+`GET {baseurl}/booths/reservation/{reservationhash}/`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| reservationhash     | string  | true     |         |
