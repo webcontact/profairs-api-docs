@@ -1,0 +1,15 @@
+current directory: /home/fname/wwwroot/profairs-api-docs/vendor/bundle/ruby/3.0.0/gems/fast_blank-1.0.0/ext/fast_blank
+/usr/bin/ruby3.0 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20230725-10698-1u29e4.rb extconf.rb
+creating Makefile
+
+current directory: /home/fname/wwwroot/profairs-api-docs/vendor/bundle/ruby/3.0.0/gems/fast_blank-1.0.0/ext/fast_blank
+make DESTDIR\= clean
+
+current directory: /home/fname/wwwroot/profairs-api-docs/vendor/bundle/ruby/3.0.0/gems/fast_blank-1.0.0/ext/fast_blank
+make DESTDIR\=
+compiling fast_blank.c
+linking shared-object fast_blank.so
+
+current directory: /home/fname/wwwroot/profairs-api-docs/vendor/bundle/ruby/3.0.0/gems/fast_blank-1.0.0/ext/fast_blank
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 fast_blank.so ./.gem.20230725-10698-rhbx78

@@ -25,6 +25,7 @@ includes:
   - texts
   - users
   - visitors
+  - hall_planning
   - errors
 
 search: true
