@@ -3,10 +3,10 @@
 
 ## Missing values
 
-If a value in the database is optional and missing for a record requested via the API, then the key of the value is simply not returned instead of being 'null'. 
+If a value in the database is optional and missing for a record requested via the API, then the key of the value is simply not returned instead of being `null`. 
 
 
-## Standrequest
+## Get standrequest
 
 ```curl
 curl --location '{baseurl}/hall_planning/standrequest/1535' \
@@ -65,7 +65,7 @@ code | meaning
 `406` | The request was not successful because probably the data was sent to the API incorrectly.
 
 
-## [GET] Branche
+## Get industrie
 
 ```curl
 curl --location '{baseurl}/hall_planning/standrequest/industrie/4' \
@@ -94,7 +94,7 @@ curl --location '{baseurl}/hall_planning/standrequest/industrie/4' \
 
 `{baseurl}/hall_planning/standrequest/industrie/{branchen_id}`
 
-With this endpoint you can get the parent and child industries of an industry. It is meant that the `main_industry_id` of the [booth wishes](#get-standwünsche) is used here. Here the `branchen_id` is mandatory.
+With this endpoint you can get the parent and child industries of an industry. It is meant that the `main_industry_id` from the [stand requests](#get-standrequest) is used here. Here the `branchen_id` is mandatory.
 
 ### Response Codes
 
@@ -104,7 +104,7 @@ code | meaning
 `406` | The request was not successful because probably the data was sent to the API incorrectly.
 
 
-## [GET] Standstatus
+## Get standstatus
 
 ```curl
 curl --location '{baseurl}/hall_planning/standstatus/63' \
@@ -128,13 +128,13 @@ curl --location '{baseurl}/hall_planning/standstatus/63' \
 `{baseurl}/hall_planning/standstatus`
 `{baseurl}/hall_planning/standstatus/{booth_number}`
 
-The `booth_number` is optional as for the [booth_wishes](#get_booth_wishes). If none is given, the booth status of each booth is returned.
+The `booth_number` is optional as for the [stand requests](#get-standrequest). If none is given, the booth status of each booth is returned.
 
 Usually there is only one booth for each booth number. But it can also happen that there are several.
 
-Ein Status kann folgendes bedeuten:
+The status is an enum, which can have the following values:
 
-Status | Bedeutung
+status | meaning
 ---|---
 `offen` | A stand object is not assigned to an exhibitor and there is no associated stand proposal for the stand object that is set to open.
 `zugestimmt` | A stand object is assigned to an exhibitor.
@@ -148,7 +148,7 @@ code | meaning
 `406` | The request was not successful because probably the data was sent to the API incorrectly.
 
 
-## [POST] Neuer Standvorschlag
+## Make stand proposal
 
 ```curl
 curl --location '{baseurl}/hall_planning/standproposal?debug=null' \
