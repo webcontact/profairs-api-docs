@@ -743,6 +743,26 @@
               </ul>
           </li>
           <li>
+            <a href="#hall-planning" class="toc-h1 toc-link" data-title="Hall planning">Hall planning</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#missing-values" class="toc-h2 toc-link" data-title="Missing values">Missing values</a>
+                  </li>
+                  <li>
+                    <a href="#get-standrequest" class="toc-h2 toc-link" data-title="Get standrequest">Get standrequest</a>
+                  </li>
+                  <li>
+                    <a href="#get-industrie" class="toc-h2 toc-link" data-title="Get industrie">Get industrie</a>
+                  </li>
+                  <li>
+                    <a href="#get-standstatus" class="toc-h2 toc-link" data-title="Get standstatus">Get standstatus</a>
+                  </li>
+                  <li>
+                    <a href="#make-stand-proposal" class="toc-h2 toc-link" data-title="Make stand proposal">Make stand proposal</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -8888,6 +8908,310 @@ ID | The ID of the kitten to delete -->
 <td>true</td>
 <td>false</td>
 <td></td>
+</tr>
+</tbody></table>
+<h1 id='hall-planning'>Hall planning</h1><h2 id='missing-values'>Missing values</h2>
+<p>If a value in the database is optional and missing for a record requested via the API, then the key of the value is simply not returned instead of being <code>null</code>. </p>
+<h2 id='get-standrequest'>Get standrequest</h2><div class="highlight"><pre class="highlight plaintext"><code>curl --location '{baseurl}/hall_planning/standrequest/1535' \
+--header 'x-API-Key: {API-Key}'
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"standwunsch"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"booth_width"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"booth_depth"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"neu aufplanen"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"booth_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"platzierungswunsch"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"exhibitor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"main_industrie_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">81</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"web://contact GmbH"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"exhibitor_fair_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1535</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>{baseurl}/hall_planning/standrequest</code><br>
+<code>{baseurl}/hall_planning/standrequest/{exhibitor_fair_id}</code></p>
+
+<p>This endpoint returns the data of the stand requests.</p>
+
+<p>The <code>exhibitor_fair_id</code> is an optional parameter. If this is set, the endpoint returns all booth requests that are assigned to the respective exhibitor. If this is not set, all booth requests will be returned.</p>
+
+<p>This data must be sent back to profairs with the planned stand:</p>
+
+<ol>
+<li><code>standwunsch_id</code>, to which the planned stand refers to</li>
+<li><code>exhibitor_fair_id</code></li>
+</ol>
+
+<p>The status is an enum, which can have the following values:</p>
+
+<table><thead>
+<tr>
+<th>status</th>
+<th>meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>neu aufplanen</code></td>
+<td>The stand request is assigned to at least one stand proposal that is not locked.</td>
+</tr>
+<tr>
+<td><code>umplanen</code></td>
+<td>The stand request is not assigned to a stand proposal that is not locked.</td>
+</tr>
+</tbody></table>
+<h3 id='response-codes'>Response Codes</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>200</code></td>
+<td>The request was successful.</td>
+</tr>
+<tr>
+<td><code>406</code></td>
+<td>The request was not successful because probably the data was sent to the API incorrectly.</td>
+</tr>
+</tbody></table>
+<h2 id='get-industrie'>Get industrie</h2><div class="highlight"><pre class="highlight plaintext"><code>curl --location '{baseurl}/hall_planning/standrequest/industrie/4' \
+--header 'x-API-Key: {API-Key}'
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"parent_industrie"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Onlinemarketing"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"child_industrie_list"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hagelsalz"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">61</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>{baseurl}/hall_planning/standrequest/industrie/{branchen_id}</code></p>
+
+<p>With this endpoint you can get the parent and child industries of an industry. It is meant that the <code>main_industry_id</code> from the <a href="#get-standrequest">stand requests</a> is used here. Here the <code>branchen_id</code> is mandatory.</p>
+<h3 id='response-codes-2'>Response Codes</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>200</code></td>
+<td>The request was successful.</td>
+</tr>
+<tr>
+<td><code>406</code></td>
+<td>The request was not successful because probably the data was sent to the API incorrectly.</td>
+</tr>
+</tbody></table>
+<h2 id='get-standstatus'>Get standstatus</h2><div class="highlight"><pre class="highlight plaintext"><code>curl --location '{baseurl}/hall_planning/standstatus/63' \
+--header 'x-API-Key: {API-Key}'
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"booth_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"offen"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>{baseurl}/hall_planning/standstatus</code>
+<code>{baseurl}/hall_planning/standstatus/{booth_number}</code></p>
+
+<p>The <code>booth_number</code> is optional as for the <a href="#get-standrequest">stand requests</a>. If none is given, the booth status of each booth is returned.</p>
+
+<p>Usually there is only one booth for each booth number. But it can also happen that there are several.</p>
+
+<p>The status is an enum, which can have the following values:</p>
+
+<table><thead>
+<tr>
+<th>status</th>
+<th>meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>offen</code></td>
+<td>A stand object is not assigned to an exhibitor and there is no associated stand proposal for the stand object that is set to open.</td>
+</tr>
+<tr>
+<td><code>zugestimmt</code></td>
+<td>A stand object is assigned to an exhibitor.</td>
+</tr>
+<tr>
+<td><code>abgelehnt</code></td>
+<td>A stand object is not assigned to an exhibitor. There is no associated stand proposal for the stand object that is set to open or agreed, but there is at least one stand proposal that is set to rejected.</td>
+</tr>
+</tbody></table>
+<h3 id='response-codes-3'>Response Codes</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>200</code></td>
+<td>The request was successful.</td>
+</tr>
+<tr>
+<td><code>406</code></td>
+<td>The request was not successful because probably the data was sent to the API incorrectly.</td>
+</tr>
+</tbody></table>
+<h2 id='make-stand-proposal'>Make stand proposal</h2><div class="highlight"><pre class="highlight plaintext"><code>curl --location '{baseurl}/hall_planning/standproposal?debug=null' \
+--header 'x-API-Key: {API-Key}' \
+--data '{
+    "booth_width": 10,
+    "booth_depth": 2,
+    "booth_number": "A4",
+    "booth_type": 1,
+    "stand_request_id": 1,
+    "exhibitor_fair_id": 3,
+    "hall_id": 1,
+    "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
+}'
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"stand_proposal_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"internal_args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"standwunsch"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ausstellerid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"beschreibung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"standtyp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"standnummer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A4"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"standgroesse"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"standzuordnung"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"standlaenge"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"standbreite"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">1337</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"messeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>{baseurl}/hall_planning/standproposal?debug</code></p>
+
+<p>This endpoint creates a new stand proposal. One must specify:</p>
+
+<ul>
+<li>the stand dimensions,</li>
+<li>the stand number,</li>
+<li>the stand type,</li>
+<li>other metadata</li>
+<li>and the exhibitor to whom the stand should be proposed.</li>
+</ul>
+
+<p>In order for the associated stand request to disappear from the list of stand requests with the transfer of the scheduled stand, a getStandRequests would have to be executed again after the successful transfer of the stand to profairs.</p>
+<h3 id='the-proposal-was-not-made'>The proposal was not made</h3>
+<p>It is possible that no stand proposal is made. In this case the response code <code>200</code> will be returned. This happens under the following conditions:</p>
+
+<ul>
+<li>There is already a stand with the identical stand number.</li>
+</ul>
+<h3 id='request-body'>Request Body</h3>
+<table><thead>
+<tr>
+<th>key</th>
+<th>required</th>
+<th>type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>booth_width</code></td>
+<td>[x]</td>
+<td>numeric</td>
+</tr>
+<tr>
+<td><code>booth_depth</code></td>
+<td>[x]</td>
+<td>numeric</td>
+</tr>
+<tr>
+<td><code>booth_number</code></td>
+<td>[x]</td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>booth_type</code></td>
+<td>[x]</td>
+<td>integer</td>
+</tr>
+<tr>
+<td><code>stand_request_id</code></td>
+<td>[x]</td>
+<td>integer</td>
+</tr>
+<tr>
+<td><code>exhibitor_fair_id</code></td>
+<td>[x]</td>
+<td>integer</td>
+</tr>
+<tr>
+<td><code>hall_id</code></td>
+<td>[ ]</td>
+<td>integer</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>[ ]</td>
+<td>string</td>
+</tr>
+</tbody></table>
+
+<p>Whether the values have the correct data type should be validated, with a meaningful error message.</p>
+<h3 id='query-params'>Query Params</h3>
+<p>If <code>debug</code> was set as a parameter, this endpoint additionally returns the arguments as they were used internally.</p>
+<h3 id='response-codes-4'>Response Codes</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>201</code></td>
+<td>The request was successful and a stand proposal was made.</td>
+</tr>
+<tr>
+<td><code>200</code></td>
+<td>The request was successful, but for <a href="#the-proposal-was-not-made">some reason</a> no stand proposal was made.</td>
+</tr>
+<tr>
+<td><code>406</code></td>
+<td>The request was not successful because probably the data was sent to the API incorrectly.</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
