@@ -1,6 +1,6 @@
 # Industries
 
-## Get industries
+## Get focus industries
 
 ```shell
 curl --location --request GET '{baseurl}/industries/?fairtypeid=2' \
