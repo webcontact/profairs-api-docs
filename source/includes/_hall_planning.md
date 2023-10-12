@@ -151,7 +151,7 @@ code | meaning
 ## Make stand proposal
 
 ```curl
-curl --location '{baseurl}/hall_planning/standproposal?debug=null' \
+curl --location '{baseurl}/hall_planning/standproposal?debug' \
 --header 'x-API-Key: {API-Key}' \
 --data '{
     "booth_width": 10,
@@ -159,7 +159,8 @@ curl --location '{baseurl}/hall_planning/standproposal?debug=null' \
     "booth_number": "A4",
     "booth_type": 1,
     "stand_request_id": 1,
-    "exhibitor_fair_id": 3,
+    "exhibitor_id": 1,
+    "fair_id": 2,
     "hall_id": 1,
     "status": "open",
     "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
@@ -187,7 +188,8 @@ curl --location '{baseurl}/hall_planning/standproposal?debug=null' \
             "messeid": 2
         }
     },
-    "error": false
+    "error": false,
+    "warning": {}
 }
 ``` 
 
@@ -199,7 +201,8 @@ This endpoint creates a new stand proposal. One must specify:
 - the stand number,
 - the stand type,
 - other metadata
-- and the exhibitor to whom the stand should be proposed.
+- the exhibitor to whom the stand should be proposed.
+- and the fair to which the stand belongs to.
 
 In order for the associated stand request to disappear from the list of stand requests with the transfer of the scheduled stand, a getStandRequests would have to be executed again after the successful transfer of the stand to profairs.
 
@@ -218,7 +221,8 @@ key | required | type | default
 `booth_number` | [x] | string
 `booth_type` | [x] | integer
 `stand_request_id` | [x] | integer
-`exhibitor_fair_id` | [x] | integer
+`exhibitor_id` | [x] | integer
+`fair_id` | [x] | integer
 `hall_id` | [ ] | integer
 `description` | [ ] | string
 `status` | [ ] | enum('accepted', 'declined', 'open', 'archived') | `open`
@@ -227,7 +231,11 @@ Whether the values have the correct data type should be validated, with a meanin
 
 ### Query Params
 
+#### debug
+
 If `debug` was set as a parameter, this endpoint additionally returns the arguments as they were used internally.
+
+The endpoint runs checks before making the proposal, if both `exhibitor_id` and `fair_id` exist in the system. If not no proposal will be made. However, if debug is set to `true`, the proposal will be made regardless, and the error messages from the checks will be warnings instead. 
 
 ### Response Codes
 
