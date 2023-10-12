@@ -9086,7 +9086,7 @@ ID | The ID of the kitten to delete -->
 <td>The request was not successful because probably the data was sent to the API incorrectly.</td>
 </tr>
 </tbody></table>
-<h2 id='make-stand-proposal'>Make stand proposal</h2><div class="highlight"><pre class="highlight plaintext"><code>curl --location '{baseurl}/hall_planning/standproposal?debug=null' \
+<h2 id='make-stand-proposal'>Make stand proposal</h2><div class="highlight"><pre class="highlight plaintext"><code>curl --location '{baseurl}/hall_planning/standproposal?debug' \
 --header 'x-API-Key: {API-Key}' \
 --data '{
     "booth_width": 10,
@@ -9094,7 +9094,8 @@ ID | The ID of the kitten to delete -->
     "booth_number": "A4",
     "booth_type": 1,
     "stand_request_id": 1,
-    "exhibitor_fair_id": 3,
+    "exhibitor_id": 1,
+    "fair_id": 2,
     "hall_id": 1,
     "status": "open",
     "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
@@ -9121,7 +9122,8 @@ ID | The ID of the kitten to delete -->
             </span><span class="nl">"messeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"warning"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p><code>{baseurl}/hall_planning/standproposal?debug</code></p>
@@ -9133,7 +9135,8 @@ ID | The ID of the kitten to delete -->
 <li>the stand number,</li>
 <li>the stand type,</li>
 <li>other metadata</li>
-<li>and the exhibitor to whom the stand should be proposed.</li>
+<li>the exhibitor to whom the stand should be proposed.</li>
+<li>and the fair to which the stand belongs to.</li>
 </ul>
 
 <p>In order for the associated stand request to disappear from the list of stand requests with the transfer of the scheduled stand, a getStandRequests would have to be executed again after the successful transfer of the stand to profairs.</p>
@@ -9183,7 +9186,13 @@ ID | The ID of the kitten to delete -->
 <td></td>
 </tr>
 <tr>
-<td><code>exhibitor_fair_id</code></td>
+<td><code>exhibitor_id</code></td>
+<td>[x]</td>
+<td>integer</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fair_id</code></td>
 <td>[x]</td>
 <td>integer</td>
 <td></td>
@@ -9209,8 +9218,10 @@ ID | The ID of the kitten to delete -->
 </tbody></table>
 
 <p>Whether the values have the correct data type should be validated, with a meaningful error message.</p>
-<h3 id='query-params'>Query Params</h3>
+<h3 id='query-params'>Query Params</h3><h4 id='debug'>debug</h4>
 <p>If <code>debug</code> was set as a parameter, this endpoint additionally returns the arguments as they were used internally.</p>
+
+<p>The endpoint runs checks before making the proposal, if both <code>exhibitor_id</code> and <code>fair_id</code> exist in the system. If not no proposal will be made. However, if debug is set to <code>true</code>, the proposal will be made regardless, and the error messages from the checks will be warnings instead. </p>
 <h3 id='response-codes-4'>Response Codes</h3>
 <table><thead>
 <tr>
