@@ -161,6 +161,7 @@ curl --location '{baseurl}/hall_planning/standproposal?debug=null' \
     "stand_request_id": 1,
     "exhibitor_fair_id": 3,
     "hall_id": 1,
+    "status": "open",
     "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
 }'
 ```
@@ -178,6 +179,7 @@ curl --location '{baseurl}/hall_planning/standproposal?debug=null' \
             "standtyp": 1,
             "standnummer": "A4",
             "standgroesse": 20,
+            "status": "open",
             "standzuordnung": 1,
             "standlaenge": 2,
             "standbreite": 10,
@@ -209,8 +211,8 @@ It is possible that no stand proposal is made. In this case the response code `2
 
 ### Request Body 
 
-key | required | type
----|---|---
+key | required | type | default
+---|---|---|---
 `booth_width` | [x] | numeric
 `booth_depth` | [x] | numeric
 `booth_number` | [x] | string
@@ -219,6 +221,7 @@ key | required | type
 `exhibitor_fair_id` | [x] | integer
 `hall_id` | [ ] | integer
 `description` | [ ] | string
+`status` | [ ] | enum('accepted', 'declined', 'open', 'archived') | `open`
 
 Whether the values have the correct data type should be validated, with a meaningful error message.
 
