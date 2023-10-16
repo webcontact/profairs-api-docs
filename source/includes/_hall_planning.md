@@ -9,7 +9,7 @@ If a value in the database is optional and missing for a record requested via th
 ## Get standrequest
 
 ```curl
-curl --location '{baseurl}/hall_planning/standrequest/1535' \
+curl --location '{baseurl}/hall_planning/standrequest?exhibitor_id=1&fair_id=5' \
 --header 'x-API-Key: {API-Key}'
 ```
 
@@ -22,33 +22,47 @@ curl --location '{baseurl}/hall_planning/standrequest/1535' \
             "standwunsch": "",
             "booth_width": 10,
             "booth_depth": 2,
-            "status": "neu aufplanen",
+            "status": "umplanen",
             "booth_type": 3,
             "platzierungswunsch": "",
-            "id": 1,
+            "id": 3,
             "exhibitor": {
-                "main_industrie_id": 81,
-                "name": "web://contact GmbH",
-                "exhibitor_fair_id": 1535
+                "exhibitor_id": 1,
+                "fair_id": 5,
+                "main_industrie_id": 3,
+                "name": "web://contact GmbH"
             }
         }
     ],
-    "error": false
+    "error": false,
+    "warning": {},
+    "error_message": {}
 }
 ```
 
-
-`{baseurl}/hall_planning/standrequest`  
-`{baseurl}/hall_planning/standrequest/{exhibitor_fair_id}`
-
 This endpoint returns the data of the stand requests.
 
-The `exhibitor_fair_id` is an optional parameter. If this is set, the endpoint returns all booth requests that are assigned to the respective exhibitor. If this is not set, all booth requests will be returned.
+### HTTP Request
+
+`GET {baseurl}/hall_planning/standrequest`  
+
+### Query Parameters
+
+The `exhibitor_id` and `fair_id` are optional parameters. If they are set, the endpoint returns all stand requests that are assigned to the respective exhibitor and fair. If they are not set, all stand requests will be returned.
+
+Parameter |	Type | required | Default | Description
+---|---|---|---|---
+exhibitor_id | numeric | false | | If this is set, fair_id has to be set as well.
+fair_id | numeric | false | | If this is set, exhibitor_id has to be set as well
+
+
+### Description
 
 This data must be sent back to profairs with the planned stand:
 
 1. `standwunsch_id`, to which the planned stand refers to
-2. `exhibitor_fair_id`
+2. `exhibitor_id`
+2. `fair_id`
 
 The status is an enum, which can have the following values:
 
