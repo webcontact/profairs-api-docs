@@ -8912,7 +8912,7 @@ ID | The ID of the kitten to delete -->
 </tbody></table>
 <h1 id='hall-planning'>Hall planning</h1><h2 id='missing-values'>Missing values</h2>
 <p>If a value in the database is optional and missing for a record requested via the API, then the key of the value is simply not returned instead of being <code>null</code>. </p>
-<h2 id='get-standrequest'>Get standrequest</h2><div class="highlight"><pre class="highlight plaintext"><code>curl --location '{baseurl}/hall_planning/standrequest/1535' \
+<h2 id='get-standrequest'>Get standrequest</h2><div class="highlight"><pre class="highlight plaintext"><code>curl --location '{baseurl}/hall_planning/standrequest?exhibitor_id=1&amp;fair_id=5' \
 --header 'x-API-Key: {API-Key}'
 </code></pre></div>
 <blockquote>
@@ -8924,32 +8924,60 @@ ID | The ID of the kitten to delete -->
             </span><span class="nl">"standwunsch"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="nl">"booth_width"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
             </span><span class="nl">"booth_depth"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"neu aufplanen"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"umplanen"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"booth_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
             </span><span class="nl">"platzierungswunsch"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
             </span><span class="nl">"exhibitor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"main_industrie_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">81</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"web://contact GmbH"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"exhibitor_fair_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1535</span><span class="w">
+                </span><span class="nl">"exhibitor_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fair_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"main_industrie_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"web://contact GmbH"</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"warning"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="nl">"error_message"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>{baseurl}/hall_planning/standrequest</code><br>
-<code>{baseurl}/hall_planning/standrequest/{exhibitor_fair_id}</code></p>
-
 <p>This endpoint returns the data of the stand requests.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET {baseurl}/hall_planning/standrequest</code>  </p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<p>The <code>exhibitor_id</code> and <code>fair_id</code> are optional parameters. If they are set, the endpoint returns all stand requests that are assigned to the respective exhibitor and fair. If they are not set, all stand requests will be returned.</p>
 
-<p>The <code>exhibitor_fair_id</code> is an optional parameter. If this is set, the endpoint returns all booth requests that are assigned to the respective exhibitor. If this is not set, all booth requests will be returned.</p>
-
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>exhibitor_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td>If this is set, fair_id has to be set as well.</td>
+</tr>
+<tr>
+<td>fair_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td>If this is set, exhibitor_id has to be set as well</td>
+</tr>
+</tbody></table>
+<h3 id='description'>Description</h3>
 <p>This data must be sent back to profairs with the planned stand:</p>
 
 <ol>
 <li><code>standwunsch_id</code>, to which the planned stand refers to</li>
-<li><code>exhibitor_fair_id</code></li>
+<li><code>exhibitor_id</code></li>
+<li><code>fair_id</code></li>
 </ol>
 
 <p>The status is an enum, which can have the following values:</p>
