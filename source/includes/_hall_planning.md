@@ -68,8 +68,8 @@ The status is an enum, which can have the following values:
 
 status | meaning
 ---|---
-`neu aufplanen` | The stand request is assigned to at least one stand proposal that is not locked.
-`umplanen` | The stand request is not assigned to a stand proposal that is not locked.
+`initial_planning` | The stand request is assigned to at least one stand proposal that is not locked.
+`replanning` | The stand request is not assigned to a stand proposal that is not locked.
 
 ### Response Codes
 
