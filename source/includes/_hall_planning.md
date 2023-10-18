@@ -19,12 +19,18 @@ curl --location '{baseurl}/hall_planning/standrequest?exhibitor_id=1&fair_id=5' 
 {
     "data": [
         {
-            "standwunsch": "",
             "booth_width": 10,
+            "placement_request": {
+                "test": "Some key value pair in the database regarding the placement."
+            },
             "booth_depth": 2,
-            "status": "umplanen",
+            "status": "replanning",
+            "stand_request": {
+                "test": "Some key value pair in the database.",
+                "A4444 (declined)": "This looks nice, but it is not mine.",
+                "A2 (declined)": "I don't want any other proposals."
+            },
             "booth_type": 3,
-            "platzierungswunsch": "",
             "id": 3,
             "exhibitor": {
                 "exhibitor_id": 1,
@@ -58,18 +64,28 @@ fair_id | numeric | false | | If this is set, exhibitor_id has to be set as well
 
 ### Description
 
-This data must be sent back to profairs with the planned stand:
+This data must be [sent back to profairs](#make-stand-proposal) in addition to the planned stand:
 
-1. `standwunsch_id`, to which the planned stand refers to
+1. `stand_request_id`, to which the planned stand refers to
 2. `exhibitor_id`
 2. `fair_id`
 
-The status is an enum, which can have the following values:
+#### status
+
+The `status` is an enum, which can have the following values:
 
 status | meaning
 ---|---
 `initial_planning` | The stand request is assigned to at least one stand proposal that is not locked.
 `replanning` | The stand request is not assigned to a stand proposal that is not locked.
+
+In summary, if the status is set to `initial_planning`, the person planning has most likely never touched this standrequest. If the status is set to `replanning`, the person planning probably already touched this request, but still has to do something.  
+
+#### stand_request / placement_request
+
+When planning the fair, you might encounter things, that cant be processed automatically. One example could be the reason, the exhibitor rejected your stand proposal. This kind of information is returned as key value pair in the keys `placement_request` and `stand_request`.
+
+It is recommended to show these key value pairs in your interface as e.g. additional information. This enables the person planning everything to have all the information they need.
 
 ### Response Codes
 
@@ -217,6 +233,8 @@ This endpoint creates a new stand proposal. One must specify:
 - other metadata
 - the exhibitor to whom the stand should be proposed.
 - and the fair to which the stand belongs to.
+
+Some of the values can be fetched from [this endpoint](#get-standrequest).
 
 In order for the associated stand request to disappear from the list of stand requests with the transfer of the scheduled stand, a getStandRequests would have to be executed again after the successful transfer of the stand to profairs.
 
