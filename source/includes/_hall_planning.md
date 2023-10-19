@@ -32,10 +32,13 @@ curl --location '{baseurl}/hall_planning/standrequest?exhibitor_id=1&fair_id=5' 
             },
             "booth_type": 3,
             "id": 3,
+            "main_industry": {
+                "name": "Andere Komponenten für Antriebstechnik",
+                "id": 206
+            },
             "exhibitor": {
                 "exhibitor_id": 1,
                 "fair_id": 5,
-                "main_industrie_id": 3,
                 "name": "web://contact GmbH"
             }
         }
