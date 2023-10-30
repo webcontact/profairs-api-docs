@@ -336,3 +336,89 @@ interestedexhibitorid | numeric | true |
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 labelid | numeric | true |
+
+## Register Interested
+
+```shell
+curl --location '{baseurl}/acquisition/register-interested-exhibitors/?dry_run=false&debug=false' \
+--header 'x-api-key: {API-Key}' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "company_name": "{company-name}",
+    "salutation": "{salutation}",
+    "first_name": "{first-name}",
+    "last_name": "{last-name}",
+    "email": "{email}",
+    "send_email": {send-email},
+    "language_code": "{language-code}",
+    "fair_id": {fair-id}
+}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "error": false,
+    "data": {
+        "temp_passwort": "krv7Mb8vNW4Z",
+        "exhibitor_id": 4080
+    },
+    "error_message": {},
+    "warning_message": {}
+}
+```
+
+This endpoint registers an interested exhibitor. It creates an exhibitor and a connected contact person. If `send_email` is set to `true`, it sends an email to the contact person. The email and the api response contains a temporary password, which can be used to login to profairs and set a permanent password.
+
+```mermaid
+flowchart TB
+  create-exhibitors[If exhibitor with the same company name, and short title exists, it updates the exhibitor.<br> Otherwise it creates a new exhibitor.] --> create-contact-person[Creates a new contact person and adds it to the created/updated exhibitor.] --> keycloak[Creates a temp password for keycloak if one doesn't already exist.] --> send-email[If send_email is set to true, it sends an email to the contact person,<br> containing the the temporary password.]
+```
+
+### HTTP request
+
+`POST {baseurl}/acquisition/register-interested-exhibitors/?dry_run=false&debug=false`
+
+### URL Parameters
+
+| Parameter | Type | required | default | Description |
+|-----------|------|----------|---------|-------------|
+| dry_run | boolean | false | false| If set to true, the endpoint doesn't modify anything in the database. |
+| debug | boolean | false | false | If set to true, it returns some additional data, which could be helpful to debug. |
+
+### Parameters
+
+
+| Parameter | Type | required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| fair_id | integer | true | | The ID of the fair |
+| language_code | string [`de_DE`, `en_GB`, etc...] | true | | The language profairs uses for e.g. the email |
+| company_name | string | true | | The name of the company |
+| salutation | string | true | | The salutation of the contact person |
+| first_name | string | true | | The first name of the contact person |
+| last_name | string | true | | The last name of the contact person |
+| email | string | true | | The email address of the contact person |
+| send_email | boolean | false | See description | Whether to send an email to the contact person. If omitted, the default will be the value, set in control. | 
+
+
+
+### Response
+
+The API returns a JSON object with the following fields:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| error | boolean | Whether an error occurred. |
+| data | object | The data returned by the API |
+| error_message | object | The error message, if an error occurred |
+| warning_message | object | The warning message, if any |
+
+If `error` is `false`, `data` will contain the following fields:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| temp_passwort | string | The temporary password, which can be used to login to profairs. |
+| exhibitor_id | integer | The id of the created exhibitor |
+
+If `error` is `true`, `error_message` will contain the error message.
