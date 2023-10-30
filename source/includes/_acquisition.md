@@ -371,10 +371,12 @@ curl --location '{baseurl}/acquisition/register-interested-exhibitors/?dry_run=f
 
 This endpoint registers an interested exhibitor. It creates an exhibitor and a connected contact person. If `send_email` is set to `true`, it sends an email to the contact person. The email and the api response contains a temporary password, which can be used to login to profairs and set a permanent password.
 
-```mermaid
-flowchart TB
-  create-exhibitors[If exhibitor with the same company name, and short title exists, it updates the exhibitor.<br> Otherwise it creates a new exhibitor.] --> create-contact-person[Creates a new contact person and adds it to the created/updated exhibitor.] --> keycloak[Creates a temp password for keycloak if one doesn't already exist.] --> send-email[If send_email is set to true, it sends an email to the contact person,<br> containing the the temporary password.]
-```
+### Flow
+
+1. Create exhibitors. If an exhibitor with the same company name and short title exists, update the exhibitor. Otherwise, create a new exhibitor.
+2. Create a contact person and add it to the created/updated exhibitor.
+3. Create a temporary password for Keycloak if one doesn't already exist.
+4. If `send_email` is set to true, send an email to the contact person containing the temporary password.
 
 ### HTTP request
 
