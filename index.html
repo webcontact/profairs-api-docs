@@ -1495,9 +1495,14 @@ ID | The ID of the kitten to delete -->
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint registers an interested exhibitor. It creates an exhibitor and a connected contact person. If <code>send_email</code> is set to <code>true</code>, it sends an email to the contact person. The email and the api response contains a temporary password, which can be used to login to profairs and set a permanent password.</p>
-<div class="highlight"><pre class="highlight plaintext"><code>flowchart TB
-  create-exhibitors[If exhibitor with the same company name, and short title exists, it updates the exhibitor.&lt;br&gt; Otherwise it creates a new exhibitor.] --&gt; create-contact-person[Creates a new contact person and adds it to the created/updated exhibitor.] --&gt; keycloak[Creates a temp password for keycloak if one doesn't already exist.] --&gt; send-email[If send_email is set to true, it sends an email to the contact person,&lt;br&gt; containing the the temporary password.]
-</code></pre></div><h3 id='http-request-10'>HTTP request</h3>
+<h3 id='flow'>Flow</h3>
+<ol>
+<li>Create exhibitors. If an exhibitor with the same company name and short title exists, update the exhibitor. Otherwise, create a new exhibitor.</li>
+<li>Create a contact person and add it to the created/updated exhibitor.</li>
+<li>Create a temporary password for Keycloak if one doesn&#39;t already exist.</li>
+<li>If <code>send_email</code> is set to true, send an email to the contact person containing the temporary password.</li>
+</ol>
+<h3 id='http-request-10'>HTTP request</h3>
 <p><code>POST {baseurl}/acquisition/register-interested-exhibitors/?dry_run=false&amp;debug=false</code></p>
 <h3 id='url-parameters-7'>URL Parameters</h3>
 <table><thead>
