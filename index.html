@@ -345,6 +345,9 @@
                   <li>
                     <a href="#assign-label-to-interessted-exhibitor" class="toc-h2 toc-link" data-title="Assign label to interessted exhibitor">Assign label to interessted exhibitor</a>
                   </li>
+                  <li>
+                    <a href="#register-interested" class="toc-h2 toc-link" data-title="Register Interested">Register Interested</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -1464,6 +1467,184 @@ ID | The ID of the kitten to delete -->
 <td></td>
 </tr>
 </tbody></table>
+<h2 id='register-interested'>Register Interested</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="s1">'{baseurl}/acquisition/register-interested-exhibitors/?dry_run=false&amp;debug=false'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'x-api-key: {API-Key}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+    "company_name": "{company-name}",
+    "salutation": "{salutation}",
+    "first_name": "{first-name}",
+    "last_name": "{last-name}",
+    "email": "{email}",
+    "send_email": {send-email},
+    "language_code": "{language-code}",
+    "fair_id": {fair-id}
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"temp_passwort"</span><span class="p">:</span><span class="w"> </span><span class="s2">"krv7Mb8vNW4Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"exhibitor_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4080</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"error_message"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="nl">"warning_message"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint registers an interested exhibitor. It creates an exhibitor and a connected contact person. If <code>send_email</code> is set to <code>true</code>, it sends an email to the contact person. The email and the api response contains a temporary password, which can be used to login to profairs and set a permanent password.</p>
+<div class="highlight"><pre class="highlight plaintext"><code>flowchart TB
+  create-exhibitors[If exhibitor with the same company name, and short title exists, it updates the exhibitor.&lt;br&gt; Otherwise it creates a new exhibitor.] --&gt; create-contact-person[Creates a new contact person and adds it to the created/updated exhibitor.] --&gt; keycloak[Creates a temp password for keycloak if one doesn't already exist.] --&gt; send-email[If send_email is set to true, it sends an email to the contact person,&lt;br&gt; containing the the temporary password.]
+</code></pre></div><h3 id='http-request-10'>HTTP request</h3>
+<p><code>POST {baseurl}/acquisition/register-interested-exhibitors/?dry_run=false&amp;debug=false</code></p>
+<h3 id='url-parameters-7'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>dry_run</td>
+<td>boolean</td>
+<td>false</td>
+<td>false</td>
+<td>If set to true, the endpoint doesn&#39;t modify anything in the database.</td>
+</tr>
+<tr>
+<td>debug</td>
+<td>boolean</td>
+<td>false</td>
+<td>false</td>
+<td>If set to true, it returns some additional data, which could be helpful to debug.</td>
+</tr>
+</tbody></table>
+<h3 id='parameters-5'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fair_id</td>
+<td>integer</td>
+<td>true</td>
+<td></td>
+<td>The ID of the fair</td>
+</tr>
+<tr>
+<td>language_code</td>
+<td>string [<code>de_DE</code>, <code>en_GB</code>, etc...]</td>
+<td>true</td>
+<td></td>
+<td>The language profairs uses for e.g. the email</td>
+</tr>
+<tr>
+<td>company_name</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td>The name of the company</td>
+</tr>
+<tr>
+<td>salutation</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td>The salutation of the contact person</td>
+</tr>
+<tr>
+<td>first_name</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td>The first name of the contact person</td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td>The last name of the contact person</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td>The email address of the contact person</td>
+</tr>
+<tr>
+<td>send_email</td>
+<td>boolean</td>
+<td>false</td>
+<td>See description</td>
+<td>Whether to send an email to the contact person. If omitted, the default will be the value, set in control.</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response</h3>
+<p>The API returns a JSON object with the following fields:</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>error</td>
+<td>boolean</td>
+<td>Whether an error occurred.</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>The data returned by the API</td>
+</tr>
+<tr>
+<td>error_message</td>
+<td>object</td>
+<td>The error message, if an error occurred</td>
+</tr>
+<tr>
+<td>warning_message</td>
+<td>object</td>
+<td>The warning message, if any</td>
+</tr>
+</tbody></table>
+
+<p>If <code>error</code> is <code>false</code>, <code>data</code> will contain the following fields:</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>temp_passwort</td>
+<td>string</td>
+<td>The temporary password, which can be used to login to profairs.</td>
+</tr>
+<tr>
+<td>exhibitor_id</td>
+<td>integer</td>
+<td>The id of the created exhibitor</td>
+</tr>
+</tbody></table>
+
+<p>If <code>error</code> is <code>true</code>, <code>error_message</code> will contain the error message.</p>
 <h1 id='booths'>Booths</h1><h2 id='get-booths'>Get booths</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/booths/'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
 </code></pre></div>
