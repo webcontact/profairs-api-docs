@@ -246,6 +246,7 @@ In order for the associated stand request to disappear from the list of stand re
 It is possible that no stand proposal is made. In this case the response code `200` will be returned. This happens under the following conditions:
 
 - There is already a stand with the identical stand number.
+- If the hall id was given, the stand has to exist in the same hall.
 
 ### Request Body 
 

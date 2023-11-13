@@ -12,7 +12,6 @@ curl --location --request GET '{baseurl}/booths/' \
 ```json
 {
     "error": false,
-    {
     "booths": [
         {
             "articleid": "",
@@ -94,15 +93,24 @@ curl --location --request POST '{baseurl}/booths/' \
 ### Parameters
 
 | Parameter           | Type    | required | Default | Description |
-| ------------------- | ------- | -------- | ------- | ----------- |
-| boothnumber         | String | true    |         |
-| boothwidth         | numeric | true    |         |
-| boothdepth         | numeric | true    |         |
-| fairid         | numeric | false    |         |
+| ------------------- | ------- |----------| ------- | ----------- |
+| boothnumber         | String | true     |         |
+| boothwidth         | numeric | true     |         |
+| boothdepth         | numeric | true     |         |
+| fairid         | numeric | true     |         |
 | boothsize         | numeric | false    |         |
 | articleid         | numeric | false    |         |
 | boothtype         | numeric | false    |         |
+| hall_id        | numeric | false    |         | 
 
+### No Booth is created
+
+If a booth matching the given parameters already exists, the endpoint will throw an error, but it will still return the booth id of the already existing booth.
+
+A booth matching the given parameters is considered a duplicate in the following cases:
+
+- There is already a booth with the identical booth number.
+- If the hall id was given, the booth has to exist in the same hall.
 
 ## Delete booth
 
