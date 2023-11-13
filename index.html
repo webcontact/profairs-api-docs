@@ -1658,7 +1658,6 @@ ID | The ID of the kitten to delete -->
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="p">{</span><span class="w">
     </span><span class="nl">"booths"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="nl">"articleid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
@@ -1782,7 +1781,7 @@ ID | The ID of the kitten to delete -->
 <tr>
 <td>fairid</td>
 <td>numeric</td>
-<td>false</td>
+<td>true</td>
 <td></td>
 <td></td>
 </tr>
@@ -1807,7 +1806,23 @@ ID | The ID of the kitten to delete -->
 <td></td>
 <td></td>
 </tr>
+<tr>
+<td>hall_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
 </tbody></table>
+<h3 id='no-booth-is-created'>No Booth is created</h3>
+<p>If a booth matching the given parameters already exists, the endpoint will throw an error, but it will still return the booth id of the already existing booth.</p>
+
+<p>A booth matching the given parameters is considered a duplicate in the following cases:</p>
+
+<ul>
+<li>There is already a booth with the identical booth number.</li>
+<li>If the hall id was given, the booth has to exist in the same hall.</li>
+</ul>
 <h2 id='delete-booth'>Delete booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/booths/{boothid}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
 </code></pre></div>
@@ -9376,6 +9391,7 @@ ID | The ID of the kitten to delete -->
 
 <ul>
 <li>There is already a stand with the identical stand number.</li>
+<li>If the hall id was given, the stand has to exist in the same hall.</li>
 </ul>
 <h3 id='request-body'>Request Body</h3>
 <table><thead>
