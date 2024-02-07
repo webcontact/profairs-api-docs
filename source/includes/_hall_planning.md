@@ -24,8 +24,9 @@ curl --location '{baseurl}/hall_planning/standrequest?exhibitor_id=1&fair_id=5' 
                 "test": "Some key value pair in the database regarding the placement."
             },
             "employee": {
-                "employee_id": 44,
-                "employee_name": "Buerger"
+                "id": 44,
+                "first_name": "Hazel",
+                "last_name": "Burger"
             },
             "booth_depth": 2,
             "status": "replanning",
@@ -96,13 +97,14 @@ It is recommended to show these key value pairs in your interface as e.g. additi
 
 #### employee
 
-If an employee in your company is assigned to the returned exhibitor, their `name` and `id` will be returned additionally to the exhibitor data.
+If an employee in your company is assigned to the returned exhibitor, their `first_name`, `last_name` and `id` will be returned additionally to the exhibitor data.
 If no employee is assigned to the exhibitor, the field `employee` will not be returned.
 
 ```json
 "employee": {
-  "employee_id": 44,
-  "employee_name": "Buerger"
+    "id": 44,
+    "first_name": "Hazel",
+    "last_name": "Burger"
 },
 ```
 
