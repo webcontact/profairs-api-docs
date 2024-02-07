@@ -23,6 +23,10 @@ curl --location '{baseurl}/hall_planning/standrequest?exhibitor_id=1&fair_id=5' 
             "placement_request": {
                 "test": "Some key value pair in the database regarding the placement."
             },
+            "employee": {
+                "employee_id": 44,
+                "employee_name": "Buerger"
+            },
             "booth_depth": 2,
             "status": "replanning",
             "stand_request": {
@@ -90,13 +94,24 @@ When planning the fair, you might encounter things, that cant be processed autom
 
 It is recommended to show these key value pairs in your interface as e.g. additional information. This enables the person planning everything to have all the information they need.
 
+#### employee
+
+If an employee in your company is assigned to the returned exhibitor, their `name` and `id` will be returned additionally to the exhibitor data.
+If no employee is assigned to the exhibitor, the field `employee` will not be returned.
+
+```json
+"employee": {
+  "employee_id": 44,
+  "employee_name": "Buerger"
+},
+```
+
 ### Response Codes
 
-code | meaning
----|---
-`200` | The request was successful.
-`406` | The request was not successful because probably the data was sent to the API incorrectly.
-
+| code  | meaning                                                                                   |
+|-------|-------------------------------------------------------------------------------------------|
+| `200` | The request was successful.                                                               |
+| `406` | The request was not successful because probably the data was sent to the API incorrectly. |
 
 ## Get industrie
 
