@@ -41,13 +41,6 @@ curl --location --request GET '{baseurl}/fairs/' \
 
 `GET {baseurl}/fairs/`
 
-### Query Parameters
-
-Parameter | Type | required | Default | Description
---------- | ---- | -------- | ------- | -----------
-fairtypeid | numeric | false |   |
-showLocked | boolean | true | true  |
-
 
 ## Get fair
 
@@ -85,12 +78,6 @@ curl --location --request GET '{baseurl}/fairs/{fairid}' \
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 fairid | numeric | true |  |
-
-### Query Parameters
-Parameter | Type | required | Default | Description
---------- | ---- | -------- | ------- | -----------
-logo | boolean | true | false  |
-motion | boolean | true | false  |
 
 ## Create fair
 
@@ -130,7 +117,7 @@ curl --location --request POST '{baseurl}/fairs/' \
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 fair | string | false |  |
-fairtypeid | numeric | false |  |
+fairtypeid | numeric | true |  |
 location | string | false |  |
 shop_no_cancellations | string | false |  |
 shop_closes | string | false |  |
@@ -174,7 +161,7 @@ fairid | numeric | true |  |
 ## Update fair
 
 ```shell
-curl --location --request PUT '{baseurl}/fairs/{fairid}' \
+curl --location --request POST '{baseurl}/fairs/{fairid}' \
 --header 'X-API-Key: {API-Key}' \
 --header 'Content-Type: text/plain' \
 --data-raw '{
@@ -202,7 +189,7 @@ curl --location --request PUT '{baseurl}/fairs/{fairid}' \
 
 ### HTTP request
 
-`PUT {baseurl}/fairs/{fairid}`
+`POST {baseurl}/fairs/{fairid}`
 
 ### URL Parameters
 
