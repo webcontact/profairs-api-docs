@@ -42,7 +42,7 @@ curl --location --request GET '{baseurl}/acquisition' \
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-fairid | numeric | false |
+fairid | numeric | true |
 
 
 ## Get acquisition by ID
@@ -106,7 +106,7 @@ curl --location --request POST '{baseurl}/acquisition/' \
 
 ### HTTP request
 
-`PUT {baseurl}/acquisition/{acquisitionid}`
+`POST {baseurl}/acquisition/`
 
 ### Parameters
 Parameter | Type | required | Default | Description

@@ -26,7 +26,6 @@ includes:
   - users
   - visitors
   - hall_planning
-  - errors
 
 search: true
 
@@ -45,7 +44,9 @@ We have language bindings in Shell, Ruby, Python, and JavaScript! You can view c
 
 This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation. -->
 
-# Authentication
+# General
+
+## Authentication
 
 > To authorize, use this code:
 
@@ -67,15 +68,15 @@ profairs expects for the API key to be included in all API requests to the serve
 You must replace <code>{API-Key}</code> with your personal API key.
 </aside>
 
-# Formatting
+## Formatting
 
-## Dates
+### Dates
 
 The date format we use at all endpoints is:
 
 `yyyy-mm-dd HH:nn:ss.000`
 
-## Salutation
+### Salutation
 
 The salutation is an enum. The possible values are:
 
