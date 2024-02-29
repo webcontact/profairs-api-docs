@@ -24,7 +24,6 @@ includes:
   - shop
   - texts
   - users
-  - visitors
   - hall_planning
 
 search: true
