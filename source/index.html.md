@@ -67,6 +67,22 @@ profairs expects for the API key to be included in all API requests to the serve
 You must replace <code>{API-Key}</code> with your personal API key.
 </aside>
 
+# Formatting
+
+## Dates
+
+The date format we use at all endpoints is:
+
+`yyyy-mm-dd HH:nn:ss.000`
+
+## Salutation
+
+The salutation is an enum. The possible values are:
+
+- `SALUTATION-MX`
+- `SALUTATION-MS`
+- `SALUTATION-MR`
+
 <!-- # Kittens
 
 ## Get All Kittens
