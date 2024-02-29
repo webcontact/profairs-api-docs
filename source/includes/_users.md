@@ -34,7 +34,7 @@ curl --location --request GET '{baseurl}/user/' \
 ```
 ### HTTP request
 
-`GET {baseurl}/users/`
+`GET {baseurl}/user/`
 
 ## Get user
 
@@ -62,7 +62,7 @@ curl --location --request GET '{baseurl}/user/{userid}' \
 ```
 ### HTTP request
 
-`GET {baseurl}/users/{userid}`
+`GET {baseurl}/user/{userid}`
 
 ### URL Parameters
 
@@ -102,7 +102,7 @@ curl --location --request POST '{baseurl}/user/' \
 ```
 ### HTTP request
 
-`POST {baseurl}/users/`
+`POST {baseurl}/user/`
 
 ### Parameters
 
@@ -139,7 +139,7 @@ curl --location --request DELETE '{baseurl}/user/{userid}/' \
 ```
 ### HTTP request
 
-`DELETE {baseurl}/users/{userid}`
+`DELETE {baseurl}/user/{userid}`
 
 ### URL Parameters
 
