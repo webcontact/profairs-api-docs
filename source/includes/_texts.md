@@ -28,7 +28,7 @@ curl --location --request GET '{baseurl}/text/categories/' \
 ```
 ### HTTP request
 
-`GET {baseurl}/text/`
+`GET {baseurl}/text/categories/`
 
 ## Get texts
 
