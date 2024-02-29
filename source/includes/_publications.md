@@ -115,12 +115,9 @@ Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 exhibitor_fairid | numeric | true | |
 language | string | true | |
-description | string | false | |
-company_description | string | false | |
-logo | binary | false | |
+description | string | true | |
+company_description | string | true | |
+logo | binary | true | |
 logo_name | string | false | |
-logo_mimetype | string | false | |
-logo_preview | binary | false | |
-logo_mimetype | string | false | |
 video_url | string | false | |
-contactid | numeric | false | |
+contactid | numeric | true | |

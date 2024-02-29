@@ -481,9 +481,9 @@ curl --location --request POST '{baseurl}/shop/categories/' \
 | contactid           | numeric | false    |         |
 | permissions_group_id | numeric | false    |         |
 | fairid              | numeric | false    |         |
-| show_coupons_link    | boolean | true    | false   |
+| show_coupons_link    | boolean | false    | false   |
 | order                | numeric | false    |         |
-| lock                 | boolean | true    | false   |
+| lock                 | boolean | false    | false   |
 | languages            | array of objects  | false    |         |
 
 ### Languages details
@@ -557,19 +557,19 @@ curl --location --request PUT '{baseurl}/shop/categories/{categoryid}' \
 | contactid           | numeric | false    |         |
 | permissions_group_id | numeric | false    |         |
 | fairid              | numeric | false    |         |
-| show_coupons_link    | boolean | true    | false   |
+| show_coupons_link    | boolean | false    | false   |
 | order                | numeric | false    |         |
-| lock                 | boolean | true    | false   |
+| lock                 | boolean | false    | false   |
 | languages            | array of objects  | false    |         |
 
 ### Languages details
 | Parameter            | Type    | required | Default | Description |
 | -------------------- | ------- | -------- | ------- | ----------- |
-| language            | string | true    |       |
-| title           | string | true    |         |
-| description | string | true    |         |
-| infobox_headline    | string | true    |   |
-| infobox_description | string | true    |         |
+| language            | string | false    |       |
+| title           | string | false    |         |
+| description | string | false    |         |
+| infobox_headline    | string | false    |   |
+| infobox_description | string | false    |         |
 
 ## Delete categorie
 
