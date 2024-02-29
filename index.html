@@ -313,7 +313,15 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            <a href="#general" class="toc-h1 toc-link" data-title="General">General</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#authentication" class="toc-h2 toc-link" data-title="Authentication">Authentication</a>
+                  </li>
+                  <li>
+                    <a href="#formatting" class="toc-h2 toc-link" data-title="Formatting">Formatting</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#acquisition" class="toc-h1 toc-link" data-title="Acquisition">Acquisition</a>
@@ -765,9 +773,6 @@
                   </li>
               </ul>
           </li>
-          <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
-          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='mailto:kevin@webcontact'>Contact us for a developer key</a></li>
@@ -784,7 +789,7 @@ Welcome to the profairs API! You can use our API to access profairs API endpoint
 We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
 This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation. -->
-<h1 id='authentication'>Authentication</h1>
+<h1 id='general'>General</h1><h2 id='authentication'>Authentication</h2>
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
@@ -805,6 +810,18 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 <aside class="notice">
 You must replace <code>{API-Key}</code> with your personal API key.
 </aside>
+<h2 id='formatting'>Formatting</h2><h3 id='dates'>Dates</h3>
+<p>The date format we use at all endpoints is:</p>
+
+<p><code>yyyy-mm-dd HH:nn:ss.000</code></p>
+<h3 id='salutation'>Salutation</h3>
+<p>The salutation is an enum. The possible values are:</p>
+
+<ul>
+<li><code>SALUTATION-MX</code></li>
+<li><code>SALUTATION-MS</code></li>
+<li><code>SALUTATION-MR</code></li>
+</ul>
 
 <!-- # Kittens
 
@@ -1020,7 +1037,7 @@ ID | The ID of the kitten to delete -->
 <tr>
 <td>fairid</td>
 <td>numeric</td>
-<td>false</td>
+<td>true</td>
 <td></td>
 <td></td>
 </tr>
@@ -1084,7 +1101,7 @@ ID | The ID of the kitten to delete -->
     </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-3'>HTTP request</h3>
-<p><code>PUT {baseurl}/acquisition/{acquisitionid}</code></p>
+<p><code>POST {baseurl}/acquisition/</code></p>
 <h3 id='parameters'>Parameters</h3>
 <table><thead>
 <tr>
@@ -9500,56 +9517,6 @@ If no employee is assigned to the exhibitor, the field <code>employee</code> wil
 <tr>
 <td><code>406</code></td>
 <td>The request was not successful because probably the data was sent to the API incorrectly.</td>
-</tr>
-</tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
-<p>The Kittn API uses the following error codes:</p>
-
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden -- The request is hidden for administrators only.</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found -- The specified method could not be found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a function with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The data requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
 </tr>
 </tbody></table>
 
