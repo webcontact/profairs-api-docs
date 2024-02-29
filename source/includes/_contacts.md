@@ -56,6 +56,7 @@ receivesNewsletter | Boolean | false | false |
 fairtypeid | numeric | false ||
 
 ## Create contact person
+
 ### HTTP request
 
 `POST {baseurl}/contacts/`
@@ -140,7 +141,7 @@ curl --location --request POST '{baseurl}/contacts/upload/' \
 
 ### HTTP request
 
-`POST {baseurl}/contactpersons/upload/`
+`POST {baseurl}/contacts/upload/`
 
 ### Parameters
 
@@ -152,6 +153,7 @@ file_name | string | true |  |
 type | string | true |  |
 
 ## Update contact person
+
 ```shell
 curl --location --request PUT '{baseurl}/contacts/{contactid}' \
 --header 'X-API-Key: {API-Key}' \
@@ -189,7 +191,7 @@ curl --location --request PUT '{baseurl}/contacts/{contactid}' \
 
 ### HTTP request
 
-`PUT {baseurl}/contactpersons/{contactid}/`
+`PUT {baseurl}/contacts/{contactid}/`
 
 ### URL Parameters
 
@@ -238,8 +240,7 @@ curl --location --request DELETE '{baseurl}/contacts/{contactid}' \
 
 ### HTTP request
 
-`DELETE {baseurl}/contactperson/{contactid}/`
-
+`DELETE {baseurl}/contacts/{contactid}/`
 
 ### URL Parameters
 
