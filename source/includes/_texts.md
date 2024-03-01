@@ -79,13 +79,14 @@ curl --location --request GET '{baseurl}/text/' \
 
 ### HTTP request
 
-`POST {baseurl}/text/`
+`GET {baseurl}/text/`
 
 ### Query Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 fairtypeid | numeric | true |
+language | string | true |
 fairid | numeric | false |
 categorieid | numeric | false |
 
