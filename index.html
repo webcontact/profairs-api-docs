@@ -762,14 +762,7 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <!-- # Introduction
-
-Welcome to the profairs API! You can use our API to access profairs API endpoints, which can get information on various cats, kittens, and breeds in our database.
-
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation. -->
-<h1 id='general'>General</h1><h2 id='authentication'>Authentication</h2>
+        <h1 id='general'>General</h1><h2 id='authentication'>Authentication</h2>
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
@@ -781,8 +774,6 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 <p>Make sure to replace <code>{API-Key}</code> with your API key.</p>
 </blockquote>
 
-<!-- profairs uses API keys to allow access to the API. You can register a new profairs API key at our [developer portal](http://example.com/developers). -->
-
 <p>profairs expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
 
 <p><code>x-api-key: {API-Key}</code></p>
@@ -790,7 +781,14 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 <aside class="notice">
 You must replace <code>{API-Key}</code> with your personal API key.
 </aside>
-<h2 id='formatting'>Formatting</h2><h3 id='dates'>Dates</h3>
+<h2 id='formatting'>Formatting</h2><h3 id='language-codes'>Language Codes</h3>
+<p>If you need to input language codes <em>(commonly found in the <code>language</code> field)</em>, we use a variation of the BCP 47 standard. Here are some examples:</p>
+
+<ul>
+<li><code>en_GB</code></li>
+<li><code>de_DE</code></li>
+</ul>
+<h3 id='dates'>Dates</h3>
 <p>The date format we use at all endpoints is:</p>
 
 <p><code>yyyy-mm-dd HH:nn:ss.000</code></p>
@@ -802,178 +800,6 @@ You must replace <code>{API-Key}</code> with your personal API key.
 <li><code>SALUTATION-MS</code></li>
 <li><code>SALUTATION-MR</code></li>
 </ul>
-
-<!-- # Kittens
-
-## Get All Kittens
-
-```ruby
-require 'profairs'
-
-api = profairs::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import profairs
-
-api = profairs.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const profairs = require('profairs');
-
-let api = profairs.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'profairs'
-
-api = profairs::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import profairs
-
-api = profairs.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const profairs = require('profairs');
-
-let api = profairs.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'profairs'
-
-api = profairs::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import profairs
-
-api = profairs.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -X DELETE \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const profairs = require('profairs');
-
-let api = profairs.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete -->
 <h1 id='acquisition'>Acquisition</h1><h2 id='get-acquisition'>Get acquisition</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/acquisition'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-KEY: {API-Key}'</span> <span class="se">\</span>
 </code></pre></div>
@@ -7888,7 +7714,7 @@ ID | The ID of the kitten to delete -->
     </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-2'>HTTP request</h3>
-<p><code>POST {baseurl}/text/</code></p>
+<p><code>GET {baseurl}/text/</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -7902,6 +7728,13 @@ ID | The ID of the kitten to delete -->
 <tr>
 <td>fairtypeid</td>
 <td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>language</td>
+<td>string</td>
 <td>true</td>
 <td></td>
 <td></td>
