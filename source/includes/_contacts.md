@@ -247,3 +247,199 @@ curl --location --request DELETE '{baseurl}/contacts/{contactid}' \
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 contactid | numeric | true |  |
+
+## Get Contact Types
+
+If you want to work with the contact types separated from the contacts, you can use the following endpoints:
+
+```shell
+curl --location --request GET '{baseurl}/contacts/types/' \
+--header 'X-API-Key: {API-Key}' \
+```
+
+> The above command returns JSON structured like this:
+  
+  ```json
+{
+  "error": false,
+  "error_message": {},
+  "contact_types": [
+    {
+      "en_GB": "Regular",
+      "contacttypeid": 5,
+      "de_DE": "Allgemein",
+      "fairtypeid": 1
+    },
+    {
+      "en_GB": "invoice recipient",
+      "contacttypeid": 6,
+      "de_DE": "Ansprechpartner Rechnungswesen",
+      "fairtypeid": 1
+    },
+    {
+      "en_GB": "Messebau",
+      "contacttypeid": 7,
+      "de_DE": "Messebau",
+      "fairtypeid": 1
+    },
+    {
+      "en_GB": "Regular",
+      "contacttypeid": 8,
+      "de_DE": "Allgemein",
+      "fairtypeid": 2
+    },
+    {
+      "en_GB": "invoice recipient",
+      "contacttypeid": 9,
+      "de_DE": "Ansprechpartner Rechnungswesen",
+      "fairtypeid": 2
+    },
+    {
+      "en_GB": "Messebau",
+      "contacttypeid": 10,
+      "de_DE": "Messebau",
+      "fairtypeid": 2
+    },
+    {
+      "en_GB": "Regular",
+      "contacttypeid": 11,
+      "de_DE": "Allgemein",
+      "fairtypeid": 3
+    }
+  ]
+}
+```
+
+### HTTP request
+
+`GET {baseurl}/contacts/types/`
+
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+contactid | numeric | false |  |
+fairtypeid | numeric | false |  |
+contacttypeid | numeric | false |  |
+
+## Create Contact Types
+
+```shell
+curl --location --request POST '{baseurl}/contacts/types/' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "fairtypeid": 1,
+  "default": false,
+  "translations": [
+    {
+      "language": "de_DE",
+      "text": "Messebau"
+    },
+    {
+      "language": "en_GB",
+      "text": "Exhibition construction"
+    }
+  ]
+}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "created": {
+    "default": false,
+    "fairtypeid": 1,
+    "translations": [
+      {
+        "language": "de_DE",
+        "text": "Messebau"
+      },
+      {
+        "language": "en_GB",
+        "text": "Exhibition construction"
+      }
+    ]
+  },
+  "error_message": {},
+  "contacttypeid": "35"
+}
+```
+
+### HTTP request
+
+`POST {baseurl}/contacts/types/`
+
+### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+fairtypeid | numeric | true |  |
+default | boolean | false | false |
+translations | array | true |  |
+
+#### translations
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+language | string | true |  |
+text | string | true |  |
+
+## Update Contact Types
+
+```shell
+curl --location --request PUT '{baseurl}/contacts/types/{contacttypeid}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "fairtypeid": 1,
+  "default": false,
+  "translations": [
+    {
+      "language": "de_DE",
+      "text": "Messebau changed"
+    }
+  ]
+}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "updated": {
+    "default": false,
+    "fairtypeid": 1,
+    "translations": [
+      {
+        "language": "de_DE",
+        "text": "Messebau changed"
+      }
+    ]
+  },
+  "error_message": {},
+  "contacttypeid": "35"
+}
+```
+
+### HTTP request
+
+`PUT {baseurl}/contacts/types/{contacttypeid}/`
+
+### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+fairtypeid | numeric | false |  |
+default | boolean | false | |
+translations | array | false |  |
+
+#### translations
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+language | string | true |  |
+text | string | true |  |
