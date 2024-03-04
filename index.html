@@ -408,6 +408,18 @@
                   <li>
                     <a href="#delete-contact-person" class="toc-h2 toc-link" data-title="Delete contact person">Delete contact person</a>
                   </li>
+                  <li>
+                    <a href="#get-contact-types" class="toc-h2 toc-link" data-title="Get Contact Types">Get Contact Types</a>
+                  </li>
+                  <li>
+                    <a href="#create-contact-types" class="toc-h2 toc-link" data-title="Create Contact Types">Create Contact Types</a>
+                  </li>
+                  <li>
+                    <a href="#update-contact-types" class="toc-h2 toc-link" data-title="Update Contact Types">Update Contact Types</a>
+                  </li>
+                  <li>
+                    <a href="#delete-contact-types" class="toc-h2 toc-link" data-title="Delete Contact Types">Delete Contact Types</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -2604,6 +2616,299 @@ You must replace <code>{API-Key}</code> with your personal API key.
 <td></td>
 </tr>
 </tbody></table>
+<h2 id='get-contact-types'>Get Contact Types</h2>
+<p>If you want to work with the contact types separated from the contacts, you can use the following endpoints:</p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/contacts/types/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"error_message"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="nl">"contact_types"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"en_GB"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Regular"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"contacttypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"de_DE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allgemein"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fairtypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"en_GB"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invoice recipient"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"contacttypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"de_DE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ansprechpartner Rechnungswesen"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fairtypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"en_GB"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Messebau"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"contacttypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"de_DE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Messebau"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fairtypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"en_GB"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Regular"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"contacttypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"de_DE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allgemein"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fairtypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"en_GB"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invoice recipient"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"contacttypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"de_DE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ansprechpartner Rechnungswesen"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fairtypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"en_GB"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Messebau"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"contacttypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"de_DE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Messebau"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fairtypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"en_GB"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Regular"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"contacttypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"de_DE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allgemein"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fairtypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-6'>HTTP request</h3>
+<p><code>GET {baseurl}/contacts/types/</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contactid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fairtypeid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>contacttypeid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='create-contact-types'>Create Contact Types</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/contacts/types/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+  "fairtypeid": 1,
+  "default": false,
+  "translations": [
+    {
+      "language": "de_DE",
+      "text": "Messebau"
+    },
+    {
+      "language": "en_GB",
+      "text": "Exhibition construction"
+    }
+  ]
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fairtypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"translations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"de_DE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Messebau"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en_GB"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Exhibition construction"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"error_message"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="nl">"contacttypeid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"35"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-7'>HTTP request</h3>
+<p><code>POST {baseurl}/contacts/types/</code></p>
+<h3 id='parameters-4'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fairtypeid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>default</td>
+<td>boolean</td>
+<td>false</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>translations</td>
+<td>array</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id='translations'>translations</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>language</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>text</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='update-contact-types'>Update Contact Types</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> PUT <span class="s1">'{baseurl}/contacts/types/{contacttypeid}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+  "fairtypeid": 1,
+  "default": false,
+  "translations": [
+    {
+      "language": "de_DE",
+      "text": "Messebau changed"
+    }
+  ]
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"updated"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fairtypeid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"translations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"de_DE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Messebau changed"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"error_message"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="nl">"contacttypeid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"35"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-8'>HTTP request</h3>
+<p><code>PUT {baseurl}/contacts/types/{contacttypeid}/</code></p>
+<h3 id='parameters-5'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fairtypeid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>default</td>
+<td>boolean</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>translations</td>
+<td>array</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id='translations-2'>translations</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>language</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>text</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='delete-contact-types'>Delete Contact Types</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/contacts/types/{contacttypeid}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"contacttypeid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"35"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-9'>HTTP request</h3>
+<p><code>DELETE {baseurl}/contacts/types/{contacttypeid}/</code></p>
 <h1 id='exhibitors'>Exhibitors</h1><h2 id='get-exhibitors'>Get exhibitors</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/exhibitors/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> GET <span class="se">\</span>
