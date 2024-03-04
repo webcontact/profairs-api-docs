@@ -466,3 +466,33 @@ curl --location --request DELETE '{baseurl}/contacts/types/{contacttypeid}' \
 ### HTTP request
 
 `DELETE {baseurl}/contacts/types/{contacttypeid}/`
+
+## Create Contact Type Assignment
+
+```shell
+curl --location --request POST '{baseurl}/contacts/type-assignments/?contacttypeid={contacttypeid}&contactid={contactid}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json' \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "created": true
+}
+```
+
+### HTTP request
+
+`POST {baseurl}/contacts/type-assignments/?contacttypeid={contacttypeid}&contactid={contactid}`
+
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+contacttypeid | numeric | true |  |
+contactid | numeric | true |  |
+
