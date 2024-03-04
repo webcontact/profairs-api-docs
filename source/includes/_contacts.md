@@ -496,3 +496,32 @@ Parameter | Type | required | Default | Description
 contacttypeid | numeric | true |  |
 contactid | numeric | true |  |
 
+
+## Delete Contact Type Assignment
+
+```shell
+curl --location --request DELETE '{baseurl}/contacts/type-assignments/?contacttypeid={contacttypeid}&contactid={contactid}' \
+--header 'X-API-Key: {API-Key}' \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "deleted": true
+}
+```
+
+### HTTP request
+
+`DELETE {baseurl}/contacts/type-assignments/?contacttypeid={contacttypeid}&contactid={contactid}`
+
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+contacttypeid | numeric | true |  |
+contactid | numeric | false |  | if not sets, it deletes every assignment for the contacttypeid
+
