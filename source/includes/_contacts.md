@@ -118,6 +118,7 @@ postalcode | string | false |  |
 city | string | false |  |
 country | string | false |  |
 fairtypeid | numeric | false |  |
+contacttypeid | numeric | false |  |
 
 ## Upload contact person image
 
@@ -221,6 +222,7 @@ postalcode |string | false |  |
 city | string | false |  |
 country | string | false |  |
 fairtypeid | numeric | false |  |
+contacttypeid | numeric | false |  |
 
 ## Delete contact person
 
