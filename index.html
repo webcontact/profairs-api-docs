@@ -420,6 +420,12 @@
                   <li>
                     <a href="#delete-contact-types" class="toc-h2 toc-link" data-title="Delete Contact Types">Delete Contact Types</a>
                   </li>
+                  <li>
+                    <a href="#create-contact-type-assignment" class="toc-h2 toc-link" data-title="Create Contact Type Assignment">Create Contact Type Assignment</a>
+                  </li>
+                  <li>
+                    <a href="#delete-contact-type-assignment" class="toc-h2 toc-link" data-title="Delete Contact Type Assignment">Delete Contact Type Assignment</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -2342,6 +2348,13 @@ You must replace <code>{API-Key}</code> with your personal API key.
 <td></td>
 <td></td>
 </tr>
+<tr>
+<td>contacttypeid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
 </tbody></table>
 <h2 id='upload-contact-person-image'>Upload contact person image</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/contacts/upload/'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
@@ -2580,6 +2593,13 @@ You must replace <code>{API-Key}</code> with your personal API key.
 </tr>
 <tr>
 <td>fairtypeid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>contacttypeid</td>
 <td>numeric</td>
 <td>false</td>
 <td></td>
@@ -2909,6 +2929,83 @@ You must replace <code>{API-Key}</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-9'>HTTP request</h3>
 <p><code>DELETE {baseurl}/contacts/types/{contacttypeid}/</code></p>
+<h2 id='create-contact-type-assignment'>Create Contact Type Assignment</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/contacts/type-assignments/?contacttypeid={contacttypeid}&amp;contactid={contactid}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"error_message"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-10'>HTTP request</h3>
+<p><code>POST {baseurl}/contacts/type-assignments/?contacttypeid={contacttypeid}&amp;contactid={contactid}</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contacttypeid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>contactid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='delete-contact-type-assignment'>Delete Contact Type Assignment</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/contacts/type-assignments/?contacttypeid={contacttypeid}&amp;contactid={contactid}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"error_message"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="nl">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-11'>HTTP request</h3>
+<p><code>DELETE {baseurl}/contacts/type-assignments/?contacttypeid={contacttypeid}&amp;contactid={contactid}</code></p>
+<h3 id='url-parameters-5'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contacttypeid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>contactid</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td>if not sets, it deletes every assignment for the contacttypeid</td>
+</tr>
+</tbody></table>
 <h1 id='exhibitors'>Exhibitors</h1><h2 id='get-exhibitors'>Get exhibitors</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/exhibitors/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
   <span class="nt">-X</span> GET <span class="se">\</span>
