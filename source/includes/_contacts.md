@@ -443,3 +443,24 @@ Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 language | string | true |  |
 text | string | true |  |
+
+## Delete Contact Types
+
+```shell
+curl --location --request DELETE '{baseurl}/contacts/types/{contacttypeid}' \
+--header 'X-API-Key: {API-Key}' \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "deleted": true,
+  "error": false,
+  "contacttypeid": "35"
+}
+```
+
+### HTTP request
+
+`DELETE {baseurl}/contacts/types/{contacttypeid}/`
