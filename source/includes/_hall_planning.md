@@ -332,8 +332,14 @@ key | required | type | default
 ---|---|---|---
 `fairid` | [x] | integer
 `b64svg` | [x] | string
+`dryRun` | [ ] | boolean | `false`
+`minimize` | [ ] | boolean | `true`
 
 ### Description
+
+The `b64svg` is the base64 encoded svg file. The svg file should be a floorplan of the fair. The individual booths can be either a [group](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g) or a [path](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path). If the booth is a group, it will be automatically converted to a path, to ensure the hover and fill functionality works. This will result in a potential loss of detail (e.g. multi colored fields inside the group of the booth). A workaround would be to overlay the structure that should be converted, with another group that is more detailed.
+
+The booth should be marked with the booth number as an id. For this either use the custom attribute `cvjs:roomId` or `data-stand-id`. The booth number should be the same as the booth number in the database.
 
 ```svg
 <?xml version="1.0" encoding="utf-8"?>
@@ -358,6 +364,16 @@ key | required | type | default
 </svg>
 ```
 
-The `b64svg` is the base64 encoded svg file. The svg file should be a floorplan of the fair. The individual booths can be either a [group](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g) or a [path](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path). If the booth is a group, it will be automatically converted to a path, to ensure the hover and fill functionality works. This will result in a potential loss of detail (e.g. multi colored fields inside the group of the booth). A workaround would be to overlay the structure that should be converted, with another group that is more detailed.
+The things this endpoint does are as follows:
 
-The booth should be marked with the booth number as an id. For this either use the custom attribute `cvjs:roomId` or `data-stand-id`. The booth number should be the same as the booth number in the database.
+1. It sanitizes the svg file (for example removing all script tags).
+2. It scales the svg to an appropriate size (the default is `1500px`).
+3. It fixes the closes the paths if possible, and converts groups to paths (only the booth groups and paths like described above).
+4. It uses [svgo](https://github.com/svg/svgo) to minimize and optimize the svg.
+
+Additional small things that are done are:
+
+- setting the `preserveAspectRatio` attribute to `xMidYMid meet`
+- setting the title of the path of the stand to its id.
+
+Important to keep in mind is, that the processing can break the svg. To check just go to the returned url and take a look if it is broken.
