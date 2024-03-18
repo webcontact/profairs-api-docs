@@ -297,3 +297,67 @@ code | meaning
 `201` | The request was successful and a stand proposal was made.
 `200` | The request was successful, but for [some reason](#the-proposal-was-not-made) no stand proposal was made.
 `406` | The request was not successful because probably the data was sent to the API incorrectly.
+
+## Upload Floorplan
+
+```curl
+curl --location '{baseurl}/hall_planning/floorplan' -X POST \
+--header 'x-API-Key: {API-Key}' \
+--data '{
+    "fairid": 1,
+    "b64svg": fkhdfh73hf92fajkdfhaslkhfKLHHUIhjhh9h9,
+}'
+```
+
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "url": "https://sandbox.profairs.de/shared/sandbox/floorplans/svg/1.svg"
+  },
+  "error": false,
+  "error_message": {}
+}
+```
+
+### HTTP request
+
+`POST {baseurl}/hall_planning/floorplan/`
+
+### Request Body
+
+key | required | type | default
+---|---|---|---
+`fairid` | [x] | integer
+`b64svg` | [x] | string
+
+### Description
+
+```svg
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="920" height="750" viewBox="0 0 920 750">
+      <g cvjs:roomId="A2498">
+        <title>0000131</title>
+        <line x1="290" y1="230" x2="340" y2="230" stroke="#ff0000" stroke-width="10.00mm" style="position:absolute; z-index:0.000000" />
+        <line x1="340" y1="230" x2="340" y2="270" stroke="#ff0000" stroke-width="10.00mm" style="position:absolute; z-index:0.000000" />
+        <line x1="340" y1="270" x2="290" y2="270" stroke="#ff0000" stroke-width="10.00mm" style="position:absolute; z-index:0.000000" />
+        <line x1="290" y1="270" x2="290" y2="230" stroke="#ff0000" stroke-width="10.00mm" style="position:absolute; z-index:0.000000" />
+      </g>
+</svg>
+```
+
+> This would be converted to:
+  
+```svg
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="920" height="750" viewBox="0 0 920 750">
+  <path cvjs:area="20" cvjs:node="1" cvjs:roomId="A2498" stroke="red" stroke-width=".616" d="M472.826 375h81.522v65.217h-81.522V375" class="ZW cvjs_nodes cvjs_A2498" />
+  <text x="474.457" y="376.63" stroke="none" dominant-baseline="baseline" font-family="Arial" font-size="13.043" style="position:absolute;z-index:0" transform="matrix(1 0 0 -1 0 753.26)">A2498</text>
+</svg>
+```
+
+The `b64svg` is the base64 encoded svg file. The svg file should be a floorplan of the fair. The individual booths can be either a [group](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g) or a [path](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path). If the booth is a group, it will be automatically converted to a path, to ensure the hover and fill functionality works. This will result in a potential loss of detail (e.g. multi colored fields inside the group of the booth). A workaround would be to overlay the structure that should be converted, with another group that is more detailed.
+
+The booth should be marked with the booth number as an id. For this either use the custom attribute `cvjs:roomId` or `data-stand-id`. The booth number should be the same as the booth number in the database.
