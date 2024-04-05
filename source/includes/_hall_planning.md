@@ -331,13 +331,14 @@ curl --location '{baseurl}/hall_planning/floorplan' -X POST \
 key | required | type | default
 ---|---|---|---
 `fairid` | [x] | integer
-`b64svg` | [x] | string
+`b64svg` or `svgUrl` | [x] | string
 `dryRun` | [ ] | boolean | `false`
-`minimize` | [ ] | boolean | `true`
 
 ### Description
 
 The `b64svg` is the base64 encoded svg file. The svg file should be a floorplan of the fair. The individual booths can be either a [group](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g) or a [path](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path). If the booth is a group, it will be automatically converted to a path, to ensure the hover and fill functionality works. This will result in a potential loss of detail (e.g. multi colored fields inside the group of the booth). A workaround would be to overlay the structure that should be converted, with another group that is more detailed.
+
+If the svg file is too big, the b64 encoded string could be error prone. In this case, the svg file can be uploaded to a server and the url can be sent as `svgUrl` instead of `b64svg`.
 
 The booth should be marked with the booth number as an id. For this either use the custom attribute `cvjs:roomId` or `data-stand-id`. The booth number should be the same as the booth number in the database.
 
@@ -375,5 +376,6 @@ Additional small things that are done are:
 
 - setting the `preserveAspectRatio` attribute to `xMidYMid meet`
 - setting the title of the path of the stand to its id.
+- removing the double whitespaces and newlines from the doctype if it is invalid
 
 Important to keep in mind is, that the processing can break the svg. To check just go to the returned url and take a look if it is broken.
