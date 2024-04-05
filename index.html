@@ -769,6 +769,9 @@
                   <li>
                     <a href="#make-stand-proposal" class="toc-h2 toc-link" data-title="Make stand proposal">Make stand proposal</a>
                   </li>
+                  <li>
+                    <a href="#upload-floorplan" class="toc-h2 toc-link" data-title="Upload Floorplan">Upload Floorplan</a>
+                  </li>
               </ul>
           </li>
       </ul>
@@ -9149,6 +9152,97 @@ If no employee is assigned to the exhibitor, the field <code>employee</code> wil
 <td>The request was not successful because probably the data was sent to the API incorrectly.</td>
 </tr>
 </tbody></table>
+<h2 id='upload-floorplan'>Upload Floorplan</h2><div class="highlight"><pre class="highlight plaintext"><code>curl --location '{baseurl}/hall_planning/floorplan' -X POST \
+--header 'x-API-Key: {API-Key}' \
+--data '{
+    "fairid": 1,
+    "b64svg": fkhdfh73hf92fajkdfhaslkhfKLHHUIhjhh9h9,
+}'
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://sandbox.profairs.de/shared/sandbox/floorplans/svg/1.svg"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"error_message"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-2'>HTTP request</h3>
+<p><code>POST {baseurl}/hall_planning/floorplan/</code></p>
+<h3 id='request-body-2'>Request Body</h3>
+<table><thead>
+<tr>
+<th>key</th>
+<th>required</th>
+<th>type</th>
+<th>default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>fairid</code></td>
+<td>[x]</td>
+<td>integer</td>
+<td></td>
+</tr>
+<tr>
+<td><code>b64svg</code> or <code>svgUrl</code></td>
+<td>[x]</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td><code>dryRun</code></td>
+<td>[ ]</td>
+<td>boolean</td>
+<td><code>false</code></td>
+</tr>
+</tbody></table>
+<h3 id='description-2'>Description</h3>
+<p>The <code>b64svg</code> is the base64 encoded svg file. The svg file should be a floorplan of the fair. The individual booths can be either a <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g">group</a> or a <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path">path</a>. If the booth is a group, it will be automatically converted to a path, to ensure the hover and fill functionality works. This will result in a potential loss of detail (e.g. multi colored fields inside the group of the booth). A workaround would be to overlay the structure that should be converted, with another group that is more detailed.</p>
+
+<p>If the svg file is too big, the b64 encoded string could be error prone. In this case, the svg file can be uploaded to a server and the url can be sent as <code>svgUrl</code> instead of <code>b64svg</code>.</p>
+
+<p>The booth should be marked with the booth number as an id. For this either use the custom attribute <code>cvjs:roomId</code> or <code>data-stand-id</code>. The booth number should be the same as the booth number in the database.</p>
+<div class="highlight"><pre class="highlight plaintext"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;svg width="920" height="750" viewBox="0 0 920 750"&gt;
+      &lt;g cvjs:roomId="A2498"&gt;
+        &lt;title&gt;0000131&lt;/title&gt;
+        &lt;line x1="290" y1="230" x2="340" y2="230" stroke="#ff0000" stroke-width="10.00mm" style="position:absolute; z-index:0.000000" /&gt;
+        &lt;line x1="340" y1="230" x2="340" y2="270" stroke="#ff0000" stroke-width="10.00mm" style="position:absolute; z-index:0.000000" /&gt;
+        &lt;line x1="340" y1="270" x2="290" y2="270" stroke="#ff0000" stroke-width="10.00mm" style="position:absolute; z-index:0.000000" /&gt;
+        &lt;line x1="290" y1="270" x2="290" y2="230" stroke="#ff0000" stroke-width="10.00mm" style="position:absolute; z-index:0.000000" /&gt;
+      &lt;/g&gt;
+&lt;/svg&gt;
+</code></pre></div>
+<blockquote>
+<p>This would be converted to:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;svg width="920" height="750" viewBox="0 0 920 750"&gt;
+  &lt;path cvjs:area="20" cvjs:node="1" cvjs:roomId="A2498" stroke="red" stroke-width=".616" d="M472.826 375h81.522v65.217h-81.522V375" class="ZW cvjs_nodes cvjs_A2498" /&gt;
+  &lt;text x="474.457" y="376.63" stroke="none" dominant-baseline="baseline" font-family="Arial" font-size="13.043" style="position:absolute;z-index:0" transform="matrix(1 0 0 -1 0 753.26)"&gt;A2498&lt;/text&gt;
+&lt;/svg&gt;
+</code></pre></div>
+<p>The things this endpoint does are as follows:</p>
+
+<ol>
+<li>It sanitizes the svg file (for example removing all script tags).</li>
+<li>It scales the svg to an appropriate size (the default is <code>1500px</code>).</li>
+<li>It fixes the closes the paths if possible, and converts groups to paths (only the booth groups and paths like described above).</li>
+<li>It uses <a href="https://github.com/svg/svgo">svgo</a> to minimize and optimize the svg.</li>
+</ol>
+
+<p>Additional small things that are done are:</p>
+
+<ul>
+<li>setting the <code>preserveAspectRatio</code> attribute to <code>xMidYMid meet</code></li>
+<li>setting the title of the path of the stand to its id.</li>
+<li>removing the double whitespaces and newlines from the doctype if it is invalid</li>
+</ul>
+
+<p>Important to keep in mind is, that the processing can break the svg. To check just go to the returned url and take a look if it is broken.</p>
 
       </div>
       <div class="dark-box">
