@@ -68,6 +68,7 @@ Parameter |	Type | required | Default | Description
 ---|---|---|---|---
 exhibitor_id | numeric | false | | If this is set, fair_id has to be set as well.
 fair_id | numeric | false | | If this is set, exhibitor_id has to be set as well
+location_id | numeric | false | | If this is set, only stand requests from this location will be returned.
 
 
 ### Description
@@ -211,7 +212,7 @@ curl --location '{baseurl}/hall_planning/standproposal?debug' \
     "stand_request_id": 1,
     "exhibitor_id": 1,
     "fair_id": 2,
-    "hall_id": 1,
+    "stand_assignment": 1,
     "status": "open",
     "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
 }'
@@ -276,9 +277,10 @@ key | required | type | default
 `stand_request_id` | [x] | integer
 `exhibitor_id` | [x] | integer
 `fair_id` | [x] | integer
-`hall_id` | [ ] | integer
+`stand_assignment` | [ ] | integer
 `description` | [ ] | string
 `status` | [ ] | enum('accepted', 'declined', 'open', 'archived') | `open`
+`location_id` | [ ] | integer
 
 Whether the values have the correct data type should be validated, with a meaningful error message.
 
@@ -333,6 +335,7 @@ key | required | type | default
 `fairid` | [x] | integer
 `b64svg` or `svgUrl` | [x] | string
 `dryRun` | [ ] | boolean | `false`
+`location_id` | [ ] | integer
 
 ### Description
 
