@@ -8835,6 +8835,13 @@ You must replace <code>{API-Key}</code> with your personal API key.
 <td></td>
 <td>If this is set, exhibitor_id has to be set as well</td>
 </tr>
+<tr>
+<td>location_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td>If this is set, only stand requests from this location will be returned.</td>
+</tr>
 </tbody></table>
 <h3 id='description'>Description</h3>
 <p>This data must be <a href="#make-stand-proposal">sent back to profairs</a> in addition to the planned stand:</p>
@@ -9003,7 +9010,7 @@ If no employee is assigned to the exhibitor, the field <code>employee</code> wil
     "stand_request_id": 1,
     "exhibitor_id": 1,
     "fair_id": 2,
-    "hall_id": 1,
+    "stand_assignment": 1,
     "status": "open",
     "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
 }'
@@ -9108,7 +9115,7 @@ If no employee is assigned to the exhibitor, the field <code>employee</code> wil
 <td></td>
 </tr>
 <tr>
-<td><code>hall_id</code></td>
+<td><code>stand_assignment</code></td>
 <td>[ ]</td>
 <td>integer</td>
 <td></td>
@@ -9124,6 +9131,12 @@ If no employee is assigned to the exhibitor, the field <code>employee</code> wil
 <td>[ ]</td>
 <td>enum(&#39;accepted&#39;, &#39;declined&#39;, &#39;open&#39;, &#39;archived&#39;)</td>
 <td><code>open</code></td>
+</tr>
+<tr>
+<td><code>location_id</code></td>
+<td>[ ]</td>
+<td>integer</td>
+<td></td>
 </tr>
 </tbody></table>
 
@@ -9197,6 +9210,12 @@ If no employee is assigned to the exhibitor, the field <code>employee</code> wil
 <td>[ ]</td>
 <td>boolean</td>
 <td><code>false</code></td>
+</tr>
+<tr>
+<td><code>location_id</code></td>
+<td>[ ]</td>
+<td>integer</td>
+<td></td>
 </tr>
 </tbody></table>
 <h3 id='description-2'>Description</h3>
