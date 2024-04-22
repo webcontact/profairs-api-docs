@@ -11,6 +11,7 @@ toc_footers:
 includes:
   - acquisition
   - booths
+  - brand
   - contacts
   - exhibitors
   - exhibitor_fair
