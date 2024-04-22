@@ -22,6 +22,7 @@ includes:
   - newsletter
   - publications
   - shop
+  - solution_list
   - texts
   - users
   - hall_planning
