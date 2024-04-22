@@ -111,6 +111,7 @@ curl --location --request POST '{baseurl}/solutions/' \
         }
     ]
 }'
+```
 
 > The above command returns JSON structured like this:
 
@@ -161,7 +162,7 @@ curl --location --request PUT '{baseurl}/solutions/{solutionid}' \
         }
     ]
 }'
-
+```
 > The above command returns JSON structured like this:
 
 ```json
