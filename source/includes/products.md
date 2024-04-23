@@ -213,4 +213,4 @@ curl --location --request DELETE '{baseurl}/products/{product_id}' \
 ### URL Parameters
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-press_rproduct_idelease_id | numeric | true |
+product_id | numeric | true |
