@@ -17,7 +17,7 @@ curl --location --request GET '{baseurl}/products' \
       "text": "",
       "introduction": "",
       "highlightid": 14,
-      "image_subtitle": "Das ist Produktbild",
+      "image_subtitle": "Das ist ein Produktbild",
       "image_mimetype": "image/png",
       "downloadlink": "",
       "id": 80,
@@ -63,7 +63,7 @@ curl --location --request GET '{baseurl}/products/{product_id}' \
       "id": 75,
       "image_name": "02.jpeg",
       "link": "https://webcontact.de",
-      "title": "dfgsdfhsdfh",
+      "title": "Lorem ipsum...",
       "image_preview": "",
       "videolink": "",
       "downloadlink": ""
@@ -141,7 +141,7 @@ curl --location --request PUT '{baseurl}/products/{product_id}' \
 --header 'Content-Type: text/json' \
 --data-raw '{
   "exhibitor_fair_id": "1",
-  "title": "Eine neue Pressemitteilung",
+  "title": "Eine aktualisiertes Produkt",
   "language": "de_DE",
   "image_name": "image03.png",
   "image_preview": "",
