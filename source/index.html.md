@@ -22,6 +22,7 @@ includes:
   - label
   - newsletter
   - press_release
+  - product_groups
   - products
   - publications
   - shop
