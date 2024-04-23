@@ -208,7 +208,7 @@ curl --location --request DELETE '{baseurl}/press-releases/{press_release_id}' \
 
 ### HTTP request
 
-`DELETE {baseurl}/brands/{brand_id}`
+`DELETE {baseurl}/press-releases/{press_release_id}`
 
 ### URL Parameters
 Parameter | Type | required | Default | Description
