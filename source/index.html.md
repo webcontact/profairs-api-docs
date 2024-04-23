@@ -21,6 +21,7 @@ includes:
   - industries
   - label
   - newsletter
+  - press_release
   - publications
   - shop
   - solution_list
