@@ -8,6 +8,7 @@ curl --location --request GET '{baseurl}/brands?fairtypeid=1' \
 ```
 
 > The above command returns JSON structured like this:
+
 ```json
 {
   "error": false,
