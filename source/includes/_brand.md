@@ -16,12 +16,12 @@ curl --location --request GET '{baseurl}/brands?fairtypeid=1' \
   "brands": [
     {
       "language": "de_DE",
-      "brand": "Deutz",
+      "name": "Deutz",
       "id": 12
     },
     {
       "language": "de-DE",
-      "brand": "John Deer",
+      "name": "John Deer",
       "id": 13
     }
   ]
@@ -54,7 +54,7 @@ curl --location --request GET '{baseurl}/brands/{brand_id}' \
   "error_message": {},
   "brands": {
     "language": "de_DE",
-    "brand": "Deutz",
+    "name": "Deutz",
     "id": 12
   }
 }
@@ -73,7 +73,7 @@ brand_id | numeric | true |
 ## Create brand
 
 ```shell
-curl --location --request POST '{baseurl}/brands/' \
+curl --location --request POST '{baseurl}/brands' \
 --header 'X-API-KEY: {API-Key}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -123,7 +123,7 @@ curl --location --request PUT '{baseurl}/brands/{brand_id}' \
 ```json
 {
   "error": false,
-  "solution": "14",
+  "id": "14",
   "error_message": {}
 }
 ```
