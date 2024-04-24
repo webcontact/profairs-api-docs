@@ -13,7 +13,7 @@ curl --location --request GET '{baseurl}/product-groups?fairtypeid=1' \
 {
   "error": false,
   "error_message": {},
-  "solutions": [
+  "product_groups": [
     {
       "language": "de_DE",
       "name": "Agrarprodukte",
@@ -64,7 +64,7 @@ curl --location --request GET '{baseurl}/product-groups/{product_group_id}' \
 {
   "error": false,
   "error_message": {},
-  "solutions": [
+  "product_groups": [
     {
       "language": "de_DE",
       "name": "Lösung 1",
@@ -116,7 +116,7 @@ curl --location --request POST '{baseurl}/product-groups/' \
 ```json
 {
   "error": false,
-  "product_group": "144",
+  "id": "144",
   "error_message": {}
 }
 ```
@@ -151,11 +151,11 @@ curl --location --request PUT '{baseurl}/product-groups/{product_group_id}' \
     "fairtypeid": 1,
     "languages": [
         {
-            "solution": "Lösung 3",
+            "product_group": "Lösung 3",
             "language": "de_DE"
         },
         {
-            "solution": "Lösung 3 EN",
+            "product_group": "Lösung 3 EN",
             "language": "en_GB"
         }
     ]
@@ -167,7 +167,7 @@ curl --location --request PUT '{baseurl}/product-groups/{product_group_id}' \
 ```json
 {
   "error": false,
-  "product_group": "143",
+  "id": "143",
   "error_message": {}
 }
 ```
@@ -208,7 +208,7 @@ curl --location --request DELETE '{baseurl}/product-groups/{product_group_id}' \
 ```json
 {
   "error": false,
-  "product_group": "143",
+  "id": "143",
   "error_message": {}
 }
 ```
