@@ -88,7 +88,7 @@ curl --location --request POST '{baseurl}/brands' \
 ```json
 {
   "error": false,
-  "id": "144",
+  "id": 144,
   "error_message": {}
 }
 ```
@@ -123,7 +123,7 @@ curl --location --request PUT '{baseurl}/brands/{brand_id}' \
 ```json
 {
   "error": false,
-  "id": "14",
+  "id": 14,
   "error_message": {}
 }
 ```
@@ -158,7 +158,7 @@ curl --location --request DELETE '{baseurl}/brands/{brand_id}' \
 ```json
 {
   "error": false,
-  "id": "16",
+  "id": 16,
   "error_message": {}
 }
 ```

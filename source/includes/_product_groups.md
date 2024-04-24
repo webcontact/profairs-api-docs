@@ -116,7 +116,7 @@ curl --location --request POST '{baseurl}/product-groups/' \
 ```json
 {
   "error": false,
-  "id": "144",
+  "id": 144,
   "error_message": {}
 }
 ```
@@ -167,7 +167,7 @@ curl --location --request PUT '{baseurl}/product-groups/{product_group_id}' \
 ```json
 {
   "error": false,
-  "id": "143",
+  "id": 143,
   "error_message": {}
 }
 ```
@@ -208,7 +208,7 @@ curl --location --request DELETE '{baseurl}/product-groups/{product_group_id}' \
 ```json
 {
   "error": false,
-  "id": "143",
+  "id": 143,
   "error_message": {}
 }
 ```

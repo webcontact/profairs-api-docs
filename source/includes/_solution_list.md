@@ -94,7 +94,7 @@ language | string | false |
 ## Create solution
 
 ```shell
-curl --location --request POST '{baseurl}/solutions/' \
+curl --location --request POST '{baseurl}/solutions' \
 --header 'X-API-KEY: {API-Key}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -118,7 +118,7 @@ curl --location --request POST '{baseurl}/solutions/' \
 ```json
 {
   "error": false,
-  "solution": "144",
+  "solution": 144,
   "error_message": {}
 }
 ```
@@ -168,7 +168,7 @@ curl --location --request PUT '{baseurl}/solutions/{solutionid}' \
 ```json
 {
   "error": false,
-  "solution": "143",
+  "solution": 143,
   "error_message": {}
 }
 ```
@@ -210,7 +210,7 @@ curl --location --request DELETE '{baseurl}/solutions/{solutionid}' \
 ```json
 {
   "error": false,
-  "solution": "143",
+  "solution": 143,
   "error_message": {}
 }
 ```

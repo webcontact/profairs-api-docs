@@ -114,7 +114,7 @@ curl --location --request POST '{baseurl}/press-releases' \
 ```json
 {
   "error": false,
-  "id": "144",
+  "id": 144,
   "error_message": {}
 }
 ```
@@ -162,7 +162,7 @@ curl --location --request PUT '{baseurl}/press-releases/{press_release_id}' \
 {
   "error": false,
   "error_message": {},
-  "id": "14"
+  "id": 14
 }
 ```
 
@@ -201,7 +201,7 @@ curl --location --request DELETE '{baseurl}/press-releases/{press_release_id}' \
 ```json
 {
   "error": false,
-  "id": "16",
+  "id": 16,
   "error_message": {}
 }
 ```
