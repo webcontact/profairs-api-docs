@@ -16,12 +16,12 @@ curl --location --request GET '{baseurl}/brands?fairtypeid=1' \
   "brands": [
     {
       "language": "de_DE",
-      "brands": "Deutz",
+      "brand": "Deutz",
       "id": 12
     },
     {
       "language": "de-DE",
-      "brands": "John Deer",
+      "brand": "John Deer",
       "id": 13
     }
   ]
@@ -54,7 +54,7 @@ curl --location --request GET '{baseurl}/brands/{brand_id}' \
   "error_message": {},
   "brands": {
     "language": "de_DE",
-    "brands": "Deutz",
+    "brand": "Deutz",
     "id": 12
   }
 }
@@ -158,7 +158,7 @@ curl --location --request DELETE '{baseurl}/brands/{brand_id}' \
 ```json
 {
   "error": false,
-  "solution": "16",
+  "id": "16",
   "error_message": {}
 }
 ```
