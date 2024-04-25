@@ -23,7 +23,6 @@ includes:
   - newsletter
   - press_release
   - product_groups
-  - products
   - publications
   - shop
   - solution_list
