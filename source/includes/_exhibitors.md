@@ -505,3 +505,429 @@ exhibitorid | numeric | true | |
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 fairid | numeric | true | |
+
+
+## Get assigned brands
+
+```shell
+curl --location --request GET '{baseurl}/exhibitors/{exhibitorid}/brands' \
+--header 'X-API-KEY: {API-Key}' \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "brands": [
+    {
+      "language": "de-DE",
+      "name": "John Deer",
+      "id": 13
+    },
+    {
+      "language": "de-DE",
+      "name": "Test Marke",
+      "id": 19
+    }
+  ]
+}
+```
+
+### HTTP request
+
+`GET {baseurl}/exhibitors/{exhibitorid}/brands`
+
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitorid | numeric | true |
+
+
+## Assign brand
+
+```shell
+curl --location --request POST '{baseurl}/exhibitors/{exhibitorid}/brands' \
+--header 'X-API-KEY: {API-Key}' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "brand_id": 19
+}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "id": 144,
+  "error_message": {}
+}
+```
+
+### HTTP request
+
+`POST {baseurl}/exhibitors/{exhibitorid}/brands`
+
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitorid | numeric | true |
+
+### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+brand_id | numeric | true | | |
+
+
+## Get assigned product groups
+
+```shell
+curl --location --request GET '{baseurl}/exhibitors/{exhibitorid}/product-groups' \
+--header 'X-API-KEY: {API-Key}' \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "product-groups": [
+    [
+      {
+        "language": "de_DE",
+        "name": "Nutzholz",
+        "id": 160
+      },
+      {
+        "language": "en_GB",
+        "name": "Timber",
+        "id": 160
+      }
+    ],
+    [
+      {
+        "language": "de_DE",
+        "name": "Agrarprodukte",
+        "id": 156
+      },
+      {
+        "language": "en_GB",
+        "name": "Agricultural products",
+        "id": 156
+      }
+    ]
+  ]
+}
+```
+### HTTP request
+
+`GET {baseurl}/exhibitors/{exhibitorid}/product-groups`
+
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitorid | numeric | true |
+
+## Assign product group
+
+```shell
+curl --location --request POST '{baseurl}/exhibitors/{exhibitorid}/product-groups' \
+--header 'X-API-KEY: {API-Key}' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "product_group_id": 156
+}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "id": 14,
+  "error_message": {}
+}
+```
+
+### HTTP request
+
+`POST {baseurl}/exhibitors/{exhibitorid}/product-groups`
+
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitorid | numeric | true |
+
+### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+product_group_id | numeric | true | | |
+
+
+## Get assigned solution list entries
+
+```shell
+curl --location --request GET '{baseurl}/exhibitors/{exhibitorid}/solution-list-entries' \
+--header 'X-API-KEY: {API-Key}' \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "solution-list": [
+    [
+      {
+        "language": "de_DE",
+        "name": "Klimaneutral",
+        "id": 158
+      },
+      {
+        "language": "en_GB",
+        "name": "climate neutral",
+        "id": 158
+      }
+    ]
+  ],
+  "error": false,
+  "error_message": {}
+}
+```
+
+### HTTP request
+
+`GET {baseurl}/exhibitors/{exhibitorid}/solution-list-entries`
+
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitorid | numeric | true |
+
+## Assign solution list entry
+
+```shell
+curl --location --request POST '{baseurl}/exhibitors/{exhibitorid}/solution-list-entries' \
+--header 'X-API-KEY: {API-Key}' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "solution_list_id": 19
+}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "id": 14,
+  "error_message": {}
+}
+```
+
+### HTTP request
+
+`POST {baseurl}/exhibitors/{exhibitorid}/product-groups`
+
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitorid | numeric | true |
+
+### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+solution_list_id | numeric | true | | |
+
+## Get base data
+
+```shell
+curl --location --request GET '{baseurl}/exhibitors/{exhibitorid}/{fairid}/base-data' \
+--header 'X-API-KEY: {API-Key}' \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "base-data": {
+    "strasse": "Waldblumenstraße 48",
+    "longitute": "8.5172466",
+    "telefax": "",
+    "plz": "75334",
+    "latitute": "48.8523418",
+    "adresszusatz": "",
+    "ustidnr": "",
+    "standbezeichnung": "",
+    "firma": "web://contact GmbH",
+    "telefon": "+49 7082 948344",
+    "ort": "Straubenhardt",
+    "kurztitel": "web://contact GmbH",
+    "land": "DE",
+    "homepage": "",
+    "debitorennummer": "",
+    "email": "email@test.local"
+  }
+}
+```
+
+### HTTP request
+
+`GET {baseurl}/exhibitors/{exhibitorid}/{fairid}/base-data`
+
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitorid | numeric | true |
+fairid | numeric | true |
+
+## Get profile
+
+```shell
+curl --location --request GET '{baseurl}/exhibitors/{exhibitorfairid}/profile' \
+--header 'X-API-KEY: {API-Key}' \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "profile": {
+    "ueber_uns": "Lorem ipsim ...",
+    "anzahl_mitarbeiter": "100",
+    "praxis": "Lorem ipsim ...",
+    "anzeige_typ": "",
+    "text": "test",
+    "social_media_4": "",
+    "bewerbungsverfahren": "Lorem ipsim ...",
+    "einstiegsmoeglichkeit": "Lorem ipsim ...",
+    "social_media_2": "",
+    "social_media_5": "",
+    "hauptsitz": "Stuttgart",
+    "qualifikationen": "Lorem ipsim ...",
+    "unternehmensbeschreibung": "Lorem ipsum...",
+    "sprache": "de_DE",
+    "logo_mimetype": "image/png",
+    "videourl": "https://url_to_the_video",
+    "logo": "aHR0cHM6Ly91cmxfdG9fdGhlX2xvZ28ucG5n",
+    "social_media_1": "",
+    "postanschrift": "Musterstraße 1",
+    "logo_name": "logo.png",
+    "consultation": 0,
+    "logo_vorschau": "bG9nb19wcmV2aWV3LnBuZw==",
+    "standorte": "München, Köln, Berlin",
+    "profil": "Lorem ipsim ...",
+    "social_media_3": ""
+  }
+}
+```
+
+### HTTP request
+
+`GET {baseurl}/exhibitors/{exhibitorfairid}/profile`
+
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitorfairid | numeric | true |
+
+## Set profile
+
+```shell
+curl --location --request POST '{baseurl}/exhibitors/{exhibitorfairid}/profile' \
+--header 'X-API-KEY: {API-Key}' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "sprache": "de_DE",
+  "text": "test",
+  "logo": "https://url_to_the_logo.png",
+  "unternehmensbeschreibung": "Lorem ipsum...",
+  "logo_name": "logo.png",
+  "logo_vorschau": "logo_preview.png",
+  "logo_mimetype": "image/png",
+  "videourl": "https://url_to_the_video",
+  "ueber_uns": "Lorem ipsim ...",
+  "bewerbungsverfahren": "Lorem ipsim ...",
+  "einstiegsmoeglichkeit": "Lorem ipsim ...",
+  "praxis": "Lorem ipsim ...",
+  "profil": "Lorem ipsim ...",
+  "qualifikationen": "Lorem ipsim ...",
+  "anzeige_typ": "",
+  "postanschrift": "Musterstraße 1",
+  "consultation": "0",
+  "hauptsitz": "Stuttgart",
+  "standorte": "München, Köln, Berlin",
+  "anzahl_mitarbeiter": "100",
+  "social_media_1": "",
+  "social_media_2": "",
+  "social_media_3": "",
+  "social_media_4": "",
+  "social_media_5": ""
+}'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "id": 14,
+  "error_message": {}
+}
+```
+
+### HTTP request
+
+`POST {baseurl}/exhibitors/{exhibitorfairid}/profile`
+
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitorfairid | numeric | true |
+
+### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+sprache | string | true | | |
+text | string | false | | |
+logo | string | false | | |
+unternehmensbeschreibung | string | false | | |
+logo_name | string | false | | |
+logo_vorschau | string | false | | |
+logo_mimetype | string | false | | |
+videourl | string | false | | |
+ueber_uns | string | false | | |
+bewerbungsverfahren | string | false | | |
+einstiegsmoeglichkeit | string | false | | |
+praxis | string | false | | |
+profil | string | false | | |
+qualifikationen | string | false | | |
+anzeige_typ | string | false | | |
+postanschrift | string | false | | |
+consultation | string | false | | |
+hauptsitz | string | false | | |
+standorte | string | false | | |
+anzahl_mitarbeiter | string | false | | |
+social_media_1 | string | false | | |
+social_media_2 | string | false | | |
+social_media_3 | string | false | | |
+social_media_4 | string | false | | |
+social_media_5 | string | false | | |
