@@ -922,7 +922,7 @@ profil | string | false | | |
 qualifikationen | string | false | | |
 anzeige_typ | string | false | | |
 postanschrift | string | false | | |
-consultation | string | false | | |
+consultation | numeric | false | | 0 or 1|
 hauptsitz | string | false | | |
 standorte | string | false | | |
 anzahl_mitarbeiter | string | false | | |
