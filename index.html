@@ -9217,6 +9217,12 @@ If no employee is assigned to the exhibitor, the field <code>employee</code> wil
 <td>integer</td>
 <td></td>
 </tr>
+<tr>
+<td><code>is_visitor</code></td>
+<td>[ ]</td>
+<td>boolean</td>
+<td><code>false</code></td>
+</tr>
 </tbody></table>
 <h3 id='description-2'>Description</h3>
 <p>The <code>b64svg</code> is the base64 encoded svg file. The svg file should be a floorplan of the fair. The individual booths can be either a <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g">group</a> or a <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path">path</a>. If the booth is a group, it will be automatically converted to a path, to ensure the hover and fill functionality works. This will result in a potential loss of detail (e.g. multi colored fields inside the group of the booth). A workaround would be to overlay the structure that should be converted, with another group that is more detailed.</p>
@@ -9224,6 +9230,24 @@ If no employee is assigned to the exhibitor, the field <code>employee</code> wil
 <p>If the svg file is too big, the b64 encoded string could be error prone. In this case, the svg file can be uploaded to a server and the url can be sent as <code>svgUrl</code> instead of <code>b64svg</code>.</p>
 
 <p>The booth should be marked with the booth number as an id. For this either use the custom attribute <code>cvjs:roomId</code> or <code>data-stand-id</code>. The booth number should be the same as the booth number in the database.</p>
+
+<p>The <code>is_visitor</code> key controlls, wether the floorplan is for the visitor or the exhibitor. If it is set to <code>true</code>, the floorplan is for the visitors, if it is set to <code>false</code> the floorplan is for the exhibitors. The default urls for the floorplans are different for the visitors and the exhibitors:</p>
+
+<table><thead>
+<tr>
+<th>entity</th>
+<th>default url</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>visitor</td>
+<td><code>https://sandbox.profairs.de/shared/sandbox/floorplans/svg/visitor_{fairid}.svg</code></td>
+</tr>
+<tr>
+<td>exhibitor</td>
+<td><code>https://sandbox.profairs.de/shared/sandbox/floorplans/svg/exhibitor_{fairid}.svg</code></td>
+</tr>
+</tbody></table>
 <div class="highlight"><pre class="highlight plaintext"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;svg width="920" height="750" viewBox="0 0 920 750"&gt;
       &lt;g cvjs:roomId="A2498"&gt;
