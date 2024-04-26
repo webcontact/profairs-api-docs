@@ -1,9 +1,9 @@
-# Products
+# Highlights
 
-## Get products
+## Get highlights
 
 ```shell
-curl --location --request GET '{baseurl}/products' \
+curl --location --request GET '{baseurl}/highlights' \
 --header 'X-API-KEY: {API-Key}' \
 ```
 
@@ -11,19 +11,19 @@ curl --location --request GET '{baseurl}/products' \
 
 ```json
 {
-  "products": [
+  "highlights": [
     {
       "language": "de_DE",
       "text": "",
       "introduction": "",
       "highlightid": 14,
-      "image_subtitle": "Das ist ein Produktbild",
+      "image_subtitle": "Das ist ein Highlightbild",
       "image_mimetype": "image/png",
       "downloadlink": "",
       "id": 80,
       "image_name": "image01.png",
       "link": "https://webcontact.de",
-      "title": "Testprodukt",
+      "title": "TestHighlight",
       "videolink": "",
       "image_preview": "",
       "videolink": "",
@@ -37,12 +37,12 @@ curl --location --request GET '{baseurl}/products' \
 
 ### HTTP request
 
-`GET {baseurl}/products`
+`GET {baseurl}/highlights`
 
-## Get product by Id
+## Get highlight by Id
 
 ```shell
-curl --location --request GET '{baseurl}/products/{product_id}' \
+curl --location --request GET '{baseurl}/highlights/{highlight_id}' \
 --header 'X-API-KEY: {API-Key}' \
 ```
 
@@ -73,23 +73,23 @@ curl --location --request GET '{baseurl}/products/{product_id}' \
 ```
 ### HTTP request
 
-`GET {baseurl}/products/{product_id}`
+`GET {baseurl}/highlights/{highlight_id}`
 
 ### URL Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-product_id | numeric | true |
+highlight_id | numeric | true |
 
-## Create product
+## Create highlight
 
 ```shell
-curl --location --request POST '{baseurl}/products' \
+curl --location --request POST '{baseurl}/highlights' \
 --header 'X-API-KEY: {API-Key}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "exhibitor_fair_id": "1",
-  "title": "Eine neues Produkt",
+  "title": "Eine neues Highlight",
   "language": "de_DE",
   "image_name": "image03.png",
   "image_preview": "",
@@ -114,7 +114,7 @@ curl --location --request POST '{baseurl}/products' \
 
 ### HTTP request
 
-`POST {baseurl}/products`
+`POST {baseurl}/highlights`
 
 ### Parameters
 
@@ -133,15 +133,15 @@ videolink | string | false | | |
 downloadlink | string | false | | |
 
 
-## Update product
+## Update highlight
 
 ```shell
-curl --location --request PUT '{baseurl}/products/{product_id}' \
+curl --location --request PUT '{baseurl}/highlights/{highlight_id}' \
 --header 'X-API-KEY: {API-Key}' \
 --header 'Content-Type: text/json' \
 --data-raw '{
   "exhibitor_fair_id": "1",
-  "title": "Eine aktualisiertes Produkt",
+  "title": "Eine aktualisiertes Highlight",
   "language": "de_DE",
   "image_name": "image03.png",
   "image_preview": "",
@@ -166,12 +166,12 @@ curl --location --request PUT '{baseurl}/products/{product_id}' \
 
 ### HTTP request
 
-`PUT {baseurl}/products/{product_id}`
+`PUT {baseurl}/highlights/{highlight_id}`
 
 ### URL Parameters
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-product_id | numeric | true |
+highlight_id | numeric | true |
 
 ### Parameters
 
@@ -189,10 +189,10 @@ link | string | false | | |
 videolink | string | false | | |
 downloadlink | string | false | | |
 
-## Delete product
+## Delete Highlight
 
 ```shell
-curl --location --request DELETE '{baseurl}/products/{product_id}' \
+curl --location --request DELETE '{baseurl}/highlights/{highlight_id}' \
 --header 'X-API-KEY: {API-Key}' \
 ```
 
@@ -208,9 +208,9 @@ curl --location --request DELETE '{baseurl}/products/{product_id}' \
 
 ### HTTP request
 
-`DELETE {baseurl}/products/{product_id}`
+`DELETE {baseurl}/highlights/{highlight_id}`
 
 ### URL Parameters
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-product_id | numeric | true |
+highlight_id | numeric | true |

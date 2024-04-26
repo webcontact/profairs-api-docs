@@ -18,6 +18,7 @@ includes:
   - exhibitor_industry
   - fairs
   - fairtypes
+  - highlights
   - industries
   - label
   - newsletter
