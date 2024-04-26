@@ -11,17 +11,22 @@ toc_footers:
 includes:
   - acquisition
   - booths
+  - brand
   - contacts
   - exhibitors
   - exhibitor_fair
   - exhibitor_industry
   - fairs
   - fairtypes
+  - highlights
   - industries
   - label
   - newsletter
+  - press_release
+  - product_groups
   - publications
   - shop
+  - solution_list
   - texts
   - users
   - hall_planning
