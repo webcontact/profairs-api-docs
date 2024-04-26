@@ -336,6 +336,7 @@ key | required | type | default
 `b64svg` or `svgUrl` | [x] | string
 `dryRun` | [ ] | boolean | `false`
 `location_id` | [ ] | integer
+`is_visitor` | [ ] | boolean | `false`
 
 ### Description
 
@@ -344,6 +345,13 @@ The `b64svg` is the base64 encoded svg file. The svg file should be a floorplan 
 If the svg file is too big, the b64 encoded string could be error prone. In this case, the svg file can be uploaded to a server and the url can be sent as `svgUrl` instead of `b64svg`.
 
 The booth should be marked with the booth number as an id. For this either use the custom attribute `cvjs:roomId` or `data-stand-id`. The booth number should be the same as the booth number in the database.
+
+The `is_visitor` key controlls, wether the floorplan is for the visitor or the exhibitor. If it is set to `true`, the floorplan is for the visitors, if it is set to `false` the floorplan is for the exhibitors. The default urls for the floorplans are different for the visitors and the exhibitors:
+
+entity | default url
+---|---
+visitor | `https://sandbox.profairs.de/shared/sandbox/floorplans/svg/visitor_{fairid}.svg`
+exhibitor | `https://sandbox.profairs.de/shared/sandbox/floorplans/svg/exhibitor_{fairid}.svg`
 
 ```svg
 <?xml version="1.0" encoding="utf-8"?>
