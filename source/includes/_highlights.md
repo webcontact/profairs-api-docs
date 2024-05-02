@@ -131,6 +131,7 @@ text | string | false | | |
 link | string | false | | |
 videolink | string | false | | |
 downloadlink | string | false | | |
+highlightid | numeric | false | | | use this parameter to add a new entry to an existing highlight in another language
 
 
 ## Update highlight
