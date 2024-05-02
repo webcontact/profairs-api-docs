@@ -152,7 +152,8 @@ curl --location --request PUT '{baseurl}/booths/{boothid}' \
     "boothdepth": 3,
     "boothsize": 15,
     "articleid": 1337,
-    "boothtype": 1
+    "boothtype": 1,
+    "hall_id": 15
 }'
 ```
 
@@ -186,6 +187,8 @@ curl --location --request PUT '{baseurl}/booths/{boothid}' \
 | boothsize         | numeric | false    |         |
 | articleid         | numeric | false    |         |
 | boothtype         | numeric | false    |         |
+| hall_id         | numeric | false    |         | please user either hall_id or hall_namne
+| hall_name         | name | false    |         | please user either hall_id or hall_namne
 
 
 ## Get booth types
