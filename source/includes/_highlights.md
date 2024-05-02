@@ -52,7 +52,7 @@ curl --location --request GET '{baseurl}/highlights/{highlight_id}' \
 {
   "error": false,
   "error_message": {},
-  "pressReleases": [
+  "highlights": [
     {
       "language": "de_DE",
       "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l",
