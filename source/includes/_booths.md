@@ -14,11 +14,27 @@ curl --location --request GET '{baseurl}/booths/' \
     "error": false,
     "booths": [
         {
-            "articleid": "",
+            "articleid": 3,
             "change_user": 999,
             "create_user": 999,
             "change_date": "February, 03 2022 10:48:33",
             "boothwidth": "3.0",
+            "exhibitors": [
+              {
+                "company": "Muster GmbH",
+                "plz": "12345",
+                "street": "Musterweg 45",
+                "tel": "+49 1234 12 345 67",
+                "main_exhibitor": "Muster GmbH",
+                "website": "https://www.succeet.de",
+                "city": "Musterstadt",
+                "exhibitorid": 123,
+                "main_exhibitor_fair_id": 132,
+                "exhibitorfairid": 1,
+                "short_company": "Muster GmbH",
+                "mail": "mail@muster.local"
+              }
+            ],
             "boothnumber": "2-634",
             "boothtype": 0,
             "create_date": "February, 02 2022 10:44:02",
@@ -152,7 +168,8 @@ curl --location --request PUT '{baseurl}/booths/{boothid}' \
     "boothdepth": 3,
     "boothsize": 15,
     "articleid": 1337,
-    "boothtype": 1
+    "boothtype": 1,
+    "hall_id": 15
 }'
 ```
 
@@ -186,6 +203,8 @@ curl --location --request PUT '{baseurl}/booths/{boothid}' \
 | boothsize         | numeric | false    |         |
 | articleid         | numeric | false    |         |
 | boothtype         | numeric | false    |         |
+| hall_id         | numeric | false    |         | please user either hall_id or hall_namne
+| hall_name         | name | false    |         | please user either hall_id or hall_namne
 
 
 ## Get booth types

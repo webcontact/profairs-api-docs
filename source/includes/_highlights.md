@@ -52,7 +52,7 @@ curl --location --request GET '{baseurl}/highlights/{highlight_id}' \
 {
   "error": false,
   "error_message": {},
-  "pressReleases": [
+  "highlights": [
     {
       "language": "de_DE",
       "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l",
@@ -131,6 +131,7 @@ text | string | false | | |
 link | string | false | | |
 videolink | string | false | | |
 downloadlink | string | false | | |
+highlightid | numeric | false | | | use this parameter to add a new entry to an existing highlight in another language
 
 
 ## Update highlight
