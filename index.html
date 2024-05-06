@@ -6041,7 +6041,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request'>HTTP request</h3>
 <p><code>GET {baseurl}/highlights</code></p>
-<h2 id='get-highlight-by-id'>Get highlight by Id</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/highlights/{highlight_id}'</span> <span class="se">\</span>
+<h2 id='get-highlight-by-id'>Get highlight by Id</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/highlights/{id}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-KEY: {API-Key}'</span> <span class="se">\</span>
 </code></pre></div>
 <blockquote>
@@ -6069,7 +6069,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-2'>HTTP request</h3>
-<p><code>GET {baseurl}/highlights/{highlight_id}</code></p>
+<p><code>GET {baseurl}/highlights/{id}</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -6081,7 +6081,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>highlight_id</td>
+<td>id</td>
 <td>numeric</td>
 <td>true</td>
 <td></td>
@@ -6210,7 +6210,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='update-highlight'>Update highlight</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> PUT <span class="s1">'{baseurl}/highlights/{highlight_id}'</span> <span class="se">\</span>
+<h2 id='update-highlight'>Update highlight</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> PUT <span class="s1">'{baseurl}/highlights/{id}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-KEY: {API-Key}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: text/json'</span> <span class="se">\</span>
 <span class="nt">--data-raw</span> <span class="s1">'{
@@ -6236,7 +6236,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-4'>HTTP request</h3>
-<p><code>PUT {baseurl}/highlights/{highlight_id}</code></p>
+<p><code>PUT {baseurl}/highlights/{id}</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -6248,7 +6248,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>highlight_id</td>
+<td>id</td>
 <td>numeric</td>
 <td>true</td>
 <td></td>
@@ -6343,7 +6343,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='delete-highlight'>Delete Highlight</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/highlights/{highlight_id}'</span> <span class="se">\</span>
+<h2 id='delete-highlight'>Delete Highlight</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/highlights/{id}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-KEY: {API-Key}'</span> <span class="se">\</span>
 </code></pre></div>
 <blockquote>
@@ -6355,7 +6355,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
   </span><span class="nl">"error_message"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-5'>HTTP request</h3>
-<p><code>DELETE {baseurl}/highlights/{highlight_id}</code></p>
+<p><code>DELETE {baseurl}/highlights/{id}</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -6367,7 +6367,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>highlight_id</td>
+<td>id</td>
 <td>numeric</td>
 <td>true</td>
 <td></td>
