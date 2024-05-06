@@ -42,7 +42,7 @@ curl --location --request GET '{baseurl}/highlights' \
 ## Get highlight by Id
 
 ```shell
-curl --location --request GET '{baseurl}/highlights/{highlight_id}' \
+curl --location --request GET '{baseurl}/highlights/{id}' \
 --header 'X-API-KEY: {API-Key}' \
 ```
 
@@ -73,13 +73,13 @@ curl --location --request GET '{baseurl}/highlights/{highlight_id}' \
 ```
 ### HTTP request
 
-`GET {baseurl}/highlights/{highlight_id}`
+`GET {baseurl}/highlights/{id}`
 
 ### URL Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-highlight_id | numeric | true |
+id | numeric | true |
 
 ## Create highlight
 
@@ -137,7 +137,7 @@ highlightid | numeric | false | | | use this parameter to add a new entry to an 
 ## Update highlight
 
 ```shell
-curl --location --request PUT '{baseurl}/highlights/{highlight_id}' \
+curl --location --request PUT '{baseurl}/highlights/{id}' \
 --header 'X-API-KEY: {API-Key}' \
 --header 'Content-Type: text/json' \
 --data-raw '{
@@ -167,12 +167,12 @@ curl --location --request PUT '{baseurl}/highlights/{highlight_id}' \
 
 ### HTTP request
 
-`PUT {baseurl}/highlights/{highlight_id}`
+`PUT {baseurl}/highlights/{id}`
 
 ### URL Parameters
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-highlight_id | numeric | true |
+id | numeric | true |
 
 ### Parameters
 
@@ -193,7 +193,7 @@ downloadlink | string | false | | |
 ## Delete Highlight
 
 ```shell
-curl --location --request DELETE '{baseurl}/highlights/{highlight_id}' \
+curl --location --request DELETE '{baseurl}/highlights/{id}' \
 --header 'X-API-KEY: {API-Key}' \
 ```
 
@@ -209,9 +209,9 @@ curl --location --request DELETE '{baseurl}/highlights/{highlight_id}' \
 
 ### HTTP request
 
-`DELETE {baseurl}/highlights/{highlight_id}`
+`DELETE {baseurl}/highlights/{id}`
 
 ### URL Parameters
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-highlight_id | numeric | true |
+id | numeric | true |
