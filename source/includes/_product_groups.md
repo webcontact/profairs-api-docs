@@ -47,7 +47,7 @@ curl --location --request GET '{baseurl}/product-groups?fairtypeid=1' \
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 fairtypeid | numeric | true |
-parentid | numeric | true | 0
+parentid | numeric | false | 0
 language | string | false
 exhibitorid | numeric | false
 showlocked | boolean | false | false 
@@ -87,6 +87,7 @@ curl --location --request GET '{baseurl}/product-groups/{product_group_id}' \
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 product_group_id | numeric | true |
+fairtypeid | numeric | false |
 language | string | false |
 
 ## Create product group
@@ -130,7 +131,7 @@ curl --location --request POST '{baseurl}/product-groups/' \
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 parentid | numeric | true | | |
-messetypid | numeric | true | | |
+fairtypeid | numeric | true | | |
 languages | array of objects | true | |
 
 ### Languages details
@@ -186,7 +187,7 @@ product_group_id | numeric | true |
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 parentid | numeric | true | | |
-messetypid | numeric | true | | |
+fairtypeid | numeric | true | | |
 languages | array of objects | true | |
 
 ### Languages details

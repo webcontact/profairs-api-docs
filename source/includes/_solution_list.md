@@ -131,8 +131,8 @@ curl --location --request POST '{baseurl}/solutions' \
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-parentid | numeric | true | | |
-messetypid | numeric | true | | |
+parentid | numeric | true | | 0 |
+fairtypeid | numeric | true | | |
 languages | array of objects | true | |
 
 ### Languages details
@@ -187,8 +187,8 @@ solutionid | numeric | true |
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-parentid | numeric | true | | |
-messetypid | numeric | true | | |
+parentid | numeric | true | | 0 |
+fairtypeid | numeric | true | | |
 languages | array of objects | true | |
 
 ### Languages details

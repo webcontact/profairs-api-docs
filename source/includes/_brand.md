@@ -143,7 +143,7 @@ brand_id | numeric | true |
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 fairtypeid | numeric | true | | |
-name | numeric | true | | |
+name | string | true | | |
 language | string | true | |
 
 ## Delete brand

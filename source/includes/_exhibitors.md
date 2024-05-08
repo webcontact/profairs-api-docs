@@ -736,7 +736,7 @@ curl --location --request POST '{baseurl}/exhibitors/{exhibitorid}/solution-list
 
 ### HTTP request
 
-`POST {baseurl}/exhibitors/{exhibitorid}/product-groups`
+`POST {baseurl}/exhibitors/{exhibitorid}/solution-list-entries`
 
 ### URL Parameters
 
@@ -808,34 +808,62 @@ curl --location --request GET '{baseurl}/exhibitors/{exhibitorfairid}/profile' \
 {
   "error": false,
   "error_message": {},
-  "profile": {
-    "ueber_uns": "Lorem ipsim ...",
-    "anzahl_mitarbeiter": "100",
-    "praxis": "Lorem ipsim ...",
-    "anzeige_typ": "",
-    "text": "test",
-    "social_media_4": "",
-    "bewerbungsverfahren": "Lorem ipsim ...",
-    "einstiegsmoeglichkeit": "Lorem ipsim ...",
-    "social_media_2": "",
-    "social_media_5": "",
-    "hauptsitz": "Stuttgart",
-    "qualifikationen": "Lorem ipsim ...",
-    "unternehmensbeschreibung": "Lorem ipsum...",
-    "sprache": "de_DE",
-    "logo_mimetype": "image/png",
-    "videourl": "https://url_to_the_video",
-    "logo": "aHR0cHM6Ly91cmxfdG9fdGhlX2xvZ28ucG5n",
-    "social_media_1": "",
-    "postanschrift": "Musterstraße 1",
-    "logo_name": "logo.png",
-    "consultation": 0,
-    "logo_vorschau": "bG9nb19wcmV2aWV3LnBuZw==",
-    "standorte": "München, Köln, Berlin",
-    "profil": "Lorem ipsim ...",
-    "social_media_3": ""
-  }
-}
+  "profile": [
+    {
+      "ueber_uns": "Lorem ipsim ...",
+      "anzahl_mitarbeiter": "100",
+      "praxis": "Lorem ipsim ...",
+      "anzeige_typ": "",
+      "text": "test",
+      "social_media_4": "",
+      "bewerbungsverfahren": "Lorem ipsim ...",
+      "einstiegsmoeglichkeit": "Lorem ipsim ...",
+      "social_media_2": "",
+      "social_media_5": "",
+      "hauptsitz": "Stuttgart",
+      "qualifikationen": "Lorem ipsim ...",
+      "unternehmensbeschreibung": "Lorem ipsum...",
+      "sprache": "de_DE",
+      "logo_mimetype": "image/png",
+      "videourl": "https://url_to_the_video",
+      "logo": "aHR0cHM6Ly91cmxfdG9fdGhlX2xvZ28ucG5n",
+      "social_media_1": "",
+      "postanschrift": "Musterstraße 1",
+      "logo_name": "logo.png",
+      "consultation": 0,
+      "logo_vorschau": "bG9nb19wcmV2aWV3LnBuZw==",
+      "standorte": "München, Köln, Berlin",
+      "profil": "Lorem ipsim ...",
+      "social_media_3": ""
+    },
+    {
+      "ueber_uns": "Lorem ipsim ...",
+      "anzahl_mitarbeiter": "100",
+      "praxis": "Lorem ipsim ...",
+      "anzeige_typ": "",
+      "text": "test",
+      "social_media_4": "",
+      "bewerbungsverfahren": "Lorem ipsim ...",
+      "einstiegsmoeglichkeit": "Lorem ipsim ...",
+      "social_media_2": "",
+      "social_media_5": "",
+      "hauptsitz": "Stuttgart",
+      "qualifikationen": "Lorem ipsim ...",
+      "unternehmensbeschreibung": "Lorem ipsum...",
+      "sprache": "en_GB",
+      "logo_mimetype": "image/png",
+      "videourl": "https://url_to_the_video",
+      "logo": "aHR0cHM6Ly91cmxfdG9fdGhlX2xvZ28ucG5n",
+      "social_media_1": "",
+      "postanschrift": "Main Street 1",
+      "logo_name": "logo.png",
+      "consultation": 0,
+      "logo_vorschau": "bG9nb19wcmV2aWV3LnBuZw==",
+      "standorte": "London, Leeds, Liverpool",
+      "profil": "Lorem ipsim ...",
+      "social_media_3": ""
+    }
+]
 ```
 
 ### HTTP request
