@@ -15,27 +15,37 @@ curl --location --request GET '{baseurl}/industries/?fairtypeid=2' \
         {
             "language": "de_DE",
             "industry": "Architektur",
-            "industryid": 34
+            "industryid": 34,
+            "parentid": 0,
+            "ordernumber": 0
         },
         {
             "language": "de_DE",
             "industry": "Betriebswirtschaftslehre",
-            "industryid": 35
+            "industryid": 35,
+            "parentid": 0,
+            "ordernumber": 0
         },
         {
             "language": "de_DE",
             "industry": "Maschinenbau",
-            "industryid": 45
+            "industryid": 45,
+            "parentid": 0,
+            "ordernumber": 0
         },
         {
             "language": "de_DE",
             "industry": "Mathematik",
-            "industryid": 46
+            "industryid": 46,
+            "parentid": 0,
+            "ordernumber": 0
         },
         {
             "language": "de_DE",
             "industry": "Technik- und Management ",
-            "industryid": 54
+            "industryid": 54,
+            "parentid": 0,
+            "ordernumber": 0
         }
     ],
     "error": false
@@ -55,6 +65,7 @@ language | string |false ||
 parentid | numeric |true | 0 |
 exhibitorid | numeric |false ||
 showlocked | boolean |false ||
+
 ## Get industrie
 
 ```shell
@@ -70,7 +81,9 @@ curl --location --request GET '{baseurl}/industries/2/' \
         {
             "language": "de_DE",
             "industry": "Webentwicklung",
-            "industryid": 2
+            "industryid": 2,
+            "parentid": 0,
+            "ordernumber": 0
         }
     ],
     "error": false
@@ -89,7 +102,7 @@ idustryid | numeric | true | |
 ### Query Parameters
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-language | string | false | | />
+language | string | false | | 
 
 ## Create industrie
 
@@ -99,6 +112,7 @@ curl --location --request POST '{baseurl}/industries/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "parentid": 1,
+    "ordernumber": 0,
     "fairtypeid": 1,
     "languages": [
         {
@@ -130,7 +144,8 @@ curl --location --request POST '{baseurl}/industries/' \
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-parentid | numeric | true | | |
+parentid | numeric | true | 0 | |
+ordernumber | numeric | true | 0 | |
 messetypid | numeric | true | | |
 languages | array of objects | true | |
 
@@ -149,6 +164,7 @@ curl --location --request PUT '{basepath}/industries/{idustryid}/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "parentid": 1,
+    "ordernumber": 0,
     "fairtypeid": 1,
     "languages": [
         {
@@ -185,7 +201,8 @@ industryid | numeric | true | | |
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-parentid | numeric | true | | |
+parentid | numeric | true | 0 | |
+ordernumber | numeric | true | 0 | |
 messetypid | numeric | true | | |
 languages | array of objects | true | |
 
