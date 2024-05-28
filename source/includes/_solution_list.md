@@ -145,8 +145,8 @@ curl --location --request POST '{baseurl}/solutions' \
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-parentid | numeric | true | | 0 |
-ordernumber | numeric | true | | 0 |
+parentid | numeric | true | 0 | |
+ordernumber | numeric | true | 0 | |
 fairtypeid | numeric | true | | |
 languages | array of objects | true | |
 
@@ -204,8 +204,8 @@ solutionid | numeric | true |
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-parentid | numeric | true | | 0 |
-ordernumber | numeric | true | | 0 |
+parentid | numeric | true | 0 | |
+ordernumber | numeric | true | 0 | |
 fairtypeid | numeric | true | | |
 languages | array of objects | true | |
 
