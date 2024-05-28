@@ -18,7 +18,7 @@ curl --location --request GET '{baseurl}/press-releases' \
       "language": "de_DE",
       "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l",
       "introduction": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l",
-      "highlightid": 9,
+      "groupid": 9,
       "image_subtitle": "This is an image",
       "image_mimetype": "image/png",
       "id": 74,
@@ -169,7 +169,7 @@ curl --location --request GET '{baseurl}/press-releases' \
       "language": "de_DE",
       "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l",
       "introduction": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l",
-      "highlightid": 10,
+      "groupid": 10,
       "image_subtitle": "This is another image", 
       "image_mimetype": "image/jpeg",
       "id": 75,
@@ -343,7 +343,7 @@ curl --location --request GET '{baseurl}/press-releases/{press_release_id}' \
       "language": "de_DE",
       "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l",
       "introduction": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l",
-      "highlightid": 10,
+      "groupid": 10,
       "image_subtitle": "This is another image", 
       "image_mimetype": "image/jpeg",
       "id": 75,
@@ -520,6 +520,7 @@ curl --location --request POST '{baseurl}/press-releases' \
   "introduction": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut",
   "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut",
   "link": "https://webcontact.de",
+  "groupid": 19
 }'
 ```
 
@@ -550,6 +551,7 @@ image_mimetype | string | false | | |
 introduction | string | false | | |
 text | string | false | | |
 link | string | false | | |
+groupid | numeric | false | | | use this parameter to add a new entry to an existing press release in another language
 
 
 ## Update press release
@@ -568,6 +570,7 @@ curl --location --request PUT '{baseurl}/press-releases/{press_release_id}' \
   "introduction": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut",
   "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut",
   "link": "https://webcontact.de",
+  "groupid": 19
 }'
 ```
 > The above command returns JSON structured like this:
@@ -602,6 +605,7 @@ image_mimetype | string | false | | |
 introduction | string | false | | |
 text | string | false | | |
 link | string | false | | |
+groupid | numeric | false | | | use this parameter to add a new entry to an existing press release in another language
 
 ## Delete press release
 

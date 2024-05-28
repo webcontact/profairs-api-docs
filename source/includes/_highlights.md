@@ -16,7 +16,7 @@ curl --location --request GET '{baseurl}/highlights' \
       "language": "de_DE",
       "text": "",
       "introduction": "",
-      "highlightid": 14,
+      "groupid": 14,
       "image_subtitle": "Das ist ein Highlightbild",
       "image_mimetype": "image/png",
       "downloadlink": "",
@@ -167,7 +167,7 @@ curl --location --request GET '{baseurl}/highlights/{id}' \
       "language": "de_DE",
       "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l",
       "introduction": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l",
-      "highlightid": 10,
+      "groupid": 10,
       "image_subtitle": "This is another image", 
       "image_mimetype": "image/jpeg",
       "id": 75,
@@ -319,6 +319,7 @@ curl --location --request POST '{baseurl}/highlights' \
   "link": "https://webcontact.de",
   "videolink": "",
   "downloadlink": "",
+  "groupid": 19
 }'
 ```
 
@@ -351,7 +352,7 @@ text | string | false | | |
 link | string | false | | |
 videolink | string | false | | |
 downloadlink | string | false | | |
-highlightid | numeric | false | | | use this parameter to add a new entry to an existing highlight in another language
+groupid | numeric | false | | | use this parameter to add a new entry to an existing highlight in another language
 
 
 ## Update highlight
@@ -372,6 +373,7 @@ curl --location --request PUT '{baseurl}/highlights/{id}' \
   "link": "https://webcontact.de",
   "videolink": "",
   "downloadlink": "",
+  "groupid": 19
 }'
 ```
 
@@ -409,6 +411,7 @@ text | string | false | | |
 link | string | false | | |
 videolink | string | false | | |
 downloadlink | string | false | | |
+groupid | numeric | false | | | use this parameter to add a new entry to an existing press release in another language
 
 ## Delete Highlight
 
