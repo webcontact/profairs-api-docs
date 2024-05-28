@@ -16,12 +16,14 @@ curl --location --request GET '{baseurl}/brands?fairtypeid=1' \
   "brands": [
     {
       "language": "de_DE",
+      "groupid": 11,
       "name": "Deutz",
       "id": 12
     },
     {
       "language": "de-DE",
       "name": "John Deer",
+      "groupid": 11,
       "id": 13
     }
   ]
@@ -54,6 +56,7 @@ curl --location --request GET '{baseurl}/brands/{brand_id}' \
   "error_message": {},
   "brands": {
     "language": "de_DE",
+    "groupid": 11,
     "name": "Deutz",
     "id": 12
   }
