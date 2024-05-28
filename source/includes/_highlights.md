@@ -27,7 +27,117 @@ curl --location --request GET '{baseurl}/highlights' \
       "videolink": "",
       "image_preview": "preview_image01.png",
       "videolink": "",
-      "downloadlink": ""
+      "downloadlink": "",
+      "keywords": [
+        {
+          "language": "de_DE",
+          "groupId": 26,
+          "name": "Stichwort 1",
+          "id": 26
+        },
+        {
+          "language": "en_GB",
+          "groupId": 26,
+          "name": "Keyword 1",
+          "id": 27
+        },
+        {
+          "language": "de_DE",
+          "groupId": 26,
+          "name": "Stichwort 2",
+          "id": 26
+        },
+        {
+          "language": "en_GB",
+          "groupId": 26,
+          "name": "Keyword 2",
+          "id": 27
+        }
+      ],
+      "solution_list_entries": [
+        [
+          {
+            "language": "de_DE",
+            "parentid": 169,
+            "name": "klimaneutral",
+            "id": 170,
+            "ordernumber": 0
+          },
+          {
+            "language": "en_GB",
+            "parentid": 169,
+            "name": "climate neutral",
+            "id": 170,
+            "ordernumber": 0
+          }
+        ]
+      ],
+      "brands": [
+        {
+          "language": "de_DE",
+          "groupId": 11,
+          "name": "Marke 1",
+          "id": 12
+        },
+        {
+          "language": "de_DE",
+          "groupId": 13,
+          "name": "Marke 2",
+          "id": 14
+        },
+      ],
+      "branches": [
+        [
+          {
+            "language": "de_DE",
+            "parentid": 0,
+            "name": "Architektur",
+            "id": 34,
+            "ordernumber": 0
+          },
+          {
+            "language": "en_GB",
+            "parentid": 0,
+            "name": "Architecture",
+            "id": 34,
+            "ordernumber": 0
+          }
+        ]
+      ],
+      "product_group": [
+        [
+          {
+            "language": "de_DE",
+            "parentid": 172,
+            "name": "Gemüse",
+            "id": 195,
+            "ordernumber": 0
+          },
+          {
+            "language": "en_GB",
+            "parentid": 172,
+            "name": "Vegetables",
+            "id": 195,
+            "ordernumber": 0
+          }
+        ],
+        [
+          {
+            "language": "de_DE",
+            "parentid": 172,
+            "name": "Getreide",
+            "id": 196,
+            "ordernumber": 0
+          },
+          {
+            "language": "en_GB",
+            "parentid": 172,
+            "name": "Cereals",
+            "id": 196,
+            "ordernumber": 0
+          }
+        ]
+      ]
     }
   ],
   "error": false,
@@ -66,7 +176,117 @@ curl --location --request GET '{baseurl}/highlights/{id}' \
       "title": "Lorem ipsum...",
       "image_preview": "",
       "videolink": "",
-      "downloadlink": ""
+      "downloadlink": "",
+      "keywords": [
+        {
+          "language": "de_DE",
+          "groupId": 26,
+          "name": "Stichwort 1",
+          "id": 26
+        },
+        {
+          "language": "en_GB",
+          "groupId": 26,
+          "name": "Keyword 1",
+          "id": 27
+        },
+        {
+          "language": "de_DE",
+          "groupId": 26,
+          "name": "Stichwort 2",
+          "id": 26
+        },
+        {
+          "language": "en_GB",
+          "groupId": 26,
+          "name": "Keyword 2",
+          "id": 27
+        }
+      ],
+      "solution_list_entries": [
+        [
+          {
+            "language": "de_DE",
+            "parentid": 169,
+            "name": "klimaneutral",
+            "id": 170,
+            "ordernumber": 0
+          },
+          {
+            "language": "en_GB",
+            "parentid": 169,
+            "name": "climate neutral",
+            "id": 170,
+            "ordernumber": 0
+          }
+        ]
+      ],
+      "brands": [
+        {
+          "language": "de_DE",
+          "groupId": 11,
+          "name": "Marke 1",
+          "id": 12
+        },
+        {
+          "language": "de_DE",
+          "groupId": 13,
+          "name": "Marke 2",
+          "id": 14
+        },
+      ],
+      "branches": [
+        [
+          {
+            "language": "de_DE",
+            "parentid": 0,
+            "name": "Architektur",
+            "id": 34,
+            "ordernumber": 0
+          },
+          {
+            "language": "en_GB",
+            "parentid": 0,
+            "name": "Architecture",
+            "id": 34,
+            "ordernumber": 0
+          }
+        ]
+      ],
+      "product_group": [
+        [
+          {
+            "language": "de_DE",
+            "parentid": 172,
+            "name": "Gemüse",
+            "id": 195,
+            "ordernumber": 0
+          },
+          {
+            "language": "en_GB",
+            "parentid": 172,
+            "name": "Vegetables",
+            "id": 195,
+            "ordernumber": 0
+          }
+        ],
+        [
+          {
+            "language": "de_DE",
+            "parentid": 172,
+            "name": "Getreide",
+            "id": 196,
+            "ordernumber": 0
+          },
+          {
+            "language": "en_GB",
+            "parentid": 172,
+            "name": "Cereals",
+            "id": 196,
+            "ordernumber": 0
+          }
+        ]
+      ]
     }
   ]
 }
