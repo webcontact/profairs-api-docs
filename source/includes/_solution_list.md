@@ -17,21 +17,29 @@ curl --location --request GET '{baseurl}/solutions?fairtypeid=1' \
     {
       "language": "de_DE",
       "name": "Lösung 1",
+      "parentid": 0,
+      "ordernumber": 0,
       "id": 143
     },
     {
       "language": "en_GB",
       "name": "Lösung 1 EN",
+      "parentid": 0,
+      "ordernumber": 0,
       "id": 143
     },
     {
       "language": "de_DE",
       "name": "Lösung 2",
+      "parentid": 0,
+      "ordernumber": 0,
       "id": 144
     },
     {
       "language": "en_GB",
       "name": "Lösung 2 EN",
+      "parentid": 0,
+      "ordernumber": 0,
       "id": 144
     }
   ]
@@ -69,11 +77,15 @@ curl --location --request GET '{baseurl}/solutions/{solutionid}' \
     {
       "language": "de_DE",
       "name": "Lösung 1",
+      "parentid": 0,
+      "ordernumber": 0,
       "id": 143
     },
     {
       "language": "en_GB",
       "name": "Lösung 1 EN",
+      "parentid": 0,
+      "ordernumber": 0,
       "id": 143
     }
   ]
@@ -100,6 +112,8 @@ curl --location --request POST '{baseurl}/solutions' \
 --data-raw '{
     "parentid": 0,
     "fairtypeid": 1,
+    "parentid": 0,
+    "ordernumber": 0,
     "languages": [
         {
             "solution": "Lorem Ipsum",
@@ -132,6 +146,7 @@ curl --location --request POST '{baseurl}/solutions' \
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 parentid | numeric | true | | 0 |
+ordernumber | numeric | true | | 0 |
 fairtypeid | numeric | true | | |
 languages | array of objects | true | |
 
@@ -151,6 +166,8 @@ curl --location --request PUT '{baseurl}/solutions/{solutionid}' \
 --data-raw '{
     "parentid": 0,
     "fairtypeid": 1,
+    "parentid": 0,
+    "ordernumber": 0,
     "languages": [
         {
             "solution": "Lösung 3",
@@ -188,6 +205,7 @@ solutionid | numeric | true |
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 parentid | numeric | true | | 0 |
+ordernumber | numeric | true | | 0 |
 fairtypeid | numeric | true | | |
 languages | array of objects | true | |
 
