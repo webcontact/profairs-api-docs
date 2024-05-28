@@ -16,21 +16,29 @@ curl --location --request GET '{baseurl}/product-groups?fairtypeid=1' \
   "product_groups": [
     {
       "language": "de_DE",
+      "parentid": 0,
+      "ordernumber": 0,
       "name": "Agrarprodukte",
       "id": 143
     },
     {
       "language": "en_GB",
+      "parentid": 0,
+      "ordernumber": 0,
       "name": "Agricultural products",
       "id": 143
     },
     {
       "language": "de_DE",
+      "parentid": 0,
+      "ordernumber": 0,
       "name": "Nutzholz",
       "id": 144
     },
     {
       "language": "en_GB",
+      "parentid": 0,
+      "ordernumber": 0,
       "name": "Timber",
       "id": 144
     }
@@ -68,11 +76,15 @@ curl --location --request GET '{baseurl}/product-groups/{product_group_id}' \
     {
       "language": "de_DE",
       "name": "Lösung 1",
+      "parentid": 0,
+      "ordernumber": 0,
       "id": 143
     },
     {
       "language": "en_GB",
       "name": "Lösung 1 EN",
+      "parentid": 0,
+      "ordernumber": 0,
       "id": 143
     }
   ]
@@ -98,6 +110,7 @@ curl --location --request POST '{baseurl}/product-groups/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "parentid": 0,
+    "ordernumber": 0,
     "fairtypeid": 1,
     "languages": [
         {
@@ -130,7 +143,8 @@ curl --location --request POST '{baseurl}/product-groups/' \
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-parentid | numeric | true | | |
+parentid | numeric | true | 0 | |
+ordernumber | numeric | true | 0 | |
 fairtypeid | numeric | true | | |
 languages | array of objects | true | |
 
@@ -149,6 +163,7 @@ curl --location --request PUT '{baseurl}/product-groups/{product_group_id}' \
 --header 'Content-Type: text/json' \
 --data-raw '{
     "parentid": 0,
+    "ordernumber": 0,
     "fairtypeid": 1,
     "languages": [
         {
@@ -186,7 +201,8 @@ product_group_id | numeric | true |
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-parentid | numeric | true | | |
+parentid | numeric | true | 0 | |
+ordernumber | numeric | true | 0 | |
 fairtypeid | numeric | true | | |
 languages | array of objects | true | |
 
