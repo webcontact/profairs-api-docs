@@ -25,7 +25,145 @@ curl --location --request GET '{baseurl}/press-releases' \
       "image_name": "image01.png",
       "link": "https://webcontact.de",
       "title": "Lorem Ipsum...",
-      "image_preview": ""
+      "image_preview": "",
+      "keywords": [
+        {
+          "language": "de_DE",
+          "groupId": 8,
+          "name": "Stichwort 1",
+          "id": 7
+        },
+        {
+          "language": "en_GB",
+          "groupId": 8,
+          "name": "Keyword 1",
+          "id": 8
+        },
+        {
+          "language": "de_DE",
+          "groupId": 9,
+          "name": "stichwort 2",
+          "id": 9
+        },
+        {
+          "language": "en_GB",
+          "groupId": 9,
+          "name": "Keyword 2",
+          "id": 10
+        }
+      ],
+      "solution_list_entries": [
+        [
+          {
+            "language": "de_DE",
+            "parentid": 169,
+            "name": "Lösungsverzeichniseintrag 1",
+            "id": 170,
+            "ordernumber": 0
+          },
+          {
+            "language": "en_GB",
+            "parentid": 169,
+            "name": "Solution List Entry 1",
+            "id": 170,
+            "ordernumber": 0
+          }
+        ]
+      ],
+      "brands": [
+        {
+          "language": "de_DE",
+          "groupId": 11,
+          "name": "Marke 1",
+          "id": 12
+        }
+      ],
+      "branches": [
+        [
+          {
+            "language": "de_DE",
+            "parentid": 0,
+            "name": "Branche 1",
+            "id": 34,
+            "ordernumber": 0
+          },
+          {
+            "language": "en_GB",
+            "parentid": 0,
+            "name": "Branch 1",
+            "id": 34,
+            "ordernumber": 0
+          }
+        ],
+        [
+          {
+            "language": "de_DE",
+            "parentid": 0,
+            "name": "Branche 2",
+            "id": 36,
+            "ordernumber": 0
+          }
+        ],
+        [
+          {
+            "language": "de_DE",
+            "parentid": 0,
+            "name": "Branch 2",
+            "id": 36,
+            "ordernumber": 0
+          }
+        ]
+      ],
+      "product_group": [
+        [
+          {
+            "language": "de_DE",
+            "parentid": 172,
+            "name": "Gemüse",
+            "id": 195,
+            "ordernumber": 0
+          },
+          {
+            "language": "en_GB",
+            "parentid": 172,
+            "name": "Vegetables",
+            "id": 195,
+            "ordernumber": 0
+          }
+        ],
+        [
+          {
+            "language": "de_DE",
+            "parentid": 172,
+            "name": "Getreide",
+            "id": 196,
+            "ordernumber": 0
+          },
+          {
+            "language": "en_GB",
+            "parentid": 172,
+            "name": "Cereals",
+            "id": 196,
+            "ordernumber": 0
+          }
+        ],
+        [
+          {
+            "language": "de_DE",
+            "parentid": 172,
+            "name": "Obst",
+            "id": 194,
+            "ordernumber": 0
+          },
+          {
+            "language": "en_GB",
+            "parentid": 172,
+            "name": "Fruits",
+            "id": 194,
+            "ordernumber": 0
+          }
+        ]
+      ]
     },
     {
       "language": "de_DE",
@@ -38,7 +176,145 @@ curl --location --request GET '{baseurl}/press-releases' \
       "image_name": "02.jpeg",
       "link": "https://webcontact.de",
       "title": "dfgsdfhsdfh",
-      "image_preview": ""
+      "image_preview": "",
+      "keywords": [
+        {
+          "language": "de_DE",
+          "groupId": 8,
+          "name": "Stichwort 1",
+          "id": 7
+        },
+        {
+          "language": "en_GB",
+          "groupId": 8,
+          "name": "Keyword 1",
+          "id": 8
+        },
+        {
+          "language": "de_DE",
+          "groupId": 9,
+          "name": "stichwort 2",
+          "id": 9
+        },
+        {
+          "language": "en_GB",
+          "groupId": 9,
+          "name": "Keyword 2",
+          "id": 10
+        }
+      ],
+      "solution_list_entries": [
+        [
+          {
+            "language": "de_DE",
+            "parentid": 169,
+            "name": "Lösungsverzeichniseintrag 1",
+            "id": 170,
+            "ordernumber": 0
+          },
+          {
+            "language": "en_GB",
+            "parentid": 169,
+            "name": "Solution List Entry 1",
+            "id": 170,
+            "ordernumber": 0
+          }
+        ]
+      ],
+      "brands": [
+        {
+          "language": "de_DE",
+          "groupId": 11,
+          "name": "Marke 1",
+          "id": 12
+        }
+      ],
+      "branches": [
+        [
+          {
+            "language": "de_DE",
+            "parentid": 0,
+            "name": "Branche 1",
+            "id": 34,
+            "ordernumber": 0
+          },
+          {
+            "language": "en_GB",
+            "parentid": 0,
+            "name": "Branch 1",
+            "id": 34,
+            "ordernumber": 0
+          }
+        ],
+        [
+          {
+            "language": "de_DE",
+            "parentid": 0,
+            "name": "Branche 2",
+            "id": 36,
+            "ordernumber": 0
+          }
+        ],
+        [
+          {
+            "language": "de_DE",
+            "parentid": 0,
+            "name": "Branch 2",
+            "id": 36,
+            "ordernumber": 0
+          }
+        ]
+      ],
+      "product_group": [
+        [
+          {
+            "language": "de_DE",
+            "parentid": 172,
+            "name": "Gemüse",
+            "id": 195,
+            "ordernumber": 0
+          },
+          {
+            "language": "en_GB",
+            "parentid": 172,
+            "name": "Vegetables",
+            "id": 195,
+            "ordernumber": 0
+          }
+        ],
+        [
+          {
+            "language": "de_DE",
+            "parentid": 172,
+            "name": "Getreide",
+            "id": 196,
+            "ordernumber": 0
+          },
+          {
+            "language": "en_GB",
+            "parentid": 172,
+            "name": "Cereals",
+            "id": 196,
+            "ordernumber": 0
+          }
+        ],
+        [
+          {
+            "language": "de_DE",
+            "parentid": 172,
+            "name": "Obst",
+            "id": 194,
+            "ordernumber": 0
+          },
+          {
+            "language": "en_GB",
+            "parentid": 172,
+            "name": "Fruits",
+            "id": 194,
+            "ordernumber": 0
+          }
+        ]
+      ]
     }
   ]
 }
@@ -74,7 +350,145 @@ curl --location --request GET '{baseurl}/press-releases/{press_release_id}' \
       "image_name": "02.jpeg",
       "link": "https://webcontact.de",
       "title": "dfgsdfhsdfh",
-      "image_preview": ""
+      "image_preview": "",
+      "keywords": [
+        {
+          "language": "de_DE",
+          "groupId": 8,
+          "name": "Stichwort 1",
+          "id": 7
+        },
+        {
+          "language": "en_GB",
+          "groupId": 8,
+          "name": "Keyword 1",
+          "id": 8
+        },
+        {
+          "language": "de_DE",
+          "groupId": 9,
+          "name": "stichwort 2",
+          "id": 9
+        },
+        {
+          "language": "en_GB",
+          "groupId": 9,
+          "name": "Keyword 2",
+          "id": 10
+        }
+      ],
+      "solution_list_entries": [
+        [
+          {
+            "language": "de_DE",
+            "parentid": 169,
+            "name": "Lösungsverzeichniseintrag 1",
+            "id": 170,
+            "ordernumber": 0
+          },
+          {
+            "language": "en_GB",
+            "parentid": 169,
+            "name": "Solution List Entry 1",
+            "id": 170,
+            "ordernumber": 0
+          }
+        ]
+      ],
+      "brands": [
+        {
+          "language": "de_DE",
+          "groupId": 11,
+          "name": "Marke 1",
+          "id": 12
+        }
+      ],
+      "branches": [
+        [
+          {
+            "language": "de_DE",
+            "parentid": 0,
+            "name": "Branche 1",
+            "id": 34,
+            "ordernumber": 0
+          },
+          {
+            "language": "en_GB",
+            "parentid": 0,
+            "name": "Branch 1",
+            "id": 34,
+            "ordernumber": 0
+          }
+        ],
+        [
+          {
+            "language": "de_DE",
+            "parentid": 0,
+            "name": "Branche 2",
+            "id": 36,
+            "ordernumber": 0
+          }
+        ],
+        [
+          {
+            "language": "de_DE",
+            "parentid": 0,
+            "name": "Branch 2",
+            "id": 36,
+            "ordernumber": 0
+          }
+        ]
+      ],
+      "product_group": [
+        [
+          {
+            "language": "de_DE",
+            "parentid": 172,
+            "name": "Gemüse",
+            "id": 195,
+            "ordernumber": 0
+          },
+          {
+            "language": "en_GB",
+            "parentid": 172,
+            "name": "Vegetables",
+            "id": 195,
+            "ordernumber": 0
+          }
+        ],
+        [
+          {
+            "language": "de_DE",
+            "parentid": 172,
+            "name": "Getreide",
+            "id": 196,
+            "ordernumber": 0
+          },
+          {
+            "language": "en_GB",
+            "parentid": 172,
+            "name": "Cereals",
+            "id": 196,
+            "ordernumber": 0
+          }
+        ],
+        [
+          {
+            "language": "de_DE",
+            "parentid": 172,
+            "name": "Obst",
+            "id": 194,
+            "ordernumber": 0
+          },
+          {
+            "language": "en_GB",
+            "parentid": 172,
+            "name": "Fruits",
+            "id": 194,
+            "ordernumber": 0
+          }
+        ]
+      ]
     }
   ]
 }
