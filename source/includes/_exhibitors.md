@@ -510,7 +510,7 @@ fairid | numeric | true | |
 ## Get assigned brands
 
 ```shell
-curl --location --request GET '{baseurl}/exhibitors/{exhibitorid}/brands' \
+curl --location --request GET '{baseurl}/exhibitors/{exhibitor_fair_id}/brands' \
 --header 'X-API-KEY: {API-Key}' \
 ```
 
@@ -537,19 +537,19 @@ curl --location --request GET '{baseurl}/exhibitors/{exhibitorid}/brands' \
 
 ### HTTP request
 
-`GET {baseurl}/exhibitors/{exhibitorid}/brands`
+`GET {baseurl}/exhibitors/{exhibitor_fair_id}/brands`
 
 ### URL Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-exhibitorid | numeric | true |
+exhibitor_fair_id | numeric | true |
 
 
 ## Assign brand
 
 ```shell
-curl --location --request POST '{baseurl}/exhibitors/{exhibitorid}/brands' \
+curl --location --request POST '{baseurl}/exhibitors/{exhibitor_fair_id}/brands' \
 --header 'X-API-KEY: {API-Key}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -569,13 +569,13 @@ curl --location --request POST '{baseurl}/exhibitors/{exhibitorid}/brands' \
 
 ### HTTP request
 
-`POST {baseurl}/exhibitors/{exhibitorid}/brands`
+`POST {baseurl}/exhibitors/{exhibitor_fair_id}/brands`
 
 ### URL Parameters
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-exhibitorid | numeric | true |
+exhibitor_fair_id | numeric | true |
 
 ### Parameters
 
