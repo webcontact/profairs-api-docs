@@ -42,7 +42,21 @@ curl --location --request GET '{baseurl}/booths/' \
             "boothsize": "15.0",
             "fairid": 7,
             "boothid": 30,
-            "boothdepth": "5.0"
+            "boothdepth": "5.0",
+            "brands": [
+              {
+                "language": "de_DE",
+                "groupId": 11,
+                "name": "Brand 1",
+                "id": 12
+              },
+              {
+                "language": "en_GB",
+                "groupId": 11,
+                "name": "Brand 1",
+                "id": 37
+              }
+            ],
         },
         {
             "articleid": "",
@@ -57,7 +71,21 @@ curl --location --request GET '{baseurl}/booths/' \
             "boothsize": "",
             "fairid": 7,
             "boothid": 29,
-            "boothdepth": "3.00"
+            "boothdepth": "3.00",
+            "brands": [
+              {
+                "language": "de_DE",
+                "groupId": 14,
+                "name": "Brand 2",
+                "id": 111
+              },
+              {
+                "language": "en_GB",
+                "groupId": 14,
+                "name": "Brand 2",
+                "id": 112
+              }
+            ],
         }
     ]
 }
@@ -403,3 +431,61 @@ curl --location --request GET '{baseurl}/booths/reservation/{reservationhash}/' 
 | Parameter           | Type    | required | Default | Description |
 | ------------------- | ------- | -------- | ------- | ----------- |
 | reservationhash     | string  | true     |         |
+
+
+## Assign Brand to Booth
+
+```shell
+curl --location --request POST '{baseurl}/booths/{boothid}/brand/{brand_group_id}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "id": 5
+}
+```
+
+### HTTP request
+
+`POST {baseurl}/booths/{boothid}/brand/{brand_group_id}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| boothid         | numeric | true    |         |
+| brand_group_id         | numeric | true    |         |
+
+
+## Unassign Brand to Booth
+
+```shell
+curl --location --request DELETE '{baseurl}/booths/{boothid}/brand/{brand_group_id}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "id": 117
+}
+```
+
+### HTTP request
+
+`DELETE {baseurl}/booths/{boothid}/brand/{brand_group_id}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| boothid         | numeric | true    |         |
+| brand_group_id         | numeric | true    |         |
