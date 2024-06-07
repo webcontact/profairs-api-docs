@@ -57,6 +57,24 @@ curl --location --request GET '{baseurl}/booths/' \
                 "id": 37
               }
             ],
+            "branches": [
+              {
+                "language": "de_DE",
+                "parentid": 2,
+                "groupid": 197,
+                "name": "Webentwicklung",
+                "id": 197,
+                "ordernumber": 0
+              },
+              {
+                "language": "en_GB",
+                "parentid": 2,
+                "groupid": 197,
+                "name": "Web Development",
+                "id": 198,
+                "ordernumber": 0
+              }
+            ],
         },
         {
             "articleid": "",
@@ -462,7 +480,7 @@ curl --location --request POST '{baseurl}/booths/{boothid}/brand/{brand_group_id
 | brand_group_id         | numeric | true    |         |
 
 
-## Unassign Brand to Booth
+## Unassign Brand from Booth
 
 ```shell
 curl --location --request DELETE '{baseurl}/booths/{boothid}/brand/{brand_group_id}' \
@@ -489,3 +507,60 @@ curl --location --request DELETE '{baseurl}/booths/{boothid}/brand/{brand_group_
 | ------------------- | ------- | -------- | ------- | ----------- |
 | boothid         | numeric | true    |         |
 | brand_group_id         | numeric | true    |         |
+
+## Assign Branch to Booth
+
+```shell
+curl --location --request POST '{baseurl}/booths/{boothid}/branch/{branch_group_id}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "id": 7
+}
+```
+
+### HTTP request
+
+`POST {baseurl}/booths/{boothid}/branch/{branch_group_id}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| boothid         | numeric | true    |         |
+| branch_group_id         | numeric | true    |         |
+
+
+## Unassign Branch from Booth
+
+```shell
+curl --location --request DELETE '{baseurl}/booths/{boothid}/branch/{branch_group_id}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "id": 117
+}
+```
+
+### HTTP request
+
+`DELETE {baseurl}/booths/{boothid}/branch/{branch_group_id}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| boothid         | numeric | true    |         |
+| branch_group_id         | numeric | true    |         |
