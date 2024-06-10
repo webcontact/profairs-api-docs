@@ -570,3 +570,69 @@ curl --location --request DELETE '{baseurl}/highlights/{highlight_group_id}/bran
 | ------------------- | ------- | -------- | ------- | ----------- |
 | highlight_group_id         | numeric | true    |         |
 | brand_group_id         | numeric | true    |         |
+
+
+## Assign Product Group to Highlight
+
+```shell
+curl --location --request POST '{baseurl}/highlights/{highlight_group_id}/product-group' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+--data-raw '{
+  "branch_group_id": 6
+}'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "id": 42
+}
+```
+
+### HTTP request
+
+`POST {baseurl}/highlights/{highlight_group_id}/product-group`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| highlight_group_id         | numeric | true    |         |
+
+### Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| product-group_group-id         | numeric | true    |         |
+
+
+## Unassign Product Group from Highlight
+
+```shell
+curl --location --request DELETE '{baseurl}/highlights/{highlight_group_id}/product-group/{product-group_group-id}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "id": 40
+}
+```
+
+### HTTP request
+
+`DELETE {baseurl}/highlights/{highlight_group_id}/product-group/{product-group_group-id}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| highlight_group_id         | numeric | true    |         |
+| product-group_group-id         | numeric | true    |         |
