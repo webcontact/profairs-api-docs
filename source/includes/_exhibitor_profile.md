@@ -76,6 +76,16 @@ curl --location --request GET '{baseurl}/exhibitors/{exhibitorfairid}/profile' \
           "ordernumber": 0
         }
       ],
+      "solution_lists": [
+        {
+          "language": "de_DE",
+          "parentid": 169,
+          "groupid": 170,
+          "name": "Logistik",
+          "id": 170,
+          "ordernumber": 0
+        }
+      ],
     },
     {
       "ueber_uns": "Lorem ipsim ...",
@@ -136,6 +146,16 @@ curl --location --request GET '{baseurl}/exhibitors/{exhibitorfairid}/profile' \
           "groupid": 195,
           "name": "Malt",
           "id": 195,
+          "ordernumber": 0
+        }
+      ],
+      "solution_lists": [
+        {
+          "language": "en_GB",
+          "parentid": 169,
+          "groupid": 170,
+          "name": "Logistics",
+          "id": 170,
           "ordernumber": 0
         }
       ],
@@ -471,4 +491,63 @@ curl --location --request DELETE '{baseurl}/exhibitors/{exhibitorfairid}/profile
 | ------------------- | ------- | -------- | ------- | ----------- |
 | exhibitorfairid         | numeric | true    |         |
 | product_group_group_id         | numeric | true    |         |
+| locale         | string | true    |         | possible values are "de_DE" and "en_GB"
+
+
+## Assign Solution List to Exhibitor Profile
+
+```shell
+curl --location --request POST '{baseurl}/exhibitors/{exhibitorfairid}/profile/solution-list/{solution_list_group_id}/{locale}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "id": 66
+}
+```
+
+### HTTP request
+
+`POST {baseurl}/exhibitors/{exhibitorfairid}/profile/solution-list/{solution_list_group_id}/{locale}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| exhibitorfairid         | numeric | true    |         |
+| solution_list_group_id         | numeric | true    |         |
+| locale         | string | true    |         | possible values are "de_DE" and "en_GB"
+
+
+## Unassign Solution List from Exhibitor Profile
+
+```shell
+curl --location --request DELETE '{baseurl}/exhibitors/{exhibitorfairid}/profile/solution-list/{solution_list_group_id}/{locale}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {}
+}
+```
+
+### HTTP request
+
+`DELETE {baseurl}/exhibitors/{exhibitorfairid}/profile/solution-list/{solution_list_group_id}/{locale}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| exhibitorfairid         | numeric | true    |         |
+| solution_list_group_id         | numeric | true    |         |
 | locale         | string | true    |         | possible values are "de_DE" and "en_GB"
