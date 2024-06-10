@@ -569,7 +569,7 @@ curl --location --request DELETE '{baseurl}/highlights/{highlight_group_id}/bran
 | Parameter           | Type    | required | Default | Description |
 | ------------------- | ------- | -------- | ------- | ----------- |
 | highlight_group_id         | numeric | true    |         |
-| brand_group_id         | numeric | true    |         |
+| branch_group_id         | numeric | true    |         |
 
 
 ## Assign Product Group to Highlight
@@ -579,7 +579,7 @@ curl --location --request POST '{baseurl}/highlights/{highlight_group_id}/produc
 --header 'X-API-Key: {API-Key}' \
 --header 'Content-Type: application/json'
 --data-raw '{
-  "branch_group_id": 6
+  "product-group_group-id": 6
 }'
 ```
 > The above command returns JSON structured like this:
