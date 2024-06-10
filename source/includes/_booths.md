@@ -14,67 +14,81 @@ curl --location --request GET '{baseurl}/booths/' \
     "error": false,
     "booths": [
         {
-            "articleid": 3,
-            "change_user": 999,
-            "create_user": 999,
-            "change_date": "February, 03 2022 10:48:33",
-            "boothwidth": "3.0",
-            "exhibitors": [
-              {
-                "company": "Muster GmbH",
-                "plz": "12345",
-                "street": "Musterweg 45",
-                "tel": "+49 1234 12 345 67",
-                "main_exhibitor": "Muster GmbH",
-                "website": "https://www.succeet.de",
-                "city": "Musterstadt",
-                "exhibitorid": 123,
-                "main_exhibitor_fair_id": 132,
-                "exhibitorfairid": 1,
-                "short_company": "Muster GmbH",
-                "mail": "mail@muster.local"
-              }
-            ],
-            "boothnumber": "2-634",
-            "boothtype": 0,
-            "create_date": "February, 02 2022 10:44:02",
-            "syncstatus": 0,
-            "boothsize": "15.0",
-            "fairid": 7,
-            "boothid": 30,
-            "boothdepth": "5.0",
-            "brands": [
-              {
-                "language": "de_DE",
-                "groupId": 11,
-                "name": "Brand 1",
-                "id": 12
-              },
-              {
-                "language": "en_GB",
-                "groupId": 11,
-                "name": "Brand 1",
-                "id": 37
-              }
-            ],
-            "branches": [
-              {
-                "language": "de_DE",
-                "parentid": 2,
-                "groupid": 197,
-                "name": "Webentwicklung",
-                "id": 197,
-                "ordernumber": 0
-              },
-              {
-                "language": "en_GB",
-                "parentid": 2,
-                "groupid": 197,
-                "name": "Web Development",
-                "id": 198,
-                "ordernumber": 0
-              }
-            ],
+          "articleid": 3,
+          "change_user": 999,
+          "create_user": 999,
+          "change_date": "February, 03 2022 10:48:33",
+          "boothwidth": "3.0",
+          "exhibitors": [
+            {
+              "company": "Muster GmbH",
+              "plz": "12345",
+              "street": "Musterweg 45",
+              "tel": "+49 1234 12 345 67",
+              "main_exhibitor": "Muster GmbH",
+              "website": "https://www.succeet.de",
+              "city": "Musterstadt",
+              "exhibitorid": 123,
+              "main_exhibitor_fair_id": 132,
+              "exhibitorfairid": 1,
+              "short_company": "Muster GmbH",
+              "mail": "mail@muster.local"
+            }
+          ],
+          "boothnumber": "2-634",
+          "boothtype": 0,
+          "create_date": "February, 02 2022 10:44:02",
+          "syncstatus": 0,
+          "boothsize": "15.0",
+          "fairid": 7,
+          "boothid": 30,
+          "boothdepth": "5.0",
+          "brands": [
+            {
+              "language": "de_DE",
+              "groupId": 11,
+              "name": "Brand 1",
+              "id": 12
+            },
+            {
+              "language": "en_GB",
+              "groupId": 11,
+              "name": "Brand 1",
+              "id": 37
+            }
+          ],
+          "branches": [
+            {
+              "language": "de_DE",
+              "parentid": 2,
+              "groupid": 197,
+              "name": "Webentwicklung",
+              "id": 197,
+              "ordernumber": 0
+            },
+            {
+              "language": "en_GB",
+              "parentid": 2,
+              "groupid": 197,
+              "name": "Web Development",
+              "id": 198,
+              "ordernumber": 0
+            }
+          ],
+          "keywords": [
+            {
+              "language": "de_DE",
+              "groupId": 26,
+              "name": "Stichwort 3",
+              "id": 26
+            },
+            {
+              "language": "en_GB",
+              "groupId": 26,
+              "name": "Keyword 3",
+              "id": 27
+            }
+          ],
         },
         {
             "articleid": "",
@@ -564,3 +578,61 @@ curl --location --request DELETE '{baseurl}/booths/{boothid}/branch/{branch_grou
 | ------------------- | ------- | -------- | ------- | ----------- |
 | boothid         | numeric | true    |         |
 | branch_group_id         | numeric | true    |         |
+
+
+## Assign Keyword to Booth
+
+```shell
+curl --location --request POST '{baseurl}/booths/{boothid}/keyword/{keyword_group_id}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "id": 8
+}
+```
+
+### HTTP request
+
+`POST {baseurl}/booths/{boothid}/keyword/{keyword_group_id}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| boothid         | numeric | true    |         |
+| keyword_group_id         | numeric | true    |         |
+
+
+## Unassign Keyword from Booth
+
+```shell
+curl --location --request DELETE '{baseurl}/booths/{boothid}/keyword/{keyword_group_id}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "id": 110
+}
+```
+
+### HTTP request
+
+`DELETE {baseurl}/booths/{boothid}/keyword/{keyword_group_id}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| boothid         | numeric | true    |         |
+| keyword_group_id         | numeric | true    |         |
