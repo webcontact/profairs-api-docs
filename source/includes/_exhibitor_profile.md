@@ -39,7 +39,25 @@ curl --location --request GET '{baseurl}/exhibitors/{exhibitorfairid}/profile' \
       "logo_vorschau": "bG9nb19wcmV2aWV3LnBuZw==",
       "standorte": "München, Köln, Berlin",
       "profil": "Lorem ipsim ...",
-      "social_media_3": ""
+      "social_media_3": "",
+      "branches": [
+        {
+          "language": "de_DE",
+          "parentid": 2,
+          "groupid": 197,
+          "name": "Architektur",
+          "id": 197,
+          "ordernumber": 0
+        }
+      ],
+      "keywords": [
+        {
+          "language": "de_DE",
+          "groupid": 26,
+          "name": "Stichwort3",
+          "id": 26
+        }
+      ],
     },
     {
       "ueber_uns": "Lorem ipsim ...",
@@ -69,12 +87,20 @@ curl --location --request GET '{baseurl}/exhibitors/{exhibitorfairid}/profile' \
       "social_media_3": "",
       "branches": [
         {
-          "language": "de_DE",
+          "language": "en_GB",
           "parentid": 2,
           "groupid": 197,
-          "name": "Architektur",
+          "name": "Architectur",
           "id": 197,
           "ordernumber": 0
+        }
+      ],
+      "keywords": [
+        {
+          "language": "en_GB",
+          "groupid": 26,
+          "name": "Keyword 3",
+          "id": 26
         }
       ],
     }
@@ -234,3 +260,61 @@ curl --location --request DELETE '{baseurl}/exhibitors/{exhibitorfairid}/profile
 | branch_group_id         | numeric | true    |         |
 | locale         | string | true    |         | possible values are "de_DE" and "en_GB"
 
+
+## Assign Keyword to Exhibitor Profile
+
+```shell
+curl --location --request POST '{baseurl}/exhibitors/{exhibitorfairid}/profile/keyword/{keyword_group_id}/{locale}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "id": 40
+}
+```
+
+### HTTP request
+
+`POST {baseurl}/exhibitors/{exhibitorfairid}/profile/keyword/{keyword_group_id}/{locale}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| exhibitorfairid         | numeric | true    |         |
+| keyword_group_id         | numeric | true    |         |
+| locale         | string | true    |         | possible values are "de_DE" and "en_GB"
+
+
+## Unassign Keyword from Exhibitor Profile
+
+```shell
+curl --location --request DELETE '{baseurl}/exhibitors/{exhibitorfairid}/profile/keyword/{keyword_group_id}/{locale}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {}
+}
+```
+
+### HTTP request
+
+`DELETE {baseurl}/exhibitors/{exhibitorfairid}/profile/keyword/{keyword_group_id}/{locale}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| exhibitorfairid         | numeric | true    |         |
+| keyword_group_id         | numeric | true    |         |
+| locale         | string | true    |         | possible values are "de_DE" and "en_GB"
