@@ -43,6 +43,7 @@ curl --location --request GET '{baseurl}/booths/' \
           "fairid": 7,
           "boothid": 30,
           "boothdepth": "5.0",
+          "address": "Testweg 1, 12345 Testen",
           "brands": [
             {
               "language": "de_DE",
@@ -162,6 +163,7 @@ curl --location --request GET '{baseurl}/booths/' \
             "fairid": 7,
             "boothid": 29,
             "boothdepth": "3.00",
+            "address": "Musterweg 12, 12345 Testen",
             "brands": [
               {
                 "language": "de_DE",
@@ -387,7 +389,8 @@ curl --location --request GET '{baseurl}/booths/exhibitor/' \
             "mainexhibitorid": 2279,
             "boothid": 26,
             "change_date": "April, 05 2019 15:05:04",
-            "exhibitorfairid": 2280
+            "exhibitorfairid": 2280,
+            "address": "Testweg 1, 12345 Testen"
         },
         {
             "boothassignment": "",
@@ -400,7 +403,8 @@ curl --location --request GET '{baseurl}/booths/exhibitor/' \
             "mainexhibitorid": 0,
             "boothid": 562,
             "change_date": "June, 25 2019 17:03:19",
-            "exhibitorfairid": 2305
+            "exhibitorfairid": 2305,
+            "address": "Musterstraße 12, 12345 Testen"
         }
     ]
 }
@@ -430,7 +434,8 @@ curl --location --request POST '{baseurl}/booths/exhibitor/{boothid}/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "fairid": 7,
-    "exhibitorfairid": 96
+    "exhibitorfairid": 96,
+    "address": "Testweg 1, 12345 Testen"
 }'
 ```
 
@@ -464,6 +469,7 @@ curl --location --request POST '{baseurl}/booths/exhibitor/{boothid}/' \
 | postingdate  | date | false    |        |
 | boothassignment  | String | false    |        |
 | variantid  | numeric | false    |        | Specified variant is ordered when creating |
+| address  | string | false    |  |
 
 
 ## Delete exhibitor booth assignment
