@@ -20,6 +20,7 @@ curl --location --request GET '{baseurl}/exhibitor-fair-assignments/' \
             "create_user": 35,
             "fairid": 3,
             "exhibitorfairid": 7,
+            "is_highlighted": 1,
             "userid": "",
             "change_date": "February, 06 2021 19:46:47",
             "exhibitorid": 5
@@ -32,6 +33,7 @@ curl --location --request GET '{baseurl}/exhibitor-fair-assignments/' \
             "create_user": 999,
             "fairid": 3,
             "exhibitorfairid": 15,
+            "is_highlighted": 0,
             "userid": "",
             "change_date": "June, 11 2016 13:33:57",
             "exhibitorid": 10
@@ -61,7 +63,8 @@ curl --location --request POST '{baseurl}/exhibitor-fair-assignments/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "exhibitorid": 1337,
-    "fairid": 10
+    "fairid": 10,
+    "is_highlighted": 1
 }'
 ```
 
@@ -84,6 +87,7 @@ Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 exhibitorid | numeric | true | |
 fairid | numeric | true | |
+is_highlighted | numeric | false | 0 | 1 = "yes", 0 = "no"
 
 ## Delete exhibitor fair assignment
 
