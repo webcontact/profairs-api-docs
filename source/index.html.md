@@ -16,6 +16,7 @@ includes:
   - exhibitors
   - exhibitor_fair
   - exhibitor_industry
+  - exhibitor_profile
   - fairs
   - fairtypes
   - highlights
