@@ -125,6 +125,28 @@ curl --location --request GET '{baseurl}/booths/' \
               "ordernumber": 0
             }
           ],
+          "contacts": [
+            {
+              "postalcode": "12345",
+              "company": "Muster GmbH",
+              "telephone": "01234/567890",
+              "country": "Deutschland",
+              "job_title": "Senior Developer",
+              "salutation": "Herr",
+              "lastname": "Max",
+              "contactid": 2876,
+              "mobile": "",
+              "street": "Musterweg 1",
+              "additional_address": "",
+              "firstname": "Mustermann",
+              "comment": "",
+              "city": "Musterstadt",
+              "exhibitorid": 3415,
+              "title": "",
+              "newsletter": false,
+              "email": "max@mustermann.local"
+            }
+          ],
         },
         {
             "articleid": "",
@@ -788,3 +810,61 @@ curl --location --request DELETE '{baseurl}/booths/{boothid}/product-group/{prod
 | ------------------- | ------- | -------- | ------- | ----------- |
 | boothid         | numeric | true    |         |
 | solution_list_group_id         | numeric | true    |         |
+
+
+## Assign Contact to Booth
+
+```shell
+curl --location --request POST '{baseurl}/booths/{boothid}/contact/{contact_id}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "id": 19
+}
+```
+
+### HTTP request
+
+`POST {baseurl}/booths/{boothid}/contact/{contact_id}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| boothid         | numeric | true    |         |
+| contact_id         | numeric | true    |         |
+
+
+## Unassign Product Group from Booth
+
+```shell
+curl --location --request DELETE '{baseurl}/booths/{boothid}/contact/{contact_id}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "id": 110
+}
+```
+
+### HTTP request
+
+`DELETE {baseurl}/booths/{boothid}/contact/{contact_id}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| boothid         | numeric | true    |         |
+| contact_id         | numeric | true    |         |
