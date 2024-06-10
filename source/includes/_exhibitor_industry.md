@@ -19,8 +19,10 @@ curl --location --request GET '{baseurl}/exhibitor-industry/' \
             "create_user": 667,
             "exhibitor": "12345",
             "industryid": 73,
+            "groupid": 197,
             "change_date": "February, 25 2022 14:58:53",
-            "exhibitorid": 2299
+            "exhibitorid": 2299,
+            "is_top_of_the_list": 0
         },
         {
             "language": "de_DE",
@@ -30,8 +32,10 @@ curl --location --request GET '{baseurl}/exhibitor-industry/' \
             "create_user": 667,
             "exhibitor": "12345",
             "industryid": 72,
+            "groupid": 198,
             "change_date": "February, 25 2022 14:58:38",
-            "exhibitorid": 2299
+            "exhibitorid": 2299,
+            "is_top_of_the_list": 0
         }
     ],
     "error": false
@@ -60,7 +64,8 @@ curl --location --request POST '{baseurl}/exhibitor-industry/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "exhibitorid": 1337,
-    "industryid": 20
+    "industryid": 20,
+    "is_top_of_the_list": 0
 }'
 ```
 
@@ -84,6 +89,7 @@ Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 exhibitorid | numeric | true | |
 industryid | numeric | true | |
+is_top_of_the_list | numeric | true | 1 = yes, 0 = no
 
 ## Delete exhibitor industry assignment
 

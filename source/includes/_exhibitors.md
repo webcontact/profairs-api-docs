@@ -600,11 +600,19 @@ curl --location --request GET '{baseurl}/exhibitors/{exhibitorid}/product-groups
   "product-groups": [
     [
       {
+        "parentid": 172,
+        "groupid": 194,
+        "is_top_of_the_list": 1,
+        "ordernumber": 0,
         "language": "de_DE",
         "name": "Nutzholz",
         "id": 160
       },
       {
+        "parentid": 173,
+        "groupid": 194,
+        "is_top_of_the_list": 1,
+        "ordernumber": 0,
         "language": "en_GB",
         "name": "Timber",
         "id": 160
@@ -612,11 +620,19 @@ curl --location --request GET '{baseurl}/exhibitors/{exhibitorid}/product-groups
     ],
     [
       {
+        "parentid": 182,
+        "groupid": 184,
+        "is_top_of_the_list": 0,
+        "ordernumber": 0,
         "language": "de_DE",
         "name": "Agrarprodukte",
         "id": 156
       },
       {
+        "parentid": 183,
+        "groupid": 184,
+        "is_top_of_the_list": 0,
+        "ordernumber": 0,
         "language": "en_GB",
         "name": "Agricultural products",
         "id": 156
@@ -642,7 +658,8 @@ curl --location --request POST '{baseurl}/exhibitors/{exhibitorid}/product-group
 --header 'X-API-KEY: {API-Key}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-  "product_group_id": 156
+  "product_group_id": 156,
+  "is_top_of_the_list": 0
 }'
 ```
 
@@ -671,6 +688,7 @@ exhibitorid | numeric | true |
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 product_group_id | numeric | true | | |
+is_top_of_the_list | numeric | true | 1 = yes, 0 = no
 
 
 ## Get assigned solution list entries
@@ -794,4 +812,3 @@ Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 exhibitorid | numeric | true |
 fairid | numeric | true |
-
