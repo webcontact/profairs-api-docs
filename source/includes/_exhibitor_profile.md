@@ -66,7 +66,17 @@ curl --location --request GET '{baseurl}/exhibitors/{exhibitorfairid}/profile' \
       "logo_vorschau": "bG9nb19wcmV2aWV3LnBuZw==",
       "standorte": "London, Leeds, Liverpool",
       "profil": "Lorem ipsim ...",
-      "social_media_3": ""
+      "social_media_3": "",
+      "branches": [
+        {
+          "language": "de_DE",
+          "parentid": 2,
+          "groupid": 197,
+          "name": "Architektur",
+          "id": 197,
+          "ordernumber": 0
+        }
+      ],
     }
 ]
 ```
@@ -164,3 +174,63 @@ social_media_2 | string | false | | |
 social_media_3 | string | false | | |
 social_media_4 | string | false | | |
 social_media_5 | string | false | | |
+
+
+## Assign Branch to Exhibitor Profile
+
+```shell
+curl --location --request POST '{baseurl}/exhibitors/{exhibitorfairid}/profile/branch/{branch_group_id}/{locale}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "id": 19
+}
+```
+
+### HTTP request
+
+`POST {baseurl}/exhibitors/{exhibitorfairid}/profile/branch/{branch_group_id}/{locale}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| exhibitorfairid         | numeric | true    |         |
+| branch_group_id         | numeric | true    |         |
+| locale         | string | true    |         | possible values are "de_DE" and "en_GB"
+
+
+## Unassign Branch from Exhibitor Profile
+
+```shell
+curl --location --request DELETE '{baseurl}/exhibitors/{exhibitorfairid}/profile/branch/{branch_group_id}/{locale}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {}
+}
+```
+
+### HTTP request
+
+`DELETE {baseurl}/exhibitors/{exhibitorfairid}/profile/branch/{branch_group_id}/{locale}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| exhibitorfairid         | numeric | true    |         |
+| branch_group_id         | numeric | true    |         |
+| locale         | string | true    |         | possible values are "de_DE" and "en_GB"
+
