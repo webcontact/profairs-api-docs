@@ -66,6 +66,16 @@ curl --location --request GET '{baseurl}/exhibitors/{exhibitorfairid}/profile' \
           "id": 26
         }
       ],
+      "product_groups": [
+        {
+          "language": "de_DE",
+          "parentid": 172,
+          "groupid": 195,
+          "name": "Malz",
+          "id": 195,
+          "ordernumber": 0
+        }
+      ],
     },
     {
       "ueber_uns": "Lorem ipsim ...",
@@ -117,6 +127,16 @@ curl --location --request GET '{baseurl}/exhibitors/{exhibitorfairid}/profile' \
           "groupid": 26,
           "name": "Keyword 3",
           "id": 26
+        }
+      ],
+      "product_groups": [
+        {
+          "language": "en_GB",
+          "parentid": 172,
+          "groupid": 195,
+          "name": "Malt",
+          "id": 195,
+          "ordernumber": 0
         }
       ],
     }
@@ -392,4 +412,63 @@ curl --location --request DELETE '{baseurl}/exhibitors/{exhibitorfairid}/profile
 | ------------------- | ------- | -------- | ------- | ----------- |
 | exhibitorfairid         | numeric | true    |         |
 | brand_group_id         | numeric | true    |         |
+| locale         | string | true    |         | possible values are "de_DE" and "en_GB"
+
+
+## Assign Product Group to Exhibitor Profile
+
+```shell
+curl --location --request POST '{baseurl}/exhibitors/{exhibitorfairid}/profile/product-group/{product_group_group_id}/{locale}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "id": 66
+}
+```
+
+### HTTP request
+
+`POST {baseurl}/exhibitors/{exhibitorfairid}/profile/product-group/{product_group_group_id}/{locale}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| exhibitorfairid         | numeric | true    |         |
+| product_group_group_id         | numeric | true    |         |
+| locale         | string | true    |         | possible values are "de_DE" and "en_GB"
+
+
+## Unassign Product Group from Exhibitor Profile
+
+```shell
+curl --location --request DELETE '{baseurl}/exhibitors/{exhibitorfairid}/profile/product-group/{product_group_group_id}/{locale}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {}
+}
+```
+
+### HTTP request
+
+`DELETE {baseurl}/exhibitors/{exhibitorfairid}/profile/product-group/{product_group_group_id}/{locale}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| exhibitorfairid         | numeric | true    |         |
+| product_group_group_id         | numeric | true    |         |
 | locale         | string | true    |         | possible values are "de_DE" and "en_GB"
