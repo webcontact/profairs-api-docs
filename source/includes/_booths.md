@@ -89,6 +89,24 @@ curl --location --request GET '{baseurl}/booths/' \
               "id": 27
             }
           ],
+          "solution_lists": [
+            {
+              "language": "de_DE",
+              "parentid": 169,
+              "groupid": 170,
+              "name": "Logistik",
+              "id": 170,
+              "ordernumber": 0
+            },
+            {
+              "language": "en_GB",
+              "parentid": 169,
+              "groupid": 170,
+              "name": "Logistics",
+              "id": 170,
+              "ordernumber": 0
+            }
+          ],
         },
         {
             "articleid": "",
@@ -636,3 +654,62 @@ curl --location --request DELETE '{baseurl}/booths/{boothid}/keyword/{keyword_gr
 | ------------------- | ------- | -------- | ------- | ----------- |
 | boothid         | numeric | true    |         |
 | keyword_group_id         | numeric | true    |         |
+
+
+## Assign Solution List to Booth
+
+```shell
+curl --location --request POST '{baseurl}/booths/{boothid}/solution-list/{solution_list_group_id}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "id": 45
+}
+```
+
+### HTTP request
+
+`POST {baseurl}/booths/{boothid}/solution-list/{solution_list_group_id}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| boothid         | numeric | true    |         |
+| solution_list_group_id         | numeric | true    |         |
+
+
+## Unassign Solution List from Booth
+
+```shell
+curl --location --request DELETE '{baseurl}/booths/{boothid}/solution-list/{solution_list_group_id}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "id": 110
+}
+```
+
+### HTTP request
+
+`DELETE {baseurl}/booths/{boothid}/solution-list/{solution_list_group_id}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| boothid         | numeric | true    |         |
+| solution_list_group_id         | numeric | true    |         |
+
