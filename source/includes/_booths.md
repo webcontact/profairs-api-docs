@@ -868,3 +868,60 @@ curl --location --request DELETE '{baseurl}/booths/{boothid}/contact/{contact_id
 | ------------------- | ------- | -------- | ------- | ----------- |
 | boothid         | numeric | true    |         |
 | contact_id         | numeric | true    |         |
+
+
+## Assign Highlight to Booth
+
+```shell
+curl --location --request POST '{baseurl}/booths/{boothid}/highlight/{highlight_group_id}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "id": 19
+}
+```
+
+### HTTP request
+
+`POST {baseurl}/booths/{boothid}/highlight/{highlight_group_id}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| boothid         | numeric | true    |         |
+| highlight_group_id         | numeric | true    |         |
+
+
+## Unassign Highlight from Booth
+
+```shell
+curl --location --request DELETE '{baseurl}/booths/{boothid}/highlight/{highlight_group_id}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {}
+}
+```
+
+### HTTP request
+
+`DELETE {baseurl}/booths/{boothid}/highlight/{highlight_group_id}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| boothid         | numeric | true    |         |
+| highlight_group_id         | numeric | true    |         |
