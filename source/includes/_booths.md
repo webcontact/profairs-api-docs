@@ -107,6 +107,24 @@ curl --location --request GET '{baseurl}/booths/' \
               "ordernumber": 0
             }
           ],
+          "product_groups": [
+            {
+              "language": "de_DE",
+              "parentid": 172,
+              "groupid": 195,
+              "name": "Malz",
+              "id": 195,
+              "ordernumber": 0
+            },
+            {
+              "language": "en_GB",
+              "parentid": 172,
+              "groupid": 195,
+              "name": "Malt",
+              "id": 195,
+              "ordernumber": 0
+            }
+          ],
         },
         {
             "articleid": "",
@@ -713,3 +731,60 @@ curl --location --request DELETE '{baseurl}/booths/{boothid}/solution-list/{solu
 | boothid         | numeric | true    |         |
 | solution_list_group_id         | numeric | true    |         |
 
+
+## Assign Product Group to Booth
+
+```shell
+curl --location --request POST '{baseurl}/booths/{boothid}/product-group/{product_group_group_id}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "id": 19
+}
+```
+
+### HTTP request
+
+`POST {baseurl}/booths/{boothid}/product-group/{product_group_group_id}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| boothid         | numeric | true    |         |
+| product_group_group_id         | numeric | true    |         |
+
+
+## Unassign Product Group from Booth
+
+```shell
+curl --location --request DELETE '{baseurl}/booths/{boothid}/product-group/{product_group_group_id}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "id": 110
+}
+```
+
+### HTTP request
+
+`DELETE {baseurl}/booths/{boothid}/product-group/{product_group_group_id}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| boothid         | numeric | true    |         |
+| solution_list_group_id         | numeric | true    |         |
