@@ -40,6 +40,14 @@ curl --location --request GET '{baseurl}/exhibitors/{exhibitorfairid}/profile' \
       "standorte": "München, Köln, Berlin",
       "profil": "Lorem ipsim ...",
       "social_media_3": "",
+      "brands": [
+        {
+          "language": "de_DE",
+          "groupid": 11,
+          "name": "Mustermarke",
+          "id": 11
+        }
+      ],
       "branches": [
         {
           "language": "de_DE",
@@ -85,6 +93,14 @@ curl --location --request GET '{baseurl}/exhibitors/{exhibitorfairid}/profile' \
       "standorte": "London, Leeds, Liverpool",
       "profil": "Lorem ipsim ...",
       "social_media_3": "",
+      "brands": [
+        {
+          "language": "en_GB",
+          "groupid": 11,
+          "name": "Test Brand",
+          "id": 11
+        }
+      ],
       "branches": [
         {
           "language": "en_GB",
@@ -317,4 +333,63 @@ curl --location --request DELETE '{baseurl}/exhibitors/{exhibitorfairid}/profile
 | ------------------- | ------- | -------- | ------- | ----------- |
 | exhibitorfairid         | numeric | true    |         |
 | keyword_group_id         | numeric | true    |         |
+| locale         | string | true    |         | possible values are "de_DE" and "en_GB"
+
+
+## Assign Brand to Exhibitor Profile
+
+```shell
+curl --location --request POST '{baseurl}/exhibitors/{exhibitorfairid}/profile/brand/{brand_group_id}/{locale}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "id": 40
+}
+```
+
+### HTTP request
+
+`POST {baseurl}/exhibitors/{exhibitorfairid}/profile/brand/{brand_group_id}/{locale}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| exhibitorfairid         | numeric | true    |         |
+| brand_group_id         | numeric | true    |         |
+| locale         | string | true    |         | possible values are "de_DE" and "en_GB"
+
+
+## Unassign Brand from Exhibitor Profile
+
+```shell
+curl --location --request DELETE '{baseurl}/exhibitors/{exhibitorfairid}/profile/brand/{brand_group_id}/{locale}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {}
+}
+```
+
+### HTTP request
+
+`DELETE {baseurl}/exhibitors/{exhibitorfairid}/profile/brand/{brand_group_id}/{locale}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| exhibitorfairid         | numeric | true    |         |
+| brand_group_id         | numeric | true    |         |
 | locale         | string | true    |         | possible values are "de_DE" and "en_GB"
