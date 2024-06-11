@@ -31,12 +31,11 @@ curl --location --request GET '{baseurl}/exhibitors/{exhibitorfairid}/profile' \
       "sprache": "de_DE",
       "logo_mimetype": "image/png",
       "videourl": "https://url_to_the_video",
-      "logo": "aHR0cHM6Ly91cmxfdG9fdGhlX2xvZ28ucG5n",
+      "mood_picture_name": "moodpicture.png",
       "social_media_1": "",
       "postanschrift": "Musterstraße 1",
       "logo_name": "logo.png",
       "consultation": 0,
-      "logo_vorschau": "bG9nb19wcmV2aWV3LnBuZw==",
       "standorte": "München, Köln, Berlin",
       "profil": "Lorem ipsim ...",
       "social_media_3": "",
@@ -104,12 +103,11 @@ curl --location --request GET '{baseurl}/exhibitors/{exhibitorfairid}/profile' \
       "sprache": "en_GB",
       "logo_mimetype": "image/png",
       "videourl": "https://url_to_the_video",
-      "logo": "aHR0cHM6Ly91cmxfdG9fdGhlX2xvZ28ucG5n",
       "social_media_1": "",
       "postanschrift": "Main Street 1",
       "logo_name": "logo.png",
       "consultation": 0,
-      "logo_vorschau": "bG9nb19wcmV2aWV3LnBuZw==",
+      "mood_picture_name": "moodpicture.png",
       "standorte": "London, Leeds, Liverpool",
       "profil": "Lorem ipsim ...",
       "social_media_3": "",
@@ -182,7 +180,6 @@ curl --location --request POST '{baseurl}/exhibitors/{exhibitorfairid}/profile' 
 --data-raw '{
   "sprache": "de_DE",
   "text": "test",
-  "logo": "https://url_to_the_logo.png",
   "unternehmensbeschreibung": "Lorem ipsum...",
   "logo_name": "https://URL_TO_IMAGE",
   "logo_vorschau": "https://URL_TO_PREVIEW_IMAGE",
@@ -204,7 +201,8 @@ curl --location --request POST '{baseurl}/exhibitors/{exhibitorfairid}/profile' 
   "social_media_2": "",
   "social_media_3": "",
   "social_media_4": "",
-  "social_media_5": ""
+  "social_media_5": "",
+  "mood_picture_name": "https://URL_TO_MOOD_PICTURE"
 }'
 ```
 > The above command returns JSON structured like this:
@@ -233,7 +231,6 @@ Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 sprache | string | true | | |
 text | string | false | | |
-logo | string | false | | |
 unternehmensbeschreibung | string | false | | |
 logo_name | string | false | | |
 logo_vorschau | string | false | | |
@@ -256,6 +253,7 @@ social_media_2 | string | false | | |
 social_media_3 | string | false | | |
 social_media_4 | string | false | | |
 social_media_5 | string | false | | |
+mood_picture_name | string | false | | |
 
 
 ## Assign Branch to Exhibitor Profile
