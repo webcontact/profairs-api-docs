@@ -575,12 +575,14 @@ curl --location --request GET '{baseurl}/exhibitors/{exhibitor_fair_id}/brands' 
   "error_message": {},
   "brands": [
     {
-      "language": "de-DE",
+      "language": "de_DE",
+      "groupId": 10,
       "name": "John Deer",
       "id": 13
     },
     {
-      "language": "de-DE",
+      "language": "de_DE",
+      "groupId": 9,
       "name": "Test Marke",
       "id": 19
     }
