@@ -507,6 +507,59 @@ Parameter | Type | required | Default | Description
 fairid | numeric | true | |
 
 
+## Get assigned Keywords
+
+```shell
+curl --location --request GET '{baseurl}/exhibitors/{exhibitor_fair_id}/keywords' \
+--header 'X-API-KEY: {API-Key}' \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "brands": [
+    {
+      "language": "de_DE",
+      "groupId": 9,
+      "name": "Stichwort 1",
+      "id": 13
+    },
+    {
+      "language": "en_GB",
+      "groupId": 9,
+      "name": "Keyword 1",
+      "id": 14
+    },
+    {
+      "language": "de_DE",
+      "groupId": 10,
+      "name": "Stichwort 2",
+      "id": 19
+    },
+    {
+      "language": "en_GB",
+      "groupId": 10,
+      "name": "Stichwort 2",
+      "id": 19
+    }
+  ]
+}
+```
+
+### HTTP request
+
+`GET {baseurl}/exhibitors/{exhibitor_fair_id}/brands`
+
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitor_fair_id | numeric | true |
+
+
 ## Get assigned brands
 
 ```shell
