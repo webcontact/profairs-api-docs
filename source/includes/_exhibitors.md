@@ -798,7 +798,7 @@ curl --location --request POST '{baseurl}/exhibitors/{exhibitorid}/solution-list
 --header 'X-API-KEY: {API-Key}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-  "solution_list_id": 19
+  "solution_list_group_id": 19
 }'
 ```
 
@@ -826,7 +826,7 @@ exhibitorid | numeric | true |
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-solution_list_id | numeric | true | | |
+solution_list_group_id | numeric | true | | |
 
 
 ## Unassign solution list entry
