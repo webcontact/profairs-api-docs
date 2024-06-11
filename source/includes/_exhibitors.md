@@ -584,6 +584,36 @@ Parameter | Type | required | Default | Description
 brand_id | numeric | true | | |
 
 
+## Unassign brand
+
+```shell
+curl --location --request DELETE '{baseurl}/exhibitors/{exhibitor_fair_id}/brands/{brand_group_id}' \
+--header 'X-API-KEY: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "id": 144,
+  "error_message": {}
+}
+```
+
+### HTTP request
+
+`DELETE {baseurl}/exhibitors/{exhibitor_fair_id}/brands/{brand_group_id}`
+
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitor_fair_id | numeric | true |
+brand_group_id | numeric | true |
+
+
 ## Get assigned product groups
 
 ```shell
@@ -691,6 +721,36 @@ product_group_id | numeric | true | | |
 is_top_of_the_list | numeric | true | 1 = yes, 0 = no
 
 
+## Unassign product group
+
+```shell
+curl --location --request DELETE '{baseurl}/exhibitors/{exhibitorid}/product-groups/{product_group_group_id}' \
+--header 'X-API-KEY: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "id": 14,
+  "error_message": {}
+}
+```
+
+### HTTP request
+
+`POST {baseurl}/exhibitors/{exhibitorid}/product-groups/{product_group_group_id}`
+
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitorid | numeric | true |
+product_group_group_id | numeric | true |
+
+
 ## Get assigned solution list entries
 
 ```shell
@@ -767,6 +827,38 @@ exhibitorid | numeric | true |
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 solution_list_id | numeric | true | | |
+
+
+## Unassign solution list entry
+
+```shell
+curl --location --request DELETE '{baseurl}/exhibitors/{exhibitorid}/solution-list-entries/{solution_list_group_id}' \
+--header 'X-API-KEY: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "id": 14,
+  "error_message": {}
+}
+```
+
+### HTTP request
+
+`DELETE {baseurl}/exhibitors/{exhibitorid}/solution-list-entries/{solution_list_group_id}`
+
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitorid | numeric | true |
+solution_list_group_id | numeric | true |
+
+
 
 ## Get base data
 
