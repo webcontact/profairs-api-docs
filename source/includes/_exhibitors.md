@@ -688,7 +688,7 @@ curl --location --request POST '{baseurl}/exhibitors/{exhibitorid}/product-group
 --header 'X-API-KEY: {API-Key}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-  "product_group_id": 156,
+  "product_group_group_id": 156,
   "is_top_of_the_list": 0
 }'
 ```
@@ -717,7 +717,7 @@ exhibitorid | numeric | true |
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-product_group_id | numeric | true | | |
+product_group_group_id | numeric | true | | |
 is_top_of_the_list | numeric | true | 1 = yes, 0 = no
 
 
