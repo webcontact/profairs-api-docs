@@ -553,7 +553,7 @@ curl --location --request POST '{baseurl}/exhibitors/{exhibitor_fair_id}/brands'
 --header 'X-API-KEY: {API-Key}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-  "brand_id": 19
+  "brand_group_id": 19
 }'
 ```
 
@@ -581,7 +581,7 @@ exhibitor_fair_id | numeric | true |
 
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
-brand_id | numeric | true | | |
+brand_group_id | numeric | true | | |
 
 
 ## Unassign brand
