@@ -26,7 +26,7 @@ curl --location --request GET '{baseurl}/booths/' \
               "street": "Musterweg 45",
               "tel": "+49 1234 12 345 67",
               "main_exhibitor": "Muster GmbH",
-              "website": "https://www.succeet.de",
+              "website": "https://www.muster.local",
               "city": "Musterstadt",
               "exhibitorid": 123,
               "main_exhibitor_fair_id": 132,
@@ -48,7 +48,7 @@ curl --location --request GET '{baseurl}/booths/' \
             {
               "language": "de_DE",
               "groupId": 11,
-              "name": "Brand 1",
+              "name": "Marke 1",
               "id": 12
             },
             {
