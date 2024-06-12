@@ -75,6 +75,7 @@ industryid | numeric | false | |
 industryids | list | false | |
 shop_categorie | numeric | false | |
 interestcode | String | false | |
+language | String | false | |
 locked | Boolean | true | false |
 external_id | String | false | |
 exhibitortypeid | numeric | false | |
