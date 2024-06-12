@@ -551,7 +551,7 @@ curl --location --request GET '{baseurl}/exhibitors/{exhibitor_fair_id}/keywords
 
 ### HTTP request
 
-`GET {baseurl}/exhibitors/{exhibitor_fair_id}/brands`
+`GET {baseurl}/exhibitors/{exhibitor_fair_id}/keywords`
 
 ### URL Parameters
 
