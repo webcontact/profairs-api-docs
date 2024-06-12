@@ -80,6 +80,11 @@ external_id | String | false | |
 exhibitortypeid | numeric | false | |
 getBooths | Boolean | true | false | Adds booths to the exhibitors. If set to true, fairid is required.
 getContacts | Boolean | true | false | Adds contacts to the exhibitors.
+getBranchen | Boolean | true | false | Adds branches to the exhibitors. If set to true, fairid and language is required
+getKeywords | Boolean | true | false | Adds keywords to the exhibitors.
+getBrands | Boolean | true | false | Adds brands to the exhibitors.
+getSolutionList | Boolean | true | false | Adds solution list entries to the exhibitors.
+getProductGroup | Boolean | true | false | Adds product group entries to the exhibitors.
 
 ## Create an Exhibitor
 ```shell
