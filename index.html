@@ -4349,6 +4349,41 @@ You must replace <code>{API-Key}</code> with your personal API key.
 <td>false</td>
 <td>Adds contacts to the exhibitors.</td>
 </tr>
+<tr>
+<td>getBranchen</td>
+<td>Boolean</td>
+<td>true</td>
+<td>false</td>
+<td>Adds branches to the exhibitors. If set to true, fairid and language is required</td>
+</tr>
+<tr>
+<td>getKeywords</td>
+<td>Boolean</td>
+<td>true</td>
+<td>false</td>
+<td>Adds keywords to the exhibitors.</td>
+</tr>
+<tr>
+<td>getBrands</td>
+<td>Boolean</td>
+<td>true</td>
+<td>false</td>
+<td>Adds brands to the exhibitors.</td>
+</tr>
+<tr>
+<td>getSolutionList</td>
+<td>Boolean</td>
+<td>true</td>
+<td>false</td>
+<td>Adds solution list entries to the exhibitors.</td>
+</tr>
+<tr>
+<td>getProductGroup</td>
+<td>Boolean</td>
+<td>true</td>
+<td>false</td>
+<td>Adds product group entries to the exhibitors.</td>
+</tr>
 </tbody></table>
 <h2 id='create-an-exhibitor'>Create an Exhibitor</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"{baseurl}/exhibitors/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-api-key: {API-Key}"</span> <span class="se">\</span>
