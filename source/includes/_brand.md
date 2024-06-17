@@ -82,7 +82,8 @@ curl --location --request POST '{baseurl}/brands' \
 --data-raw '{
   "fairtypeid": "1",
   "name": "Test Marke",
-  "language": "de_DE"
+  "language": "de_DE",
+  "groupid": "15"
 }'
 ```
 
@@ -92,6 +93,7 @@ curl --location --request POST '{baseurl}/brands' \
 {
   "error": false,
   "id": 144,
+  "groupid": 15,
   "error_message": {}
 }
 ```
@@ -107,6 +109,7 @@ Parameter | Type | required | Default | Description
 fairtypeid | numeric | true | | |
 name | numeric | true | | |
 language | string | true | |
+groupid | numeric | false | |
 
 
 ## Update brand
