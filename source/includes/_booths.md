@@ -532,7 +532,7 @@ curl --location --request GET '{baseurl}/booths/reservation/{reservationhash}/' 
 ## Assign Brand to Booth
 
 ```shell
-curl --location --request POST '{baseurl}/booths/{boothid}/brand/{brand_group_id}' \
+curl --location --request POST '{baseurl}/booths/{exhibitorboothid}/brand/{brand_group_id}' \
 --header 'X-API-Key: {API-Key}' \
 --header 'Content-Type: application/json'
 ```
@@ -548,20 +548,20 @@ curl --location --request POST '{baseurl}/booths/{boothid}/brand/{brand_group_id
 
 ### HTTP request
 
-`POST {baseurl}/booths/{boothid}/brand/{brand_group_id}`
+`POST {baseurl}/booths/{exhibitorboothid}/brand/{brand_group_id}`
 
 ### URL Parameters
 
 | Parameter           | Type    | required | Default | Description |
 | ------------------- | ------- | -------- | ------- | ----------- |
-| boothid         | numeric | true    |         |
+| exhibitorboothid         | numeric | true    |         |
 | brand_group_id         | numeric | true    |         |
 
 
 ## Unassign Brand from Booth
 
 ```shell
-curl --location --request DELETE '{baseurl}/booths/{boothid}/brand/{brand_group_id}' \
+curl --location --request DELETE '{baseurl}/booths/{exhibitorboothid}/brand/{brand_group_id}' \
 --header 'X-API-Key: {API-Key}' \
 --header 'Content-Type: application/json'
 ```
@@ -577,19 +577,19 @@ curl --location --request DELETE '{baseurl}/booths/{boothid}/brand/{brand_group_
 
 ### HTTP request
 
-`DELETE {baseurl}/booths/{boothid}/brand/{brand_group_id}`
+`DELETE {baseurl}/booths/{exhibitorboothid}/brand/{brand_group_id}`
 
 ### URL Parameters
 
 | Parameter           | Type    | required | Default | Description |
 | ------------------- | ------- | -------- | ------- | ----------- |
-| boothid         | numeric | true    |         |
+| exhibitorboothid         | numeric | true    |         |
 | brand_group_id         | numeric | true    |         |
 
 ## Assign Branch to Booth
 
 ```shell
-curl --location --request POST '{baseurl}/booths/{boothid}/branch/{branch_group_id}' \
+curl --location --request POST '{baseurl}/booths/{exhibitorboothid}/branch/{branch_group_id}' \
 --header 'X-API-Key: {API-Key}' \
 --header 'Content-Type: application/json'
 ```
@@ -605,20 +605,20 @@ curl --location --request POST '{baseurl}/booths/{boothid}/branch/{branch_group_
 
 ### HTTP request
 
-`POST {baseurl}/booths/{boothid}/branch/{branch_group_id}`
+`POST {baseurl}/booths/{exhibitorboothid}/branch/{branch_group_id}`
 
 ### URL Parameters
 
 | Parameter           | Type    | required | Default | Description |
 | ------------------- | ------- | -------- | ------- | ----------- |
-| boothid         | numeric | true    |         |
+| exhibitorboothid         | numeric | true    |         |
 | branch_group_id         | numeric | true    |         |
 
 
 ## Unassign Branch from Booth
 
 ```shell
-curl --location --request DELETE '{baseurl}/booths/{boothid}/branch/{branch_group_id}' \
+curl --location --request DELETE '{baseurl}/booths/{exhibitorboothid}/branch/{branch_group_id}' \
 --header 'X-API-Key: {API-Key}' \
 --header 'Content-Type: application/json'
 ```
@@ -634,20 +634,20 @@ curl --location --request DELETE '{baseurl}/booths/{boothid}/branch/{branch_grou
 
 ### HTTP request
 
-`DELETE {baseurl}/booths/{boothid}/branch/{branch_group_id}`
+`DELETE {baseurl}/booths/{exhibitorboothid}/branch/{branch_group_id}`
 
 ### URL Parameters
 
 | Parameter           | Type    | required | Default | Description |
 | ------------------- | ------- | -------- | ------- | ----------- |
-| boothid         | numeric | true    |         |
+| exhibitorboothid         | numeric | true    |         |
 | branch_group_id         | numeric | true    |         |
 
 
 ## Assign Keyword to Booth
 
 ```shell
-curl --location --request POST '{baseurl}/booths/{boothid}/keyword/{keyword_group_id}' \
+curl --location --request POST '{baseurl}/booths/{exhibitorboothid}/keyword/{keyword_group_id}' \
 --header 'X-API-Key: {API-Key}' \
 --header 'Content-Type: application/json'
 ```
@@ -663,20 +663,20 @@ curl --location --request POST '{baseurl}/booths/{boothid}/keyword/{keyword_grou
 
 ### HTTP request
 
-`POST {baseurl}/booths/{boothid}/keyword/{keyword_group_id}`
+`POST {baseurl}/booths/{exhibitorboothid}/keyword/{keyword_group_id}`
 
 ### URL Parameters
 
 | Parameter           | Type    | required | Default | Description |
 | ------------------- | ------- | -------- | ------- | ----------- |
-| boothid         | numeric | true    |         |
+| exhibitorboothid         | numeric | true    |         |
 | keyword_group_id         | numeric | true    |         |
 
 
 ## Unassign Keyword from Booth
 
 ```shell
-curl --location --request DELETE '{baseurl}/booths/{boothid}/keyword/{keyword_group_id}' \
+curl --location --request DELETE '{baseurl}/booths/{exhibitorboothid}/keyword/{keyword_group_id}' \
 --header 'X-API-Key: {API-Key}' \
 --header 'Content-Type: application/json'
 ```
@@ -692,20 +692,20 @@ curl --location --request DELETE '{baseurl}/booths/{boothid}/keyword/{keyword_gr
 
 ### HTTP request
 
-`DELETE {baseurl}/booths/{boothid}/keyword/{keyword_group_id}`
+`DELETE {baseurl}/booths/{exhibitorboothid}/keyword/{keyword_group_id}`
 
 ### URL Parameters
 
 | Parameter           | Type    | required | Default | Description |
 | ------------------- | ------- | -------- | ------- | ----------- |
-| boothid         | numeric | true    |         |
+| exhibitorboothid         | numeric | true    |         |
 | keyword_group_id         | numeric | true    |         |
 
 
 ## Assign Solution List to Booth
 
 ```shell
-curl --location --request POST '{baseurl}/booths/{boothid}/solution-list/{solution_list_group_id}' \
+curl --location --request POST '{baseurl}/booths/{exhibitorboothid}/solution-list/{solution_list_group_id}' \
 --header 'X-API-Key: {API-Key}' \
 --header 'Content-Type: application/json'
 ```
@@ -721,20 +721,20 @@ curl --location --request POST '{baseurl}/booths/{boothid}/solution-list/{soluti
 
 ### HTTP request
 
-`POST {baseurl}/booths/{boothid}/solution-list/{solution_list_group_id}`
+`POST {baseurl}/booths/{exhibitorboothid}/solution-list/{solution_list_group_id}`
 
 ### URL Parameters
 
 | Parameter           | Type    | required | Default | Description |
 | ------------------- | ------- | -------- | ------- | ----------- |
-| boothid         | numeric | true    |         |
+| exhibitorboothid         | numeric | true    |         |
 | solution_list_group_id         | numeric | true    |         |
 
 
 ## Unassign Solution List from Booth
 
 ```shell
-curl --location --request DELETE '{baseurl}/booths/{boothid}/solution-list/{solution_list_group_id}' \
+curl --location --request DELETE '{baseurl}/booths/{exhibitorboothid}/solution-list/{solution_list_group_id}' \
 --header 'X-API-Key: {API-Key}' \
 --header 'Content-Type: application/json'
 ```
@@ -750,20 +750,20 @@ curl --location --request DELETE '{baseurl}/booths/{boothid}/solution-list/{solu
 
 ### HTTP request
 
-`DELETE {baseurl}/booths/{boothid}/solution-list/{solution_list_group_id}`
+`DELETE {baseurl}/booths/{exhibitorboothid}/solution-list/{solution_list_group_id}`
 
 ### URL Parameters
 
 | Parameter           | Type    | required | Default | Description |
 | ------------------- | ------- | -------- | ------- | ----------- |
-| boothid         | numeric | true    |         |
+| exhibitorboothid         | numeric | true    |         |
 | solution_list_group_id         | numeric | true    |         |
 
 
 ## Assign Product Group to Booth
 
 ```shell
-curl --location --request POST '{baseurl}/booths/{boothid}/product-group/{product_group_group_id}' \
+curl --location --request POST '{baseurl}/booths/{exhibitorboothid}/product-group/{product_group_group_id}' \
 --header 'X-API-Key: {API-Key}' \
 --header 'Content-Type: application/json'
 ```
@@ -779,20 +779,20 @@ curl --location --request POST '{baseurl}/booths/{boothid}/product-group/{produc
 
 ### HTTP request
 
-`POST {baseurl}/booths/{boothid}/product-group/{product_group_group_id}`
+`POST {baseurl}/booths/{exhibitorboothid}/product-group/{product_group_group_id}`
 
 ### URL Parameters
 
 | Parameter           | Type    | required | Default | Description |
 | ------------------- | ------- | -------- | ------- | ----------- |
-| boothid         | numeric | true    |         |
+| exhibitorboothid         | numeric | true    |         |
 | product_group_group_id         | numeric | true    |         |
 
 
 ## Unassign Product Group from Booth
 
 ```shell
-curl --location --request DELETE '{baseurl}/booths/{boothid}/product-group/{product_group_group_id}' \
+curl --location --request DELETE '{baseurl}/booths/{exhibitorboothid}/product-group/{product_group_group_id}' \
 --header 'X-API-Key: {API-Key}' \
 --header 'Content-Type: application/json'
 ```
@@ -808,20 +808,20 @@ curl --location --request DELETE '{baseurl}/booths/{boothid}/product-group/{prod
 
 ### HTTP request
 
-`DELETE {baseurl}/booths/{boothid}/product-group/{product_group_group_id}`
+`DELETE {baseurl}/booths/{exhibitorboothid}/product-group/{product_group_group_id}`
 
 ### URL Parameters
 
 | Parameter           | Type    | required | Default | Description |
 | ------------------- | ------- | -------- | ------- | ----------- |
-| boothid         | numeric | true    |         |
+| exhibitorboothid         | numeric | true    |         |
 | solution_list_group_id         | numeric | true    |         |
 
 
 ## Assign Contact to Booth
 
 ```shell
-curl --location --request POST '{baseurl}/booths/{boothid}/contact/{contact_id}' \
+curl --location --request POST '{baseurl}/booths/{exhibitorboothid}/contact/{contact_id}' \
 --header 'X-API-Key: {API-Key}' \
 --header 'Content-Type: application/json'
 ```
@@ -837,20 +837,20 @@ curl --location --request POST '{baseurl}/booths/{boothid}/contact/{contact_id}'
 
 ### HTTP request
 
-`POST {baseurl}/booths/{boothid}/contact/{contact_id}`
+`POST {baseurl}/booths/{exhibitorboothid}/contact/{contact_id}`
 
 ### URL Parameters
 
 | Parameter           | Type    | required | Default | Description |
 | ------------------- | ------- | -------- | ------- | ----------- |
-| boothid         | numeric | true    |         |
+| exhibitorboothid         | numeric | true    |         |
 | contact_id         | numeric | true    |         |
 
 
-## Unassign Product Group from Booth
+## Unassign Contact from Booth
 
 ```shell
-curl --location --request DELETE '{baseurl}/booths/{boothid}/contact/{contact_id}' \
+curl --location --request DELETE '{baseurl}/booths/{exhibitorboothid}/contact/{contact_id}' \
 --header 'X-API-Key: {API-Key}' \
 --header 'Content-Type: application/json'
 ```
@@ -866,20 +866,20 @@ curl --location --request DELETE '{baseurl}/booths/{boothid}/contact/{contact_id
 
 ### HTTP request
 
-`DELETE {baseurl}/booths/{boothid}/contact/{contact_id}`
+`DELETE {baseurl}/booths/{exhibitorboothid}/contact/{contact_id}`
 
 ### URL Parameters
 
 | Parameter           | Type    | required | Default | Description |
 | ------------------- | ------- | -------- | ------- | ----------- |
-| boothid         | numeric | true    |         |
+| exhibitorboothid         | numeric | true    |         |
 | contact_id         | numeric | true    |         |
 
 
 ## Assign Highlight to Booth
 
 ```shell
-curl --location --request POST '{baseurl}/booths/{boothid}/highlight/{highlight_group_id}' \
+curl --location --request POST '{baseurl}/booths/{exhibitorboothid}/highlight/{highlight_group_id}' \
 --header 'X-API-Key: {API-Key}' \
 --header 'Content-Type: application/json'
 ```
@@ -895,20 +895,20 @@ curl --location --request POST '{baseurl}/booths/{boothid}/highlight/{highlight_
 
 ### HTTP request
 
-`POST {baseurl}/booths/{boothid}/highlight/{highlight_group_id}`
+`POST {baseurl}/booths/{exhibitorboothid}/highlight/{highlight_group_id}`
 
 ### URL Parameters
 
 | Parameter           | Type    | required | Default | Description |
 | ------------------- | ------- | -------- | ------- | ----------- |
-| boothid         | numeric | true    |         |
+| exhibitorboothid         | numeric | true    |         |
 | highlight_group_id         | numeric | true    |         |
 
 
 ## Unassign Highlight from Booth
 
 ```shell
-curl --location --request DELETE '{baseurl}/booths/{boothid}/highlight/{highlight_group_id}' \
+curl --location --request DELETE '{baseurl}/booths/{exhibitorboothid}/highlight/{highlight_group_id}' \
 --header 'X-API-Key: {API-Key}' \
 --header 'Content-Type: application/json'
 ```
@@ -923,11 +923,11 @@ curl --location --request DELETE '{baseurl}/booths/{boothid}/highlight/{highligh
 
 ### HTTP request
 
-`DELETE {baseurl}/booths/{boothid}/highlight/{highlight_group_id}`
+`DELETE {baseurl}/booths/{exhibitorboothid}/highlight/{highlight_group_id}`
 
 ### URL Parameters
 
 | Parameter           | Type    | required | Default | Description |
 | ------------------- | ------- | -------- | ------- | ----------- |
-| boothid         | numeric | true    |         |
+| exhibitorboothid         | numeric | true    |         |
 | highlight_group_id         | numeric | true    |         |
