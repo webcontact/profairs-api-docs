@@ -422,7 +422,7 @@
                     <a href="#assign-contact-to-booth" class="toc-h2 toc-link" data-title="Assign Contact to Booth">Assign Contact to Booth</a>
                   </li>
                   <li>
-                    <a href="#unassign-product-group-from-booth-2" class="toc-h2 toc-link" data-title="Unassign Product Group from Booth">Unassign Product Group from Booth</a>
+                    <a href="#unassign-contact-from-booth" class="toc-h2 toc-link" data-title="Unassign Contact from Booth">Unassign Contact from Booth</a>
                   </li>
                   <li>
                     <a href="#assign-highlight-to-booth" class="toc-h2 toc-link" data-title="Assign Highlight to Booth">Assign Highlight to Booth</a>
@@ -2494,7 +2494,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='assign-brand-to-booth'>Assign Brand to Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/booths/{boothid}/brand/{brand_group_id}'</span> <span class="se">\</span>
+<h2 id='assign-brand-to-booth'>Assign Brand to Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/booths/{exhibitorboothid}/brand/{brand_group_id}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
 </code></pre></div>
@@ -2507,7 +2507,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-10'>HTTP request</h3>
-<p><code>POST {baseurl}/booths/{boothid}/brand/{brand_group_id}</code></p>
+<p><code>POST {baseurl}/booths/{exhibitorboothid}/brand/{brand_group_id}</code></p>
 <h3 id='url-parameters-6'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2519,7 +2519,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>boothid</td>
+<td>exhibitorboothid</td>
 <td>numeric</td>
 <td>true</td>
 <td></td>
@@ -2533,7 +2533,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='unassign-brand-from-booth'>Unassign Brand from Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/booths/{boothid}/brand/{brand_group_id}'</span> <span class="se">\</span>
+<h2 id='unassign-brand-from-booth'>Unassign Brand from Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/booths/{exhibitorboothid}/brand/{brand_group_id}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
 </code></pre></div>
@@ -2546,7 +2546,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">117</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-11'>HTTP request</h3>
-<p><code>DELETE {baseurl}/booths/{boothid}/brand/{brand_group_id}</code></p>
+<p><code>DELETE {baseurl}/booths/{exhibitorboothid}/brand/{brand_group_id}</code></p>
 <h3 id='url-parameters-7'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2558,7 +2558,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>boothid</td>
+<td>exhibitorboothid</td>
 <td>numeric</td>
 <td>true</td>
 <td></td>
@@ -2572,7 +2572,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='assign-branch-to-booth'>Assign Branch to Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/booths/{boothid}/branch/{branch_group_id}'</span> <span class="se">\</span>
+<h2 id='assign-branch-to-booth'>Assign Branch to Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/booths/{exhibitorboothid}/branch/{branch_group_id}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
 </code></pre></div>
@@ -2585,7 +2585,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-12'>HTTP request</h3>
-<p><code>POST {baseurl}/booths/{boothid}/branch/{branch_group_id}</code></p>
+<p><code>POST {baseurl}/booths/{exhibitorboothid}/branch/{branch_group_id}</code></p>
 <h3 id='url-parameters-8'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2597,7 +2597,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>boothid</td>
+<td>exhibitorboothid</td>
 <td>numeric</td>
 <td>true</td>
 <td></td>
@@ -2611,7 +2611,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='unassign-branch-from-booth'>Unassign Branch from Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/booths/{boothid}/branch/{branch_group_id}'</span> <span class="se">\</span>
+<h2 id='unassign-branch-from-booth'>Unassign Branch from Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/booths/{exhibitorboothid}/branch/{branch_group_id}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
 </code></pre></div>
@@ -2624,7 +2624,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">117</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-13'>HTTP request</h3>
-<p><code>DELETE {baseurl}/booths/{boothid}/branch/{branch_group_id}</code></p>
+<p><code>DELETE {baseurl}/booths/{exhibitorboothid}/branch/{branch_group_id}</code></p>
 <h3 id='url-parameters-9'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2636,7 +2636,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>boothid</td>
+<td>exhibitorboothid</td>
 <td>numeric</td>
 <td>true</td>
 <td></td>
@@ -2650,7 +2650,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='assign-keyword-to-booth'>Assign Keyword to Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/booths/{boothid}/keyword/{keyword_group_id}'</span> <span class="se">\</span>
+<h2 id='assign-keyword-to-booth'>Assign Keyword to Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/booths/{exhibitorboothid}/keyword/{keyword_group_id}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
 </code></pre></div>
@@ -2663,7 +2663,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-14'>HTTP request</h3>
-<p><code>POST {baseurl}/booths/{boothid}/keyword/{keyword_group_id}</code></p>
+<p><code>POST {baseurl}/booths/{exhibitorboothid}/keyword/{keyword_group_id}</code></p>
 <h3 id='url-parameters-10'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2675,7 +2675,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>boothid</td>
+<td>exhibitorboothid</td>
 <td>numeric</td>
 <td>true</td>
 <td></td>
@@ -2689,7 +2689,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='unassign-keyword-from-booth'>Unassign Keyword from Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/booths/{boothid}/keyword/{keyword_group_id}'</span> <span class="se">\</span>
+<h2 id='unassign-keyword-from-booth'>Unassign Keyword from Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/booths/{exhibitorboothid}/keyword/{keyword_group_id}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
 </code></pre></div>
@@ -2702,7 +2702,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">110</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-15'>HTTP request</h3>
-<p><code>DELETE {baseurl}/booths/{boothid}/keyword/{keyword_group_id}</code></p>
+<p><code>DELETE {baseurl}/booths/{exhibitorboothid}/keyword/{keyword_group_id}</code></p>
 <h3 id='url-parameters-11'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2714,7 +2714,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>boothid</td>
+<td>exhibitorboothid</td>
 <td>numeric</td>
 <td>true</td>
 <td></td>
@@ -2728,7 +2728,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='assign-solution-list-to-booth'>Assign Solution List to Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/booths/{boothid}/solution-list/{solution_list_group_id}'</span> <span class="se">\</span>
+<h2 id='assign-solution-list-to-booth'>Assign Solution List to Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/booths/{exhibitorboothid}/solution-list/{solution_list_group_id}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
 </code></pre></div>
@@ -2741,7 +2741,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-16'>HTTP request</h3>
-<p><code>POST {baseurl}/booths/{boothid}/solution-list/{solution_list_group_id}</code></p>
+<p><code>POST {baseurl}/booths/{exhibitorboothid}/solution-list/{solution_list_group_id}</code></p>
 <h3 id='url-parameters-12'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2753,7 +2753,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>boothid</td>
+<td>exhibitorboothid</td>
 <td>numeric</td>
 <td>true</td>
 <td></td>
@@ -2767,7 +2767,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='unassign-solution-list-from-booth'>Unassign Solution List from Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/booths/{boothid}/solution-list/{solution_list_group_id}'</span> <span class="se">\</span>
+<h2 id='unassign-solution-list-from-booth'>Unassign Solution List from Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/booths/{exhibitorboothid}/solution-list/{solution_list_group_id}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
 </code></pre></div>
@@ -2780,7 +2780,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">110</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-17'>HTTP request</h3>
-<p><code>DELETE {baseurl}/booths/{boothid}/solution-list/{solution_list_group_id}</code></p>
+<p><code>DELETE {baseurl}/booths/{exhibitorboothid}/solution-list/{solution_list_group_id}</code></p>
 <h3 id='url-parameters-13'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2792,7 +2792,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>boothid</td>
+<td>exhibitorboothid</td>
 <td>numeric</td>
 <td>true</td>
 <td></td>
@@ -2806,7 +2806,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='assign-product-group-to-booth'>Assign Product Group to Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/booths/{boothid}/product-group/{product_group_group_id}'</span> <span class="se">\</span>
+<h2 id='assign-product-group-to-booth'>Assign Product Group to Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/booths/{exhibitorboothid}/product-group/{product_group_group_id}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
 </code></pre></div>
@@ -2819,7 +2819,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-18'>HTTP request</h3>
-<p><code>POST {baseurl}/booths/{boothid}/product-group/{product_group_group_id}</code></p>
+<p><code>POST {baseurl}/booths/{exhibitorboothid}/product-group/{product_group_group_id}</code></p>
 <h3 id='url-parameters-14'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2831,7 +2831,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>boothid</td>
+<td>exhibitorboothid</td>
 <td>numeric</td>
 <td>true</td>
 <td></td>
@@ -2845,7 +2845,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='unassign-product-group-from-booth'>Unassign Product Group from Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/booths/{boothid}/product-group/{product_group_group_id}'</span> <span class="se">\</span>
+<h2 id='unassign-product-group-from-booth'>Unassign Product Group from Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/booths/{exhibitorboothid}/product-group/{product_group_group_id}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
 </code></pre></div>
@@ -2858,7 +2858,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">110</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-19'>HTTP request</h3>
-<p><code>DELETE {baseurl}/booths/{boothid}/product-group/{product_group_group_id}</code></p>
+<p><code>DELETE {baseurl}/booths/{exhibitorboothid}/product-group/{product_group_group_id}</code></p>
 <h3 id='url-parameters-15'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2870,7 +2870,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>boothid</td>
+<td>exhibitorboothid</td>
 <td>numeric</td>
 <td>true</td>
 <td></td>
@@ -2884,7 +2884,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='assign-contact-to-booth'>Assign Contact to Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/booths/{boothid}/contact/{contact_id}'</span> <span class="se">\</span>
+<h2 id='assign-contact-to-booth'>Assign Contact to Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/booths/{exhibitorboothid}/contact/{contact_id}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
 </code></pre></div>
@@ -2897,7 +2897,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-20'>HTTP request</h3>
-<p><code>POST {baseurl}/booths/{boothid}/contact/{contact_id}</code></p>
+<p><code>POST {baseurl}/booths/{exhibitorboothid}/contact/{contact_id}</code></p>
 <h3 id='url-parameters-16'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2909,7 +2909,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>boothid</td>
+<td>exhibitorboothid</td>
 <td>numeric</td>
 <td>true</td>
 <td></td>
@@ -2923,7 +2923,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='unassign-product-group-from-booth-2'>Unassign Product Group from Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/booths/{boothid}/contact/{contact_id}'</span> <span class="se">\</span>
+<h2 id='unassign-contact-from-booth'>Unassign Contact from Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/booths/{exhibitorboothid}/contact/{contact_id}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
 </code></pre></div>
@@ -2936,7 +2936,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">110</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-21'>HTTP request</h3>
-<p><code>DELETE {baseurl}/booths/{boothid}/contact/{contact_id}</code></p>
+<p><code>DELETE {baseurl}/booths/{exhibitorboothid}/contact/{contact_id}</code></p>
 <h3 id='url-parameters-17'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2948,7 +2948,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>boothid</td>
+<td>exhibitorboothid</td>
 <td>numeric</td>
 <td>true</td>
 <td></td>
@@ -2962,7 +2962,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='assign-highlight-to-booth'>Assign Highlight to Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/booths/{boothid}/highlight/{highlight_group_id}'</span> <span class="se">\</span>
+<h2 id='assign-highlight-to-booth'>Assign Highlight to Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'{baseurl}/booths/{exhibitorboothid}/highlight/{highlight_group_id}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
 </code></pre></div>
@@ -2975,7 +2975,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-22'>HTTP request</h3>
-<p><code>POST {baseurl}/booths/{boothid}/highlight/{highlight_group_id}</code></p>
+<p><code>POST {baseurl}/booths/{exhibitorboothid}/highlight/{highlight_group_id}</code></p>
 <h3 id='url-parameters-18'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2987,7 +2987,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>boothid</td>
+<td>exhibitorboothid</td>
 <td>numeric</td>
 <td>true</td>
 <td></td>
@@ -3001,7 +3001,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='unassign-highlight-from-booth'>Unassign Highlight from Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/booths/{boothid}/highlight/{highlight_group_id}'</span> <span class="se">\</span>
+<h2 id='unassign-highlight-from-booth'>Unassign Highlight from Booth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/booths/{exhibitorboothid}/highlight/{highlight_group_id}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
 </code></pre></div>
@@ -3013,7 +3013,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
   </span><span class="nl">"error_message"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-23'>HTTP request</h3>
-<p><code>DELETE {baseurl}/booths/{boothid}/highlight/{highlight_group_id}</code></p>
+<p><code>DELETE {baseurl}/booths/{exhibitorboothid}/highlight/{highlight_group_id}</code></p>
 <h3 id='url-parameters-19'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -3025,7 +3025,7 @@ You must replace <code>{API-Key}</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>boothid</td>
+<td>exhibitorboothid</td>
 <td>numeric</td>
 <td>true</td>
 <td></td>
