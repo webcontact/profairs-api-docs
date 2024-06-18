@@ -931,3 +931,60 @@ curl --location --request DELETE '{baseurl}/booths/{exhibitorboothid}/highlight/
 | ------------------- | ------- | -------- | ------- | ----------- |
 | exhibitorboothid         | numeric | true    |         |
 | highlight_group_id         | numeric | true    |         |
+
+
+## Assign Press Release to Booth
+
+```shell
+curl --location --request POST '{baseurl}/booths/{exhibitorboothid}/press-release/{pressrelease_group_id}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "id": 19
+}
+```
+
+### HTTP request
+
+`POST {baseurl}/booths/{exhibitorboothid}/press-release/{pressrelease_group_id}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| exhibitorboothid         | numeric | true    |         |
+| pressrelease_group_id         | numeric | true    |         |
+
+
+## Unassign Press Release from Booth
+
+```shell
+curl --location --request DELETE '{baseurl}/booths/{exhibitorboothid}/press-release/{pressrelease_group_id}' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {}
+}
+```
+
+### HTTP request
+
+`DELETE {baseurl}/booths/{exhibitorboothid}/press-release/{pressrelease_group_id}`
+
+### URL Parameters
+
+| Parameter           | Type    | required | Default | Description |
+| ------------------- | ------- | -------- | ------- | ----------- |
+| exhibitorboothid         | numeric | true    |         |
+| pressrelease_group_id         | numeric | true    |         |
