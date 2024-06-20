@@ -86,6 +86,9 @@ getKeywords | Boolean | true | false | Adds keywords to the exhibitors.
 getBrands | Boolean | true | false | Adds brands to the exhibitors.
 getSolutionList | Boolean | true | false | Adds solution list entries to the exhibitors.
 getProductGroup | Boolean | true | false | Adds product group entries to the exhibitors.
+getHighlights | Boolean | true | false | Adds Highlight entries to the exhibitors.
+getPressReleases | Boolean | true | false | Adds Press Releases entries to the exhibitors.
+getOnlinemedia | Boolean | true | false | Adds the Online Media entries to the exhibitors.
 
 ## Create an Exhibitor
 ```shell
