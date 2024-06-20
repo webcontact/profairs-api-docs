@@ -55,7 +55,7 @@ curl --location --request GET '{baseurl}/solutions?fairtypeid=1' \
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 fairtypeid | numeric | true |
-parentid | numeric | true | 0
+parentid | numeric | false | 
 language | string | false
 exhibitorid | numeric | false
 showlocked | boolean | false | false 

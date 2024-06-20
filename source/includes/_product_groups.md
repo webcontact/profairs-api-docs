@@ -55,7 +55,7 @@ curl --location --request GET '{baseurl}/product-groups?fairtypeid=1' \
 Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 fairtypeid | numeric | true |
-parentid | numeric | false | 0
+parentid | numeric | false
 language | string | false
 exhibitorid | numeric | false
 showlocked | boolean | false | false 
