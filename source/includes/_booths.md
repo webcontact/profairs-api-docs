@@ -31,8 +31,155 @@ curl --location --request GET '{baseurl}/booths/' \
               "exhibitorid": 123,
               "main_exhibitor_fair_id": 132,
               "exhibitorfairid": 1,
+              "exhibitorbootid": 111,
               "short_company": "Muster GmbH",
-              "mail": "mail@muster.local"
+              "mail": "mail@muster.local",
+              "brands": [
+                {
+                  "language": "de_DE",
+                  "groupId": 11,
+                  "name": "Marke 1",
+                  "id": 12
+                },
+                {
+                  "language": "en_GB",
+                  "groupId": 11,
+                  "name": "Brand 1",
+                  "id": 37
+                }
+              ],
+              "branches": [
+                {
+                  "language": "de_DE",
+                  "parentid": 2,
+                  "groupid": 197,
+                  "name": "Webentwicklung",
+                  "id": 197,
+                  "ordernumber": 0
+                },
+                {
+                  "language": "en_GB",
+                  "parentid": 2,
+                  "groupid": 197,
+                  "name": "Web Development",
+                  "id": 198,
+                  "ordernumber": 0
+                }
+              ],
+              "keywords": [
+                {
+                  "language": "de_DE",
+                  "groupId": 26,
+                  "name": "Stichwort 3",
+                  "id": 26
+                },
+                {
+                  "language": "en_GB",
+                  "groupId": 26,
+                  "name": "Keyword 3",
+                  "id": 27
+                }
+              ],
+              "solution_lists": [
+                {
+                  "language": "de_DE",
+                  "parentid": 169,
+                  "groupid": 170,
+                  "name": "Logistik",
+                  "id": 170,
+                  "ordernumber": 0
+                },
+                {
+                  "language": "en_GB",
+                  "parentid": 169,
+                  "groupid": 170,
+                  "name": "Logistics",
+                  "id": 170,
+                  "ordernumber": 0
+                }
+              ],
+              "product_groups": [
+                {
+                  "language": "de_DE",
+                  "parentid": 172,
+                  "groupid": 195,
+                  "name": "Malz",
+                  "id": 195,
+                  "ordernumber": 0
+                },
+                {
+                  "language": "en_GB",
+                  "parentid": 172,
+                  "groupid": 195,
+                  "name": "Malt",
+                  "id": 195,
+                  "ordernumber": 0
+                }
+              ],
+              "contacts": [
+                {
+                  "postalcode": "12345",
+                  "company": "Muster GmbH",
+                  "telephone": "01234/567890",
+                  "country": "Deutschland",
+                  "job_title": "Senior Developer",
+                  "salutation": "Herr",
+                  "lastname": "Max",
+                  "contactid": 2876,
+                  "mobile": "",
+                  "street": "Musterweg 1",
+                  "additional_address": "",
+                  "firstname": "Mustermann",
+                  "comment": "",
+                  "city": "Musterstadt",
+                  "exhibitorid": 3415,
+                  "title": "",
+                  "newsletter": false,
+                  "email": "max@mustermann.local"
+                }
+              ],
+              "press_releases": [
+                {
+                  "keywords": [],
+                  "language": "de_DE",
+                  "text": "Lorem ipsum",
+                  "introduction": "Lorem ipsum ...",
+                  "solution_list_entries": [],
+                  "image_subtitle": "",
+                  "brands": [],
+                  "groupid": 41,
+                  "image_mimetype": "image/png",
+                  "image_name": "https://url/to/image.png",
+                  "branches": [],
+                  "id": 317,
+                  "product_group": [],
+                  "link": "",
+                  "exhibitor_fair_id": 1442,
+                  "title": "Das ist ein Presseartikel"
+                }
+              ],
+              "highlights": [
+                {
+                  "keywords": [],
+                  "language": "de_DE",
+                  "text": "Lorem ipsum ...",
+                  "introduction": "Lorem ipsum",
+                  "solution_list_entries": [],
+                  "image_subtitle": "",
+                  "brands": [],
+                  "groupid": 40,
+                  "image_mimetype": "image/png",
+                  "image_name": "https://url/to/image.png",
+                  "downloadlink": "https://url/to/download",
+                  "branches": [],
+                  "id": 316,
+                  "product_group": [],
+                  "link": "",
+                  "exhibitor_fair_id": 1442,
+                  "title": "Das ist ein Messehighlight",
+                  "videolink": ""
+                }
+              ],
             }
           ],
           "boothnumber": "2-634",
@@ -43,141 +190,7 @@ curl --location --request GET '{baseurl}/booths/' \
           "fairid": 7,
           "boothid": 30,
           "boothdepth": "5.0",
-          "address": "Testweg 1, 12345 Testen",
-          "brands": [
-            {
-              "language": "de_DE",
-              "groupId": 11,
-              "name": "Marke 1",
-              "id": 12
-            },
-            {
-              "language": "en_GB",
-              "groupId": 11,
-              "name": "Brand 1",
-              "id": 37
-            }
-          ],
-          "branches": [
-            {
-              "language": "de_DE",
-              "parentid": 2,
-              "groupid": 197,
-              "name": "Webentwicklung",
-              "id": 197,
-              "ordernumber": 0
-            },
-            {
-              "language": "en_GB",
-              "parentid": 2,
-              "groupid": 197,
-              "name": "Web Development",
-              "id": 198,
-              "ordernumber": 0
-            }
-          ],
-          "keywords": [
-            {
-              "language": "de_DE",
-              "groupId": 26,
-              "name": "Stichwort 3",
-              "id": 26
-            },
-            {
-              "language": "en_GB",
-              "groupId": 26,
-              "name": "Keyword 3",
-              "id": 27
-            }
-          ],
-          "solution_lists": [
-            {
-              "language": "de_DE",
-              "parentid": 169,
-              "groupid": 170,
-              "name": "Logistik",
-              "id": 170,
-              "ordernumber": 0
-            },
-            {
-              "language": "en_GB",
-              "parentid": 169,
-              "groupid": 170,
-              "name": "Logistics",
-              "id": 170,
-              "ordernumber": 0
-            }
-          ],
-          "product_groups": [
-            {
-              "language": "de_DE",
-              "parentid": 172,
-              "groupid": 195,
-              "name": "Malz",
-              "id": 195,
-              "ordernumber": 0
-            },
-            {
-              "language": "en_GB",
-              "parentid": 172,
-              "groupid": 195,
-              "name": "Malt",
-              "id": 195,
-              "ordernumber": 0
-            }
-          ],
-          "contacts": [
-            {
-              "postalcode": "12345",
-              "company": "Muster GmbH",
-              "telephone": "01234/567890",
-              "country": "Deutschland",
-              "job_title": "Senior Developer",
-              "salutation": "Herr",
-              "lastname": "Max",
-              "contactid": 2876,
-              "mobile": "",
-              "street": "Musterweg 1",
-              "additional_address": "",
-              "firstname": "Mustermann",
-              "comment": "",
-              "city": "Musterstadt",
-              "exhibitorid": 3415,
-              "title": "",
-              "newsletter": false,
-              "email": "max@mustermann.local"
-            }
-          ],
-        },
-        {
-            "articleid": "",
-            "change_user": 999,
-            "create_user": 999,
-            "change_date": "February, 03 2022 10:48:33",
-            "boothwidth": "4.00",
-            "boothnumber": "2-614",
-            "boothtype": "",
-            "create_date": "February, 02 2022 10:44:02",
-            "syncstatus": 0,
-            "boothsize": "",
-            "fairid": 7,
-            "boothid": 29,
-            "boothdepth": "3.00",
-            "address": "Musterweg 12, 12345 Testen",
-            "brands": [
-              {
-                "language": "de_DE",
-                "groupId": 14,
-                "name": "Brand 2",
-                "id": 111
-              },
-              {
-                "language": "en_GB",
-                "groupId": 14,
-                "name": "Brand 2",
-                "id": 112
-              }
-            ],
+          "address": "Testweg 1, 12345 Testen"
         }
     ]
 }
