@@ -7904,6 +7904,24 @@ You must replace <code>{API-Key}</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request'>HTTP request</h3>
 <p><code>GET {baseurl}/highlights</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>exhibitor_fair_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
 <h2 id='get-highlight-by-id'>Get highlight by Id</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/highlights/{id}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-KEY: {API-Key}'</span> <span class="se">\</span>
 </code></pre></div>
@@ -9776,6 +9794,24 @@ You must replace <code>{API-Key}</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request'>HTTP request</h3>
 <p><code>GET {baseurl}/press-releases</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>exhibitor_fair_id</td>
+<td>numeric</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
 <h2 id='get-press-release-by-id'>Get press release by Id</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{baseurl}/press-releases/{press_release_id}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-KEY: {API-Key}'</span> <span class="se">\</span>
 </code></pre></div>
