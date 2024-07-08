@@ -149,6 +149,13 @@ curl --location --request GET '{baseurl}/highlights' \
 
 `GET {baseurl}/highlights`
 
+### Query Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitor_fair_id | numeric | false |
+
+
 ## Get highlight by Id
 
 ```shell

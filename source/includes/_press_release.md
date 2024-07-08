@@ -324,6 +324,11 @@ curl --location --request GET '{baseurl}/press-releases' \
 
 `GET {baseurl}/press-releases`
 
+### Query Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitor_fair_id | numeric | false |
 
 ## Get press release by Id
 
