@@ -190,7 +190,8 @@ curl --location --request GET '{baseurl}/booths/' \
           "fairid": 7,
           "boothid": 30,
           "boothdepth": "5.0",
-          "address": "Testweg 1, 12345 Testen"
+          "address": "Testweg 1, 12345 Testen",
+          "description": "Lorem ipsum ..."
         }
     ]
 }
@@ -403,7 +404,8 @@ curl --location --request GET '{baseurl}/booths/exhibitor/' \
             "boothid": 26,
             "change_date": "April, 05 2019 15:05:04",
             "exhibitorfairid": 2280,
-            "address": "Testweg 1, 12345 Testen"
+            "address": "Testweg 1, 12345 Testen",
+            "description": "Lorem ipsum ..."
         },
         {
             "boothassignment": "",
@@ -417,7 +419,8 @@ curl --location --request GET '{baseurl}/booths/exhibitor/' \
             "boothid": 562,
             "change_date": "June, 25 2019 17:03:19",
             "exhibitorfairid": 2305,
-            "address": "Musterstraße 12, 12345 Testen"
+            "address": "Musterstraße 12, 12345 Testen",
+            "description": "Lorem ipsum ..."
         }
     ]
 }
@@ -448,7 +451,8 @@ curl --location --request POST '{baseurl}/booths/exhibitor/{boothid}/' \
 --data-raw '{
     "fairid": 7,
     "exhibitorfairid": 96,
-    "address": "Testweg 1, 12345 Testen"
+    "address": "Testweg 1, 12345 Testen",
+    "description": "Lorem ipsum ..."
 }'
 ```
 
@@ -483,6 +487,7 @@ curl --location --request POST '{baseurl}/booths/exhibitor/{boothid}/' \
 | boothassignment  | String | false    |        |
 | variantid  | numeric | false    |        | Specified variant is ordered when creating |
 | address  | string | false    |  |
+| description  | string | false    |  |
 
 
 ## Delete exhibitor booth assignment
