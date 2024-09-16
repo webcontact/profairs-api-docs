@@ -580,6 +580,9 @@
                     <a href="#create-exhibitor-fair-assignment" class="toc-h2 toc-link" data-title="Create exhibitor fair assignment">Create exhibitor fair assignment</a>
                   </li>
                   <li>
+                    <a href="#update-exhibitor-fair-assignment" class="toc-h2 toc-link" data-title="Update exhibitor fair assignment">Update exhibitor fair assignment</a>
+                  </li>
+                  <li>
                     <a href="#delete-exhibitor-fair-assignment" class="toc-h2 toc-link" data-title="Delete exhibitor fair assignment">Delete exhibitor fair assignment</a>
                   </li>
                   <li>
@@ -5990,6 +5993,63 @@ You must replace <code>{API-Key}</code> with your personal API key.
 <td>1 = &quot;yes&quot;, 0 = &quot;no&quot;</td>
 </tr>
 </tbody></table>
+<h2 id='update-exhibitor-fair-assignment'>Update exhibitor fair assignment</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> PUT <span class="s1">'{baseurl}/exhibitor-fair-assignments/{exhibitorfairid}/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+    "is_highlighted": 1
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"debug"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"exhibitorfairid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"256"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"x-api-key"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"is_highlighted"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"exhibitorfairid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"256"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-3'>HTTP Request</h3>
+<p><code>PUT {baseurl}/exhibitor-fair-assignments/{exhibitorfairid}</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>exhibitorfairid</td>
+<td>numeric</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='parameters-2'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>is_highlighted</td>
+<td>numeric</td>
+<td>false</td>
+<td>0</td>
+<td>1 = &quot;yes&quot;, 0 = &quot;no&quot;</td>
+</tr>
+</tbody></table>
 <h2 id='delete-exhibitor-fair-assignment'>Delete exhibitor fair assignment</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'{baseurl}/exhibitor-fair-assignments/{exhibitorid}/'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-API-Key: {API-Key}'</span> <span class="se">\</span>
 </code></pre></div>
@@ -6000,9 +6060,9 @@ You must replace <code>{API-Key}</code> with your personal API key.
     </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nl">"exhibitorid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1337"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='http-request-3'>HTTP Request</h3>
+</span></code></pre></div><h3 id='http-request-4'>HTTP Request</h3>
 <p><code>DELETE {baseurl}/exhibitor-fair-assignments/{exhibitorid}/</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
+<h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6054,9 +6114,9 @@ You must replace <code>{API-Key}</code> with your personal API key.
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='http-request-4'>HTTP Request</h3>
+</span></code></pre></div><h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET {baseurl}/exhibitor-fair-assignments/{exhibitorfairid}/track-login/</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
