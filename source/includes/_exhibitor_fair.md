@@ -89,6 +89,49 @@ exhibitorid | numeric | true | |
 fairid | numeric | true | |
 is_highlighted | numeric | false | 0 | 1 = "yes", 0 = "no"
 
+## Update exhibitor fair assignment
+
+```shell
+curl --location --request PUT '{baseurl}/exhibitor-fair-assignments/{exhibitorfairid}/' \
+--header 'X-API-Key: {API-Key}' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "is_highlighted": 1
+}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "debug": {
+    "exhibitorfairid": "256",
+    "x-api-key": null,
+    "is_highlighted": 1
+  },
+  "exhibitorfairid": "256"
+}
+```
+
+### HTTP Request
+
+`PUT {baseurl}/exhibitor-fair-assignments/{exhibitorfairid}`
+
+
+### URL Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitorfairid | numeric | true | |
+
+
+### Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+is_highlighted | numeric | false | 0 | 1 = "yes", 0 = "no"
+
 ## Delete exhibitor fair assignment
 
 ```shell
