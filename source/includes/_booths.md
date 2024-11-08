@@ -836,64 +836,6 @@ curl --location --request DELETE '{baseurl}/booths/{exhibitorboothid}/product-gr
 | solution_list_group_id         | numeric | true    |         |
 
 
-## Assign Contact to Booth
-
-```shell
-curl --location --request POST '{baseurl}/booths/{exhibitorboothid}/contact/{contact_id}' \
---header 'X-API-Key: {API-Key}' \
---header 'Content-Type: application/json'
-```
-> The above command returns JSON structured like this:
-
-```json
-{
-  "error": false,
-  "error_message": {},
-  "id": 19
-}
-```
-
-### HTTP request
-
-`POST {baseurl}/booths/{exhibitorboothid}/contact/{contact_id}`
-
-### URL Parameters
-
-| Parameter           | Type    | required | Default | Description |
-| ------------------- | ------- | -------- | ------- | ----------- |
-| exhibitorboothid         | numeric | true    |         |
-| contact_id         | numeric | true    |         |
-
-
-## Unassign Contact from Booth
-
-```shell
-curl --location --request DELETE '{baseurl}/booths/{exhibitorboothid}/contact/{contact_id}' \
---header 'X-API-Key: {API-Key}' \
---header 'Content-Type: application/json'
-```
-> The above command returns JSON structured like this:
-
-```json
-{
-  "error": false,
-  "error_message": {},
-  "id": 110
-}
-```
-
-### HTTP request
-
-`DELETE {baseurl}/booths/{exhibitorboothid}/contact/{contact_id}`
-
-### URL Parameters
-
-| Parameter           | Type    | required | Default | Description |
-| ------------------- | ------- | -------- | ------- | ----------- |
-| exhibitorboothid         | numeric | true    |         |
-| contact_id         | numeric | true    |         |
-
-
 ## Assign Highlight to Booth
 
 ```shell
