@@ -968,3 +968,53 @@ Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 exhibitorid | numeric | true |
 fairid | numeric | true |
+
+
+## Get primary product groups
+
+```shell
+curl --location --request GET '{baseurl}/exhibitors/{exhibitorid}/primary-productgroups' \
+--header 'X-API-KEY: {API-Key}' \
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "product_groups": [
+    {
+      "language": "de_DE",
+      "parentid": 0,
+      "ordernumber": 0,
+      "name": "Agrarprodukte",
+      "id": 143
+    },
+    {
+      "language": "en_GB",
+      "parentid": 0,
+      "ordernumber": 0,
+      "name": "Agricultural products",
+      "id": 143
+    }
+  ]
+}
+```
+
+
+### HTTP request
+
+`GET {baseurl}/exhibitors/{exhibitorid}/primary-productgroups`
+
+### URL Parameter
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+exhibitorid | numeric | true
+
+### Query Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+fairtypeid | numeric | false
+language | string | false | de_DE
