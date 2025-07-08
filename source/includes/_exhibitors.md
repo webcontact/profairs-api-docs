@@ -1018,3 +1018,50 @@ Parameter | Type | required | Default | Description
 --------- | ---- | -------- | ------- | -----------
 fairtypeid | numeric | false
 language | string | false | de_DE
+
+## Get exhibitor id-card
+
+```shell
+curl --location --request GET '{baseurl}/exhibitors/id-card' \
+--header 'X-API-KEY: {API-KEY}'
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "error": false,
+  "error_message": {},
+  "exhibitor-id-card": [
+    {
+      "name": "Max Mustermann",
+      "phone": "+49123456798",
+      "type": "aussteller",
+      "code": "UQxWG7ww",
+      "honor_date": ""
+    },
+    {
+      "name": "Maria Musterfrau",
+      "phone": "+49123456798",
+      "type": "tagesaussteller",
+      "code": "EQYzbA93",
+      "honor_date": "February, 02 2025 15:42:25 +0100"
+    },
+  ]
+}
+```
+
+### HTTP request
+
+`GET {baseurl}/exhibitors/id-card`
+
+### Query Parameters
+
+Parameter | Type | required | Default | Description
+--------- | ---- | -------- | ------- | -----------
+fairid | numeric | true
+language | string | true | de_DE
+code | string | false
+name | string | false
+variantid | numeric | false
+limit | numeric | false
+page | numeric | false
